@@ -19,7 +19,22 @@ export type PublicIndicator = {
   publishedAt: string;
   note: string;
   comparison?: { displayValue: string; period: string; note: string };
+  indicatorScore?: { value: number; basis: string; benchmark?: string; benchmarkSourceUrl?: string; note: string };
 };
+
+export type CategoryScore = {
+  id: "economy" | "education" | "health";
+  label: string;
+  value: number;
+  evidenceCount: number;
+  expectedEvidence: number;
+  evidenceLabel: string;
+  method: string;
+  interpretation: string;
+  provisional: boolean;
+};
+
+export type UnscoredCategory = { id: string; label: string; reason: string };
 
 export type MissingIndicator = {
   id: string;
@@ -62,7 +77,7 @@ const sources = {
   vaccination: {
     label: "The State of Health of the Nation Report 2024 — NDHS",
     publisher: "Federal Ministry of Health and Social Welfare",
-    url: "https://fmohconnect.gov.ng/wp-content/uploads/2025/05/The-State-of-Health-of-the-Nation-Report-2024.pdf",
+    url: "https://www.health.gov.ng/wp-content/uploads/2025/10/NDHS-2024-Final-Report_Disseminated17102025.pdf",
     period: "2023–2024 survey",
     publishedAt: "May 2025",
   },
@@ -186,7 +201,39 @@ function makeIndicator(
 
 export function getPublicRecordIndicators(person: { office: string; state?: string }) {
   if (person.office === "President") {
-    return { indicators: nationalIndicators, missing: [
+    const indicators = nationalIndicators.map(item => {
+      if (item.id === "real-gdp-growth-2026-q2") return {
+        ...item,
+        indicatorScore: {
+          value: roundScore(Math.min(10, (item.value / 4.68) * 10)),
+          basis: "2026 official budget benchmark",
+          benchmark: "4.68% real GDP growth projection for 2026",
+          benchmarkSourceUrl: "https://nass.gov.ng/documents/download/11234",
+          note: "Q2 year-on-year growth compared directionally with the full-year 2026 budget projection. This is a provisional partial-year benchmark check, not the final full-year result.",
+        },
+      };
+      if (item.id === "headline-inflation-2026-10") return {
+        ...item,
+        indicatorScore: {
+          value: roundScore(Math.min(10, (16.5 / item.value) * 10)),
+          basis: "2026 official budget benchmark",
+          benchmark: "16.5% inflation assumption for 2026",
+          benchmarkSourceUrl: "https://nass.gov.ng/documents/download/11234",
+          note: "Lower inflation than the budget assumption earns a higher benchmark score. October year-on-year inflation is compared directionally with the 2026 budget assumption; it is not the final annual average.",
+        },
+      };
+      if (item.id === "vaccination-national-ndhs-2023-24") return {
+        ...item,
+        indicatorScore: {
+          value: roundScore(item.value / 10),
+          basis: "Coverage percentage converted to a 0–10 scale",
+          benchmark: "100% of children aged 12–23 months fully vaccinated",
+          note: "A coverage-level score, not a trend score or a causal estimate of federal performance. Health delivery is shared across federal, state and local systems.",
+        },
+      };
+      return item;
+    });
+    return { indicators, missing: [
       { id: "presidential-commitment-ledger", label: "Presidential manifesto commitments", period: "2023–2027 term", reason: "The 2023 Renewed Hope manifesto is identifiable, but Sabi's item-by-item commitment register and evidence decisions are not yet published." },
       { id: "security-outcomes", label: "Security outcomes", period: "2023–2026", reason: "A comparable, source-validated national series with consistent baseline and reporting periods has not yet been added to this public record." },
     ] as MissingIndicator[] };
@@ -231,7 +278,141 @@ export function getPublicRecordIndicators(person: { office: string; state?: stri
       { id: "health-execution-2025", label: "Health budget execution", period: "FY2025", reason: "The cited BudgIT state-government table does not provide a directly comparable FCT entry." },
     );
   }
-  return { indicators, missing };
+  const scoredIndicators = indicators.map(item => {
+    if (item.id === "igr-2025") {
+      const values = Object.entries(stateData).filter(([name]) => name !== "Federal Capital Territory");
+      const jurisdictions = person.office === "FCT Minister"
+        ? Object.entries(stateData)
+        : values;
+      const sorted = jurisdictions.slice().sort((a, b) => (b[1].igr || 0) - (a[1].igr || 0));
+      const rank = sorted.findIndex(([name]) => name === jurisdiction) + 1;
+      const total = sorted.length;
+      const peerValue = total > 1 ? (10 * (total - rank) / (total - 1)) : 0;
+      return {
+        ...item,
+        indicatorScore: {
+          value: roundScore(peerValue),
+          basis: "2025 nominal IGR peer position",
+          benchmark: `Rank ${rank} of ${total} ${person.office === "FCT Minister" ? "state and FCT jurisdictions" : "states"}`,
+          note: "This is a relative score for total nominal revenue collected, not per-capita revenue, inflation-adjusted growth, household prosperity or a standalone judgement of the officeholder.",
+        },
+      };
+    }
+    if (item.id === "education-execution-2025") return {
+      ...item,
+      indicatorScore: {
+        value: executionScore(item.value),
+        basis: "2025 approved-budget execution",
+        benchmark: "100% of the approved education budget spent",
+        note: "Calculated as 10 − the absolute percentage-point distance from 100%, divided by 10. Budget execution is a fiscal-process measure, not evidence of learning or school quality.",
+      },
+    };
+    if (item.id === "health-execution-2025") return {
+      ...item,
+      indicatorScore: {
+        value: executionScore(item.value),
+        basis: "2025 approved-budget execution",
+        benchmark: "100% of the approved health budget spent",
+        note: "A score of 10 is exact execution of the approved amount. Under- or over-execution moves the score away from 10; expenditure above 100% is not rewarded as extra performance.",
+      },
+    };
+    if (item.id === "vaccination-ndhs-2023-24") return {
+      ...item,
+      indicatorScore: {
+        value: roundScore(item.value / 10),
+        basis: "NDHS 2024 coverage percentage converted to a 0–10 scale",
+        benchmark: "100% of children aged 12–23 months fully vaccinated",
+        note: "This measures the state-level survey result, not change during the governor's tenure. It is not a causal estimate of the governor's contribution.",
+      },
+    };
+    return item;
+  });
+  return { indicators: scoredIndicators, missing };
+}
+
+function roundScore(value: number) {
+  return Math.round(Math.max(0, Math.min(10, value)) * 10) / 10;
+}
+
+function executionScore(value: number) {
+  return roundScore(10 - Math.abs(100 - value) / 10);
+}
+
+export function getPublicRecordScores(person: { name: string; office: string; state?: string }) {
+  const record = getPublicRecordIndicators(person);
+  const byId = new Map(record.indicators.map(item => [item.id, item]));
+  const average = (ids: string[]) => {
+    const scores = ids.map(id => byId.get(id)?.indicatorScore?.value).filter((value): value is number => value !== undefined);
+    return scores.length ? roundScore(scores.reduce((sum, value) => sum + value, 0) / scores.length) : null;
+  };
+  const categories: CategoryScore[] = [];
+  if (person.office === "President") {
+    const economy = average(["real-gdp-growth-2026-q2", "headline-inflation-2026-10"]);
+    const health = average(["vaccination-national-ndhs-2023-24"]);
+    if (economy !== null) categories.push({
+      id: "economy", label: "Economy & fiscal conditions", value: economy,
+      evidenceCount: 2, expectedEvidence: 2, evidenceLabel: "2 of 2 benchmarks",
+      method: "Average of Q2 real GDP growth attainment and October headline-inflation performance against the 2026 Federal Government budget assumptions.",
+      interpretation: "Provisional, partial-year benchmark tracking. These are national indicators and include monetary, fiscal and external factors beyond the President's direct control.",
+      provisional: true,
+    });
+    if (health !== null) categories.push({
+      id: "health", label: "Health outcomes", value: health,
+      evidenceCount: 1, expectedEvidence: 1, evidenceLabel: "1 survey indicator",
+      method: "Share of children aged 12–23 months fully vaccinated for all basic antigens, divided by 10.",
+      interpretation: "A national coverage-level indicator from NDHS 2024. Health delivery is shared across all tiers of government; this is not a causal presidential rating.",
+      provisional: true,
+    });
+  } else {
+    const economy = average(["igr-2025"]);
+    const education = average(["education-execution-2025"]);
+    const healthIds = ["health-execution-2025", "vaccination-ndhs-2023-24"];
+    const health = average(healthIds);
+    if (economy !== null) categories.push({
+      id: "economy", label: "Revenue & fiscal capacity", value: economy,
+      evidenceCount: 1, expectedEvidence: 1, evidenceLabel: "1 revenue benchmark",
+      method: person.office === "FCT Minister"
+        ? "2025 IGR rank among the 36 states and the FCT, converted linearly to a 0–10 peer score."
+        : "2025 IGR rank among the 36 states, converted linearly to a 0–10 peer score.",
+      interpretation: "A relative score for nominal total revenue. It is not population-adjusted, inflation-adjusted or a complete measure of the state economy.",
+      provisional: true,
+    });
+    if (education !== null) categories.push({
+      id: "education", label: "Education budget execution", value: education,
+      evidenceCount: 1, expectedEvidence: 1, evidenceLabel: "1 budget benchmark",
+      method: "10 − (absolute distance from 100% budget execution ÷ 10), bounded from 0 to 10.",
+      interpretation: "Measures whether the approved education budget was executed, not whether learning outcomes improved.",
+      provisional: true,
+    });
+    if (health !== null) {
+      const availableHealth = healthIds.filter(id => byId.get(id)?.indicatorScore).length;
+      categories.push({
+        id: "health", label: "Health & immunisation", value: health,
+        evidenceCount: availableHealth, expectedEvidence: 2, evidenceLabel: `${availableHealth} of 2 indicators`,
+        method: "Equal-weight average of the health budget-execution score and NDHS basic-vaccination coverage score. Where the budget dataset excludes a state, the available vaccination indicator is shown alone.",
+        interpretation: "Combines a fiscal-process measure and a household-survey outcome. The reporting periods differ and the result is not a causal estimate of the governor's contribution.",
+        provisional: true,
+      });
+    }
+  }
+  const scoredIds = new Set(categories.map(category => category.id));
+  const notScored: UnscoredCategory[] = [];
+  if (!scoredIds.has("education")) notScored.push({
+    id: "education", label: "Education",
+    reason: person.office === "President"
+      ? "A comparable federal education-outcome dataset has not yet been added to this national profile."
+      : "The cited education budget dataset does not provide a comparable figure for this jurisdiction.",
+  });
+  if (!scoredIds.has("health")) notScored.push({
+    id: "health", label: "Health",
+    reason: "No source-linked health indicator is currently available for this jurisdiction.",
+  });
+  notScored.push(
+    { id: "integrity", label: "Integrity & promise delivery", reason: "The item-by-item manifesto or public-commitment register and its approved evidence decisions are not yet complete." },
+    { id: "security", label: "Security", reason: "A comparable, validated security-outcome series has not yet been added to this profile." },
+    { id: "infrastructure", label: "Infrastructure & basic services", reason: "Comparable service-delivery measures and dated baselines are still being compiled." },
+  );
+  return { categories, notScored };
 }
 
 export function describePublicRecord(person: { name: string; office: string; state?: string }) {
