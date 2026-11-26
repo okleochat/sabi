@@ -18,7 +18,7 @@ export default function CandidateExplorer({candidates}:{candidates:Candidate[]})
   const p=candidatePortraits[c.id];
   return <Link className="candidate-card" href={"/candidates/"+c.id} key={c.id}>
    <div className={"candidate-image "+(!p?"placeholder":"")}>{p?<img src={p.url} alt={p.alt}/>:<span className="candidate-initials">{c.displayName.split(" ").slice(0,2).map(x=>x[0]).join("")}</span>}
-   {!p?<small>PORTRAIT SOURCE BEING VERIFIED</small>:null}
+   {p?<small>PHOTO: {p.credit} · {p.license}</small>:<small>PORTRAIT SOURCE BEING VERIFIED</small>}
    <span className="candidate-number">{c.partyCode}</span></div>
    <div className="candidate-body"><span className="party-tag">{c.partyCode}</span><h3>{c.displayName}</h3>
    <p>Running mate: {c.runningMateOfficialName||"Not stated in INEC list"}</p>
