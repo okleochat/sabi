@@ -1,0 +1,3 @@
+import type {Metadata} from "next";
+export const metadata:Metadata={title:"Newsroom"};
+export default function StudioPage(){return <div className="wrap"><section className="page-intro"><div className="kicker">Sabi newsroom</div><h1>Editorial workspace.</h1><p>Private tools for reviewing public submissions, researching claims, maintaining candidate records and publishing verified reporting.</p></section><section className="section"><div className="empty-state"><strong>Firebase editorial access is being connected.</strong><p>Public submissions are stored privately in Firestore. Staff access will be enabled through Firebase Authentication and an explicit editor permission record. There is no public editor registration.</p></div></section></div>;}
