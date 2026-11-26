@@ -1,3 +1,4 @@
 import {electionArticles} from "./election-articles";
 import {civicArticles} from "./civic-articles";
-export const starterArticles=[...electionArticles,...civicArticles];
+import {currentAffairsArticles} from "./current-affairs-articles";
+export const starterArticles=[...electionArticles,...civicArticles,...currentAffairsArticles];
