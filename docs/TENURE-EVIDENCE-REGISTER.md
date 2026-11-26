@@ -40,7 +40,7 @@ The `getTenureEvidence()` helper connects state-specific records to the correspo
 
 ### Extracted observations
 - Global MPI 2026 reports Nigeria's latest publicly available survey data (2024) as MPI 0.269, 48.7% incidence, 18.1% vulnerable to multidimensional poverty and 55.1% intensity. This uses the global three-dimension method and is not comparable to the separate National MPI 2022 series.
-- The 2024 NDHS reports state-level food insecurity for all 36 states and FCT; nationally 67.7% of the de jure population experienced moderate or severe food insecurity and 33.0% severe food insecurity.
+- The 2024 NDHS reports state-level food insecurity for all 36 states and FCT; nationally 67.7% of the de jure population experienced moderate or severe food insecurity and 33.0% severe food insecurity. Rivers is 76.6% / 33.5%, while Yobe is 94.1% / 65.9%.
 - NBS state MPI (2021/22) records Rivers incidence at 62.4% (95% CI 57.7–67.0) and Sokoto at 90.5% (88.2–92.8). The national incidence was 62.9% (61.9–63.8) and intensity 40.9%; the report estimated 132.92 million people multidimensionally poor. This is an inherited baseline, not an administration outcome.
 - Legacy headline inflation rose from 21.82% in January 2023 to 28.92% in December 2023. This is the old CPI series and includes the transition between administrations.
 - Selected NBS food prices, June 2023 to June 2024: onion +215.20%; boneless beef +102.74%; sliced bread +117.35%; palm oil +56.90%.
