@@ -2,8 +2,8 @@
 import {FormEvent,useState} from "react";
 export default function ClaimForm(){
  const [busy,setBusy]=useState(false);const [message,setMessage]=useState("");
- async function submit(e:FormEvent<HTMLFormElement>){e.preventDefault();setBusy(true);setMessage("");const form=new FormData(e.currentTarget);const payload={claim:String(form.get("claim")||""),context:String(form.get("context")||""),sourceUrl:String(form.get("sourceUrl")||""),contact:String(form.get("contact")||""),website:String(form.get("website")||"")};
- try{const res=await fetch("/api/claims",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});const data=await res.json();if(!res.ok)throw new Error(data.error||"We could not submit this claim.");e.currentTarget.reset();setMessage("Claim received. Our editorial team will review it and may contact you if you provided an email.");}
+ async function submit(e:FormEvent<HTMLFormElement>){e.preventDefault();const formElement=e.currentTarget;setBusy(true);setMessage("");const form=new FormData(formElement);const payload={claim:String(form.get("claim")||""),context:String(form.get("context")||""),sourceUrl:String(form.get("sourceUrl")||""),contact:String(form.get("contact")||""),website:String(form.get("website")||"")};
+ try{const res=await fetch("/api/claims",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});const data=await res.json();if(!res.ok)throw new Error(data.error||"We could not submit this claim.");formElement.reset();setMessage("Claim received. Our editorial team will review it and may contact you if you provided an email.");}
  catch(err){setMessage(err instanceof Error?err.message:"Submission failed. Please try again.");}finally{setBusy(false);}}
  return <form className="form-panel form-stack" onSubmit={submit}>
  <label>What claim should we check?<textarea name="claim" minLength={12} maxLength={2000} required placeholder="Paste the exact statement or describe the claim."/></label>

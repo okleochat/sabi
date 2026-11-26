@@ -1,0 +1,2 @@
+import type {MetadataRoute} from "next";
+export default function manifest():MetadataRoute.Manifest{return {name:"Sabi Politics",short_name:"Sabi",description:"Clear, non-partisan information about Nigeria’s 2027 elections.",start_url:"/",display:"standalone",background_color:"#f4f0e7",theme_color:"#171716",icons:[{src:"/icon.svg",sizes:"any",type:"image/svg+xml"}]};}
