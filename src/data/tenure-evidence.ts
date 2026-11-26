@@ -241,6 +241,18 @@ export const tenureEvidenceSources: EvidenceSource[] = [
     officeScope: "subnational",
   },
   {
+    id: "fmoh-dhis2-immunisation-2023-24", category: "health",
+    title: "State of Health of the Nation Report 2024 — DHIS2 immunisation trend",
+    publisher: "Federal Ministry of Health & Social Welfare",
+    url: "https://fmohconnect.gov.ng/wp-content/uploads/2025/05/The-State-of-Health-of-the-Nation-Report-2024.pdf",
+    period: "Annualised 2023 and 2024 reporting",
+    geography: "All 36 states and FCT",
+    resolution: "state-and-national", evidenceType: "official-administrative",
+    use: "State-by-state annualised fully-immunised-by-age-one DHIS2 coverage in 2023 and 2024, allowing a year-to-year administrative trend rather than a single survey snapshot.",
+    limitation: "Administrative coverage is not equivalent to NDHS household survey coverage for 12–23-month-olds. Values above 100% are reported as published and signal denominator/catchment quality limits; the ministry reports declines in Enugu, FCT, Kebbi, Sokoto and Zamfara. Do not infer causal responsibility from a single two-year interval.",
+    officeScope: "both",
+  },
+  {
     id: "ndhs-2024", category: "health",
     title: "2024 Nigeria Demographic and Health Survey — final report and key indicators",
     publisher: "National Population Commission, Federal Ministry of Health and Social Welfare, The DHS Program",
@@ -579,6 +591,16 @@ const nationalObservations: EvidenceObservation[] = [
     note: "The report provides every month-end observation for both series. The annual report describes a 6.52% naira appreciation against the US dollar at NFEM in 2025 and gross reserves rising 11.30%. FX levels and reserves are macro-financial context, not standalone measures of household welfare; oil receipts and external conditions also influence reserves.",
   },
   {
+    id: "national-dhis2-immunisation-trend-2023-24", category: "health",
+    label: "Fully immunised children by age one — DHIS2 administrative trend",
+    value: "2023 and 2024 state-level annualised coverage extracted for all 36 states and FCT; Ministry report says 28 states improved and five recorded declines (Enugu, FCT, Kebbi, Sokoto and Zamfara).",
+    period: "2023–2024", geography: "Nigeria, state and FCT",
+    publisher: "Federal Ministry of Health & Social Welfare",
+    url: "https://fmohconnect.gov.ng/wp-content/uploads/2025/05/The-State-of-Health-of-the-Nation-Report-2024.pdf",
+    evidenceType: "official-administrative",
+    note: "The full state values are displayed in each jurisdiction's profile. DHIS2 administrative rates must be kept separate from NDHS survey estimates; values over 100% are preserved and require denominator-quality caution.",
+  },
+  {
     id: "nics-2021-immunisation", category: "health",
     label: "Routine immunisation completeness and Penta-series coverage",
     value: "36% fully vaccinated · Penta3 57% · Penta1-to-Penta3 dropout 21% · child health card seen 56%",
@@ -734,6 +756,7 @@ import {micsStateBaseline2021,micsBaselineSource} from "@/data/mics-baselines";
 import {stateEducationCensus2024,educationCensusSource} from "@/data/education-census-baseline";
 import {stateSecurity2024To2025,stateSecuritySource} from "@/data/security-state-2024-25";
 import {nalabeStateLearning2022,nalabeSource} from "@/data/nalabe-baselines";
+import {stateDhIs2Immunisation2023To2024,dhis2ImmunisationSource} from "@/data/dhis2-immunisation";
 
 export function getTenureEvidence(person: { office: string; state?: string; termStart?: string }) {
   const scope = person.office === "President" ? "national" : "subnational";
@@ -770,6 +793,21 @@ export function getTenureEvidence(person: { office: string; state?: string; term
   const stateRecord = person.state ? stateLabourBaseline2023[person.state] : undefined;
   const micsRecord = person.state ? micsStateBaseline2021[person.state] : undefined;
   const educationCensus = person.state ? stateEducationCensus2024[person.state] : undefined;
+  const dhis2Immunisation = person.state ? stateDhIs2Immunisation2023To2024[person.state] : undefined;
+  if (dhis2Immunisation) {
+    observations.unshift({
+      id:"dhis2-immunisation-2023-24",
+      category:"health",
+      label:"Fully immunised by age one — DHIS2 administrative coverage",
+      value:dhis2Immunisation.year2023.toFixed(1)+"% (2023) → "+dhis2Immunisation.year2024.toFixed(1)+"% (2024)",
+      period:dhis2ImmunisationSource.period,
+      geography:person.state || "State",
+      publisher:dhis2ImmunisationSource.publisher,
+      url:dhis2ImmunisationSource.url,
+      evidenceType:"official-administrative",
+      note:dhis2ImmunisationSource.note,
+    });
+  }
   const security = person.state ? stateSecurity2024To2025[person.state] : undefined;
   if (security) {
     observations.unshift({
