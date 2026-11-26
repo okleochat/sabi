@@ -420,7 +420,22 @@ export function getPublicRecordScores(person: { name: string; office: string; st
     { id: "security", label: "Security", reason: "A comparable, validated security-outcome series has not yet been added to this profile." },
     { id: "infrastructure", label: "Infrastructure & basic services", reason: "Comparable service-delivery measures and dated baselines are still being compiled." },
   );
-  return { categories, notScored };
+  const totalAssessmentCategories = categories.length + notScored.length;
+  const overallScore = categories.length
+    ? roundScore(categories.reduce((sum, category) => sum + category.value, 0) / categories.length)
+    : null;
+  const overallCoverage = totalAssessmentCategories
+    ? Math.round((categories.length / totalAssessmentCategories) * 100)
+    : 0;
+  return {
+    categories,
+    notScored,
+    overallScore,
+    scoredCategoryCount: categories.length,
+    totalAssessmentCategories,
+    overallCoverage,
+    overallFormula: "Arithmetic mean of all published category scores. Categories marked Not scored yet are excluded, never assigned zero; the number of scored categories and total assessment categories is shown alongside the result.",
+  };
 }
 
 export function describePublicRecord(person: { name: string; office: string; state?: string }) {
