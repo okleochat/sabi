@@ -16,7 +16,8 @@ export type EvidenceCategory =
   | "health"
   | "infrastructure"
   | "integrity"
-  | "commitments";
+  | "commitments"
+  | "child-welfare";
 
 export type EvidenceSource = {
   id: string;
@@ -166,6 +167,30 @@ export const tenureEvidenceSources: EvidenceSource[] = [
     use: "Track revenue, expenditure, debt service, capital releases and implementation across successive quarters of the presidential term.",
     limitation: "Budget execution is not the same as completed infrastructure or service outcomes. Compare approved budgets, actual releases, cash expenditure, audited accounts and project delivery.",
     officeScope: "national",
+  },
+  {
+    id: "ngf-public-finance", category: "public-finance",
+    title: "Public Finance Database — comparable 36-state fiscal records",
+    publisher: "Nigeria Governors’ Forum",
+    url: "https://www.publicfinance.ngf.org.ng/",
+    period: "Annual state budget and audited-account records; coverage varies by indicator/year",
+    geography: "All 36 state governments",
+    resolution: "state-and-national", evidenceType: "official-administrative",
+    use: "Query comparable state revenue, expenditure, capital/recurrent spending, sector budgets and budget-performance indicators. NGF says data are drawn from state budgets and audited financial statements and aligned to the National Chart of Accounts.",
+    limitation: "Confirm each state/year record has an audited actual rather than an original/revised budget estimate. State reporting completeness and fiscal-year coverage may differ; retain the data provenance at indicator level.",
+    officeScope: "subnational",
+  },
+  {
+    id: "nbs-mics-2021-state-snapshots", category: "child-welfare",
+    title: "2021 Multiple Indicator Cluster Survey / National Immunisation Coverage Survey — Statistical Snapshots",
+    publisher: "National Bureau of Statistics and UNICEF",
+    url: "https://nigerianstat.gov.ng/pdfuploads/2021%20MICS%20Statistical%20Snapshots%20Report.pdf",
+    period: "2021 fieldwork; published August 2022",
+    geography: "National and all 36 states plus FCT; Borno sample covers seven LGAs",
+    resolution: "state-and-national", evidenceType: "official-statistics",
+    use: "Extract state-level early-childhood attendance, age-five organised learning participation, primary and junior-secondary attendance, basic drinking water, sanitation and hygiene, child labour, child marriage and other child-wellbeing baselines.",
+    limitation: "All measurements pre-date the 2023 administrations and are baseline/context only. Borno’s displayed state estimates cover seven of 27 LGAs. Survey definitions, populations and confidence intervals must accompany each metric.",
+    officeScope: "both",
   },
   {
     id: "budgit-state-of-states", category: "public-finance",
@@ -394,6 +419,36 @@ const nationalObservations: EvidenceObservation[] = [
     note: "This is the comparison table printed in the Q2 2024 report. Preserve the missing Q4 2023 observation; do not interpolate. Read unemployment alongside participation, employment-to-population ratio, underemployment and informality.",
   },
   {
+    id: "mics-national-education-2021", category: "education",
+    label: "Adjusted net attendance and organised learning",
+    value: "Early childhood 37.8% · age-five organised learning 63.2% · primary 68.4% · junior secondary 47.6% · senior secondary 46.7%",
+    period: "2021 survey; published August 2022", geography: "Nigeria",
+    publisher: "NBS / UNICEF — 2021 MICS Statistical Snapshots",
+    url: "https://nigerianstat.gov.ng/pdfuploads/2021%20MICS%20Statistical%20Snapshots%20Report.pdf",
+    evidenceType: "official-statistics",
+    note: "Adjusted attendance estimates from the 2021 pre-tenure survey. They describe access, not learning quality or outcomes under a post-May-2023 administration.",
+  },
+  {
+    id: "mics-national-wash-2021", category: "infrastructure",
+    label: "Population using basic WASH services",
+    value: "Basic drinking water 71.5% · basic sanitation 38.3% · basic hygiene 28.8%",
+    period: "2021 survey; published August 2022", geography: "Nigeria",
+    publisher: "NBS / UNICEF — 2021 MICS Statistical Snapshots",
+    url: "https://nigerianstat.gov.ng/pdfuploads/2021%20MICS%20Statistical%20Snapshots%20Report.pdf",
+    evidenceType: "official-statistics",
+    note: "Pre-tenure population service estimates. This separate MICS series uses its own definitions; it should not be silently merged with WASHNORM or JMP estimates.",
+  },
+  {
+    id: "mics-national-child-welfare-2021", category: "child-welfare",
+    label: "Child labour and child marriage baselines",
+    value: "Child labour among ages 5–17: 31.5% · women aged 20–49 first married/in union before 18: 33.7%",
+    period: "2021 survey; published August 2022", geography: "Nigeria",
+    publisher: "NBS / UNICEF — 2021 MICS Statistical Snapshots",
+    url: "https://nigerianstat.gov.ng/pdfuploads/2021%20MICS%20Statistical%20Snapshots%20Report.pdf",
+    evidenceType: "official-statistics",
+    note: "Pre-tenure child welfare context. The indicators concern different populations and must not be combined into one rate.",
+  },
+  {
     id: "child-mortality-2023-24", category: "health",
     label: "Under-five mortality (UNICEF/UN IGME annual estimates)",
     value: "116.8 (2023) → 115.6 (2024) deaths per 1,000 live births",
@@ -465,8 +520,10 @@ const nationalObservations: EvidenceObservation[] = [
   },
 ];
 
+import {micsStateBaseline2021,micsBaselineSource} from "@/data/mics-baselines";
+
 export function getTenureEvidence(person: { office: string; state?: string; termStart?: string }) {
-  const scope = person.office === "President" ? "national" : person.office === "Governor" ? "subnational" : "both";
+  const scope = person.office === "President" ? "national" : "subnational";
   const sources = tenureEvidenceSources.filter(source =>
     source.officeScope === "both" || source.officeScope === scope ||
     (scope === "subnational" && source.officeScope === "national")
@@ -479,6 +536,27 @@ export function getTenureEvidence(person: { office: string; state?: string; term
   });
 
   const stateRecord = person.state ? stateLabourBaseline2023[person.state] : undefined;
+  const micsRecord = person.state ? micsStateBaseline2021[person.state] : undefined;
+  if (micsRecord) {
+    const baseNote = micsBaselineSource.note;
+    const entries = [
+      ["education-ece-2021", "Early childhood education attendance (ages 3–4)", micsRecord.earlyChildhoodAttendance, "education"],
+      ["education-age5-2021", "Organised learning participation (age 5)", micsRecord.organizedLearningAge5, "education"],
+      ["education-primary-2021", "Adjusted primary net attendance (ages 6–11)", micsRecord.primaryAttendance, "education"],
+      ["education-jss-2021", "Adjusted junior-secondary net attendance (ages 12–14)", micsRecord.juniorSecondaryAttendance, "education"],
+      ["wash-water-2021", "Population using basic drinking-water services", micsRecord.basicDrinkingWater, "infrastructure"],
+      ["wash-sanitation-2021", "Population using basic sanitation services", micsRecord.basicSanitation, "infrastructure"],
+      ["wash-hygiene-2021", "Population using basic hygiene services", micsRecord.basicHygiene, "infrastructure"],
+      ["child-labour-2021", "Children aged 5–17 engaged in child labour", micsRecord.childLabour, "child-welfare"],
+      ["child-marriage-2021", "Women aged 20–49 first married/in union before age 18", micsRecord.womenMarriedBefore18, "child-welfare"],
+    ] as const;
+    observations.unshift(...entries.map(([id,label,value,category]) => ({
+      id, category, label, value: value + "%", period: micsBaselineSource.period,
+      geography: person.state || "State", publisher: micsBaselineSource.publisher,
+      url: micsBaselineSource.url, evidenceType: "official-statistics" as const,
+      note: baseNote + (person.state === "Borno" ? " The Borno state estimate is based on the survey’s seven sampled LGAs, not all 27 LGAs." : ""),
+    })));
+  }
   if (stateRecord) {
     const context = person.termStart && person.termStart > "2023-01-01"
       ? "Calendar-year 2023 includes months before this officeholder took office; use as a transition/early-term baseline, not as a complete tenure result."
