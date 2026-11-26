@@ -205,6 +205,18 @@ export const tenureEvidenceSources: EvidenceSource[] = [
     officeScope: "subnational",
   },
   {
+    id: "fme-annual-school-census-2024", category: "education",
+    title: "Nigeria Education Statistics 2024 — Annual School Census",
+    publisher: "Federal Ministry of Education",
+    url: "https://emis.education.gov.ng/portal/",
+    period: "School year 2024/2025",
+    geography: "State-level administrative census portal",
+    resolution: "state-and-national", evidenceType: "official-administrative",
+    use: "State-by-state learner totals, learner–teacher, learner–classroom and learner–toilet ratios, female learner and teacher shares, special-needs learner counts, and school ownership/level filters.",
+    limitation: "The page reports 57.9% national school reporting. Some displayed state values are visibly incomplete or anomalous; Rivers has a blank row rendered as zero, and Taraba, Yobe and Zamfara are absent from the indexed table. Missing returns must not be interpreted as zero enrolment or performance. Verify against state EMIS returns before trend comparisons.",
+    officeScope: "subnational",
+  },
+  {
     id: "nbs-mics-2021-state-snapshots", category: "child-welfare",
     title: "2021 Multiple Indicator Cluster Survey / National Immunisation Coverage Survey — Statistical Snapshots",
     publisher: "National Bureau of Statistics and UNICEF",
@@ -483,6 +495,16 @@ const nationalObservations: EvidenceObservation[] = [
     note: "The report provides every month-end observation for both series. The annual report describes a 6.52% naira appreciation against the US dollar at NFEM in 2025 and gross reserves rising 11.30%. FX levels and reserves are macro-financial context, not standalone measures of household welfare; oil receipts and external conditions also influence reserves.",
   },
   {
+    id: "nics-2021-immunisation", category: "health",
+    label: "Routine immunisation completeness and Penta-series coverage",
+    value: "36% fully vaccinated · Penta3 57% · Penta1-to-Penta3 dropout 21% · child health card seen 56%",
+    period: "2021 National Immunisation Coverage Survey", geography: "Nigeria; state estimates and confidence intervals in source tables",
+    publisher: "NBS / NPHCDA / UNICEF — MICS & NICS 2021",
+    url: "https://nigerianstat.gov.ng/pdfuploads/2021%20MICS%20Statistical%20Snapshots%20Report.pdf",
+    evidenceType: "official-statistics",
+    note: "Fully vaccinated means all first-year-of-life antigens listed in the report, not Penta3 alone. Penta3 and full vaccination are separate definitions. This is a pre-May-2023 baseline; the source gives 95% confidence intervals for selected indicators and state-level data, while Borno's sample is limited to seven LGAs.",
+  },
+  {
     id: "mics-national-education-2021", category: "education",
     label: "Adjusted net attendance and organised learning",
     value: "Early childhood 37.8% · age-five organised learning 63.2% · primary 68.4% · junior secondary 47.6% · senior secondary 46.7%",
@@ -585,6 +607,7 @@ const nationalObservations: EvidenceObservation[] = [
 ];
 
 import {micsStateBaseline2021,micsBaselineSource} from "@/data/mics-baselines";
+import {stateEducationCensus2024,educationCensusSource} from "@/data/education-census-baseline";
 
 export function getTenureEvidence(person: { office: string; state?: string; termStart?: string }) {
   const scope = person.office === "President" ? "national" : "subnational";
@@ -601,6 +624,24 @@ export function getTenureEvidence(person: { office: string; state?: string; term
 
   const stateRecord = person.state ? stateLabourBaseline2023[person.state] : undefined;
   const micsRecord = person.state ? micsStateBaseline2021[person.state] : undefined;
+  const educationCensus = person.state ? stateEducationCensus2024[person.state] : undefined;
+  if (educationCensus) {
+    const value = educationCensus;
+    observations.unshift({
+      id: "fme-school-census-2024",
+      category: "education",
+      label: "Annual School Census — reporting snapshot",
+      value: value.learners === null
+        ? "No usable state return in the portal table"
+        : value.learners.toLocaleString("en-NG") + " learners · learner/teacher " + value.learnerTeacherRatio + " · learner/classroom " + value.learnerClassroomRatio + " · learner/toilet " + value.learnerToiletRatio + " · female learners " + value.femaleLearnersPercent + "% · female teachers " + value.femaleTeachersPercent + "% · special-needs learners reported " + value.specialNeedsLearners?.toLocaleString("en-NG"),
+      period: educationCensusSource.period,
+      geography: person.state || "State",
+      publisher: educationCensusSource.publisher,
+      url: educationCensusSource.url,
+      evidenceType: "official-administrative",
+      note: educationCensusSource.note,
+    });
+  }
   if (micsRecord) {
     const baseNote = micsBaselineSource.note;
     const entries = [
