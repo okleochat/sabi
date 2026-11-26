@@ -3,6 +3,7 @@ import Link from "next/link";
 import {notFound} from "next/navigation";
 import {getCandidate} from "@/lib/data";
 import {candidatePortraits,candidateBackgrounds} from "@/data/candidate-media";
+import ShareCard from "@/app/components/ShareCard";
 export const dynamic="force-dynamic";
 export async function generateMetadata({params}:{params:Promise<{id:string}>}):Promise<Metadata>{const {id}=await params;const c=await getCandidate(id);return {title:c?.displayName||"Candidate profile"};}
 export default async function CandidateProfile({params}:{params:Promise<{id:string}>}){
@@ -20,7 +21,7 @@ export default async function CandidateProfile({params}:{params:Promise<{id:stri
  <div className="detail"><span>QUALIFICATIONS LISTED</span><strong>{c.qualifications||"Not stated"}</strong></div>
  <div className="detail"><span>RUNNING MATE QUALIFICATIONS</span><strong>{c.runningMateQualifications||"Not stated"}</strong></div>
  </div>
- <div className="source-note">OFFICIAL SOURCE: {c.source?.publisher||"INEC"} · {c.source?.publishedAt||"DATE NOT AVAILABLE"}<br/><a href={c.source?.url} target="_blank" rel="noreferrer">VIEW INEC CANDIDATE LIST ↗</a></div>
+ <ShareCard kind="2027 PRESIDENTIAL CANDIDATE" kicker={c.partyCode} title={c.displayName} summary={background?.summary||"Candidate particulars transcribed from INEC’s published list. Further biography and policy information is being checked."} details={[{label:"Party code",value:c.partyCode},{label:"Running mate",value:c.runningMateOfficialName||"Not stated"},{label:"Age on INEC list",value:String(c.ageAtPublication??"Not stated")},{label:"Qualifications",value:c.qualifications||"Not stated"}]} source="INEC candidate list" path={"/candidates/"+c.id}/><div className="source-note">OFFICIAL SOURCE: {c.source?.publisher||"INEC"} · {c.source?.publishedAt||"DATE NOT AVAILABLE"}<br/><a href={c.source?.url} target="_blank" rel="noreferrer">VIEW INEC CANDIDATE LIST ↗</a></div>
  </div></section>
  <section className="profile-research"><div className="eyebrow"><span/>THE RESEARCH FILE</div><h2>WHAT WE KNOW.<br/>WHAT WE'RE STILL CHECKING.</h2><div className="content-grid"><article className="content-card"><div className="eyebrow">VERIFIED SO FAR</div><h3>Official ticket details</h3><p>Candidate name, party code, running mate and particulars shown above are transcribed from INEC's published list.</p></article><article className="content-card"><div className="eyebrow">NEXT RESEARCH LAYER</div><h3>Biography & public record</h3><p>Political history, public offices, major decisions and independently sourced biography are added only when supported by reliable records.</p></article><article className="content-card"><div className="eyebrow">POLICY FILE</div><h3>Promises & positions</h3><p>Manifesto statements and policy proposals will be linked to the original document, with dates and clear distinctions between proposals and outcomes.</p></article></div>
  {background?.sources?.length?<div className="profile-source-list"><strong>Additional profile sources</strong>{background.sources.map(s=><a key={s.url} href={s.url} target="_blank" rel="noreferrer">{s.publisher}: {s.title} ↗</a>)}</div>:null}
