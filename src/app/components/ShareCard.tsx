@@ -5,10 +5,10 @@ type ShareDetail={label:string;value:string};
 type Props={kind?:string;kicker:string;title:string;summary?:string;details?:ShareDetail[];source?:string;assessmentDate?:string;path?:string};
 
 function drawWrapped(ctx:CanvasRenderingContext2D,text:string,x:number,y:number,maxWidth:number,lineHeight:number,maxLines:number){
- const words=String(text||"").split(/\\s+/);const lines:string[]=[];let line="";
+ const words=String(text||"").split(/\s+/);const lines:string[]=[];let line="";
  for(const word of words){const candidate=line?line+" "+word:word;if(ctx.measureText(candidate).width>maxWidth&&line){lines.push(line);line=word;if(lines.length===maxLines-1)break;}else line=candidate;}
  if(line&&lines.length<maxLines)lines.push(line);
- if(lines.length===maxLines&&words.length>lines.join(" ").split(/\\s+/).length){let last=lines[lines.length-1];while(last.length&&ctx.measureText(last+"…").width>maxWidth)last=last.slice(0,-1);lines[lines.length-1]=last+"…";}
+ if(lines.length===maxLines&&words.length>lines.join(" ").split(/\s+/).length){let last=lines[lines.length-1];while(last.length&&ctx.measureText(last+"…").width>maxWidth)last=last.slice(0,-1);lines[lines.length-1]=last+"…";}
  for(const item of lines){ctx.fillText(item,x,y);y+=lineHeight;}
  return y;
 }
