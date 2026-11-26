@@ -5,6 +5,7 @@ import {politicianPortraits} from "@/data/politician-media";
 import {getPublicRecordIndicators,getPublicRecordScores} from "@/data/public-records";
 import {publicRecordMethodology} from "@/lib/score-methodology";
 import ShareCard from "@/app/components/ShareCard";
+import {getTenureEvidence,tenureEvidenceSources} from "@/data/tenure-evidence";
 
 export const metadata:Metadata={title:"Integrity & Impact | Sabi Public Records"};
 
@@ -16,14 +17,14 @@ export default function IntegrityImpactPage(){
   <section className="page-intro">
    <div className="eyebrow"><span/>SABI INTELLIGENCE / PUBLIC RECORD INDEX</div>
    <h1>THE PEOPLE.<br/>THE PROMISES.<br/>THE PROOF.</h1>
-   <p>Explore what public records actually say about the people in office: revenue, budgets, public outcomes, decisions and commitments. Every figure links to its source, reporting period and limitations.</p>
+   <p>Explore what public records actually say about the people in office: revenue, budgets, public outcomes, security, education, health, infrastructure, procurement and commitments. Historical sources, observations, reporting periods and limitations are shown separately.</p>
   </section>
   <section className="page-section">
    <div className="section-head">
     <div><div className="eyebrow">THE PUBLIC RECORD / 2026</div><h2>{governors.length} GOVERNORS. 1 PRESIDENT. 1 FCT MINISTER.</h2></div>
     <div className="eyebrow">SOURCE-LINKED DIRECTORY</div>
    </div>
-   <ShareCard kind="SABI PUBLIC RECORD INDEX" kicker="THE PEOPLE. THE PROMISES. THE PROOF." title="Nigeria’s public officeholders" summary="An evidence-first directory of state and national public records, with source links, periods and disclosed data gaps." details={[{label:"Governors",value:String(governors.length)},{label:"President",value:"1"},{label:"FCT Minister",value:"1"},{label:"Indicator datasets",value:"4"}]} path="/integrity-impact"/>
+   <ShareCard kind="SABI PUBLIC RECORD INDEX" kicker="THE PEOPLE. THE PROMISES. THE PROOF." title="Nigeria’s public officeholders" summary="An evidence-first directory of state and national public records, with source links, periods and disclosed data gaps." details={[{label:"Governors",value:String(governors.length)},{label:"President",value:"1"},{label:"FCT Minister",value:"1"},{label:"Research source series",value:String(tenureEvidenceSources.length)}]} path="/integrity-impact"/>
    <div className="no-verdict-panel">
     <div className="eyebrow" style={{color:"#c5ff43"}}>THE DATA DESK / FIRST RELEASE</div>
     <h3>NO MYSTERY NUMBERS. OPEN SOURCES. VISIBLE GAPS.</h3>
@@ -40,6 +41,7 @@ export default function IntegrityImpactPage(){
      const portrait=politicianPortraits[p.id];
      const record=getPublicRecordIndicators(p);
      const scorecard=getPublicRecordScores(p);
+     const research=getTenureEvidence(p);
      const periods=[...new Set(record.indicators.map(x=>x.period))];
      return <Link className="candidate-card" href={"/integrity-impact/"+p.id} key={p.id}>
       <div className={"candidate-image "+(!portrait?"placeholder":"")}>
@@ -60,7 +62,7 @@ export default function IntegrityImpactPage(){
         {scorecard.categories.map(score=><span key={score.id}><b>{score.id==="economy"?"FISCAL":score.id==="education"?"EDUCATION":score.id==="health"?"HEALTH":score.id==="growth"?"GROWTH":"PRICES"}</b> {score.value.toFixed(1)}/10</span>)}
        </div>
        <p className="directory-score-coverage">{scorecard.scoredCategoryCount} of {scorecard.totalAssessmentCategories} assessment categories scored · {scorecard.overallCoverage}% coverage</p>
-       <p className="notice">{record.indicators.map(item=>item.label+": "+item.displayValue).join(" · ")}{record.missing.length?" · "+record.missing.length+" disclosed research/data gap(s)":""}</p>
+       <p className="notice"><b>{research.sources.length} source series indexed · {research.observations.length} extracted observations</b><br/>{record.indicators.map(item=>item.label+": "+item.displayValue).join(" · ")}{record.missing.length?" · "+record.missing.length+" disclosed research/data gap(s)":""}</p>
        {scorecard.notScored.length?<p className="notice">Not scored yet: {scorecard.notScored.map(x=>x.label).join(", ")}.</p>:null}
        <span>OPEN SOURCED PUBLIC RECORD ↗</span>
       </div>
