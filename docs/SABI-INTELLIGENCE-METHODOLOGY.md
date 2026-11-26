@@ -4,7 +4,7 @@
 
 Formula: 100 × sum(commitment importance weight × fulfilment value) / sum(weights for commitments with assessable evidence).
 
-**Publication gate — manifesto catalogue coverage:** before an Integrity Score is shown, editors must catalogue at least 60% of all identifiable commitments in the original manifesto or attributable pledge set. The denominator is the number of identifiable commitments in that source; the numerator is the number entered into the Sabi register. If the source is not sufficiently reviewed to establish that denominator, the score remains pending. Catalogue coverage and evidence coverage must be shown separately.
+**Completeness threshold — manifesto catalogue coverage:** 60% of identifiable commitments is the threshold for labelling an assessment complete, not a blanket publication blocker. If at least one commitment has approved, assessable evidence, publish a provisional sample score and label the sample size and coverage. When the catalogue reaches 60%, upgrade the score to a complete-register assessment. If the denominator is unknown, state that catalogue coverage is unknown. Catalogue coverage and evidence coverage must be shown separately.
 
 Status values: completed 1.00; substantially completed 0.75; partially completed 0.50; not started 0; abandoned 0; not verifiable excluded and separately disclosed. Importance weights 1–5 with published rationale. Completion requires evidence of delivery, not announcements, budget lines or contract awards. Display the catalogue denominator, catalogued commitments, assessed commitments and evidence coverage beside any score.
 
