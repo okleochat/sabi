@@ -120,6 +120,14 @@ Sources: https://nerc.gov.ng/ and the relevant NERC quarterly reports.
 
 **Interpretation rule:** these grid figures do not substantiate a claim of doubled grid generation on this measure. Before assessing the manifesto pledge, verify its exact wording and scope, including whether it refers to installed capacity, available capacity, grid generation, distributed generation or off-grid supply. Do not conflate these measures.
 
+### Current-term start dates for returning governors
+
+The term-start field in Sabi must refer to the **current electoral term**, not the officeholder's first-ever inauguration. Ten governors re-elected in 2023 began their current term on 29 May 2023: Ahmadu Umaru Fintiri, Bala Mohammed, Babagana Zulum, Inuwa Yahaya, AbdulRahman AbdulRazaq, Babajide Sanwo-Olu, Abdullahi Sule, Dapo Abiodun, Seyi Makinde and Mai Mala Buni. The 2023 inauguration coverage identifies the returning governors and their swearing-in date: https://www.channelstv.com/2023/05/29/meet-the-28-new-and-returning-governors/ and https://www.naijanews.com/2023/05/30/full-list-all-28-governors-sworn-in-across-nigeria/.
+
+Douye Diri began his second term on 14 February 2024; Bayelsa State Judiciary records the ceremony and date: https://bayelsajudiciary.gov.ng/swearing-in-ceremony-of-his-excellency-senator-douye-diri-and-his-deputy-as-governor-and-deputy-governor-of-bayelsa-state/. Hope Uzodimma began his second term on 15 January 2024: https://www.channelstv.com/2024/01/15/uzodimma-sworn-in-for-second-term/.
+
+As at this register's 26 November 2026 cut-off, Ademola Adeleke's current term still begins 27 November 2022; his second-term inauguration is scheduled for 27 November 2026. Change the term-start date only after the oath has been administered. Anambra and Ekiti current terms begin 17 March 2026 and 16 October 2026 respectively, as noted above.
+
 ## 3. Current officeholder and candidate roster checks
 
 - The November 2026 secondary roster cross-check is at https://nnu.ng/know-your-leaders/. It is a discovery source, not a substitute for each state government's official record.
