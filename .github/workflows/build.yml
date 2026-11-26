@@ -7,6 +7,8 @@ on:
     branches:
       - main
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,7 +19,7 @@ jobs:
           node-version: 24
           cache: npm
           cache-dependency-path: src/package.json
-      - name: Install dependencies
+      - name: Install dependencies and generate lockfile
         working-directory: src
         run: npm install
       - name: Build Next.js app
@@ -25,3 +27,12 @@ jobs:
         env:
           NEXT_TELEMETRY_DISABLED: 1
         run: npm run build
+      - name: Commit lockfile for Firebase App Hosting
+        run: |
+          git add src/package-lock.json
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: add npm lockfile [skip ci]"
+            git push
+          fi
