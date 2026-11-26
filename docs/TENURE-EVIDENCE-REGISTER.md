@@ -8,7 +8,7 @@ This register is a research index, not a political verdict. It does not assign n
 
 ## Research coverage added in this pass
 
-The profile research desk currently indexes **43 source series and portals**, with **28 national-level observation cards**. Several state-level source files have also been extracted:
+The profile research desk currently indexes **45 source series and portals**, with **30 national-level observation cards**. Several state-level source files have also been extracted:
 
 | Evidence file | Coverage | What is recorded | Important qualification |
 |---|---:|---|---|
@@ -26,7 +26,9 @@ The `getTenureEvidence()` helper connects state-specific records to the correspo
 ## 1. Cost of living and household welfare
 
 ### Sources indexed
+- UNDP/OPHI Global MPI 2026 country profile, using Nigeria's 2024 survey (separate method from National MPI).
 - NBS Nigeria Multidimensional Poverty Index 2022 state table (D6), including confidence intervals.
+- 2024 NDHS state food insecurity table using the FAO Food Insecurity Experience Scale.
 - NBS CPI and Inflation monthly archive.
 - CBN 2023 Financial Markets Department report, containing the monthly pre-rebase 2023 headline inflation trajectory.
 - CBN June 2026 Quarterly Statistical Bulletin, including the revised CPI linkage note and CPI tables.
@@ -37,6 +39,8 @@ The `getTenureEvidence()` helper connects state-specific records to the correspo
 - Nigeria Governors' Forum and BudgIT fiscal materials also provide context for transfers and state household conditions.
 
 ### Extracted observations
+- Global MPI 2026 reports Nigeria's latest publicly available survey data (2024) as MPI 0.269, 48.7% incidence, 18.1% vulnerable to multidimensional poverty and 55.1% intensity. This uses the global three-dimension method and is not comparable to the separate National MPI 2022 series.
+- The 2024 NDHS reports state-level food insecurity for all 36 states and FCT; nationally 67.7% of the de jure population experienced moderate or severe food insecurity and 33.0% severe food insecurity.
 - NBS state MPI (2021/22) records Rivers incidence at 62.4% (95% CI 57.7–67.0) and Sokoto at 90.5% (88.2–92.8). The national incidence was 62.9% (61.9–63.8) and intensity 40.9%; the report estimated 132.92 million people multidimensionally poor. This is an inherited baseline, not an administration outcome.
 - Legacy headline inflation rose from 21.82% in January 2023 to 28.92% in December 2023. This is the old CPI series and includes the transition between administrations.
 - Selected NBS food prices, June 2023 to June 2024: onion +215.20%; boneless beef +102.74%; sliced bread +117.35%; palm oil +56.90%.
