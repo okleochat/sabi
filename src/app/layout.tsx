@@ -1,5 +1,6 @@
 import type {Metadata} from "next";
 import Link from "next/link";
+import MobileNav from "./components/MobileNav";
 import "./globals.css";
 export const metadata:Metadata={
  title:{default:"Sabi — Politics, without the boring bits.",template:"%s | Sabi Politics"},
@@ -10,7 +11,7 @@ const links=[["/","The desk"],["/sabi-check","Sabi Check"],["/candidates","Candi
 export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body>
 <div className="topline"><span className="pulse-dot"/><span>THE 2027 ELECTION DESK IS OPEN</span><span className="topline-extra">INDEPENDENT / CURIOUS / ALWAYS CHECKING</span><Link href="/elections">EXPLORE SABI ↗</Link></div>
 <header className="site-header"><Link href="/" className="logo" aria-label="Sabi Politics home"><span className="logo-main">sabi<span>.</span></span><span className="logo-edition">POLITICS<br/>2027 EDITION</span></Link>
-<nav className="nav" aria-label="Main navigation">{links.map(([href,label])=><Link href={href} key={href}>{label}</Link>)}</nav>
+<MobileNav links={links}/>
 <Link className="header-link" href="/sabi-check">CHECK A CLAIM <span>↗</span></Link></header>
 <main>{children}</main>
 <footer className="site-footer"><div className="footer-main"><div><div className="footer-logo">sabi<b>.</b></div><p>Politics, without the boring bits.<br/>Read wide. Ask questions. Check the receipts.</p></div>
