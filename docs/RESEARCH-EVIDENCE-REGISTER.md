@@ -128,6 +128,41 @@ Sources: https://nerc.gov.ng/ and the relevant NERC quarterly reports.
 - Osun: INEC declared Ademola Adeleke winner of the 15 August 2026 election; second-term inauguration was scheduled for 27 November 2026. The term start should not be advanced until the oath has been taken.
 - INEC's October 2026 final presidential list contains 18 tickets. Keep any unnamed court-order entry separate from the 18 named candidates.
 
+## 3A. Governor manifesto discovery: Nigeria Health Watch archive
+
+Nigeria Health Watch's Manifesto Public Archive lists 15 published manifestos and extracts candidate health commitments with links to the original document. It is a useful discovery index, but it is health-sector-only and does not represent a complete catalogue of all 36 current governors' full manifestos.
+
+Archive index: https://manifesto.nigeriahealthwatch.com/manifestos
+
+Eight entries correspond to current governors and their 2023 election manifestos:
+
+| State | Governor / candidate | Original manifesto | Health commitments surfaced in the archive |
+|---|---|---|---|
+| Abia | Alex Otti | https://www.alexotti.com/wp-content/uploads/2022/11/Manifesto.pdf | Public health policy and funding framework; facility infrastructure; accreditation/monitoring agency; health-worker recruitment and welfare; state health insurance; prevention; partnerships; 24/7 ambulance/emergency services; modern tertiary facilities. The 44-page original document's healthcare section is on PDF pages 33–34. |
+| Benue | Hyacinth Alia | YouthGovTracka source link: https://www.youthgovtracka.org/storage/manifestos/LvXtQ1tg7ZySSDm05WO8hAQZDIEwBrRlZaVirKVu.pdf | Residency Training Act domestication; VVF treatment partnership; ventilators; general-hospital renovations; contributory insurance; teaching-hospital laboratory and dialysis centre; PHC upgrades; free antenatal and normal delivery services. |
+| Kano | Abba Kabir Yusuf | YouthGovTracka source link: https://youthgovtracka.org/storage/manifestos/2PPlAr0EJm83VYEV9OOqTMqNFPBApb4Q9W67RKoJ.pdf | HMIS and health workforce reform; proposed absorption of 200 doctors, 100 pharmacists and 300+ nurses trained under the prior administration; mobile clinics and 24-hour ambulance service; free maternal/child health; equipment, disease control, insurance and PHC commitments. |
+| Niger | Mohammed Umar Bago | YouthGovTracka source link: https://youthgovtracka.org/storage/manifestos/R2Txu6cgBPhWFebR2Mkxk7s4L26Ac40l2cWQUojV.pdf | Neighbourhood clinics and dispensaries; healthcare infrastructure in the three senatorial zones; metro ambulance/paramedic service; increased health-budget share; recruitment/retention of health workers; referral-system improvement. |
+| Kwara | AbdulRahman AbdulRazaq | YouthGovTracka source link: https://youthgovtracka.org/storage/manifestos/ZtZET9X4iSP4Jy3shP5lGuqvCI3GnYy5iburuAn3.pdf | Access without financial hardship; infrastructure expansion; health financing; PHC strengthening; Drug Revolving Scheme; maternal/child indicators; staffing against WHO standards; workforce training. |
+| Sokoto | Ahmad Aliyu | State Ministry of Finance source: https://mof.sk.gov.ng/wp-content/uploads/9-Point-Agenda-2026-Sokoto-State.pdf | Rehabilitation of 244 ward-level health facilities; equipment for 244 ward PGCs; secondary/tertiary facility rehabilitation; completion of teaching-hospital and zonal premier-hospital projects. |
+| Oyo | Seyi Makinde | https://seyimakinde.com/wp-content/uploads/2023/02/Roadmap-To-Sustainable-Development-2023-2027.pdf | Complete interventions at 93 outstanding PHCs; renovate 51 more to reach 351; equip and staff renovated PHCs; procure 50 ambulances; upgrade six named secondary facilities; target reductions in NCD, maternal and neonatal mortality; increase insurance enrolment by 40%; build an electronic health-record system. |
+| Zamfara | Dauda Lawal | YouthGovTracka source link: https://youthgovtracka.org/storage/manifestos/UCBdtxgwFB7NlsdYNdxyBApN7egOFcgQMV2ES641.pdf | Improve all general hospitals over six years; free antenatal care for women and children; PHC collaboration; private-sector facilities; health-worker welfare; state health-insurance scheme; improved primary and secondary health funding. |
+
+Archive detail pages:
+- Zamfara: https://manifesto.nigeriahealthwatch.com/manifestos/lawal-dauda-2023
+- Sokoto: https://manifesto.nigeriahealthwatch.com/manifestos/aliyu-ahmed-sokoto-2023
+- Niger: https://manifesto.nigeriahealthwatch.com/manifestos/mohammed-umaru-bago-2023
+- Kwara: https://manifesto.nigeriahealthwatch.com/manifestos/abdulrazaq-abdulrahman-2023
+- Kano: https://manifesto.nigeriahealthwatch.com/manifestos/yusuf-abba-kabir-2023
+- Benue: https://manifesto.nigeriahealthwatch.com/manifestos/alia-hyacinth-iormem-2023
+- Oyo: https://manifesto.nigeriahealthwatch.com/manifestos/makinde-oluseyi-abiodun-2023
+- Abia: https://manifesto.nigeriahealthwatch.com/manifestos/otti-alex-chioma-2023
+
+**Access and verification notes (26 November 2026):** the Abia original PDF was readable. The Oyo and Sokoto official PDFs were linked but too large for the web reader to extract; five YouthGovTracka-hosted PDFs returned 502/time-out errors during retrieval. Their archive summaries are useful leads, not a substitute for obtaining and reviewing the full original PDFs. The archive pages were published in August–September 2026 and extract the health section only.
+
+YouthGovTracka is described by the Open and Inclusive Democracy Platform (OIDP) as a Brain Builders Youth Development Initiative platform created to collect campaign promises and manifestos across all 36 states, with state-level focal points. Its website returned a 502 error during this research pass. Reference: https://participate.oidp.net/processes/award2026/f/304/proposals/3926?commentId=12710.
+
+**Coverage implication:** this archive supplies an initial set of eight current-governor manifesto leads. The remaining 28 current governors still require an original campaign document or a clearly documented search showing that no copy was found. For governors elected in 2019, 2024, 2025 or 2026, use the manifesto from the election that began their current term—not a different election cycle. Do not treat the health extracts as a complete manifesto catalogue or infer an Integrity Score from them.
+
 ## 4. Scoring readiness and evidence gaps
 
 1. Do not publish a governor's Integrity Score until at least 60% of the identifiable commitments in that governor's original manifesto/pledge set have been catalogued. Show catalogue coverage separately from evidence coverage.
