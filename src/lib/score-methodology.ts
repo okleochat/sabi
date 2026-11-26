@@ -13,7 +13,7 @@ export const publicRecordMethodology = {
   categories: {
     economy: {
       governors: "2025 state IGR rank among the 36 states. Score = 10 × (36 − rank) ÷ 35. Highest nominal total receives 10.0; lowest receives 0.0. FCT Minister is benchmarked separately against all 36 states plus the FCT.",
-      president: "Provisional 2026 budget-assumption tracking: real GDP growth score = min(10, actual Q2 year-on-year growth ÷ 4.68% × 10); headline-inflation score = min(10, 16.5% budget assumption ÷ October year-on-year inflation × 10). The mean of those two scores is displayed. These are partial-year readings compared directionally with full-year assumptions, not final annual results.",
+      president: "Economic growth and price stability are shown as separate scores. Growth score = min(10, actual Q2 year-on-year growth ÷ 4.68% × 10). Price-stability score = min(10, 16.5% budget inflation assumption ÷ October year-on-year headline inflation × 10). These are partial-year readings compared directionally with full-year assumptions, not final annual results; they are not averaged into a broad economy grade.",
     },
     education: {
       governors: "FY2025 education budget execution score = max(0, 10 − |100 − execution percentage| ÷ 10), capped at 10.0. Exact execution of 100% earns 10.0; under- or over-execution moves away from 10. This is a budget-credibility indicator, not a learning-outcome measure.",
@@ -48,7 +48,7 @@ export const publicRecordMethodology = {
     "Publish each available category score to one decimal place out of 10.",
     "Show the scoring formula, score benchmark, metric count and evidence coverage beside the category score.",
     "Use the text 'Not scored yet' with a specific reason when no suitable indicator exists; never show an empty value or silently assign zero.",
-    "Do not create an overall average across unlike categories.",
+    "Do not create an overall average across unlike categories. For the President, keep economic growth and price stability as separate category scores rather than combining them into a broad economy grade.",
     "Keep the President's national record and the FCT Minister's FCT record separate from governor state comparisons.",
     "Disclose when a category score is provisional because its reporting period does not match the full period or benchmark.",
   ],
