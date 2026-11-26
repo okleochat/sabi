@@ -1,0 +1,6 @@
+import type {Metadata} from "next";
+import {notFound} from "next/navigation";
+import {getPublishedRecords} from "@/lib/data";
+export const dynamic="force-dynamic";
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const rows=await getPublishedRecords("articles");const s=rows.find((x:any)=>x.slug===slug||x.id===slug);return {title:s?.title||"Sabi report"};}
+export default async function StoryPage({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const rows=await getPublishedRecords("articles");const s=rows.find((x:any)=>x.slug===slug||x.id===slug);if(!s)notFound();const paragraphs=String(s.body||"").split(/\n{2,}/).filter(Boolean);return <article className="wrap"><section className="page-intro"><div className="kicker">{s.category||"Sabi report"} · {s.publishedAt||""}</div><h1>{s.title}</h1><p>{s.summary||""}</p></section><section className="section story-body">{paragraphs.map((p:string,i:number)=><p key={i}>{p}</p>)}{Array.isArray(s.sources)?<div className="source-note"><strong>Sources</strong><ul>{s.sources.map((x:any,i:number)=><li key={i}><a href={x.url||x} target="_blank" rel="noreferrer">{x.title||x.url||x} ↗</a></li>)}</ul></div>:null}</section></article>;}
