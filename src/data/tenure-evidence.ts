@@ -333,7 +333,7 @@ export const tenureEvidenceSources: EvidenceSource[] = [
     geography: "State-level administrative census portal",
     resolution: "state-and-national", evidenceType: "official-administrative",
     use: "State-by-state learner totals, learner–teacher, learner–classroom and learner–toilet ratios, female learner and teacher shares, special-needs learner counts, and school ownership/level filters.",
-    limitation: "The page reports 57.9% national school reporting. Some displayed state values are visibly incomplete or anomalous; Rivers has a blank row rendered as zero, and Taraba, Yobe and Zamfara are absent from the indexed table. Missing returns must not be interpreted as zero enrolment or performance. Verify against state EMIS returns before trend comparisons.",
+    limitation: "The page reports 57.9% national school reporting. All 36 states and FCT have rows, but Rivers is rendered as zero learners with blank ratios and is treated as no usable return. Several other state values are visibly anomalous (including very low counts and extreme ratios). Missing returns must not be interpreted as zero enrolment or performance; verify against state EMIS returns before trend comparisons.",
     officeScope: "both",
   },
   {
