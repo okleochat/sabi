@@ -121,6 +121,18 @@ export const tenureEvidenceSources: EvidenceSource[] = [
     officeScope: "national",
   },
   {
+    id: "ndhs-state-child-mortality-2024", category: "health",
+    title: "Nigeria Demographic and Health Survey 2024 — Map 8.1 State under-five mortality",
+    publisher: "Federal Ministry of Health and Social Welfare, National Population Commission and ICF",
+    url: "https://www.health.gov.ng/wp-content/uploads/2025/10/NDHS-2024-Final-Report_Disseminated17102025.pdf",
+    period: "10-year period preceding the 2024 survey; published September 2025",
+    geography: "National, all 36 states and FCT",
+    resolution: "state-and-national", evidenceType: "official-statistics",
+    use: "State estimates of under-five mortality per 1,000 live births, based on retrospective birth histories over the ten years before the survey.",
+    limitation: "This is a retrospective 10-year estimate, not a 2024-only rate. Most of the window predates administrations inaugurated in May 2023. The national 5-year estimate uses a different period and must not be compared directly with the 10-year state values.",
+    officeScope: "both",
+  },
+  {
     id: "ndhs-food-insecurity-2024", category: "cost-of-living",
     title: "Nigeria Demographic and Health Survey 2024 — Table 2.15 Food Insecurity",
     publisher: "Federal Ministry of Health and Social Welfare, National Population Commission and ICF",
@@ -662,6 +674,16 @@ const nationalObservations: EvidenceObservation[] = [
     note: "Global MPI method: three equally weighted dimensions and ten indicators. This is not directly comparable to the National MPI 2022, which uses a separate four-dimension Nigerian framework; the two figures must not be presented as a single time series.",
   },
   {
+    id: "ndhs-under-five-mortality-national-2024", category: "health",
+    label: "Under-five mortality — NDHS 2024",
+    value: "110 deaths per 1,000 live births for the five years before the survey (approx. 2020–2024; 95% CI 103–117), compared with 132 in 2015–2019 and 128 in 2010–2014.",
+    period: "2020–2024 five-year reference period; report published 2025", geography: "Nigeria",
+    publisher: "Federal Ministry of Health and Social Welfare / NPC / ICF",
+    url: "https://www.health.gov.ng/wp-content/uploads/2025/10/NDHS-2024-Final-Report_Disseminated17102025.pdf",
+    evidenceType: "official-statistics",
+    note: "The national report says neonatal mortality was 41, infant mortality 63 and under-five mortality 110 per 1,000 live births. The state map instead uses a 10-year reference period. Survey recall, birth-date displacement and omission of non-surviving births are stated data-quality limitations.",
+  },
+  {
     id: "ndhs-food-insecurity-national-2024", category: "cost-of-living",
     label: "Food insecurity — NDHS 2024",
     value: "67.7% experienced moderate or severe food insecurity; 33.0% experienced severe food insecurity; survey counted 180,720 de jure persons.",
@@ -959,6 +981,7 @@ import {nalabeStateLearning2022,nalabeSource} from "@/data/nalabe-baselines";
 import {stateDhIs2Immunisation2023To2024,dhis2ImmunisationSource} from "@/data/dhis2-immunisation";
 import {stateMpi2022,stateMpiSource} from "@/data/mpi-baselines";
 import {stateFoodInsecurity2024,ndhsFoodInsecuritySource} from "@/data/ndhs-food-insecurity";
+import {stateUnderFiveMortality2024,ndhsChildMortalitySource} from "@/data/ndhs-child-mortality";
 
 export function getTenureEvidence(person: { office: string; state?: string; termStart?: string }) {
   const scope = person.office === "President" ? "national" : "subnational";
@@ -990,6 +1013,21 @@ export function getTenureEvidence(person: { office: string; state?: string; term
         evidenceType: "official-statistics",
         note: nalabeSource.note + " NALABE's proficiency levels 3 and 4 define meeting or exceeding minimum proficiency; weighted n is not the raw tested sample.",
       });
+    });
+  }
+  const underFiveMortality = person.state ? stateUnderFiveMortality2024[person.state] : undefined;
+  if (underFiveMortality !== undefined) {
+    observations.unshift({
+      id:"ndhs-under-five-mortality-2024-state",
+      category:"health",
+      label:"Under-five mortality — 10-year retrospective NDHS estimate",
+      value:underFiveMortality+" deaths per 1,000 live births",
+      period:ndhsChildMortalitySource.period,
+      geography:person.state || "State",
+      publisher:ndhsChildMortalitySource.publisher,
+      url:ndhsChildMortalitySource.url,
+      evidenceType:"official-statistics",
+      note:ndhsChildMortalitySource.note,
     });
   }
   const foodInsecurity = person.state ? stateFoodInsecurity2024[person.state] : undefined;
