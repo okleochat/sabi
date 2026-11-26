@@ -25,6 +25,7 @@ export default function ShareCard({kind="SABI / PUBLIC INTEREST",kicker,title,su
   ctx.fillStyle="#6758e8";ctx.font="700 24px monospace";ctx.fillText("INDEPENDENT / NON-PARTISAN",72,148);
   ctx.fillStyle="#c5ff43";ctx.fillRect(72,188,220,12);
   ctx.fillStyle="#77776d";ctx.font="500 22px monospace";ctx.fillText(String(kind).toUpperCase().slice(0,54),72,250);
+  ctx.fillStyle="#6758e8";ctx.font="600 22px monospace";ctx.fillText(String(kicker).toUpperCase().slice(0,68),72,300);
   ctx.fillStyle="#11120f";ctx.font="700 76px 'Arial', sans-serif";
   let y=drawWrapped(ctx,title,72,355,900,88,format==="square"?2:3);
   if(summary){ctx.fillStyle="#45463f";ctx.font="400 34px 'Arial', sans-serif";y=drawWrapped(ctx,summary,72,y+38,900,49,format==="square"?2:3);}
