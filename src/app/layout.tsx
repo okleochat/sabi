@@ -6,7 +6,7 @@ export const metadata:Metadata={
  description:"The people. The policies. The power moves. We break it all down so you can make up your own mind.",
  metadataBase:new URL("https://sabipolitics.web.app")
 };
-const links=[["/","The desk"],["/sabi-check","Sabi Check"],["/candidates","Candidates"],["/issues","The issues"],["/news","Newsroom"],["/voter-guide","Voter guide"]];
+const links=[["/","The desk"],["/sabi-check","Sabi Check"],["/candidates","Candidates"],["/live","Sabi Live"],["/issues","The issues"],["/news","Newsroom"]];
 export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body>
 <div className="topline"><span className="pulse-dot"/><span>THE 2027 ELECTION DESK IS OPEN</span><span className="topline-extra">INDEPENDENT / CURIOUS / ALWAYS CHECKING</span><Link href="/elections">EXPLORE SABI ↗</Link></div>
 <header className="site-header"><Link href="/" className="logo" aria-label="Sabi Politics home"><span className="logo-main">sabi<span>.</span></span><span className="logo-edition">POLITICS<br/>2027 EDITION</span></Link>
