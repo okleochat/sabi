@@ -3,6 +3,32 @@
 **Research cut-off:** 26 November 2026  
 **Purpose:** source-linked evidence queue for Sabi editors. This is not a scorecard and does not authorise automatic publication.
 
+## 1A. Initial state-impact benchmark and promise-ledger references
+
+### 2025 pSPI state-performance benchmark
+
+Sabi now displays a rank-normalised external benchmark for each of the 36 governor profiles. The 2025 Phillips Consulting State Performance Index covered 37 indicators and combined 70% objective data with 30% citizen-perception data across health, education, infrastructure, governance, economic development and digital access. The 2025 ranking list used for the benchmark is: Lagos 1, Ogun 2, Kaduna 3, Adamawa 4, Niger 5, Nasarawa 6, Gombe 7, Jigawa 8, Plateau 9, Abia 10, Oyo 11, Bauchi 12, Ebonyi 13, Cross River 14, Kebbi 15, Edo 16, Delta 17, Kwara 18, Yobe 19, Enugu 20, Akwa Ibom 21, Osun 22, Benue 23, Taraba 24, Rivers 25, Ekiti 26, Ondo 27, Zamfara 28, Bayelsa 29, Kano 30, Imo 31, Katsina 32, Sokoto 33, Anambra 34, Kogi 35 and Borno 36.
+
+Sabi converts the published ordinal rank into a 0–100 percentile using `(36 - rank) / 35 × 100`, rounding to the nearest integer. The page shows both the percentile and original rank. **This is a rank-normalised external benchmark, not Phillips Consulting's raw score and not Sabi's own five-dimension Impact Score.** It is a cross-state snapshot, not proof that the incumbent personally caused the outcome. The 2025 edition is used because it is the multidimensional 37-indicator edition; the revised 2026 pSPI is a distinct assessment with updated FY2025 financial data and different current-snapshot/trajectory measures, so its results must not be mixed into the 2025 rank series.
+
+Sources:
+- pSPI report hub: https://pspi.com.ng/pspi-report/
+- 2025 rank list: https://wikkitimes.com/lagos-ogun-kaduna-top-2025-state-performance-rankings-pspi-report/
+- 2025 methodology summary (37 KPIs; 70:30 objective/perception): https://punchng.com/pcl-unveils-2025-state-performance-index-a-scorecard-for-governance-and-development-in-nigeria/
+- Revised 2026 methodology and FY2025 audited-account update: https://punchng.com/phillips-consulting-pcl-releases-revised-2026-state-performance-indexpspi-strengthening-the-benchmark-for-measuring-state-performance-in-nigeria/
+
+### External promise-fulfilment references
+
+For eight governors, Sabi displays a clearly attributed reference to The Receipt's publicly available manifesto-ledger figure, last updated 23 November 2026: Abia 75% (2 audited promises), Delta 37.5% (4), Enugu 70% (5), Kaduna 62.5% (4), Kano 30% (5), Lagos 60% (5), Oyo 62.5% (4) and Rivers 50% (4). These figures are **not Sabi Integrity Scores** and are not adopted as Sabi editorial verdicts. They are external discovery and comparison references only. The Receipt's methodology says it scores kept promises as 1, in-progress promises as 0.5 where physical or budgetary evidence exists, and broken/abandoned promises as 0. Its public ledgers have limited samples and may not cover a full manifesto; some state pages remain marked audit-in-progress.
+
+Sources:
+- The Receipt methodology: https://www.thereceipt.ng/methodology
+- State promise ledgers: https://www.thereceipt.ng/governors/abia, /governors/delta, /governors/enugu, /governors/kaduna, /governors/kano, /governors/lagos, /governors/oyo and /governors/rivers.
+
+### Sabi score publication rule update
+
+The 60% manifesto-catalogue threshold is now a **completeness label**, not a blanket publication blocker. If at least one commitment has approved, assessable evidence, the engine can publish a provisional score with its assessed sample and coverage caveat. Reaching 60% of identifiable commitments upgrades it to a complete-register assessment. The full Sabi Impact Score still requires at least 3 of 5 dimensions and 60% of planned indicator weight. External pSPI percentiles and third-party promise-ledger references must never be relabelled as Sabi's own scores.
+
 ## 1. State fiscal and service-delivery evidence
 
 ### 2025 fiscal performance

@@ -14,7 +14,7 @@
 
 ## Cleared portraits currently wired into the site
 
-### Officeholder profiles — 18 of 38
+### Officeholder profiles — 21 of 38
 
 The following portraits are linked from Wikimedia Commons with recorded licences and creator credits:
 
@@ -22,6 +22,9 @@ The following portraits are linked from Wikimedia Commons with recorded licences
 |---|---|---|---|
 | Bola Ahmed Tinubu | Nosa Asemota | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bola_Tinubu_portrait.jpg |
 | Charles Soludo | Chinedueri | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Charles_Soludo_portrait.jpg |
+| Peter Mbah | Mba Joshua Chidiebere | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ndubuisi_Mbah.jpg |
+| Nasir Idris | Kebbi State Government (photographer uncredited) | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Dr._Muhammad_Nasir_Idris.png |
+| Caleb Mutfwang | Kambai Akau | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Mutfwang_speaking_on_the_podium_at_SK_Fest_2024_06.jpg |
 | Douye Diri | Kambai Akau | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Diri_walking_to_the_stage_at_SK_Fest_2024_01.jpg |
 | Hyacinth Alia | Leon TRR | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Revd._Fr._Dr._Hyacinth_Alia_Ph.D.jpg |
 | Babagana Zulum | BScar23625 | CC0 1.0 | https://commons.wikimedia.org/wiki/File:Babagana_Zulum.jpg |
@@ -39,11 +42,11 @@ The following portraits are linked from Wikimedia Commons with recorded licences
 | Siminalayi Fubara | ABORISADEADETONA | CC0 1.0 | https://commons.wikimedia.org/wiki/File:Governor_siminalayi_Fubara_02.jpg |
 | Mai Mala Buni | Mamman AA | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Mai_mala_buni.webp |
 
-The Tinubu and Makinde portraits are reused across their officeholder and presidential-candidate profiles; the same attribution remains visible on both pages.
+The Tinubu and Makinde portraits are reused across their officeholder and presidential-candidate profiles; the same attribution remains visible on both pages. The portrait count is by profile, so those two people each appear in both profile groups.
 
-### Officeholder profiles still awaiting a cleared portrait — 20
+### Officeholder profiles still awaiting a cleared portrait — 17
 
-Alex Otti; Ahmadu Umaru Fintiri; Umo Eno; Bala Mohammed; Bassey Otu; Monday Okpebholo; Biodun Oyebanji; Peter Mbah; Hope Uzodimma; Abba Kabir Yusuf; Dikko Umar Radda; Nasir Idris; Ahmed Usman Ododo; Abdullahi Sule; Ademola Adeleke; Caleb Mutfwang; Ahmad Aliyu; Agbu Kefas; Dauda Lawal; Nyesom Wike (FCT Minister).
+Alex Otti; Ahmadu Umaru Fintiri; Umo Eno; Bala Mohammed; Bassey Otu; Monday Okpebholo; Biodun Oyebanji; Hope Uzodimma; Abba Kabir Yusuf; Dikko Umar Radda; Ahmed Usman Ododo; Abdullahi Sule; Ademola Adeleke; Ahmad Aliyu; Agbu Kefas; Dauda Lawal; Nyesom Wike (FCT Minister).
 
 Some Commons and third-party search results were deliberately rejected: an Alex Otti file shows him together with Peter Obi rather than a usable solo portrait; a purported Peter Mbah file was for a different person; a purported Caleb Mutfwang image depicted Uba Sani; and a purported Ahmad Aliyu image depicted a different, deceased person. These are not approved for use.
 
@@ -66,9 +69,11 @@ A candidate photo-credit index was found at https://apc-pcc.com/photo-credits/. 
 
 ## Coverage at this cut-off
 
-- Officeholder profiles: 18/38 portraits cleared (President + 17 governors); 20 still outstanding (19 governors + FCT Minister).
+- Officeholder profiles: 21/38 portraits cleared (President + 20 governors); 17 still outstanding (16 governors + FCT Minister).
 - Presidential candidate profiles: 6/18 portraits cleared; 12 still outstanding.
-- Combined profile coverage: 24/56. The remaining 32 profiles must not be given guessed or unlicensed photographs.
+- Combined profile coverage: 27/56. The remaining 29 profiles must not be given guessed or unlicensed photographs.
+
+**Count reconciliation:** coverage is calculated from the portrait maps actually wired into `src/data/politician-media.ts` and `src/data/candidate-media.ts`, not from earlier draft lists. The officeholder gap list above excludes the three portraits added in this release (Peter Mbah, Nasir Idris and Caleb Mutfwang).
 
 For a reusable written-permission request, see `PORTRAIT-PERMISSION-REQUEST.md`.
 
