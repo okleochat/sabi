@@ -109,6 +109,42 @@ export const quarterlyLabourSeries2022To2024 = [
 // "Source discovered" is not the same as "every record has been extracted".
 export const tenureEvidenceSources: EvidenceSource[] = [
   {
+    id: "nbs-ghs-panel-wave5", category: "cost-of-living",
+    title: "Nigeria General Household Survey — Panel Wave 5",
+    publisher: "National Bureau of Statistics, with World Bank and Gates Foundation",
+    url: "https://www.nigerianstat.gov.ng/elibrary/read/1241588",
+    period: "Post-planting July–September 2023; post-harvest January–March 2024",
+    geography: "4,715 households across 518 enumeration areas; national panel with state identifiers",
+    resolution: "state-and-national", evidenceType: "official-statistics",
+    use: "Household consumption, food purchases, income-generating activities, dietary diversity, early childhood and welfare resilience. The World Bank catalogue exposes longitudinal weights and detailed household expenditure variables.",
+    limitation: "Two survey visits in 2023/24 are not a continuous tenure-wide panel; the survey period overlaps transition into the May 2023 administrations. Household microdata case counts are not population estimates unless correct survey weights and design are applied.",
+    officeScope: "both",
+  },
+  {
+    id: "nedi-education-dashboard", category: "education",
+    title: "Nigeria Education Data Infrastructure — public dashboard",
+    publisher: "Federal Ministry of Education",
+    url: "https://nedidata.education.gov.ng/",
+    period: "Dashboard displays 2024/2025 enrolment, school and infrastructure indicators; continuously updated",
+    geography: "State drill-downs for basic and senior secondary education",
+    resolution: "state-and-national", evidenceType: "official-administrative",
+    use: "State-level learner enrolment, public/private school counts, classroom pressure, teacher capacity, gender distribution, school infrastructure, computers, water, sanitation and composite infrastructure readiness.",
+    limitation: "The portal says figures are continuously updated and validated, so snapshot and access date must be stored. Its current dashboard totals differ from the Annual School Census portal; do not combine them without a reconciliation of school universes, reporting populations and definitions. Some modules display unavailable data.",
+    officeScope: "both",
+  },
+  {
+    id: "efcc-2023-25-enforcement", category: "integrity",
+    title: "EFCC enforcement and asset-recovery public statements, 2023–2025",
+    publisher: "Economic and Financial Crimes Commission",
+    url: "https://efcc.gov.ng/news/efcc-recovers-566bn-411m-1502-properties-in-two-years-of-olukoyedes-leadership",
+    period: "May 2023–September 2025; separate agency leadership anniversary periods",
+    geography: "National",
+    resolution: "national", evidenceType: "official-administrative",
+    use: "Track petitions, investigations, court filings, convictions and asset-recovery announcements as distinct measures of anti-financial-crime enforcement activity.",
+    limitation: "These are agency-reported outputs and in part statements by the EFCC Chairman. Agency activity is not a personal integrity score for the President, nor a direct measure of corruption prevalence. Petitions, investigations, filed cases, convictions and assets recovered are different stages and must not be conflated. Recoveries must be distinguished between final forfeiture, interim preservation and repatriation.",
+    officeScope: "national",
+  },
+  {
     id: "nbs-cpi-monthly", category: "cost-of-living",
     title: "Consumer Price Index and Inflation — monthly archive",
     publisher: "National Bureau of Statistics",
@@ -567,6 +603,26 @@ export const tenureEvidenceSources: EvidenceSource[] = [
 ];
 
 const nationalObservations: EvidenceObservation[] = [
+  {
+    id: "efcc-enforcement-2023-25", category: "integrity",
+    label: "EFCC reported enforcement activity",
+    value: "EFCC said that between October 2023 and September 2025 it received more than 19,000 petitions, conducted 29,240 investigations, filed 10,525 cases in court and secured 7,503 convictions; it separately reported recoveries of over ₦566bn, US$411m and 1,502 properties.",
+    period: "October 2023–September 2025; statement published 27 October 2025", geography: "Nigeria",
+    publisher: "Economic and Financial Crimes Commission",
+    url: "https://efcc.gov.ng/news/efcc-recovers-566bn-411m-1502-properties-in-two-years-of-olukoyedes-leadership",
+    evidenceType: "official-administrative",
+    note: "These are EFCC Chairman/agency-reported outputs, not independent measures of corruption prevalence or of a President's personal integrity. The EFCC release gives figures for the agency's leadership period beginning October 2023; they must not be attributed to a single elected officeholder. Petitions, investigations, filed cases and convictions are separate procedural stages.",
+  },
+  {
+    id: "efcc-one-year-2023-24", category: "integrity",
+    label: "EFCC reported convictions and recoveries in the first year of the presidential term",
+    value: "3,175 convictions; ₦156,276,691,242.30 and foreign currencies/assets recovered.",
+    period: "29 May 2023–29 May 2024", geography: "Nigeria",
+    publisher: "Economic and Financial Crimes Commission",
+    url: "https://efcc.gov.ng/news/efcc-secures-3-175-convictions-recovers-n156-billion-in-one-year",
+    evidenceType: "official-administrative",
+    note: "EFCC Chairman's statement, delivered through the Commission's Secretary. It is a reported enforcement output during the period, not a direct measure of corruption prevalence, causation, or an individual officeholder's integrity. Recovery values should be checked against final forfeiture orders and asset status.",
+  },
   {
     id: "nlfs-2023-national", category: "economy-jobs",
     label: "Annual labour market profile", value: "5.4% unemployment · 11.1% time-related underemployment · 92.2% informal employment",
