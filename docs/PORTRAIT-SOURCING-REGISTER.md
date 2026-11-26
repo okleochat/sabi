@@ -70,6 +70,8 @@ A candidate photo-credit index was found at https://apc-pcc.com/photo-credits/. 
 - Presidential candidate profiles: 6/18 portraits cleared; 12 still outstanding.
 - Combined profile coverage: 24/56. The remaining 32 profiles must not be given guessed or unlicensed photographs.
 
+For a reusable written-permission request, see `PORTRAIT-PERMISSION-REQUEST.md`.
+
 ## Next sourcing actions
 
 1. Request official high-resolution portrait files and written editorial-use permission from each state Government House / governor's press office and the FCT Minister's media office.
