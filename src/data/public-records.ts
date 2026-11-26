@@ -18,6 +18,7 @@ export type PublicIndicator = {
   secondarySourceUrl?: string;
   publishedAt: string;
   note: string;
+  comparison?: { displayValue: string; period: string; note: string };
 };
 
 export type MissingIndicator = {
@@ -123,7 +124,8 @@ const nationalIndicators: PublicIndicator[] = [
     displayValue: "14.06%", period: "October 2026", sourceLabel: "Monetary Policy Communiqué No. 165",
     publisher: "Central Bank of Nigeria", sourceUrl: "https://www.cbn.gov.ng/Out/2026/CCD/MPC%20Communique%20No%20165%20of%20November%202026.pdf",
     publishedAt: "24 November 2026",
-    note: "National consumer-price measure. It is not a state-level indicator and cannot by itself isolate the effect of any one officeholder.",
+    comparison: { displayValue: "18.97%", period: "October 2025", note: "Year-on-year headline inflation in the same month a year earlier, as reported by the Federal Ministry of Finance macro dashboard." },
+    note: "National consumer-price measure. The comparison shows a lower year-on-year inflation rate, not a fall in the overall price level. It cannot by itself isolate the effect of any one officeholder.",
   },
   {
     id: "real-gdp-growth-2026-q2", category: "national-economy",
@@ -131,7 +133,32 @@ const nationalIndicators: PublicIndicator[] = [
     displayValue: "4.43%", period: "Q2 2026", sourceLabel: "Second Quarter 2026 Economic Report",
     publisher: "Central Bank of Nigeria", sourceUrl: "https://www.cbn.gov.ng/Out/2026/RSD/Second%20Quarter%202026%20Economic%20Report.pdf",
     publishedAt: "2026",
+    comparison: { displayValue: "4.23%", period: "Q2 2025", note: "Real GDP year-on-year growth in the corresponding quarter a year earlier." },
     note: "National real GDP growth for the quarter. This is a macroeconomic observation, not a causal estimate of presidential contribution.",
+  },
+  {
+    id: "food-inflation-2026-10", category: "national-economy",
+    label: "Food inflation (year-on-year)", value: 19.13, unit: "%",
+    displayValue: "19.13%", period: "October 2026", sourceLabel: "Monetary Policy Communiqué No. 165",
+    publisher: "Central Bank of Nigeria", sourceUrl: "https://www.cbn.gov.ng/Out/2026/CCD/MPC%20Communique%20No%20165%20of%20November%202026.pdf",
+    publishedAt: "24 November 2026",
+    note: "National annual food-price inflation. It is distinct from headline inflation and does not show that food prices themselves declined.",
+  },
+  {
+    id: "external-reserves-2026-10", category: "national-economy",
+    label: "Gross external reserves", value: 55.2, unit: "US$ billion",
+    displayValue: "US$55.2bn", period: "30 October 2026", sourceLabel: "Nigeria Macro Dashboard",
+    publisher: "Federal Ministry of Finance", sourceUrl: "https://finance.gov.ng/?page_id=26",
+    publishedAt: "November 2026",
+    note: "National gross external reserves stock, as reported by the Finance Ministry dashboard. This is not a household-welfare measure or a state-level indicator.",
+  },
+  {
+    id: "public-debt-2026-q2", category: "national-economy",
+    label: "Total public debt", value: 166.7, unit: "₦ trillion",
+    displayValue: "₦166.7tn", period: "Q2 2026", sourceLabel: "Nigeria Macro Dashboard",
+    publisher: "Federal Ministry of Finance", sourceUrl: "https://finance.gov.ng/?page_id=26",
+    publishedAt: "November 2026",
+    note: "National total public-debt stock as reported on the Finance Ministry dashboard. Read with the debt-to-GDP ratio, debt service, maturity profile and revenue capacity; the nominal stock alone does not establish debt sustainability.",
   },
   {
     id: "vaccination-national-ndhs-2023-24", category: "health",
@@ -210,7 +237,7 @@ export function getPublicRecordIndicators(person: { office: string; state?: stri
 export function describePublicRecord(person: { name: string; office: string; state?: string }) {
   const record = getPublicRecordIndicators(person);
   if (person.office === "President") {
-    return "The national record reports headline inflation of 14.06% year-on-year in October 2026 and real GDP growth of 4.43% year-on-year in Q2 2026. The NDHS 2023–24 survey reported that 39% of children aged 12–23 months nationally had received all basic antigens. These indicators cover different periods and measure different parts of public life; they do not, by themselves, establish how much change was caused by the President. The linked evidence identifies the reporting body, reference period and limitations for each figure.";
+    return "The national record reports headline inflation of 14.06% and food inflation of 19.13% year-on-year in October 2026, alongside real GDP growth of 4.43% in Q2 2026. Headline inflation was 18.97% in October 2025, while real GDP growth was 4.23% in Q2 2025. Gross external reserves were US$55.2bn on 30 October 2026 and total public debt was ₦166.7tn in Q2 2026. The NDHS 2023–24 survey reported that 39% of children aged 12–23 months nationally had received all basic antigens. These figures measure different parts of public life and do not, by themselves, establish how much change was caused by the President. Each is linked to its source and period.";
   }
   const area = person.state || "the relevant jurisdiction";
   const facts = record.indicators.map(item => `${item.label.toLowerCase()}: ${item.displayValue} (${item.period})`);
