@@ -378,3 +378,11 @@ Category scores are provisional indicator scores. They are not averaged into a s
 - Integrity and manifesto delivery remain explicitly "Not scored yet" until the item-by-item commitment registers and approved evidence decisions are complete.
 - Security and infrastructure remain unscored until comparable, source-validated indicators with appropriate baselines have been added.
 - No missing category is assigned zero; no overall average is calculated across unlike categories.
+
+
+### Overall Score rule (27 November 2026)
+- Each officeholder profile now displays an Overall Score out of 10.
+- Formula: arithmetic mean of all category scores currently published for that officeholder, with equal weight for each category; rounded to one decimal place.
+- Categories marked "Not scored yet" are excluded from both the sum and the mean. They are never assigned zero.
+- Every Overall Score displays scored categories / total applicable assessment categories and the resulting coverage percentage.
+- Because the available categories and periods can differ between the President, governors and FCT Minister, the Overall Score is provisional and must not be used as an unqualified league table. Inspect the separate category scores, source dates and disclosed gaps.
