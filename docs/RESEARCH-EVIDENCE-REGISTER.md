@@ -280,3 +280,53 @@ The following sources materially expand the governor manifesto archive. Where a 
 3. Independent fiscal and sector research with published methods and downloadable datasets.
 4. Credible reporting for context and cross-checking.
 5. Campaign material and press releases as evidence of what was promised or claimed, not proof that delivery occurred.
+
+
+## Evidence pack: public-record indicator release (checked 26 November 2026)
+
+The public-record dashboard publishes the source observations below with their units and periods. These observations are not combined into political ratings or used to order officeholders.
+
+### Internally generated revenue, FY2025
+
+- **Primary source:** National Bureau of Statistics, 2025 Internally Generated Revenue report and related materials: https://microdata.nigerianstat.gov.ng/index.php/catalog/170/related-materials
+- **Cross-check/transcription:** The Public Interest, State Internally Generated Revenue 2025: https://www.thepublicinterest.ng/data/state-internally-generated-revenue-2025
+- **Coverage:** 36 states and the FCT.
+- **Presentation:** nominal Naira billions, rounded to the nearest ₦0.1bn.
+- **Limitations:** total IGR is not per-capita revenue, household income, service quality or a measure of causal contribution by an officeholder. It should be read with the state population, revenue composition and fiscal context before drawing broader conclusions.
+
+### Education budget execution, FY2025
+
+- **Primary source:** BudgIT, 2026 State of States Report: https://budgit.org/wp-content/uploads/2026/11/States26SMDF1.pdf
+- **Coverage:** 35 states.
+- **Rivers:** omitted by the report because 2025 audited state accounts / budget implementation reports were unavailable at publication. The source's note is reproduced on the Rivers profile.
+- **Limitations:** reported expenditure as a share of the approved education budget. This is a budget implementation measure, not a learning outcome, school quality measure or causal assessment of a governor.
+
+### Health budget execution, FY2025
+
+- **Primary source:** BudgIT, 2026 Health Financing Report: https://budgit.org/wp-content/uploads/2026/04/HealthFinancingReport__.pdf
+- **Coverage:** 34 states.
+- **Akwa Ibom:** the report notes that the available micro summaries did not provide the classified expenditure detail required for this calculation.
+- **Rivers:** the required 2025 fourth-quarter budget implementation report was unavailable.
+- **Limitations:** reported expenditure as a share of the approved health budget. A figure above 100% is retained as published and must be read with the underlying allocation and reporting notes. Budget execution is not a health outcome or a causal assessment of the governor.
+
+### Childhood vaccination outcome, NDHS 2023–2024
+
+- **Primary source:** Federal Ministry of Health and Social Welfare, The State of Health of the Nation Report 2024: https://fmohconnect.gov.ng/wp-content/uploads/2025/05/The-State-of-Health-of-the-Nation-Report-2024.pdf
+- **Coverage:** all 36 states and the FCT.
+- **Indicator:** percentage of children aged 12–23 months who had received all basic antigens, as reported in the NDHS-based table.
+- **Limitations:** a household-survey estimate for the stated age group and survey period. It is not interchangeable with routine DHIS2 administrative coverage, a 2026 live figure or proof that one officeholder caused the observed level.
+
+### National indicators displayed on the President's profile
+
+- **Headline inflation:** 14.06% year-on-year, October 2026; Central Bank of Nigeria Monetary Policy Communiqué No. 165, published 24 November 2026: https://www.cbn.gov.ng/Out/2026/CCD/MPC%20Communique%20No%20165%20of%20November%202026.pdf
+- **Real GDP growth:** 4.43% year-on-year, Q2 2026; Central Bank of Nigeria Second Quarter 2026 Economic Report: https://www.cbn.gov.ng/Out/2026/RSD/Second%20Quarter%202026%20Economic%20Report.pdf
+- **Childhood vaccination:** 39% fully vaccinated for basic antigens among children aged 12–23 months, NDHS 2023–2024; same Federal Ministry report linked above.
+- **Limitations:** national series measure different parts of the economy and population and have different reporting periods. They do not isolate the contribution of the President. Security and federal commitment ledgers remain separate research work and are explicitly identified as not yet compiled on the profile.
+
+### Release rules and data corrections
+
+- Do not turn these indicators into a combined score, a leaderboard or a political verdict.
+- Display source value, unit, definition, population, reporting period and limitations together.
+- Never replace a missing observation with zero. If a publisher excludes a state, display the publisher's reason.
+- Keep the FCT Minister's FCT record distinct from the 36 governor profiles. Use national series for the President.
+- Any correction must retain the prior value, cite the replacement source and record the reason/date of change.
