@@ -386,3 +386,12 @@ Category scores are provisional indicator scores. They are not averaged into a s
 - Categories marked "Not scored yet" are excluded from both the sum and the mean. They are never assigned zero.
 - Every Overall Score displays scored categories / total applicable assessment categories and the resulting coverage percentage.
 - Because the available categories and periods can differ between the President, governors and FCT Minister, the Overall Score is provisional and must not be used as an unqualified league table. Inspect the separate category scores, source dates and disclosed gaps.
+
+
+---
+
+## Longitudinal evidence research expansion — 27 November 2026
+
+The expanded source and observation inventory is maintained in [TENURE-EVIDENCE-REGISTER.md](./TENURE-EVIDENCE-REGISTER.md). This adds historical and qualitative evidence across cost of living, jobs, security, education, health, infrastructure, integrity, public finance and promises.
+
+The source catalogue and structured extracts are deliberately reported separately: a source being indexed does not mean its entire archive has been scraped or that it supplies a comparable observation for every year of an officeholder's tenure. Pre-tenure baselines, official claims, survey results, administrative rates, independent estimates and project leads retain their own labels and limitations.
