@@ -56,8 +56,10 @@ export default function IntegrityImpactPage(){
         <div className="stat"><strong>{record.missing.length}</strong><span>Disclosed data gaps</span></div>
        </div>
        <div className="directory-score-list">
+        <span className="overall-chip"><b>OVERALL</b> {scorecard.overallScore===null?"—":scorecard.overallScore.toFixed(1)+"/10"}</span>
         {scorecard.categories.map(score=><span key={score.id}><b>{score.id==="economy"?"FISCAL":score.id==="education"?"EDUCATION":score.id==="health"?"HEALTH":score.id==="growth"?"GROWTH":"PRICES"}</b> {score.value.toFixed(1)}/10</span>)}
        </div>
+       <p className="directory-score-coverage">{scorecard.scoredCategoryCount} of {scorecard.totalAssessmentCategories} assessment categories scored · {scorecard.overallCoverage}% coverage</p>
        <p className="notice">{record.indicators.map(item=>item.label+": "+item.displayValue).join(" · ")}{record.missing.length?" · "+record.missing.length+" disclosed research/data gap(s)":""}</p>
        {scorecard.notScored.length?<p className="notice">Not scored yet: {scorecard.notScored.map(x=>x.label).join(", ")}.</p>:null}
        <span>OPEN SOURCED PUBLIC RECORD ↗</span>
