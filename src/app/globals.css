@@ -88,3 +88,6 @@
 .sabi-share-actions button:disabled{opacity:.55;cursor:wait}
 .sabi-share-actions small{flex-basis:100%;font:400 10px var(--mono);color:var(--muted)}
 @media(max-width:480px){.sabi-share-actions{align-items:stretch}.sabi-share-actions>span{flex-basis:100%}.sabi-share-actions button{flex:1;padding:12px 8px}}
+
+.sabi-share-format{display:flex;align-items:center;gap:7px;font:500 8px var(--mono);letter-spacing:.08em;color:var(--muted)}
+.sabi-share-format select{border:1px solid var(--line);background:#fff;color:var(--ink);padding:9px 8px;font:500 10px var(--mono);min-height:38px}
