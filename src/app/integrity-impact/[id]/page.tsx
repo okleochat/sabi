@@ -3,7 +3,7 @@ import Link from "next/link";
 import {notFound} from "next/navigation";
 import {politicianSeeds} from "@/data/politicians";
 import {politicianPortraits} from "@/data/politician-media";
-import {getPublicRecordIndicators,describePublicRecord} from "@/data/public-records";
+import {getPublicRecordIndicators,getPublicRecordScores,describePublicRecord} from "@/data/public-records";
 import {publicRecordMethodology} from "@/lib/score-methodology";
 import ShareCard from "@/app/components/ShareCard";
 
@@ -28,6 +28,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
  if(!p)notFound();
  const portrait=politicianPortraits[p.id];
  const record=getPublicRecordIndicators(p);
+ const scorecard=getPublicRecordScores(p);
  const periods=[...new Set(record.indicators.map(x=>x.period))];
  const summary=describePublicRecord(p);
  const roleDescription=p.office==="Governor"?"Governor of "+p.state+", Nigeria":p.office==="President"?"President of the Federal Republic of Nigeria":"Minister of the Federal Capital Territory";
@@ -67,6 +68,30 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
   </section>
 
   <section className="profile-research">
+   <div className="eyebrow"><span/>SABI CATEGORY SCORES / 0–10</div>
+   <h2>THE SCORECARD.<br/>SHOW THE MATH.</h2>
+   <p className="notice">These are provisional, evidence-based category scores—not a single overall rating. Each is calculated from the indicators shown below. The score describes the recorded jurisdictional result or benchmark, not proof that one officeholder caused it.</p>
+   <div className="score-grid">
+    {scorecard.categories.map(category=><article className="score-card" key={category.id}>
+     <div className="eyebrow">{category.label.toUpperCase()}</div>
+     <div className="score-card-value">{category.value.toFixed(1)}<span>/10</span></div>
+     <div className="score-evidence">{category.evidenceLabel} · {category.provisional?"PROVISIONAL": "PUBLISHED"}</div>
+     <p>{category.method}</p>
+     <p>{category.interpretation}</p>
+    </article>)}
+   </div>
+   <div className="not-scored-panel">
+    <div className="eyebrow">NOT SCORED YET / EVIDENCE REGISTER INCOMPLETE</div>
+    <div className="not-scored-grid">
+     {scorecard.notScored.map(category=><article key={category.id}>
+      <strong>{category.label}</strong>
+      <p>{category.reason}</p>
+     </article>)}
+    </div>
+   </div>
+  </section>
+
+  <section className="profile-research">
    <div className="eyebrow"><span/>THE RESEARCH FILE / {record.indicators.length} PUBLISHED INDICATORS</div>
    <h2>WHAT THE RECORD<br/>ACTUALLY SAYS.</h2>
    <p className="notice">Values are shown in the units and populations used by the source. Revenue totals are nominal, budget execution is not a service outcome, and survey measures describe the surveyed population and period. None of these figures alone establishes how much change was caused by an officeholder.</p>
@@ -78,6 +103,12 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
      <p><b>Reporting period:</b> {item.period}{item.population?" · "+item.population:""}</p>
      {item.comparison?<p><b>Comparable reference:</b> {item.comparison.displayValue} ({item.comparison.period}). {item.comparison.note}</p>:null}
      <p>{item.note}</p>
+     {item.indicatorScore?<div className="indicator-score">
+      <div><span>INDICATOR SCORE</span><strong>{item.indicatorScore.value.toFixed(1)}/10</strong></div>
+      <small>{item.indicatorScore.basis}{item.indicatorScore.benchmark?" · "+item.indicatorScore.benchmark:""}</small>
+      <p>{item.indicatorScore.note}</p>
+      {item.indicatorScore.benchmarkSourceUrl?<a href={item.indicatorScore.benchmarkSourceUrl} target="_blank" rel="noreferrer">OPEN BENCHMARK SOURCE ↗</a>:null}
+     </div>:<div className="indicator-unscored">CONTEXTUAL FIGURE · NOT USED IN A CATEGORY SCORE</div>}
      <div className="source-note"><b>{item.publisher}</b> · {item.sourceLabel} · Published {item.publishedAt}<br/><a href={item.sourceUrl} target="_blank" rel="noreferrer">OPEN PRIMARY SOURCE ↗</a>{item.secondarySourceUrl?<><span> · </span><a href={item.secondarySourceUrl} target="_blank" rel="noreferrer">TRANSCRIPTION / CROSS-CHECK ↗</a></>:null}</div>
     </article>)}
    </div>:<div className="empty-state">No comparable source-linked indicators have been added to this profile yet. The data gaps below explain the next records required.</div>}
