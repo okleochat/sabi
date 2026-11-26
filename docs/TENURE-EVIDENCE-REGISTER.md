@@ -8,7 +8,7 @@ This register is a research index, not a political verdict. It does not assign n
 
 ## Research coverage added in this pass
 
-The profile research desk currently indexes **42 source series and portals**, with **27 national-level observation cards**. Several state-level source files have also been extracted:
+The profile research desk currently indexes **43 source series and portals**, with **28 national-level observation cards**. Several state-level source files have also been extracted:
 
 | Evidence file | Coverage | What is recorded | Important qualification |
 |---|---:|---|---|
@@ -26,6 +26,7 @@ The `getTenureEvidence()` helper connects state-specific records to the correspo
 ## 1. Cost of living and household welfare
 
 ### Sources indexed
+- NBS Nigeria Multidimensional Poverty Index 2022 state table (D6), including confidence intervals.
 - NBS CPI and Inflation monthly archive.
 - CBN 2023 Financial Markets Department report, containing the monthly pre-rebase 2023 headline inflation trajectory.
 - CBN June 2026 Quarterly Statistical Bulletin, including the revised CPI linkage note and CPI tables.
@@ -36,11 +37,13 @@ The `getTenureEvidence()` helper connects state-specific records to the correspo
 - Nigeria Governors' Forum and BudgIT fiscal materials also provide context for transfers and state household conditions.
 
 ### Extracted observations
+- NBS state MPI (2021/22) records Rivers incidence at 62.4% (95% CI 57.7–67.0) and Sokoto at 90.5% (88.2–92.8). The national incidence was 62.9% (61.9–63.8) and intensity 40.9%; the report estimated 132.92 million people multidimensionally poor. This is an inherited baseline, not an administration outcome.
 - Legacy headline inflation rose from 21.82% in January 2023 to 28.92% in December 2023. This is the old CPI series and includes the transition between administrations.
 - Selected NBS food prices, June 2023 to June 2024: onion +215.20%; boneless beef +102.74%; sliced bread +117.35%; palm oil +56.90%.
 - March 2024 Cost of a Healthy Diet: ₦982 per adult per day nationally; selected state estimates ranged from ₦739 in Katsina to ₦1,330 in Ekiti.
 - South-South transport fare examples are captured for July 2023 and July 2024, but they are zonal—not state-specific—averages.
 - The GHS Panel Wave 5 interviewed 4,715 households in 518 enumeration areas. Visits took place July–September 2023 and January–March 2024.
+- NBS 2021/22 MPI D6 state data: 62.9% national incidence (95% CI 61.9–63.8), 40.9% intensity and 132.92 million people classified multidimensionally poor; full 37-jurisdiction table with confidence intervals is stored in `src/data/mpi-baselines.ts`.
 
 ### Method cautions and next extraction
 Inflation is not the same as the price level or affordability. Sabi should retain the CPI index, month-on-month rate and year-on-year rate, then pair those with matched food-item prices, healthy-diet costs, fares, poverty and real household income/consumption. The NBS CPI was rebased in 2025; the CBN June 2026 Statistical Bulletin documents the NBS's revised linkage using the 12-month average of 2024 = 100 rather than the initially used December 2024 = 100. Use the official revised linked series and store its vintage—do not create a hand-built splice.
