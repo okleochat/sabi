@@ -2,6 +2,7 @@
 import {useState} from "react";
 import {GoogleAuthProvider,signInWithPopup,signOut} from "firebase/auth";
 import {auth} from "@/lib/firebase-client";
+import ResearchAssistant from "./ResearchAssistant";
 type Claim={id:string;claim:string;status:string;createdAt:string;context?:string;sourceUrl?:string};
 export default function StudioLogin(){
  const [busy,setBusy]=useState(false);const [user,setUser]=useState("");const [uid,setUid]=useState("");const [claims,setClaims]=useState<Claim[]>([]);const [pending,setPending]=useState(false);const [message,setMessage]=useState("");
@@ -25,6 +26,7 @@ export default function StudioLogin(){
  {!user&&!uid?<div className="form-panel"><h2>Staff sign-in</h2><p className="notice">Use your Google account. Only accounts explicitly approved in the Firestore editors collection can enter the newsroom.</p><button className="button" disabled={busy} onClick={login}>{busy?"Signing in…":"Continue with Google ↗"}</button></div>:null}
  {pending?<div className="form-panel"><h2>Access approval required</h2><p>{message}</p><div className="detail"><span>Signed-in account</span><strong>{user}</strong></div><div className="detail" style={{marginTop:10}}><span>Firebase user UID</span><strong style={{overflowWrap:"anywhere"}}>{uid}</strong></div><p className="notice">In Firestore, create a document in the <strong>editors</strong> collection using this UID as the document ID. Add fields <strong>role: "admin"</strong> and <strong>email: "{user}"</strong>. Then refresh this page.</p><div className="hero-actions"><button className="button" onClick={refresh} disabled={busy}>Check access</button><button className="button secondary" onClick={logout}>Sign out</button></div></div>:null}
  {user&&!pending&&claims.length>=0?<div className="studio-dashboard"><div className="section-head"><div><div className="eyebrow">Signed in as {user}</div><h2>Claim inbox</h2></div><div className="hero-actions"><button className="button" onClick={refresh} disabled={busy}>Refresh</button><button className="button secondary" onClick={logout}>Sign out</button></div></div>
+ <ResearchAssistant/>
  {claims.length? <div className="studio-claims">{claims.map(c=><article className="content-card" key={c.id}><div className="eyebrow">{c.status||"submitted"} · {c.createdAt||""}</div><h3>{c.claim}</h3>{c.context?<p>{c.context}</p>:null}{c.sourceUrl?<p><a href={c.sourceUrl} target="_blank" rel="noreferrer">Open submitted source ↗</a></p>:null}<label className="status-label">Workflow status<select value={c.status||"submitted"} disabled={busy} onChange={e=>updateClaim(c.id,e.target.value)}><option value="submitted">Submitted</option><option value="triaged">Triaged</option><option value="researching">Researching</option><option value="editor_review">Editor review</option><option value="closed">Closed</option></select></label></article>)}</div>:<div className="empty-state">No claims have been submitted yet.</div>}
  </div>:null}
  {message&&!pending?<p className="notice" role="status">{message}</p>:null}
