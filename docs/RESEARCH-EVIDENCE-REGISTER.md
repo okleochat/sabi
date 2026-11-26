@@ -330,3 +330,12 @@ The public-record dashboard publishes the source observations below with their u
 - Never replace a missing observation with zero. If a publisher excludes a state, display the publisher's reason.
 - Keep the FCT Minister's FCT record distinct from the 36 governor profiles. Use national series for the President.
 - Any correction must retain the prior value, cite the replacement source and record the reason/date of change.
+
+
+### Presidential macroeconomic and fiscal context (November 2026 snapshot)
+
+- **Source:** Federal Ministry of Finance, Nigeria Macro Dashboard: https://finance.gov.ng/?page_id=26
+- **Reported values:** headline inflation 14.06% year-on-year (October 2026); food inflation 19.13% year-on-year (October 2026); real GDP growth 4.43% year-on-year (Q2 2026); gross external reserves US$55.2bn (30 October 2026); total public debt ₦166.7tn (Q2 2026).
+- **Comparators shown:** headline inflation 18.97% year-on-year (October 2025); real GDP growth 4.23% year-on-year (Q2 2025).
+- **Cross-check:** CBN Monetary Policy Communiqué No. 165 (24 November 2026): https://www.cbn.gov.ng/Out/2026/CCD/MPC%20Communique%20No%20165%20of%20November%202026.pdf
+- **Limitations:** indicators have different definitions and reference dates. A lower inflation rate means prices are rising more slowly, not that the overall price level fell. Debt stock must be read with debt service, revenue, GDP and maturity profile. Macroeconomic trends do not by themselves establish how much change was caused by the President.
