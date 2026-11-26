@@ -37,11 +37,12 @@ export const stateFoodInsecurity2024:Record<string,StateFoodInsecurity2024>={
   "Delta":{moderateOrSevere: 62.6, severe: 20.8,samplePersons:4055},
   "Edo":{moderateOrSevere: 49.6, severe: 15.2,samplePersons:2764},
   "Rivers":{moderateOrSevere: 76.6, severe: 33.5,samplePersons:4958},
-  "Lagos":{moderateOrSevere: null, severe: null,samplePersons:null},
-  "Ogun":{moderateOrSevere: null, severe: null,samplePersons:null},
-  "Ondo":{moderateOrSevere: null, severe: null,samplePersons:null},
-  "Osun":{moderateOrSevere: null, severe: null,samplePersons:null},
-  "Oyo":{moderateOrSevere: null, severe: null,samplePersons:null}
+  "Lagos":{moderateOrSevere: 61.8, severe: 30.7,samplePersons:6894},
+  "Ogun":{moderateOrSevere: 78.2, severe: 33.1,samplePersons:5802},
+  "Ondo":{moderateOrSevere: 61.1, severe: 22.7,samplePersons:2732},
+  "Osun":{moderateOrSevere: 66.1, severe: 22.6,samplePersons:3215},
+  "Oyo":{moderateOrSevere: 66.1, severe: 23.7,samplePersons:5314},
+  "Ekiti":{moderateOrSevere: 68.1, severe: 27.9,samplePersons:1321},
 };
 export const ndhsFoodInsecuritySource={
  publisher:"Federal Ministry of Health & Social Welfare, National Population Commission and ICF",
