@@ -6,7 +6,7 @@ const commitmentWeight=(item:Commitment)=>Number.isFinite(item.weight)?Math.max(
 
 export function calculateIntegrityScore(items:Commitment[],catalogue:IntegrityCatalogueCoverage){
  const {cataloguedCommitments,identifiableCommitments}=catalogue;
- if(!Number.isInteger(cataloguedCommitments)||!Number.isInteger(identifiableCommitments)||cataloguedCommitments<0||identifiableCommitments<0||cataloguedCommitments>identifiableCommitments)throw new Error("Invalid manifesto catalogue coverage");
+ if(!Number.isInteger(cataloguedCommitments)||!Number.isInteger(identifiableCommitments)||cataloguedCommitments<0||identifiableCommitments<0||cataloguedCommitments>identifiableCommitments||cataloguedCommitments!==items.length)throw new Error("Invalid manifesto catalogue coverage: the catalogue count must match the supplied commitment register");
  const catalogueCoverage=identifiableCommitments?Math.round(100*cataloguedCommitments/identifiableCommitments):0;
  const catalogueGatePassed=identifiableCommitments>0&&cataloguedCommitments/identifiableCommitments>=INTEGRITY_CATALOGUE_THRESHOLD;
  const totalWeight=items.reduce((n,x)=>n+commitmentWeight(x),0);
