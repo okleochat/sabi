@@ -14,7 +14,7 @@
 
 ## Cleared portraits currently wired into the site
 
-### Officeholder profiles — 20 of 38
+### Officeholder profiles — 21 of 38
 
 The following portraits are linked from Wikimedia Commons with recorded licences and creator credits:
 
@@ -24,6 +24,7 @@ The following portraits are linked from Wikimedia Commons with recorded licences
 | Charles Soludo | Chinedueri | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Charles_Soludo_portrait.jpg |
 | Peter Mbah | Mba Joshua Chidiebere | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ndubuisi_Mbah.jpg |
 | Nasir Idris | Kebbi State Government (photographer uncredited) | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Dr._Muhammad_Nasir_Idris.png |
+| Caleb Mutfwang | Kambai Akau | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Mutfwang_speaking_on_the_podium_at_SK_Fest_2024_06.jpg |
 | Douye Diri | Kambai Akau | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Diri_walking_to_the_stage_at_SK_Fest_2024_01.jpg |
 | Hyacinth Alia | Leon TRR | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Revd._Fr._Dr._Hyacinth_Alia_Ph.D.jpg |
 | Babagana Zulum | BScar23625 | CC0 1.0 | https://commons.wikimedia.org/wiki/File:Babagana_Zulum.jpg |
