@@ -8,7 +8,7 @@ This register is a research index, not a political verdict. It does not assign n
 
 ## Research coverage added in this pass
 
-The profile research desk currently indexes **45 source series and portals**, with **30 national-level observation cards**. Several state-level source files have also been extracted:
+The profile research desk currently indexes **46 source series and portals**, with **31 national-level observation cards**. Several state-level source files have also been extracted:
 
 | Evidence file | Coverage | What is recorded | Important qualification |
 |---|---:|---|---|
@@ -135,6 +135,8 @@ MICS and NALABE are 2021/2022 baselines, not results under governors inaugurated
 - IOM/UNICEF/WHO sources where relevant to disease, health workforce and services.
 
 ### Extracted observations
+- NDHS 2024 state map provides retrospective 10-year under-five mortality estimates for all 36 states and FCT. Examples: Jigawa 161 and Kwara 14 deaths per 1,000 live births. The estimates are not 2024-only; most of the underlying window predates May 2023.
+- National under-five mortality in the NDHS 2024 report is 110 per 1,000 live births for the five years preceding the survey (95% CI 103–117). The report's earlier NDHS survey comparisons are 132 before the 2018 survey and 128 before the 2013 survey; these are survey-period comparisons, not calendar-year estimates.
 - NDHS 2023/24 full basic-antigen vaccination estimates are already present in the public-record data for states and FCT.
 - DHIS2 2023 and 2024 annualised “fully immunised by age one” coverage is now captured for 36 states and FCT.
 - 2021 NICS national estimates include 36% fully vaccinated, 57% Penta3 coverage and 21% Penta1-to-Penta3 dropout.
