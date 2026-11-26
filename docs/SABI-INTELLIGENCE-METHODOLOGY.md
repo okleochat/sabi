@@ -1,12 +1,20 @@
-# Sabi Public Records methodology v2.1.0
+# Sabi Public Records methodology v2.2.0
 
 ## Purpose
 
-Sabi publishes category scores out of 10 wherever the public record contains a usable, source-linked metric and a disclosed benchmark. Scores are attached to the measured category, not presented as a single overall politician rating. They describe observed jurisdictional results or benchmark position; they do not, by themselves, prove that an officeholder caused those results.
+Sabi publishes category scores out of 10 wherever the public record contains a usable, source-linked metric and a disclosed benchmark. It also publishes an **Overall Score out of 10** calculated from the category scores available for each officeholder. Every score describes an observed jurisdictional result or benchmark position; it does not, by itself, prove that an officeholder caused that result.
 
-## The 0–10 scale
+## The 0–10 scale and Overall Score
 
-All scores are shown to one decimal place. Each category score is the arithmetic mean of the indicator scores available in that category. The page shows the number of available indicators, the scoring basis, reporting periods and limitations. Missing indicators are not converted to zero.
+All scores are shown to one decimal place.
+
+- **Category score:** arithmetic mean of the available indicator scores within that category.
+- **Overall Score:** arithmetic mean of every published category score for that officeholder. Each category receives equal weight.
+- **Missing categories:** categories labelled **Not scored yet** are excluded from the arithmetic mean, never assigned zero.
+- **Coverage:** every Overall Score displays the number of scored assessment categories, the total applicable assessment categories and the resulting coverage percentage.
+- **Interpretation:** the Overall Score is provisional when category coverage is incomplete. It is a summary of the currently available evidence, not a complete assessment of every part of public performance.
+
+An Overall Score must not be used as a definitive league table when officeholders have different category coverage, different available indicators or non-comparable reporting periods. Readers should inspect the category scores and the evidence gaps beside it.
 
 ### Governors — fiscal revenue position
 
@@ -42,7 +50,7 @@ All scores are shown to one decimal place. Each category score is the arithmetic
 - Indicator: October 2026 year-on-year headline inflation compared directionally with the 2026 Federal Government budget assumption of 16.5%.
 - Formula: **min(10, 16.5 ÷ actual headline inflation × 10)**.
 - Important limitation: the October year-on-year rate is not the final full-year average. A lower inflation rate means prices are rising more slowly; it does not mean the overall price level has fallen.
-- Economic growth and price stability remain separate category scores. They are not averaged into a single broad "Economy" grade. Food inflation, reserves and public debt are contextual indicators and are not scored without directly comparable benchmarks.
+- Economic growth and price stability remain separate category scores. They are not averaged into a broad "Economy" grade. Food inflation, reserves and public debt are contextual indicators and are not scored without directly comparable benchmarks.
 
 ### President — health outcomes
 
