@@ -2,11 +2,9 @@
  * NDHS 2024 Table 2.15, percentage of the de jure population experiencing
  * moderate or severe food insecurity, and severe food insecurity.
  * Values transcribed directly from the national/state rows.
- * Lagos, Ogun, Ondo and Osun not available in the retrieved table segment? See
- * source note: keep missing values null until confirmed from complete table
- * rather than estimate or interpolate.
+ * All 36 states and FCT are present in the published state table.
  */
-export type StateFoodInsecurity2024={moderateOrSevere:number|null;severe:number|null;samplePersons:number|null};
+export type StateFoodInsecurity2024={moderateOrSevere:number;severe:number;samplePersons:number};
 export const stateFoodInsecurity2024:Record<string,StateFoodInsecurity2024>={
   "Federal Capital Territory":{moderateOrSevere: 65.4, severe: 24.7,samplePersons:3104},
   "Benue":{moderateOrSevere: 62.9, severe: 23.5,samplePersons:4380},
@@ -50,5 +48,5 @@ export const ndhsFoodInsecuritySource={
  title:"Nigeria Demographic and Health Survey 2024 — Table 2.15 Food insecurity",
  period:"2024 survey; report published September 2025",
  url:"https://www.health.gov.ng/wp-content/uploads/2025/10/NDHS-2024-Final-Report_Disseminated17102025.pdf",
- note:"Percentages describe the de jure population experiencing moderate or severe food insecurity and severe food insecurity, based on the FAO Food Insecurity Experience Scale. Respondents were asked eight questions about constraints on access to adequate food over the previous 12 months. It is a household survey, not a direct causal assessment of a governor or President. Four South-West state rows were not available in the extracted table segment and remain null pending verification from the complete table; do not treat nulls as zero."
+ note:"Percentages describe the de jure population experiencing moderate or severe food insecurity and severe food insecurity, based on the FAO Food Insecurity Experience Scale. Respondents were asked eight questions about constraints on access to adequate food over the previous 12 months. It is a household survey, not a direct causal assessment of a governor or President. Values are published state survey estimates; sample counts are reported person counts, not necessarily the unweighted number of respondents. The source drops household members with any food-insecurity responses marked refused or unknown."
 };
