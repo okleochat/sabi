@@ -54,7 +54,7 @@ export default function IntegrityImpactPage(){
         <div className="stat"><strong>{periods.length}</strong><span>Reporting periods</span></div>
         <div className="stat"><strong>{record.missing.length}</strong><span>Disclosed data gaps</span></div>
        </div>
-       <p className="notice">{describePublicRecord(p)}</p>
+       <p className="notice">{record.indicators.map(item=>item.label+": "+item.displayValue).join(" · ")}{record.missing.length?" · "+record.missing.length+" disclosed research/data gap(s)":""}</p>
        <span>OPEN SOURCED PUBLIC RECORD ↗</span>
       </div>
      </Link>;
