@@ -337,6 +337,18 @@ export const tenureEvidenceSources: EvidenceSource[] = [
     officeScope: "both",
   },
   {
+    id: "euaa-security-state-table-2024-25", category: "security",
+    title: "State-level security incidents and fatalities — EUAA table based on ACLED",
+    publisher: "European Union Agency for Asylum (EUAA), based on ACLED",
+    url: "https://www.ecoi.net/en/file/local/2135519/2026_01_EUAA_COI_Query_Response_Q4_Nigeria_Major_political_security_human_rights_developments.pdf",
+    period: "1 January 2024–31 December 2025; source data as of 9 January 2026",
+    geography: "All 36 states and FCT",
+    resolution: "state-and-national", evidenceType: "international-monitoring",
+    use: "Exact state-level totals of incidents coded as battles, explosions/remote violence and violence against civilians, plus ACLED-estimated direct fatalities.",
+    limitation: "The two-year window does not cover the whole tenure beginning May 2023. Fatalities are estimated and do not distinguish civilian from non-civilian deaths. Incident totals are not a per-capita exposure rate and are affected by reporting and coding coverage.",
+    officeScope: "both",
+  },
+  {
     id: "euaa-security-review", category: "security",
     title: "Nigeria security situation — 2024–2025 ACLED-based country analysis",
     publisher: "European Union Agency for Asylum",
@@ -595,6 +607,16 @@ const nationalObservations: EvidenceObservation[] = [
     note: "NERC 2024 Annual Report, Appendix Table D.2, printed page 189. Generation and grid delivery are not household supply hours; distribution-company/feeder data are needed to assess actual service.",
   },
   {
+    id: "euaa-security-state-total-2024-25", category: "security",
+    label: "State-level security incidents and estimated fatalities",
+    value: "8,654 incidents · 21,504 estimated fatalities across Nigeria; 7,590 fatalities were from violence-against-civilians-coded events.",
+    period: "1 January 2024–31 December 2025", geography: "Nigeria; all states and FCT",
+    publisher: "EUAA based on ACLED curated data",
+    url: "https://www.ecoi.net/en/file/local/2135519/2026_01_EUAA_COI_Query_Response_Q4_Nigeria_Major_political_security_human_rights_developments.pdf",
+    evidenceType: "international-monitoring",
+    note: "The report's exact state table is also attached to each relevant state profile. Fatalities are ACLED estimates, not an official death register, and do not separate civilian from non-civilian deaths. This does not cover the first months of the administrations inaugurated in May 2023.",
+  },
+  {
     id: "acled-security-2024-25", category: "security",
     label: "ACLED-recorded security incidents and fatalities",
     value: "8,654 incidents · 21,504 estimated fatalities",
@@ -628,6 +650,7 @@ const nationalObservations: EvidenceObservation[] = [
 
 import {micsStateBaseline2021,micsBaselineSource} from "@/data/mics-baselines";
 import {stateEducationCensus2024,educationCensusSource} from "@/data/education-census-baseline";
+import {stateSecurity2024To2025,stateSecuritySource} from "@/data/security-state-2024-25";
 
 export function getTenureEvidence(person: { office: string; state?: string; termStart?: string }) {
   const scope = person.office === "President" ? "national" : "subnational";
@@ -645,6 +668,21 @@ export function getTenureEvidence(person: { office: string; state?: string; term
   const stateRecord = person.state ? stateLabourBaseline2023[person.state] : undefined;
   const micsRecord = person.state ? micsStateBaseline2021[person.state] : undefined;
   const educationCensus = person.state ? stateEducationCensus2024[person.state] : undefined;
+  const security = person.state ? stateSecurity2024To2025[person.state] : undefined;
+  if (security) {
+    observations.unshift({
+      id: "euaa-acled-security-state-2024-25",
+      category: "security",
+      label: "ACLED-recorded security events and estimated fatalities",
+      value: security.incidents.toLocaleString("en-NG") + " incidents · " + security.estimatedFatalities.toLocaleString("en-NG") + " estimated fatalities",
+      period: stateSecuritySource.period,
+      geography: person.state || "State",
+      publisher: stateSecuritySource.publisher,
+      url: stateSecuritySource.url,
+      evidenceType: "international-monitoring",
+      note: stateSecuritySource.note,
+    });
+  }
   if (educationCensus) {
     const value = educationCensus;
     observations.unshift({
