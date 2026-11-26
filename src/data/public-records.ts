@@ -23,7 +23,7 @@ export type PublicIndicator = {
 };
 
 export type CategoryScore = {
-  id: "economy" | "education" | "health";
+  id: "economy" | "education" | "health" | "growth" | "price-stability";
   label: string;
   value: number;
   evidenceCount: number;
@@ -347,13 +347,21 @@ export function getPublicRecordScores(person: { name: string; office: string; st
   };
   const categories: CategoryScore[] = [];
   if (person.office === "President") {
-    const economy = average(["real-gdp-growth-2026-q2", "headline-inflation-2026-10"]);
+    const growth = average(["real-gdp-growth-2026-q2"]);
+    const priceStability = average(["headline-inflation-2026-10"]);
     const health = average(["vaccination-national-ndhs-2023-24"]);
-    if (economy !== null) categories.push({
-      id: "economy", label: "Economy & fiscal conditions", value: economy,
-      evidenceCount: 2, expectedEvidence: 2, evidenceLabel: "2 of 2 benchmarks",
-      method: "Average of Q2 real GDP growth attainment and October headline-inflation performance against the 2026 Federal Government budget assumptions.",
-      interpretation: "Provisional, partial-year benchmark tracking. These are national indicators and include monetary, fiscal and external factors beyond the President's direct control.",
+    if (growth !== null) categories.push({
+      id: "growth", label: "Economic growth", value: growth,
+      evidenceCount: 1, expectedEvidence: 1, evidenceLabel: "1 GDP benchmark",
+      method: "Q2 2026 real GDP growth attainment: actual 4.43% divided by the 4.68% 2026 Federal Government budget projection, multiplied by 10.",
+      interpretation: "A provisional partial-year check against the full-year budget projection, not the final annual growth result or proof of presidential causation.",
+      provisional: true,
+    });
+    if (priceStability !== null) categories.push({
+      id: "price-stability", label: "Price stability", value: priceStability,
+      evidenceCount: 1, expectedEvidence: 1, evidenceLabel: "1 inflation benchmark",
+      method: "16.5% 2026 Federal Government budget inflation assumption divided by October 2026 year-on-year headline inflation of 14.06%, multiplied by 10 and capped at 10.",
+      interpretation: "A provisional directional comparison. October year-on-year inflation is not the final full-year average, and a lower inflation rate means prices rise more slowly—not that prices have fallen.",
       provisional: true,
     });
     if (health !== null) categories.push({
