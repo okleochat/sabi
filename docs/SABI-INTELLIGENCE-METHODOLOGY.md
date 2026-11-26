@@ -6,8 +6,11 @@
 ## Impact Score (0–100)
 Five equally weighted dimensions: living standards & poverty, health, education, jobs/economy/infrastructure, safety/public services/governance. Score dimensions from pre-declared outcome indicators. Compare pre-office baseline to current period and, where feasible, national trend or comparable states. Do not infer causation from correlation. Disclose attribution. Withhold overall score unless at least 3/5 dimensions and 60% of planned indicator weight are assessable; show unavailable dimensions. Use per-capita and inflation-adjusted measures where relevant.
 
-## Evidence and AI
-Every scored input needs URL, publisher, publication date, access date, relevant quote/data and verification status. Prioritise official statistics, budgets, audited accounts, procurement records, court records, legislation, regulator data and credible independent reporting. AI extraction creates drafts only in research_drafts; an editor verifies and approves. AI cannot set final scores or publish autonomously. Log corrections and methodology versions.
+## Evidence, research and editorial control
+Every published factual claim needs a source URL, publisher, publication date, access date, relevant quote/data and verification status. Prioritise official statistics, budgets, audited accounts, procurement records, court records, legislation, regulator data and credible independent reporting. ChatGPT is used externally as a scheduled research and editorial assistant; it prepares a source-linked research queue and draft copy for human review. It has no direct publishing access to this site or Firebase. Editors independently verify sources, approve copy and enter updates through the newsroom workflow. No external AI report automatically changes public pages or metrics. Log corrections and methodology versions.
+
+## Shareable graphics
+Branded PNG share cards are generated in the visitor's browser from the page's visible, approved content. They are not stored as new factual records. Cards include Sabi branding, page context and source/assessment metadata where supplied. Missing values remain explicitly pending; the generator must not manufacture a score, verdict or source.
 
 ## Initial roster sources
 - President: https://statehouse.gov.ng/
