@@ -1,4 +1,9 @@
 import type {Metadata} from "next";
+import Link from "next/link";
 import ClaimForm from "./ClaimForm";
-export const metadata:Metadata={title:"Submit a claim"};
-export default function SabiCheckPage(){return <div className="wrap"><section className="page-intro"><div className="kicker">Sabi Check</div><h1>Heard a claim?<br/>Let’s check it.</h1><p>Send us the exact statement and, where possible, the original source. Our team reviews claims using evidence and transparent editorial standards.</p></section><section className="section"><ClaimForm/></section></div>;}
+export const metadata:Metadata={title:"Sabi Check — No cap. Just receipts."};
+export default function SabiCheckPage(){return <div className="page-shell">
+<section className="page-intro"><div className="eyebrow"><span/>THE VERIFICATION DESK / 002</div><h1>BEFORE YOU<br/>FORWARD IT.<br/>LET'S CHECK<br/>AM.</h1><p>A claim can travel faster than the truth. Send us the exact statement and, if you can, the original source. A human editor checks the evidence before anything becomes a public fact-check.</p></section>
+<section className="page-section check-submit-layout"><div className="check-submit-intro"><div className="eyebrow">GOT SOMETHING TO CHECK?</div><h2>NO CAP.<br/><em>JUST RECEIPTS.</em></h2><div className="human-review-stamp">HUMAN<br/>REVIEW<br/>ONLY ✳</div><p>Your submission stays private while it is in the editorial queue. A submission is not a published fact-check, and not every claim will be selected for review.</p><Link className="underlink" href="/fact-checks">BROWSE PUBLISHED FACT-CHECKS ↗</Link></div><ClaimForm/></section>
+<section className="verification-steps"><div className="eyebrow">THREE STEPS. NO SHORTCUTS.</div><div className="verification-grid"><div><b>01</b><h3>SUBMIT A CLAIM</h3><p>Send the exact wording, a link and context if you have it.</p></div><div><b>02</b><h3>EDITOR CHECKS SOURCES</h3><p>We look for primary documents, original statements and reliable corroboration.</p></div><div><b>03</b><h3>PUBLISH WITH RECEIPTS</h3><p>An editor approves the findings, verdict and evidence links before publication.</p></div></div></section>
+</div>;}

@@ -1,0 +1,18 @@
+export const voterGuideSteps=[
+{number:"01",title:"Check your registration details",detail:"Use INEC's voter-services portal to check your voter status. The portal also provides registration and polling-unit transfer services. Use the official address, not a link sent by an unknown account.",action:"Open INEC Voter Services",url:"https://cvr.inecnigeria.org/"},
+{number:"02",title:"Confirm your polling unit",detail:"Plan to vote at the polling unit where you are registered. Check its location ahead of time and keep the details somewhere you can access on election day.",action:"Check your voter details",url:"https://cvr.inecnigeria.org/"},
+{number:"03",title:"Take your physical PVC",detail:"INEC's voter-education guidance says voters must present the physical Permanent Voter Card and be verified through BVAS. A screenshot of a card or another person's card is not a substitute.",action:"Read INEC voter guidance",url:"https://inecnigeria.org/voters/education"},
+{number:"04",title:"Understand accreditation",detail:"INEC says BVAS is used for biometric accreditation. Its published guidance says fingerprint verification is used, with facial recognition deployed if fingerprint capture fails. Follow authorised polling officials' instructions.",action:"How accreditation works",url:"https://inecnigeria.org/voters/education"},
+{number:"05",title:"Vote in secret",detail:"After the register check and ballot issuance, proceed to the private voting cubicle. Mark your choice according to the ballot instructions, fold the paper as directed and place it in the designated ballot box.",action:"Read the voting procedure",url:"https://inecnigeria.org/voters/education"},
+{number:"06",title:"Keep it peaceful and verify information",detail:"Do not interfere with voters or polling officials. Follow the public counting process without obstruction and avoid sharing unverified result claims. Use official election channels for results and incident reporting.",action:"INEC election information",url:"https://inecnigeria.org/"}
+];
+export const voterFaqs=[
+{q:"When is the 2027 presidential election?",a:"INEC's current online calendar lists Saturday, 16 January 2027 for the Presidential and National Assembly elections."},
+{q:"When is the governorship election?",a:"INEC's current online calendar lists Saturday, 6 February 2027 for the Governorship and State House of Assembly elections in the participating states and constituencies."},
+{q:"Can I vote without my PVC?",a:"INEC's published voter guidance says voters must present the physical Permanent Voter Card and be verified through BVAS. Check the live instructions before election day."},
+{q:"What if BVAS cannot read my fingerprint?",a:"INEC's voter-education guidance says facial-recognition authentication is deployed if fingerprint capture fails. Follow polling officials' instructions."},
+{q:"What time do polling units open?",a:"INEC currently publishes 8:30 a.m. to 2:30 p.m. for polling-unit accreditation and voting. It also says voters already in the queue by 2:30 p.m. are entitled to vote. Check for updated instructions."},
+{q:"Can I vote at any polling unit?",a:"Plan to vote at your registered polling unit. Use INEC's voter-services portal to confirm your details and polling location."},
+{q:"Does BVAS count the votes?",a:"BVAS is used for voter accreditation and identity verification. Your choice is marked on the ballot paper and placed in the ballot box; BVAS is not your ballot."},
+{q:"Does Sabi support a political party?",a:"No. Sabi Politics is an independent, non-partisan civic-information edition. We explain claims, candidates, parties and policies without endorsing a party or candidate."}
+];

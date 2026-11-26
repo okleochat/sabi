@@ -1,0 +1,3 @@
+export type SourceLink={title:string;publisher:string;url:string;publishedAt?:string};
+export type BodyBlock={type:"paragraph"|"heading"|"callout"|"list";text?:string;items?:string[]};
+export type StarterArticle={id:string;slug:string;title:string;summary:string;category:string;label:string;author:string;publishedAt:string;updatedAt:string;readTime:string;featured:boolean;heroArt:string;body:BodyBlock[];sources:SourceLink[]};

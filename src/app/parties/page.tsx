@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
-import { getCandidates } from "@/lib/data";
+import type {Metadata} from "next";
+import {getCandidates} from "@/lib/data";
+import {partyNames} from "@/data/party-directory";
 export const metadata:Metadata={title:"Political parties"};
 export const dynamic="force-dynamic";
-export default async function PartiesPage(){
- const candidates=await getCandidates();const parties=Array.from(new Set(candidates.map(c=>c.partyCode))).sort();
- return <div className="wrap"><section className="page-intro"><div className="kicker">The political landscape</div><h1>Parties behind<br/>the presidential tickets.</h1><p>Party codes below are shown as recorded in INEC’s published presidential candidate list. Full party histories, leadership and policy positions will be added only from verifiable sources.</p></section>
- <section className="section"><div className="section-head"><div><div className="eyebrow">INEC-listed parties</div><h2>{parties.length} party codes</h2></div></div><div className="content-grid">{parties.map(code=>{const rows=candidates.filter(c=>c.partyCode===code);return <article className="content-card" key={code}><span className="party-tag">{code}</span><h3>{code}</h3><p>{rows.length} presidential ticket{rows.length===1?"":"s"} in the captured list.</p><p style={{marginTop:12}}>{rows.map(c=>c.displayName).join(", ")}</p></article>;})}</div></section></div>;
-}
+export default async function PartiesPage(){const candidates=await getCandidates();const parties=Object.entries(partyNames).sort((a,b)=>a[1].localeCompare(b[1]));return <div className="page-shell">
+<section className="page-intro"><div className="eyebrow"><span/>THE POLITICAL LANDSCAPE</div><h1>THE PARTIES.<br/>THE TICKETS.<br/>THE CHOICES.</h1><p>Explore the 22 political parties listed on INEC's official register. The directory shows which party codes appear in the presidential list captured by Sabi; it does not imply that every registered party is contesting every office.</p></section>
+<section className="page-section"><div className="section-head"><div><div className="eyebrow">INEC REGISTER / CHECKED NOV 2026</div><h2>{parties.length} REGISTERED<br/>PARTIES.</h2></div><a className="underlink" href="https://inecnigeria.org/parties/" target="_blank" rel="noreferrer">OPEN INEC PARTY REGISTER ↗</a></div>
+<div className="party-grid">{parties.map(([code,name],i)=>{const tickets=candidates.filter(c=>c.partyCode===code);return <article className="party-card" key={code}><div className="party-card-top"><span>{String(i+1).padStart(2,"0")}</span><b>{code}</b></div><h3>{name}</h3><p>{tickets.length?tickets.map(c=>c.displayName).join(", "):"No presidential ticket captured under this party code in the source list used for this directory."}</p><div className="party-card-bottom"><span>{tickets.length?tickets.length+" TICKET":"REGISTERED PARTY"}</span><span>INEC REGISTER</span></div></article>;})}</div>
+<p className="source-note">Party names and registration status are based on INEC's published register. Presidential ticket names shown here are transcribed from INEC's separate 2027 final list. We do not infer party ideology or policy positions from a party name. <a href="https://inecnigeria.org/parties/" target="_blank" rel="noreferrer">SOURCE: INEC REGISTER ↗</a></p></section></div>;}
