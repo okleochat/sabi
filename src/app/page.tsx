@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {getCandidates,getPublishedRecords} from "@/lib/data";
 import {candidatePortraits} from "@/data/candidate-media";
+import ShareCard from "@/app/components/ShareCard";
 export const dynamic="force-dynamic";
 function StoryArt({kind,label}:{kind:string;label:string}){return <div className={"story-visual "+(kind==="calendar"?"lime":kind==="court"?"ink":"")}><small>{label}</small><strong>{kind==="calendar"?"SAVE THE DATE":kind==="court"?"WHO MAKES THE LIST?":kind==="economy"?"THE PRICE OF IT ALL":kind==="signal"?"TEST RUN. NOT ELECTION DAY.":"POLITICS, DECODED."}</strong></div>;}
 export default async function HomePage(){
