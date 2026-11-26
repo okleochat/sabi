@@ -1,5 +1,13 @@
-import type { Metadata } from "next";
-import { getPublishedRecords } from "@/lib/data";
-export const metadata:Metadata={title:"News and analysis"};
+import type {Metadata} from "next";
+import Link from "next/link";
+import {getPublishedRecords} from "@/lib/data";
+export const metadata:Metadata={title:"Fresh from the Sabi Desk"};
 export const dynamic="force-dynamic";
-export default async function NewsPage(){const stories=await getPublishedRecords("articles");return <div className="wrap"><section className="page-intro"><div className="kicker">Sabi newsroom</div><h1>Reporting with<br/>receipts.</h1><p>Election news, explainers and analysis with clear sourcing, publication dates and a distinction between reporting and opinion.</p></section><section className="section">{stories.length?<div className="content-grid">{stories.map((s:any)=><article className="content-card" key={s.id}><div className="eyebrow">{s.category||"Sabi report"}</div><h3>{s.title}</h3><p>{s.summary||""}</p><span className="notice">{s.publishedAt||""}</span></article>)}</div>:<div className="empty-state">No stories have been published yet. The newsroom will add reports after editorial review and source verification.</div>}</section></div>;}
+function Visual({kind,label}:{kind:string;label:string}){return <div className={"story-visual "+(kind==="calendar"?"lime":kind==="court"?"ink":"")}><small>{label}</small><strong>{kind==="calendar"?"SAVE THE DATE":kind==="court"?"WHO MAKES THE LIST?":kind==="economy"?"THE PRICE OF IT ALL":kind==="signal"?"TEST RUN. NOT ELECTION DAY.":"POLITICS, DECODED."}</strong></div>;}
+export default async function NewsPage(){const stories=await getPublishedRecords("articles");const lead=stories.find(s=>s.featured)||stories[0];const others=stories.filter(s=>s.id!==lead?.id);return <div className="page-shell">
+<section className="page-intro"><div className="eyebrow"><span/>THE SABI EDITORIAL DESK / INDEPENDENT</div><h1>FRESH FROM<br/>THE SABI DESK.</h1><p>Election news, explainers and field guides with receipts. We separate what is known, what is reported and what still needs checking. No party line. No made-up certainty.</p></section>
+<section className="page-section"><div className="section-head"><div><div className="eyebrow">THE LATEST / {stories.length} STORIES</div><h2>WHAT'S THE<br/>STORY TODAY?</h2></div><span className="eyebrow">THE SABI DESK</span></div>
+{lead?<div className="story-feature"><div><Visual kind={lead.heroArt||"signal"} label={lead.label||lead.category||"SABI DESK"}/></div><div className="story-feature-copy"><div className="story-meta">{lead.category} · {lead.readTime} · {lead.publishedAt}</div><h3>{lead.title}</h3><p>{lead.summary}</p><Link className="btn black" href={"/story/"+lead.slug}>READ THE STORY ↗</Link></div></div>:<div className="empty-state">The newsroom is preparing its first reports.</div>}
+<div className="story-grid story-library">{others.map(s=><article className="story-card" key={s.id}><Visual kind={s.heroArt||"signal"} label={s.category}/><div className="story-content"><div className="story-meta">{s.label||s.publishedAt} · {s.readTime}</div><h3>{s.title}</h3><p>{s.summary}</p><Link href={"/story/"+s.slug}>OPEN STORY ↗</Link></div></article>)}</div>
+<p className="source-note">Every article links to the sources used. News reports are attributed to their publishers; explainers identify official or primary documents where available. The Sabi Desk is an editorial byline, not an individual reporter's name.</p>
+</section></div>;}
