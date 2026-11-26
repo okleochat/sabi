@@ -1,8 +1,9 @@
 import type {Metadata} from "next";
 import Link from "next/link";
 import {issueBriefs} from "@/data/issue-briefs";
+import ShareCard from "@/app/components/ShareCard";
 export const metadata:Metadata={title:"The big issues"};
 export default function IssuesPage(){return <div className="page-shell">
 <section className="page-intro"><div className="eyebrow"><span/>THE POLICY FILE / VOL. 01</div><h1>THE BIG<br/>ISSUES.</h1><p>Not just what candidates say. What the problems are, what the public data says and the questions a serious plan should answer. These are research briefs, not endorsements or party scorecards.</p></section>
-<section className="page-section"><div className="section-head"><div><div className="eyebrow">SEVEN STARTING POINTS</div><h2>WHERE SHOULD<br/>WE LOOK FIRST?</h2></div><span className="eyebrow">SABI EXPLAINS</span></div>
+<section className="page-section"><ShareCard kind="SABI POLICY FILE" kicker="PUBLIC POLICY EXPLAINERS" title="The big issues." summary="Research briefs on public problems, public data and questions citizens can ask candidates." details={[{label:"Policy briefs",value:String(issueBriefs.length)},{label:"Purpose",value:"Inform, not endorse"},{label:"Sources",value:"Primary references"}]} source="Sources listed in each policy brief" path="/issues"/><div className="section-head"><div><div className="eyebrow">SEVEN STARTING POINTS</div><h2>WHERE SHOULD<br/>WE LOOK FIRST?</h2></div><span className="eyebrow">SABI EXPLAINS</span></div>
 <div className="content-grid">{issueBriefs.map(issue=><article className="content-card issue-card" key={issue.slug}><div className="eyebrow">{issue.number} / THE POLICY FILE</div><h3>{issue.title}</h3><p>{issue.tagline}</p><p>{issue.overview}</p><Link href={"/issues/"+issue.slug}>OPEN THE BRIEF ↗</Link></article>)}</div></section></div>;}
