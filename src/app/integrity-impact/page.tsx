@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import Link from "next/link";
 import {politicianSeeds} from "@/data/politicians";
 import {politicianPortraits} from "@/data/politician-media";
-import {getPublicRecordIndicators,describePublicRecord} from "@/data/public-records";
+import {getPublicRecordIndicators,getPublicRecordScores} from "@/data/public-records";
 import {publicRecordMethodology} from "@/lib/score-methodology";
 import ShareCard from "@/app/components/ShareCard";
 
@@ -39,6 +39,7 @@ export default function IntegrityImpactPage(){
     {politicianSeeds.map((p,i)=>{
      const portrait=politicianPortraits[p.id];
      const record=getPublicRecordIndicators(p);
+     const scorecard=getPublicRecordScores(p);
      const periods=[...new Set(record.indicators.map(x=>x.period))];
      return <Link className="candidate-card" href={"/integrity-impact/"+p.id} key={p.id}>
       <div className={"candidate-image "+(!portrait?"placeholder":"")}>
@@ -54,7 +55,11 @@ export default function IntegrityImpactPage(){
         <div className="stat"><strong>{periods.length}</strong><span>Reporting periods</span></div>
         <div className="stat"><strong>{record.missing.length}</strong><span>Disclosed data gaps</span></div>
        </div>
+       <div className="directory-score-list">
+        {scorecard.categories.map(score=><span key={score.id}><b>{score.id==="economy"?"FISCAL":score.id==="education"?"EDUCATION":"HEALTH"}</b> {score.value.toFixed(1)}/10</span>)}
+       </div>
        <p className="notice">{record.indicators.map(item=>item.label+": "+item.displayValue).join(" · ")}{record.missing.length?" · "+record.missing.length+" disclosed research/data gap(s)":""}</p>
+       {scorecard.notScored.length?<p className="notice">Not scored yet: {scorecard.notScored.map(x=>x.label).join(", ")}.</p>:null}
        <span>OPEN SOURCED PUBLIC RECORD ↗</span>
       </div>
      </Link>;
