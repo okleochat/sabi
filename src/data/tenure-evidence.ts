@@ -109,6 +109,18 @@ export const quarterlyLabourSeries2022To2024 = [
 // "Source discovered" is not the same as "every record has been extracted".
 export const tenureEvidenceSources: EvidenceSource[] = [
   {
+    id: "nbs-mpi-2022", category: "cost-of-living",
+    title: "Nigeria Multidimensional Poverty Index Survey Results 2022 — state estimates, confidence intervals and deprivations",
+    publisher: "National Bureau of Statistics, with UNDP and UNICEF technical support",
+    url: "https://www.nigerianstat.gov.ng/pdfuploads/NIGERIA%20MULTIDIMENSIONAL%20POVERTY%20INDEX%20SURVEY%20RESULTS%202022.pdf",
+    period: "MPI Survey 2021/22; report published November 2022",
+    geography: "National, all states and FCT; state estimates representative except Borno",
+    resolution: "state-and-national", evidenceType: "official-statistics",
+    use: "State MPI, incidence, intensity, 95% confidence intervals, population share and number of multidimensionally poor people. The index includes deprivation in health, education, living standards, work and shocks including security, underemployment and food insecurity.",
+    limitation: "This is a pre-May-2023 baseline, not a current-tenure outcome. Borno is explicitly not representative at state level. MPI differs from monetary poverty and should not be compared with an income-poverty rate as if definitions match. The next comparable MPI wave is needed to measure change.",
+    officeScope: "both",
+  },
+  {
     id: "nbs-ghs-panel-wave5", category: "cost-of-living",
     title: "Nigeria General Household Survey — Panel Wave 5",
     publisher: "National Bureau of Statistics, with World Bank and Gates Foundation",
@@ -616,6 +628,16 @@ export const tenureEvidenceSources: EvidenceSource[] = [
 
 const nationalObservations: EvidenceObservation[] = [
   {
+    id: "nigeria-mpi-2022-national", category: "cost-of-living",
+    label: "Multidimensional poverty — national baseline",
+    value: "MPI 0.257 · 62.9% incidence (95% CI 61.9–63.8) · 40.9% intensity · 132.92 million people identified as multidimensionally poor.",
+    period: "MPI Survey 2021/22; report published November 2022", geography: "Nigeria",
+    publisher: "National Bureau of Statistics — Nigeria MPI 2022",
+    url: "https://www.nigerianstat.gov.ng/pdfuploads/NIGERIA%20MULTIDIMENSIONAL%20POVERTY%20INDEX%20SURVEY%20RESULTS%202022.pdf",
+    evidenceType: "official-statistics",
+    note: "MPI is incidence multiplied by intensity and covers health, education, living standards and work/shocks. It is not a monetary poverty rate. This predates the May 2023 administration and is inherited-condition context, not a later performance result.",
+  },
+  {
     id: "efcc-enforcement-2023-25", category: "integrity",
     label: "EFCC reported enforcement activity",
     value: "EFCC said that between October 2023 and September 2025 it received more than 19,000 petitions, conducted 29,240 investigations, filed 10,525 cases in court and secured 7,503 convictions; it separately reported recoveries of over ₦566bn, US$411m and 1,502 properties.",
@@ -891,6 +913,7 @@ import {stateEducationCensus2024,educationCensusSource} from "@/data/education-c
 import {stateSecurity2024To2025,stateSecuritySource} from "@/data/security-state-2024-25";
 import {nalabeStateLearning2022,nalabeSource} from "@/data/nalabe-baselines";
 import {stateDhIs2Immunisation2023To2024,dhis2ImmunisationSource} from "@/data/dhis2-immunisation";
+import {stateMpi2022,stateMpiSource} from "@/data/mpi-baselines";
 
 export function getTenureEvidence(person: { office: string; state?: string; termStart?: string }) {
   const scope = person.office === "President" ? "national" : "subnational";
@@ -922,6 +945,21 @@ export function getTenureEvidence(person: { office: string; state?: string; term
         evidenceType: "official-statistics",
         note: nalabeSource.note + " NALABE's proficiency levels 3 and 4 define meeting or exceeding minimum proficiency; weighted n is not the raw tested sample.",
       });
+    });
+  }
+  const mpiRecord = person.state ? stateMpi2022[person.state] : undefined;
+  if (mpiRecord) {
+    observations.unshift({
+      id:"state-mpi-2022-baseline",
+      category:"cost-of-living",
+      label:"Multidimensional poverty — inherited baseline",
+      value:"MPI "+mpiRecord.mpi.toFixed(3)+" · incidence "+mpiRecord.incidence.toFixed(1)+"% (95% CI "+mpiRecord.incidenceCiLow.toFixed(1)+"–"+mpiRecord.incidenceCiHigh.toFixed(1)+") · intensity "+mpiRecord.intensity.toFixed(1)+"% · "+mpiRecord.poorMillions.toFixed(2)+"m poor",
+      period:stateMpiSource.period,
+      geography:person.state || "State",
+      publisher:stateMpiSource.publisher,
+      url:stateMpiSource.url,
+      evidenceType:"official-statistics",
+      note:stateMpiSource.note,
     });
   }
   const stateRecord = person.state ? stateLabourBaseline2023[person.state] : undefined;
