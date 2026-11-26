@@ -76,6 +76,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
      <h3>{item.label}</h3>
      <strong style={{font:"700 clamp(31px,4vw,48px)/.95 var(--display)",letterSpacing:"-.06em",margin:"5px 0"}}>{item.displayValue}</strong>
      <p><b>Reporting period:</b> {item.period}{item.population?" · "+item.population:""}</p>
+     {item.comparison?<p><b>Comparable reference:</b> {item.comparison.displayValue} ({item.comparison.period}). {item.comparison.note}</p>:null}
      <p>{item.note}</p>
      <div className="source-note"><b>{item.publisher}</b> · {item.sourceLabel} · Published {item.publishedAt}<br/><a href={item.sourceUrl} target="_blank" rel="noreferrer">OPEN PRIMARY SOURCE ↗</a>{item.secondarySourceUrl?<><span> · </span><a href={item.secondarySourceUrl} target="_blank" rel="noreferrer">TRANSCRIPTION / CROSS-CHECK ↗</a></>:null}</div>
     </article>)}
