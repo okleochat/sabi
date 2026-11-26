@@ -215,7 +215,7 @@ export function describePublicRecord(person: { name: string; office: string; sta
   const area = person.state || "the relevant jurisdiction";
   const facts = record.indicators.map(item => `${item.label.toLowerCase()}: ${item.displayValue} (${item.period})`);
   const unavailable = record.missing.length
-    ? ` ${record.missing.length} listed indicator(s) are unavailable in the cited datasets, with the reason recorded below.`
+    ? ` The profile also discloses ${record.missing.length} research or data gap(s), each explained below.`
     : "";
   return `The published public record for ${area} currently includes ${facts.join("; ")}. These figures cover revenue, budget reporting and/or a survey outcome depending on the indicator. They describe the jurisdiction during the stated reporting periods and should not be read as a causal estimate of ${person.name}'s individual contribution.${unavailable}`;
 }
