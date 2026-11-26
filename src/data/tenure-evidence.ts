@@ -480,7 +480,6 @@ export function getTenureEvidence(person: { office: string; state?: string; term
 
   const stateRecord = person.state ? stateLabourBaseline2023[person.state] : undefined;
   if (stateRecord) {
-    const isStateGovernor = person.office === "Governor";
     const context = person.termStart && person.termStart > "2023-01-01"
       ? "Calendar-year 2023 includes months before this officeholder took office; use as a transition/early-term baseline, not as a complete tenure result."
       : "Calendar-year 2023 is a reference-period observation; compare with a later survey before drawing a trend.";
