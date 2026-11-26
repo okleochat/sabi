@@ -70,7 +70,19 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
   <section className="profile-research">
    <div className="eyebrow"><span/>SABI CATEGORY SCORES / 0–10</div>
    <h2>THE SCORECARD.<br/>SHOW THE MATH.</h2>
-   <p className="notice">These are provisional, evidence-based category scores—not a single overall rating. Each is calculated from the indicators shown below. The score describes the recorded jurisdictional result or benchmark, not proof that one officeholder caused it.</p>
+   <p className="notice">The Overall Score is the equal-weight average of every published category score below. Categories marked Not scored yet are excluded, never counted as zero; the coverage figure shows how much of the assessment is currently scored. These provisional scores describe recorded jurisdictional results or benchmark positions, not proof that one officeholder caused them.</p>
+   <div className="overall-score-panel">
+    <div>
+     <div className="eyebrow">SABI OVERALL SCORE / 0–10</div>
+     <div className="overall-score-value">{scorecard.overallScore===null?"NOT SCORED":scorecard.overallScore.toFixed(1)}<span>{scorecard.overallScore===null?"":"/10"}</span></div>
+     <div className="overall-score-coverage">{scorecard.scoredCategoryCount} OF {scorecard.totalAssessmentCategories} CATEGORIES SCORED · {scorecard.overallCoverage}% COVERAGE</div>
+    </div>
+    <div className="overall-score-method">
+     <strong>HOW IT IS CALCULATED</strong>
+     <p>{scorecard.overallFormula}</p>
+     <p>Equal weight per scored category. The overall result is provisional and should be read alongside the category scores and unscored evidence gaps.</p>
+    </div>
+   </div>
    <div className="score-grid">
     {scorecard.categories.map(category=><article className="score-card" key={category.id}>
      <div className="eyebrow">{category.label.toUpperCase()}</div>
