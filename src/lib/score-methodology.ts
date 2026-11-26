@@ -3,17 +3,24 @@
  * Scores describe measured records and reference benchmarks, not causal attribution.
  */
 export const publicRecordMethodology = {
-  version: "2.1.0",
+  version: "2.2.0",
   scale: {
     minimum: 0,
     maximum: 10,
     precision: 1,
     rule: "Every score is calculated from a named indicator and a published benchmark. Category scores are the arithmetic mean of the available indicator scores in that category. Missing indicators are excluded and coverage is shown.",
   },
+  overallScore: {
+    label: "Overall Score",
+    formula: "Arithmetic mean of all currently published category scores for that officeholder, rounded to one decimal place.",
+    weighting: "Each published category score receives equal weight.",
+    missingEvidence: "Categories labelled Not scored yet are excluded from the numerator and denominator of the arithmetic mean; they are not assigned zero. The score always displays the number of scored categories, the total applicable assessment categories and coverage percentage.",
+    caution: "The overall score is provisional when category coverage is incomplete. Because jurisdictions may have different numbers and types of available categories, it must not be used as a league table without matching category coverage and comparable evidence.",
+  },
   categories: {
     economy: {
       governors: "2025 state IGR rank among the 36 states. Score = 10 × (36 − rank) ÷ 35. Highest nominal total receives 10.0; lowest receives 0.0. FCT Minister is benchmarked separately against all 36 states plus the FCT.",
-      president: "Economic growth and price stability are shown as separate scores. Growth score = min(10, actual Q2 year-on-year growth ÷ 4.68% × 10). Price-stability score = min(10, 16.5% budget inflation assumption ÷ October year-on-year headline inflation × 10). These are partial-year readings compared directionally with full-year assumptions, not final annual results; they are not averaged into a broad economy grade.",
+      president: "Economic growth and price stability are shown as separate scores. Growth score = min(10, actual Q2 year-on-year growth ÷ 4.68% × 10). Price-stability score = min(10, 16.5% budget inflation assumption ÷ October year-on-year inflation × 10). These are partial-year readings compared directionally with full-year assumptions, not final annual results; they are not averaged into a broad economy grade.",
     },
     education: {
       governors: "FY2025 education budget execution score = max(0, 10 − |100 − execution percentage| ÷ 10), capped at 10.0. Exact execution of 100% earns 10.0; under- or over-execution moves away from 10. This is a budget-credibility indicator, not a learning-outcome measure.",
@@ -25,7 +32,8 @@ export const publicRecordMethodology = {
     },
   },
   principles: [
-    "Category scores are evidence scores for the named measure; they are not a single overall politician rating.",
+    "Category scores are evidence scores for the named measure; they are not a causal assessment of an individual officeholder.",
+    "The overall score is a transparent average of all available category scores, not a weighted causal model.",
     "Do not infer that the officeholder caused a change merely because it occurred during their tenure.",
     "Keep raw values, units, populations, periods, sources and limitations visible beside scores.",
     "Do not convert missing or unpublished data into zero. Display a reason and the evidence coverage.",
@@ -47,8 +55,10 @@ export const publicRecordMethodology = {
   publicationRules: [
     "Publish each available category score to one decimal place out of 10.",
     "Show the scoring formula, score benchmark, metric count and evidence coverage beside the category score.",
-    "Use the text 'Not scored yet' with a specific reason when no suitable indicator exists; never show an empty value or silently assign zero.",
-    "Do not create an overall average across unlike categories. For the President, keep economic growth and price stability as separate category scores rather than combining them into a broad economy grade.",
+    "Publish an Overall Score as the equal-weight mean of all currently available category scores; always show scored-category coverage beside it.",
+    "Exclude categories marked Not scored yet from the overall calculation; never silently assign zero.",
+    "Do not use overall scores as a league table when category coverage or evidence definitions differ.",
+    "For the President, keep economic growth and price stability as separate category scores rather than combining them into a broad economy grade.",
     "Keep the President's national record and the FCT Minister's FCT record separate from governor state comparisons.",
     "Disclose when a category score is provisional because its reporting period does not match the full period or benchmark.",
   ],
