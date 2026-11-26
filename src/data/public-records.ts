@@ -193,6 +193,11 @@ export function getPublicRecordIndicators(person: { office: string; state?: stri
   }
 
   const missing = [...(record.missing || [])];
+  if (person.office === "Governor") {
+    missing.push({ id: "governor-commitment-register", label: "Governor's public commitment register", period: "Current term", reason: "Sabi has not yet published an item-by-item register linking this governor's original manifesto or attributable pledges to independently checked delivery evidence. The register must be built from source documents rather than inferred from general news coverage." });
+  } else if (person.office === "FCT Minister") {
+    missing.push({ id: "fct-policy-commitments", label: "FCT Minister's policy and project register", period: "Current appointment", reason: "The FCT Minister is appointed rather than elected. Sabi is compiling a separate register of attributable policy commitments, project milestones and FCT-specific evidence." });
+  }
   if (jurisdiction === "Federal Capital Territory") {
     missing.push(
       { id: "education-execution-2025", label: "Education budget execution", period: "FY2025", reason: "The cited BudgIT table reports state-government budgets and does not provide a directly comparable FCT entry." },
