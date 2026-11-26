@@ -265,6 +265,18 @@ export const tenureEvidenceSources: EvidenceSource[] = [
     officeScope: "national",
   },
   {
+    id: "nalabe-2022-state-learning-assessment", category: "education",
+    title: "National Assessment of Learning Achievement in Basic Education (NALABE) 2022",
+    publisher: "Universal Basic Education Commission and UNICEF",
+    url: "https://www.unicef.org/nigeria/media/14341/file/NALABE%202022%20Report_pdf.pdf.pdf",
+    period: "Assessment October 2022; report published December 2025",
+    geography: "National, all 36 states and FCT",
+    resolution: "state-and-national", evidenceType: "official-statistics",
+    use: "Nationally representative assessments of P3, P5 and JS2 learners in mathematics and English, plus P5 and JS2 in basic science/technology and social studies. State tables report mean scale scores and percentages below, partially meeting, meeting and exceeding proficiency.",
+    limitation: "This is a pre-May-2023 baseline, not an assessment of current governors. The weighted learner counts in state tables are not raw tested sample sizes; some state samples are small and should be interpreted using the report's survey design and uncertainty limitations.",
+    officeScope: "subnational",
+  },
+  {
     id: "unicef-sitan-2024", category: "education",
     title: "Situation Analysis of Children and Adolescents in Nigeria 2024",
     publisher: "UNICEF and Federal Ministry of Budget and Economic Planning",
@@ -637,6 +649,16 @@ const nationalObservations: EvidenceObservation[] = [
     note: "Modelled national estimates, not annual survey counts. Use the full series and uncertainty intervals; this two-year change is not an individual officeholder attribution.",
   },
   {
+    id: "nalabe-national-learning-2022", category: "education",
+    label: "National minimum-proficiency rates in basic education",
+    value: "P3 mathematics 50% · P3 English 32% · P5 mathematics 34% · P5 English 44% · JS2 mathematics 14% · JS2 English 31%.",
+    period: "October 2022 assessment; report published December 2025", geography: "Nigeria",
+    publisher: "UBEC / UNICEF — NALABE 2022",
+    url: "https://www.unicef.org/nigeria/media/14341/file/NALABE%202022%20Report_pdf.pdf.pdf",
+    evidenceType: "official-statistics",
+    note: "Minimum proficiency means proficiency levels 3 or 4. The sample included 75,067 P3, 71,041 P5 and 23,564 JS2 learners. This is a pre-tenure baseline and not an assessment of the administrations that began in May 2023.",
+  },
+  {
     id: "learning-baseline-mics", category: "education",
     label: "Foundational learning baseline",
     value: "27% of children aged 7–14 had core reading skills; 25% had foundational numeracy skills",
@@ -711,6 +733,7 @@ const nationalObservations: EvidenceObservation[] = [
 import {micsStateBaseline2021,micsBaselineSource} from "@/data/mics-baselines";
 import {stateEducationCensus2024,educationCensusSource} from "@/data/education-census-baseline";
 import {stateSecurity2024To2025,stateSecuritySource} from "@/data/security-state-2024-25";
+import {nalabeStateLearning2022,nalabeSource} from "@/data/nalabe-baselines";
 
 export function getTenureEvidence(person: { office: string; state?: string; termStart?: string }) {
   const scope = person.office === "President" ? "national" : "subnational";
@@ -725,6 +748,25 @@ export function getTenureEvidence(person: { office: string; state?: string; term
     return ["acled-security-2024-25", "child-mortality-2023-24", "wash-baseline-2021", "nerc-generation-2021-24", "budgit-state-revenue-2023-24"].includes(item.id);
   });
 
+  const nalabeRecords = person.state ? nalabeStateLearning2022 : undefined;
+  if (person.state && nalabeRecords) {
+    (["P3 mathematics","P5 mathematics","JS2 mathematics"] as const).forEach(level => {
+      const result = nalabeRecords[level][person.state!];
+      if (!result) return;
+      observations.unshift({
+        id: "nalabe-" + level.toLowerCase().replaceAll(" ","-") + "-2022",
+        category: "education",
+        label: "NALABE " + level + " — mean scale score and minimum proficiency",
+        value: result.meanScaleScore + " mean scale score · " + result.minimumProficiencyPercent + "% meeting/exceeding minimum proficiency · weighted n=" + result.weightedLearnerCount.toLocaleString("en-NG"),
+        period: nalabeSource.period,
+        geography: person.state || "State",
+        publisher: nalabeSource.publisher,
+        url: nalabeSource.url,
+        evidenceType: "official-statistics",
+        note: nalabeSource.note + " NALABE's proficiency levels 3 and 4 define meeting or exceeding minimum proficiency; weighted n is not the raw tested sample.",
+      });
+    });
+  }
   const stateRecord = person.state ? stateLabourBaseline2023[person.state] : undefined;
   const micsRecord = person.state ? micsStateBaseline2021[person.state] : undefined;
   const educationCensus = person.state ? stateEducationCensus2024[person.state] : undefined;
