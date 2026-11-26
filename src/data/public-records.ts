@@ -152,7 +152,7 @@ function makeIndicator(
   return {
     id, category, label, value, unit, displayValue, period: source.period,
     sourceLabel: source.label, publisher: source.publisher, sourceUrl: source.url,
-    ...(source === sources.igr ? { secondarySourceUrl: sources.igr.secondary } : {}),
+    ...("secondary" in source ? { secondarySourceUrl: source.secondary } : {}),
     publishedAt: source.publishedAt, note, ...(population ? { population } : {}),
   };
 }
@@ -210,7 +210,7 @@ export function getPublicRecordIndicators(person: { office: string; state?: stri
 export function describePublicRecord(person: { name: string; office: string; state?: string }) {
   const record = getPublicRecordIndicators(person);
   if (person.office === "President") {
-    return "The national record shown here combines consumer-price inflation, quarterly real GDP growth and a national childhood-vaccination survey estimate. These indicators cover different periods and measure different parts of public life; they do not, by themselves, establish how much change was caused by the President. The linked evidence register identifies the reporting body, reference period and limitations for each figure.";
+    return "The national record reports headline inflation of 14.06% year-on-year in October 2026 and real GDP growth of 4.43% year-on-year in Q2 2026. The NDHS 2023–24 survey reported that 39% of children aged 12–23 months nationally had received all basic antigens. These indicators cover different periods and measure different parts of public life; they do not, by themselves, establish how much change was caused by the President. The linked evidence identifies the reporting body, reference period and limitations for each figure.";
   }
   const area = person.state || "the relevant jurisdiction";
   const facts = record.indicators.map(item => `${item.label.toLowerCase()}: ${item.displayValue} (${item.period})`);
