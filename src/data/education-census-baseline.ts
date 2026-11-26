@@ -50,6 +50,9 @@ export const stateEducationCensus2024: Record<string, StateEducationCensus> = {
   Plateau: { learners:628699, learnerTeacherRatio:26.3, learnerClassroomRatio:33.0, learnerToiletRatio:113.0, femaleLearnersPercent:50.6, femaleTeachersPercent:49.3, specialNeedsLearners:5364 },
   Rivers: { learners:null, learnerTeacherRatio:null, learnerClassroomRatio:null, learnerToiletRatio:null, femaleLearnersPercent:null, femaleTeachersPercent:null, specialNeedsLearners:null },
   Sokoto: { learners:1212573, learnerTeacherRatio:65.2, learnerClassroomRatio:82.4, learnerToiletRatio:269.4, femaleLearnersPercent:46.3, femaleTeachersPercent:29.5, specialNeedsLearners:10592 },
+  Taraba: { learners:1184014, learnerTeacherRatio:83.2, learnerClassroomRatio:91.6, learnerToiletRatio:854.3, femaleLearnersPercent:47.8, femaleTeachersPercent:33.8, specialNeedsLearners:2921 },
+  Yobe: { learners:1140079, learnerTeacherRatio:62.3, learnerClassroomRatio:98.8, learnerToiletRatio:160.2, femaleLearnersPercent:51.3, femaleTeachersPercent:44.7, specialNeedsLearners:23352 },
+  Zamfara: { learners:1061437, learnerTeacherRatio:50.0, learnerClassroomRatio:76.1, learnerToiletRatio:180.7, femaleLearnersPercent:41.8, femaleTeachersPercent:41.6, specialNeedsLearners:15336 },
 };
 
 export const educationCensusSource = {
@@ -61,8 +64,5 @@ export const educationCensusSource = {
   nationalReportingRate: 57.9,
   totalSchools: 215033,
   schoolsReported: 124543,
-  note: "The portal reports only 57.9% of listed schools submitted data nationally. Some state totals and ratios are extreme or visibly incomplete; the page table omits Taraba, Yobe and Zamfara and shows Rivers with zero learners and blank ratios. Those are missing returns, not zero-performing systems. All state rows are raw administrative reporting, not necessarily representative or directly comparable across the entire school universe. Verify anomalous entries against state EMIS returns before trend or performance use."
+  note: "The portal reports only 57.9% of listed schools submitted data nationally. All 36 states and FCT have rows, but Rivers is rendered as zero learners, zero special-needs learners and blank ratios; treat this as no usable return, not evidence of zero learners. Some other state totals and ratios are extreme or incomplete (for example Cross River reports 9,145 learners and Taraba reports 854.3 learners per toilet). All are raw administrative returns, not necessarily representative or directly comparable across the full school universe. Verify anomalies against state EMIS returns before trend or performance use."
 };
-  Taraba: { learners:1184014, learnerTeacherRatio:83.2, learnerClassroomRatio:91.6, learnerToiletRatio:854.3, femaleLearnersPercent:47.8, femaleTeachersPercent:33.8, specialNeedsLearners:2921 },
-  Yobe: { learners:1140079, learnerTeacherRatio:62.3, learnerClassroomRatio:98.8, learnerToiletRatio:160.2, femaleLearnersPercent:51.3, femaleTeachersPercent:44.7, specialNeedsLearners:23352 },
-  Zamfara: { learners:1061437, learnerTeacherRatio:50.0, learnerClassroomRatio:76.1, learnerToiletRatio:180.7, femaleLearnersPercent:41.8, femaleTeachersPercent:41.6, specialNeedsLearners:15336 },
