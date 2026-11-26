@@ -18,9 +18,9 @@ export default function ShareCard({kind="SABI / PUBLIC INTEREST",kicker,title,su
  async function makeImage(){
   const canvas=document.createElement("canvas");canvas.width=1080;canvas.height=format==="square"?1080:format==="story"?1920:1350;
   const ctx=canvas.getContext("2d");if(!ctx)throw new Error("Image rendering is not supported on this device.");
-  ctx.fillStyle="#f2f0e7";ctx.fillRect(0,0,1080,1350);
+  ctx.fillStyle="#f2f0e7";ctx.fillRect(0,0,1080,canvas.height);
   ctx.fillStyle="#11120f";ctx.fillRect(0,0,1080,18);
-  ctx.fillStyle="#6758e8";ctx.fillRect(0,18,22,1332);
+  ctx.fillStyle="#6758e8";ctx.fillRect(0,18,22,canvas.height-18);
   ctx.fillStyle="#11120f";ctx.font="500 25px monospace";ctx.fillText("SABI POLITICS",72,94);
   ctx.fillStyle="#6758e8";ctx.font="700 24px monospace";ctx.fillText("INDEPENDENT / NON-PARTISAN",72,148);
   ctx.fillStyle="#c5ff43";ctx.fillRect(72,188,220,12);
