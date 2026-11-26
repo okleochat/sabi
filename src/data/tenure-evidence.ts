@@ -109,6 +109,30 @@ export const quarterlyLabourSeries2022To2024 = [
 // "Source discovered" is not the same as "every record has been extracted".
 export const tenureEvidenceSources: EvidenceSource[] = [
   {
+    id: "undp-global-mpi-2026-nigeria", category: "cost-of-living",
+    title: "Global Multidimensional Poverty Index 2026 — Nigeria country profile",
+    publisher: "UNDP Human Development Report Office and Oxford Poverty and Human Development Initiative",
+    url: "https://hdr.undp.org/sites/default/files/Country-Profiles/MPI2026/NGA.pdf",
+    period: "Most recent Nigeria survey data: 2024; Global MPI update October 2026",
+    geography: "National",
+    resolution: "national", evidenceType: "international-monitoring",
+    use: "Latest publicly available survey data used for Nigeria in the Global MPI 2026 country profile: incidence, intensity, MPI value, vulnerability, severe multidimensional poverty and dimension contributions.",
+    limitation: "This Global MPI uses a different three-dimension/ten-indicator method from Nigeria's four-dimension National MPI 2022. The 2024 survey result must not be directly compared with the 2021/22 National MPI estimate as if it were the same series or a time trend. It is national only, not state-specific.",
+    officeScope: "national",
+  },
+  {
+    id: "ndhs-food-insecurity-2024", category: "cost-of-living",
+    title: "Nigeria Demographic and Health Survey 2024 — Table 2.15 Food Insecurity",
+    publisher: "Federal Ministry of Health and Social Welfare, National Population Commission and ICF",
+    url: "https://www.health.gov.ng/wp-content/uploads/2025/10/NDHS-2024-Final-Report_Disseminated17102025.pdf",
+    period: "2024 survey; report published September 2025",
+    geography: "National, all 36 states and FCT",
+    resolution: "state-and-national", evidenceType: "official-statistics",
+    use: "State-level and national moderate/severe and severe food insecurity using the FAO Food Insecurity Experience Scale, based on household reports of constraints on access to adequate food in the previous 12 months.",
+    limitation: "Household survey estimate, not a direct causal assessment of an officeholder. Preserve the exact de jure population and survey sample definition; the survey refers to the 12 months preceding each interview and is not a monthly food-price measure.",
+    officeScope: "both",
+  },
+  {
     id: "nbs-mpi-2022", category: "cost-of-living",
     title: "Nigeria Multidimensional Poverty Index Survey Results 2022 — state estimates, confidence intervals and deprivations",
     publisher: "National Bureau of Statistics, with UNDP and UNICEF technical support",
@@ -628,6 +652,26 @@ export const tenureEvidenceSources: EvidenceSource[] = [
 
 const nationalObservations: EvidenceObservation[] = [
   {
+    id: "global-mpi-2024-survey", category: "cost-of-living",
+    label: "Global Multidimensional Poverty Index — latest Nigerian survey",
+    value: "MPI 0.269 · 48.7% multidimensionally poor (113.316m people) · 18.1% vulnerable (42.225m) · 28.7% in severe multidimensional poverty · intensity 55.1%.",
+    period: "Survey data 2024; Global MPI 2026 release", geography: "Nigeria",
+    publisher: "UNDP Human Development Report Office / OPHI",
+    url: "https://hdr.undp.org/sites/default/files/Country-Profiles/MPI2026/NGA.pdf",
+    evidenceType: "international-monitoring",
+    note: "Global MPI method: three equally weighted dimensions and ten indicators. This is not directly comparable to the National MPI 2022, which uses a separate four-dimension Nigerian framework; the two figures must not be presented as a single time series.",
+  },
+  {
+    id: "ndhs-food-insecurity-national-2024", category: "cost-of-living",
+    label: "Food insecurity — NDHS 2024",
+    value: "67.7% experienced moderate or severe food insecurity; 33.0% experienced severe food insecurity; survey counted 180,720 de jure persons.",
+    period: "2024 survey; published September 2025", geography: "Nigeria",
+    publisher: "Federal Ministry of Health and Social Welfare / NPC / ICF",
+    url: "https://www.health.gov.ng/wp-content/uploads/2025/10/NDHS-2024-Final-Report_Disseminated17102025.pdf",
+    evidenceType: "official-statistics",
+    note: "Food Insecurity Experience Scale based on eight questions about access to adequate food in the preceding 12 months. The national survey reports urban 66.7% and rural 68.6% moderate/severe food insecurity. Not a measure of month-to-month food prices.",
+  },
+  {
     id: "nigeria-mpi-2022-national", category: "cost-of-living",
     label: "Multidimensional poverty — national baseline",
     value: "MPI 0.257 · 62.9% incidence (95% CI 61.9–63.8) · 40.9% intensity · 132.92 million people identified as multidimensionally poor.",
@@ -914,6 +958,7 @@ import {stateSecurity2024To2025,stateSecuritySource} from "@/data/security-state
 import {nalabeStateLearning2022,nalabeSource} from "@/data/nalabe-baselines";
 import {stateDhIs2Immunisation2023To2024,dhis2ImmunisationSource} from "@/data/dhis2-immunisation";
 import {stateMpi2022,stateMpiSource} from "@/data/mpi-baselines";
+import {stateFoodInsecurity2024,ndhsFoodInsecuritySource} from "@/data/ndhs-food-insecurity";
 
 export function getTenureEvidence(person: { office: string; state?: string; termStart?: string }) {
   const scope = person.office === "President" ? "national" : "subnational";
@@ -945,6 +990,21 @@ export function getTenureEvidence(person: { office: string; state?: string; term
         evidenceType: "official-statistics",
         note: nalabeSource.note + " NALABE's proficiency levels 3 and 4 define meeting or exceeding minimum proficiency; weighted n is not the raw tested sample.",
       });
+    });
+  }
+  const foodInsecurity = person.state ? stateFoodInsecurity2024[person.state] : undefined;
+  if (foodInsecurity) {
+    observations.unshift({
+      id:"ndhs-food-insecurity-2024-state",
+      category:"cost-of-living",
+      label:"Food insecurity — NDHS 2024",
+      value:foodInsecurity.moderateOrSevere.toFixed(1)+"% moderate or severe · "+foodInsecurity.severe.toFixed(1)+"% severe · survey persons="+foodInsecurity.samplePersons.toLocaleString("en-NG"),
+      period:ndhsFoodInsecuritySource.period,
+      geography:person.state || "State",
+      publisher:ndhsFoodInsecuritySource.publisher,
+      url:ndhsFoodInsecuritySource.url,
+      evidenceType:"official-statistics",
+      note:ndhsFoodInsecuritySource.note,
     });
   }
   const mpiRecord = person.state ? stateMpi2022[person.state] : undefined;
