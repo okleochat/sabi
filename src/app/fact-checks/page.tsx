@@ -1,0 +1,6 @@
+import type {Metadata} from "next";
+import Link from "next/link";
+import {getPublishedRecords} from "@/lib/data";
+export const metadata:Metadata={title:"Fact-check library"};
+export const dynamic="force-dynamic";
+export default async function FactChecksPage(){const records=await getPublishedRecords("factchecks");return <div className="wrap"><section className="page-intro"><div className="kicker">Sabi Check · Evidence library</div><h1>Claims, checked<br/>with evidence.</h1><p>Fact-checks published by Sabi after editorial review. Each entry should show its verdict, the reasoning and links to the evidence.</p></section><section className="section">{records.length?<div className="content-grid">{records.map((r:any)=><article className="content-card" key={r.id}><div className="eyebrow">{r.verdict||"Review"}</div><h3>{r.title||r.claim}</h3><p>{r.summary||""}</p><Link href={"/fact-check/"+(r.slug||r.id)}>Read fact-check ↗</Link></article>)}</div>:<div className="empty-state">No fact-checks have been published yet. Submitted claims remain private to the newsroom until they are reviewed and an editor approves publication.</div>}</section></div>;}

@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import { getPublishedRecords } from "@/lib/data";
+export const metadata:Metadata={title:"News and analysis"};
+export const dynamic="force-dynamic";
+export default async function NewsPage(){const stories=await getPublishedRecords("articles");return <div className="wrap"><section className="page-intro"><div className="kicker">Sabi newsroom</div><h1>Reporting with<br/>receipts.</h1><p>Election news, explainers and analysis with clear sourcing, publication dates and a distinction between reporting and opinion.</p></section><section className="section">{stories.length?<div className="content-grid">{stories.map((s:any)=><article className="content-card" key={s.id}><div className="eyebrow">{s.category||"Sabi report"}</div><h3>{s.title}</h3><p>{s.summary||""}</p><span className="notice">{s.publishedAt||""}</span></article>)}</div>:<div className="empty-state">No stories have been published yet. The newsroom will add reports after editorial review and source verification.</div>}</section></div>;}
