@@ -5,6 +5,7 @@ import {politicianSeeds} from "@/data/politicians";
 import {politicianPortraits} from "@/data/politician-media";
 import {getPublicRecordIndicators,getPublicRecordScores,describePublicRecord} from "@/data/public-records";
 import {publicRecordMethodology} from "@/lib/score-methodology";
+import {getTenureEvidence} from "@/data/tenure-evidence";
 import ShareCard from "@/app/components/ShareCard";
 
 export const dynamicParams=false;
@@ -29,6 +30,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
  const portrait=politicianPortraits[p.id];
  const record=getPublicRecordIndicators(p);
  const scorecard=getPublicRecordScores(p);
+ const tenureEvidence=getTenureEvidence(p);
  const periods=[...new Set(record.indicators.map(x=>x.period))];
  const summary=describePublicRecord(p);
  const roleDescription=p.office==="Governor"?"Governor of "+p.state+", Nigeria":p.office==="President"?"President of the Federal Republic of Nigeria":"Minister of the Federal Capital Territory";
@@ -126,6 +128,53 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
      <div className="source-note"><b>{item.publisher}</b> · {item.sourceLabel} · Published {item.publishedAt}<br/><a href={item.sourceUrl} target="_blank" rel="noreferrer">OPEN PRIMARY SOURCE ↗</a>{item.secondarySourceUrl?<><span> · </span><a href={item.secondarySourceUrl} target="_blank" rel="noreferrer">TRANSCRIPTION / CROSS-CHECK ↗</a></>:null}</div>
     </article>)}
    </div>:<div className="empty-state">No comparable source-linked indicators have been added to this profile yet. The data gaps below explain the next records required.</div>}
+  </section>
+
+  <section className="profile-research">
+   <div className="eyebrow"><span/>THE LONGITUDINAL RESEARCH DESK / {tenureEvidence.sources.length} SOURCE SERIES</div>
+   <h2>LOOK BEYOND<br/>THE SNAPSHOT.</h2>
+   <p className="notice">This research file brings together historical series, surveys, administrative reports, independent monitoring and original campaign documents. A listed source is a research lead, not proof of an officeholder's personal contribution. Each item retains its reference period, geographic coverage and limitations.</p>
+   {tenureEvidence.observations.length?<div className="content-grid">
+    {tenureEvidence.observations.map(item=><article className="content-card" key={item.id}>
+     <div className="eyebrow">{item.category.toUpperCase().replaceAll("-"," ")} / {item.geography.toUpperCase()}</div>
+     <h3>{item.label}</h3>
+     <strong style={{font:"700 clamp(20px,3vw,30px)/1.1 var(--display)",letterSpacing:"-.04em",display:"block",margin:"8px 0"}}>{item.value}</strong>
+     <p><b>Reference period:</b> {item.period}</p>
+     <p>{item.note}</p>
+     <div className="source-note"><b>{item.publisher}</b> · {item.evidenceType.replaceAll("-"," ")}<br/><a href={item.url} target="_blank" rel="noreferrer">OPEN SOURCE ↗</a></div>
+    </article>)}
+   </div>:null}
+   {tenureEvidence.quarterlyLabourSeries.length?<article className="content-card" style={{marginTop:18}}>
+    <div className="eyebrow">NBS / QUARTERLY LABOUR SERIES</div>
+    <h3>Published labour-market observations</h3>
+    <p>These are the six quarters compared in the NBS Q2 2024 report. Q4 2023 is not present in that published comparison and has not been interpolated.</p>
+    <div style={{overflowX:"auto",marginTop:12}}>
+     <table style={{width:"100%",borderCollapse:"collapse",minWidth:620,textAlign:"left"}}>
+      <thead><tr>{["Period","Unemployment","Participation","Employment / population","Underemployment","LU2"].map(label=><th key={label} style={{padding:"9px 8px",borderBottom:"1px solid var(--line)",fontSize:11}}>{label}</th>)}</tr></thead>
+      <tbody>{tenureEvidence.quarterlyLabourSeries.map(row=><tr key={row.period}>
+       <td style={{padding:"9px 8px",borderBottom:"1px solid var(--line)"}}>{row.period}</td>
+       <td style={{padding:"9px 8px",borderBottom:"1px solid var(--line)"}}>{row.unemployment.toFixed(1)}%</td>
+       <td style={{padding:"9px 8px",borderBottom:"1px solid var(--line)"}}>{row.participation.toFixed(1)}%</td>
+       <td style={{padding:"9px 8px",borderBottom:"1px solid var(--line)"}}>{row.employmentToPopulation.toFixed(1)}%</td>
+       <td style={{padding:"9px 8px",borderBottom:"1px solid var(--line)"}}>{row.underemployment.toFixed(1)}%</td>
+       <td style={{padding:"9px 8px",borderBottom:"1px solid var(--line)"}}>{row.lu2.toFixed(1)}%</td>
+      </tr>)}</tbody>
+     </table>
+    </div>
+    <div className="source-note">Source: National Bureau of Statistics, Nigeria Labour Force Survey Q2 2024. <a href="https://nigerianstat.gov.ng/pdfuploads/NLFS_Q2_2024.pdf" target="_blank" rel="noreferrer">OPEN ORIGINAL TABLE ↗</a>. Read the report's methods before comparing across survey rounds.</div>
+   </article>:null}
+   <div className="eyebrow" style={{marginTop:28}}>SOURCE REGISTER / {tenureEvidence.sources.length} DOCUMENTS AND DATA PORTALS</div>
+   <div className="content-grid">
+    {tenureEvidence.sources.map(source=><article className="content-card" key={source.id}>
+     <div className="eyebrow">{source.category.toUpperCase().replaceAll("-"," ")} / {source.evidenceType.replaceAll("-"," ")}</div>
+     <h3>{source.title}</h3>
+     <p><b>Publisher:</b> {source.publisher}</p>
+     <p><b>Coverage:</b> {source.period} · {source.geography}</p>
+     <p>{source.use}</p>
+     <p><b>Limitations:</b> {source.limitation}</p>
+     <div className="source-note"><a href={source.url} target="_blank" rel="noreferrer">OPEN ORIGINAL SOURCE ↗</a></div>
+    </article>)}
+   </div>
   </section>
 
   <section className="profile-research">
