@@ -1,55 +1,68 @@
-# Sabi Public Records methodology v2.0.0
+# Sabi Public Records methodology v2.1.0
 
 ## Purpose
 
-Sabi makes public records easier to inspect. The product presents sourced observations, public commitments, actions and outcomes in plain language. It does not publish composite political ratings, league tables, winner/loser labels or numerical verdicts about officeholders.
+Sabi publishes category scores out of 10 wherever the public record contains a usable, source-linked metric and a disclosed benchmark. Scores are attached to the measured category, not presented as a single overall politician rating. They describe observed jurisdictional results or benchmark position; they do not, by themselves, prove that an officeholder caused those results.
 
-## What appears on an officeholder profile
+## The 0–10 scale
 
-Each profile separates the following evidence types:
+All scores are shown to one decimal place. Each category score is the arithmetic mean of the indicator scores available in that category. The page shows the number of available indicators, the scoring basis, reporting periods and limitations. Missing indicators are not converted to zero.
 
-- **Public outcomes:** survey results and population measures, with their population definitions and reference periods.
-- **Fiscal records:** internally generated revenue, budget allocations and reported expenditure. Nominal revenue totals are not per-capita figures; budget execution is not a direct measure of service quality.
-- **Commitment register:** a source-linked list of specific promises, their original wording and deadlines, the officeholder's stated position, evidence of action or delivery, and a descriptive status.
-- **Actions and projects:** dated government decisions, legislation, procurement records, contracts, milestones and independently documented completion.
-- **Data gaps and disputes:** missing datasets, publisher exclusions, conflicting figures and corrections are visible rather than silently converted into zero or a negative finding.
+### Governors — fiscal revenue position
 
-## Commitment status definitions
+- Indicator: total nominal internally generated revenue (IGR), calendar year 2025.
+- Comparison: 36 states.
+- Formula: **10 × (36 − rank) ÷ 35**. The highest IGR receives 10.0 and the lowest receives 0.0.
+- FCT: the FCT Minister's jurisdiction is benchmarked separately against all 36 states plus the FCT.
+- Important limitation: this is a peer-position score for total nominal revenue, not per-capita revenue, inflation-adjusted growth, household prosperity or a complete measure of economic performance. State size, tax base and economic structure influence the total.
 
-- **Fulfilled:** evidence supports delivery of the specific promised output or outcome.
-- **Partly reported:** some elements are documented, but full delivery is not established.
-- **Underway:** an implementation step is documented; this is not the same as delivery.
-- **Not yet due:** the published deadline has not passed.
-- **Evidence not found:** a reasonable review did not locate evidence; this is not proof that no action occurred.
-- **Disputed:** credible sources materially disagree, and the disagreement is displayed.
+### Governors — education budget execution
 
-Announcements, budget allocations, contract awards and groundbreakings are not treated as proof that a service or outcome has been delivered. Inherited projects and shared federal/state responsibilities are identified where evidence permits.
+- Indicator: FY2025 education expenditure as a percentage of the approved education budget, from BudgIT's 2026 State of States Report.
+- Formula: **max(0, 10 − |100 − execution percentage| ÷ 10)**, capped at 10.0.
+- Exact execution of 100% earns 10.0. Under- or over-execution moves the score away from 10. Overspending is not rewarded with extra points.
+- Important limitation: budget execution measures spending against an approved allocation. It does not prove that learning improved, schools were adequately staffed or funds were spent efficiently.
 
-## Indicator rules
+### Health — governors and FCT
 
-Every item shows its value, unit, population (where applicable), reporting period, publisher, source link, publication date and limitations. Sabi keeps economic, security, health, education, infrastructure and fiscal indicators separate. Unlike measures are not blended into an overall number.
+- Indicators: (a) FY2025 health budget execution from BudgIT's 2026 Health Financing Report, and (b) the 2024 NDHS percentage of children aged 12–23 months fully vaccinated for all basic antigens.
+- Budget execution uses the same distance-from-100 formula as education.
+- Vaccination score: **coverage percentage ÷ 10**.
+- Category score: equal-weight average of the available indicator scores. Where a state is excluded from the health budget dataset, the NDHS score is shown alone and the profile reports the reduced evidence coverage.
+- Important limitation: this combines a fiscal-process indicator with a household-survey outcome from a different reporting period. The NDHS figure describes the surveyed population; it is not a change score or a causal estimate of the governor's contribution.
 
-Where comparable baseline and follow-up values exist, both may be shown with the dates and definitions. A change observed during a term is not automatically attributed to the officeholder. Peer-state context may be shown only where definitions, time periods and coverage are comparable; Sabi does not turn that context into a political ranking.
+### President — economy and fiscal conditions
 
-Missing data is never assigned zero. Where a publisher excludes a state or does not publish a comparable FCT figure, the profile explains the stated reason. Values are presented as reported, including expenditure execution above 100%, with the underlying report linked.
+- Indicators: Q2 2026 real GDP growth compared with the 2026 Federal Government budget projection of 4.68%, and October 2026 year-on-year headline inflation compared directionally with the 2026 budget assumption of 16.5%.
+- GDP score: **min(10, actual GDP growth ÷ 4.68 × 10)**.
+- Inflation score: **min(10, 16.5 ÷ actual headline inflation × 10)**.
+- Category score: arithmetic mean of the two indicator scores.
+- Important limitation: the GDP figure is a Q2 year-on-year observation and inflation is an October year-on-year observation, while the benchmarks are full-year 2026 budget assumptions. The score is therefore provisional, directional benchmark tracking—not a final annual assessment. Food inflation, reserves and public debt are shown as contextual figures but are not included in this category score without a directly comparable score benchmark.
 
-## Jurisdiction
+### President — health outcomes
 
-The President's profile uses national indicators and federal commitments. Governor profiles use state-level evidence. The FCT Minister's profile uses FCT-specific records and clearly identified national series where relevant. The FCT is not forced into a 36-state governor comparison.
+- Indicator: 2024 NDHS national percentage of children aged 12–23 months fully vaccinated for all basic antigens.
+- Score: **coverage percentage ÷ 10**.
+- Important limitation: this is a national survey-level measure. Health delivery is shared among federal, state and local institutions; the figure does not establish an individual presidential contribution.
 
-## Editorial controls
+## Categories not yet scored
 
-Every published factual claim needs a source URL, publisher, publication date, access date, relevant data and verification status. Prioritise official statistics, audited accounts, budget implementation reports, court records, legislation, regulator data, procurement records and credible independent research.
+Integrity and manifesto delivery, security, infrastructure, and any education or service category without a comparable indicator are labelled **Not scored yet**, with a reason. A commitment score will only be published after a specific attributable promise, its deadline and the supporting evidence decision have been recorded and approved. No category receives an invented zero or an inferred score.
 
-Government announcements are labelled as government claims unless independently corroborated. Conflicting sources are displayed with their differences. Editors record corrections, right-of-reply requests and methodology changes in a public change log. Automated research may prepare a source-linked draft but does not publish or change public records without human editorial review.
+## Reading and comparing scores
 
-## Initial source register
+A score is only comparable where the same formula, definition, population and period are used. Fiscal peer position is not an absolute grade. An indicator may be affected by population size, inherited infrastructure, federal policy, economic shocks and other factors beyond an officeholder's control. Sabi does not infer causation from correlation.
+
+Every score links to its source and displays the underlying value, period, population/definition, publisher and known limitations. Government announcements are labelled as government claims unless corroborated. Conflicting records and corrections are displayed and logged.
+
+## Source register
 
 - **NBS 2025 Internally Generated Revenue:** https://microdata.nigerianstat.gov.ng/index.php/catalog/170/related-materials
-- **BudgIT 2026 State of States Report:** https://budgit.org/wp-content/uploads/2026/11/States26SMDF1.pdf
-- **BudgIT 2026 Health Financing Report:** https://budgit.org/wp-content/uploads/2026/04/HealthFinancingReport__.pdf
-- **Federal Ministry of Health, The State of Health of the Nation Report 2024 / NDHS:** https://fmohconnect.gov.ng/wp-content/uploads/2025/05/The-State-of-Health-of-the-Nation-Report-2024.pdf
-- **CBN Monetary Policy Communiqué No. 165:** https://www.cbn.gov.ng/Out/2026/CCD/MPC%20Communique%20No%20165%20of%20November%202026.pdf
-- **CBN Second Quarter 2026 Economic Report:** https://www.cbn.gov.ng/Out/2026/RSD/Second%20Quarter%202026%20Economic%20Report.pdf
+- **Joint Tax Board 2024/2025 Year Book, page 14 — 2024 IGR comparison:** https://cms-api.jrb.gov.ng/api/publication-assets/file/2024-2025-jtb-year-book.pdf
+- **BudgIT 2026 State of States Report, page 155 — FY2025 education budget execution:** https://budgit.org/wp-content/uploads/2026/11/States26SMDF1.pdf
+- **BudgIT 2026 Health Financing Report — FY2025 health budget execution:** https://budgit.org/wp-content/uploads/2026/04/HealthFinancingReport__.pdf
+- **Nigeria Demographic and Health Survey 2024, published September 2025:** https://www.health.gov.ng/wp-content/uploads/2025/10/NDHS-2024-Final-Report_Disseminated17102025.pdf
+- **2026 Federal Government budget assumptions, National Assembly document:** https://nass.gov.ng/documents/download/11234
+- **Nigeria Macro Dashboard, Federal Ministry of Finance:** https://finance.gov.ng/?page_id=26
 
-See `RESEARCH-EVIDENCE-REGISTER.md` for the detailed source trail and limitations. See `PORTRAIT-SOURCING-REGISTER.md` for image provenance.
+See `RESEARCH-EVIDENCE-REGISTER.md` for detailed source coverage and limitations. See `PORTRAIT-SOURCING-REGISTER.md` for image provenance.
