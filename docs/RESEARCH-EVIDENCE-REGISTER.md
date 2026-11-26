@@ -339,3 +339,42 @@ The public-record dashboard publishes the source observations below with their u
 - **Comparators shown:** headline inflation 18.97% year-on-year (October 2025); real GDP growth 4.23% year-on-year (Q2 2025).
 - **Cross-check:** CBN Monetary Policy Communiqué No. 165 (24 November 2026): https://www.cbn.gov.ng/Out/2026/CCD/MPC%20Communique%20No%20165%20of%20November%202026.pdf
 - **Limitations:** indicators have different definitions and reference dates. A lower inflation rate means prices are rising more slowly, not that the overall price level fell. Debt stock must be read with debt service, revenue, GDP and maturity profile. Macroeconomic trends do not by themselves establish how much change was caused by the President.
+
+
+## 0–10 category score release (checked 27 November 2026)
+
+Category scores are provisional indicator scores. They are not averaged into a single politician rating. The exact formulas and limitations are published in `SABI-INTELLIGENCE-METHODOLOGY.md`.
+
+### Fiscal revenue peer score
+- 2025 state IGR values are from the NBS 2025 release and are ranked among the 36 states.
+- The FCT is kept out of the 36-state governor comparison; the FCT Minister's FCT score is separately ranked against all 37 jurisdictions.
+- Formula: 10 × (N − rank) ÷ (N − 1); highest total nominal IGR receives 10.0, lowest receives 0.0.
+- 2024 comparison/reporting context: Joint Tax Board, 2024/2025 Year Book, page 14: https://cms-api.jrb.gov.ng/api/publication-assets/file/2024-2025-jtb-year-book.pdf
+- This is total nominal revenue, not per-capita revenue, inflation-adjusted growth or a complete measure of prosperity. The peer position is a descriptive fiscal-scale score only.
+
+### Education and health execution scores
+- Education: BudgIT, 2026 State of States Report, page 155, FY2025 education implementation table: https://budgit.org/wp-content/uploads/2026/11/States26SMDF1.pdf
+- Health: BudgIT, 2026 Health Financing Report, FY2025 health budget performance table: https://budgit.org/wp-content/uploads/2026/04/HealthFinancingReport__.pdf
+- Formula for each budget execution indicator: max(0, 10 − |100 − execution percentage| ÷ 10), capped at 10.0.
+- Exact 100% execution receives 10.0. Spending below or above the approved budget receives a lower score; overspending is not rewarded. Budget execution does not prove service quality, learning or health outcomes.
+- Dataset omissions remain disclosed. The education report excludes Rivers; the health table excludes Akwa Ibom and Rivers. An excluded jurisdiction is not assigned zero.
+
+### NDHS health outcome score
+- Primary source: Nigeria Demographic and Health Survey 2024, published September 2025: https://www.health.gov.ng/wp-content/uploads/2025/10/NDHS-2024-Final-Report_Disseminated17102025.pdf
+- Indicator: percentage of children aged 12–23 months fully vaccinated for all basic antigens.
+- Formula: coverage percentage ÷ 10.
+- Limitation: survey coverage level, not change during a specific governor's tenure or proof of a single officeholder's contribution. It is not interchangeable with routine administrative immunisation reporting.
+
+### President's 2026 macro benchmark scores
+- Actual values: Federal Ministry of Finance Nigeria Macro Dashboard, https://finance.gov.ng/?page_id=26
+- Official 2026 assumptions: National Assembly document, https://nass.gov.ng/documents/download/11234 (real GDP growth projection 4.68%; inflation assumption 16.5%).
+- GDP score formula: min(10, Q2 2026 real GDP growth ÷ 4.68 × 10).
+- Inflation score formula: min(10, 16.5 ÷ October 2026 year-on-year headline inflation × 10).
+- The category score is the arithmetic mean of these two benchmark scores.
+- Limitation: the current readings are partial-year observations and do not match the full-year budget-assumption period exactly. This is provisional directional benchmark tracking, not a final annual score. Food inflation, external reserves and public debt remain contextual indicators and are not included in this score.
+
+### Coverage and non-scored categories
+- Each category shows its number of available indicators. Health coverage may be 1/2 in states omitted from the FY2025 health budget table.
+- Integrity and manifesto delivery remain explicitly "Not scored yet" until the item-by-item commitment registers and approved evidence decisions are complete.
+- Security and infrastructure remain unscored until comparable, source-validated indicators with appropriate baselines have been added.
+- No missing category is assigned zero; no overall average is calculated across unlike categories.
