@@ -1,1 +1,44 @@
-export const scoreMethodology={version:"1.2.0",integrity:{name:"Integrity Score",range:"0–100",formula:"100 × sum(commitment importance weight × fulfilment value) / sum(weights for commitments with assessable evidence)",catalogueCoverageThreshold:60,catalogueCoverageRule:"The 60% catalogue threshold marks a complete-register assessment. It no longer blocks publication of a provisional score: whenever at least one commitment has approved, assessable evidence, publish the sample score with an explicit provisional label and show catalogue coverage as unknown or incomplete. Upgrade to a complete assessment once at least 60% of identifiable commitments have been catalogued.",statusValues:{completed:1,substantially_completed:0.75,partially_completed:0.5,not_started:0,abandoned:0,not_verifiable:null},rules:["Commitments must be traceable to a dated manifesto, official campaign document or attributable public pledge.","Publish provisional scores when assessable evidence exists; clearly label sample size and catalogue coverage.","At 60% catalogue coverage, the score may be labelled a complete-register assessment, subject to evidence coverage.","Each commitment has a published importance weight from 1 to 5 and a documented reason.","Unverifiable commitments are listed separately and reduce evidence coverage; they are not treated as completed.","Show catalogue coverage and evidence coverage separately beside any score.","Completion requires independently evidenced delivery, not an announcement, budget allocation, contract award or groundbreaking.","Disclose inherited projects and shared responsibility."]},impact:{name:"Impact Score",range:"0–100",dimensions:[{id:"living-standards",label:"Living standards & poverty",weight:20},{id:"health",label:"Health outcomes & access",weight:20},{id:"education",label:"Education & skills",weight:20},{id:"economy-infrastructure",label:"Jobs, economy & infrastructure",weight:20},{id:"safety-governance",label:"Safety, public services & governance",weight:20}],formula:"Each dimension is scored 0–100 from pre-declared outcome indicators; overall score is the weighted mean. Publish indicator direction, baseline, endline, period, comparator and data quality.",rules:["Use official statistical series, budgets, audited accounts, sector regulators and reputable datasets.","Compare pre-office baseline to current outcomes and, where feasible, national trend or comparable states.","Do not infer causation from correlation; disclose the share reasonably attributable to the officeholder.","Publish the full Sabi Impact Score when at least 3 of 5 dimensions and 60% of planned indicator weight are assessable; until then, show each available dimension and external benchmarks separately.","Show absolute outcomes and per-capita / inflation-adjusted measures where relevant.","External indices and rank-normalised benchmarks must be labelled as external references, never presented as Sabi's own Impact Score."]},confidence:{formula:"Evidence coverage = assessed indicator or commitment weight / total planned weight × 100. Integrity catalogue coverage is reported separately. Confidence is shown separately and never blended into performance."},governance:["Every input and revision has a source URL, publisher, publication date, access date and evidence reference.","AI extracts candidate facts and drafts summaries; human editors approve final statuses, weights and scores.","Corrections and appeals are logged with old value, new value, reason, editor and timestamp.","Scores are versioned; methodology changes trigger recalculation and a visible change log."]} as const;
+/**
+ * Public-record methodology.
+ *
+ * Sabi publishes source-linked observations and commitment evidence statuses.
+ * It does not generate composite political ratings, league tables or verdicts.
+ */
+export const publicRecordMethodology = {
+  version: "2.0.0",
+  principles: [
+    "Publish the underlying observation, unit, population and reporting period rather than converting it into a political rating.",
+    "Keep economic, fiscal, social and service indicators distinct; do not blend unlike measures into a composite number.",
+    "Show baseline and time-series context when the same series is available on a comparable basis.",
+    "Separate official statistics, administrative records, budget execution, independent research, government claims and editorial analysis.",
+    "Do not infer that an officeholder caused a change merely because it occurred during their tenure.",
+    "Do not convert missing or unpublished data into zero, a negative status or an assumed result.",
+    "Record every source URL, publisher, publication date, access date and known limitation.",
+    "Commitment records must link to an attributable public promise and identify the evidence supporting each descriptive status.",
+    "Give officials a clear correction and right-of-reply route; log changes and preserve the earlier public record.",
+  ],
+  indicatorGroups: [
+    { id: "economy", label: "Economy & livelihoods", examples: ["Internally generated revenue", "Labour-market and poverty indicators"] },
+    { id: "security", label: "Security & stability", examples: ["Consistent incident and victimisation series", "Displacement and access measures"] },
+    { id: "health", label: "Health", examples: ["Budget implementation", "Population health and access survey indicators"] },
+    { id: "education", label: "Education", examples: ["Budget implementation", "Enrolment, attendance and learning outcomes"] },
+    { id: "infrastructure", label: "Infrastructure & basic services", examples: ["Water, electricity, roads and digital access"] },
+    { id: "fiscal", label: "Fiscal & governance records", examples: ["Revenue, expenditure, audited accounts and procurement disclosures"] },
+  ],
+  statusDefinitions: {
+    fulfilled: "A specific, attributable commitment with evidence that the promised output or outcome has been delivered.",
+    partlyReported: "Some elements are documented, but the full commitment or target is not established by available evidence.",
+    underway: "A verifiable implementation step is documented; this is not the same as delivery.",
+    notYetDue: "The published deadline has not passed.",
+    evidenceNotFound: "A reasonable source review did not locate evidence; this is not proof that no action occurred.",
+    disputed: "Credible sources materially disagree, so the disagreement is shown rather than collapsed into one status.",
+  },
+  publicationRules: [
+    "Do not publish aggregate officeholder scores, rankings or winner/loser labels.",
+    "Keep nominal totals, per-capita measures, budget allocations, actual expenditure and real-world outcomes clearly separated.",
+    "Display source values as published; explain rounding, denominator and out-of-range values instead of silently correcting them.",
+    "State the jurisdiction and level of government covered by every measure.",
+    "Where a report excludes a jurisdiction, explain the publisher's stated reason next to the missing indicator.",
+    "Use separate national series for the President and FCT-specific records for the FCT Minister; do not force either into a state comparison.",
+  ],
+} as const;
