@@ -31,13 +31,18 @@ All scores are shown to one decimal place. Each category score is the arithmetic
 - Category score: equal-weight average of the available indicator scores. Where a state is excluded from the health budget dataset, the NDHS score is shown alone and the profile reports the reduced evidence coverage.
 - Important limitation: this combines a fiscal-process indicator with a household-survey outcome from a different reporting period. The NDHS figure describes the surveyed population; it is not a change score or a causal estimate of the governor's contribution.
 
-### President — economy and fiscal conditions
+### President — economic growth
 
-- Indicators: Q2 2026 real GDP growth compared with the 2026 Federal Government budget projection of 4.68%, and October 2026 year-on-year headline inflation compared directionally with the 2026 budget assumption of 16.5%.
-- GDP score: **min(10, actual GDP growth ÷ 4.68 × 10)**.
-- Inflation score: **min(10, 16.5 ÷ actual headline inflation × 10)**.
-- Category score: arithmetic mean of the two indicator scores.
-- Important limitation: the GDP figure is a Q2 year-on-year observation and inflation is an October year-on-year observation, while the benchmarks are full-year 2026 budget assumptions. The score is therefore provisional, directional benchmark tracking—not a final annual assessment. Food inflation, reserves and public debt are shown as contextual figures but are not included in this category score without a directly comparable score benchmark.
+- Indicator: Q2 2026 real GDP growth compared with the 2026 Federal Government budget projection of 4.68%.
+- Formula: **min(10, actual Q2 year-on-year growth ÷ 4.68 × 10)**.
+- Important limitation: this is a partial-year observation compared with a full-year projection. It is a provisional benchmark check, not the final annual result or proof of presidential causation.
+
+### President — price stability
+
+- Indicator: October 2026 year-on-year headline inflation compared directionally with the 2026 Federal Government budget assumption of 16.5%.
+- Formula: **min(10, 16.5 ÷ actual headline inflation × 10)**.
+- Important limitation: the October year-on-year rate is not the final full-year average. A lower inflation rate means prices are rising more slowly; it does not mean the overall price level has fallen.
+- Economic growth and price stability remain separate category scores. They are not averaged into a single broad "Economy" grade. Food inflation, reserves and public debt are contextual indicators and are not scored without directly comparable benchmarks.
 
 ### President — health outcomes
 
