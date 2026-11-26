@@ -26,9 +26,9 @@ export default function ShareCard({kind="SABI / PUBLIC INTEREST",kicker,title,su
   ctx.fillStyle="#c5ff43";ctx.fillRect(72,188,220,12);
   ctx.fillStyle="#77776d";ctx.font="500 22px monospace";ctx.fillText(String(kind).toUpperCase().slice(0,54),72,250);
   ctx.fillStyle="#11120f";ctx.font="700 76px 'Arial', sans-serif";
-  let y=drawWrapped(ctx,title,72,355,900,88,4);
-  if(summary){ctx.fillStyle="#45463f";ctx.font="400 34px 'Arial', sans-serif";y=drawWrapped(ctx,summary,72,y+38,900,49,5);}
-  if(details.length){y+=30;ctx.fillStyle="#6758e8";ctx.fillRect(72,y,936,4);y+=42;const visible=details.slice(0,5);for(const item of visible){ctx.fillStyle="#77776d";ctx.font="500 20px monospace";ctx.fillText(String(item.label).toUpperCase().slice(0,38),72,y);ctx.fillStyle="#11120f";ctx.font="700 30px 'Arial', sans-serif";ctx.fillText(String(item.value).slice(0,70),470,y);y+=68;}}
+  let y=drawWrapped(ctx,title,72,355,900,88,3);
+  if(summary){ctx.fillStyle="#45463f";ctx.font="400 34px 'Arial', sans-serif";y=drawWrapped(ctx,summary,72,y+38,900,49,3);}
+  if(details.length){y+=30;ctx.fillStyle="#6758e8";ctx.fillRect(72,y,936,4);y+=42;const visible=details.slice(0,4);for(const item of visible){ctx.fillStyle="#77776d";ctx.font="500 20px monospace";ctx.fillText(String(item.label).toUpperCase().slice(0,38),72,y);ctx.fillStyle="#11120f";ctx.font="700 30px 'Arial', sans-serif";ctx.fillText(String(item.value).slice(0,42),470,y);y+=60;}}
   ctx.fillStyle="#11120f";ctx.fillRect(72,1160,936,2);
   ctx.fillStyle="#11120f";ctx.font="700 30px 'Arial', sans-serif";ctx.fillText("READ THE RECEIPTS.",72,1220);
   ctx.fillStyle="#6758e8";ctx.font="500 21px monospace";ctx.fillText("sabipolitics.web.app",72,1264);
