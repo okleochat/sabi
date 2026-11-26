@@ -4,6 +4,7 @@ export type IntegrityCatalogueCoverage={cataloguedCommitments:number;identifiabl
 const INTEGRITY_CATALOGUE_THRESHOLD=0.6;
 const commitmentWeight=(item:Commitment)=>Number.isFinite(item.weight)?Math.max(1,Math.min(5,item.weight)):1;
 
+/** items must contain the complete catalogued register, not only the commitments with approved evidence. */
 export function calculateIntegrityScore(items:Commitment[],catalogue:IntegrityCatalogueCoverage){
  const {cataloguedCommitments,identifiableCommitments}=catalogue;
  if(!Number.isInteger(cataloguedCommitments)||!Number.isInteger(identifiableCommitments)||cataloguedCommitments<0||identifiableCommitments<0||cataloguedCommitments>identifiableCommitments||cataloguedCommitments!==items.length)throw new Error("Invalid manifesto catalogue coverage: the catalogue count must match the supplied commitment register");
