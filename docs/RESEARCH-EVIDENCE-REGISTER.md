@@ -163,6 +163,19 @@ YouthGovTracka is described by the Open and Inclusive Democracy Platform (OIDP) 
 
 **Coverage implication:** this archive supplies an initial set of eight current-governor manifesto leads. The remaining 28 current governors still require an original campaign document or a clearly documented search showing that no copy was found. For governors elected in 2019, 2024, 2025 or 2026, use the manifesto from the election that began their current term—not a different election cycle. Do not treat the health extracts as a complete manifesto catalogue or infer an Integrity Score from them.
 
+## 3B. Independent promise-tracking methods reviewed
+
+The Receipt publishes a separate governor promise-ledger and a public methodology page:
+- Methodology: https://www.thereceipt.ng/methodology
+- Governor directory: https://www.thereceipt.ng/
+- Example Abia ledger: https://www.thereceipt.ng/governors/abia
+- Example Borno ledger: https://www.thereceipt.ng/governors/borno
+- Example Oyo ledger: https://www.thereceipt.ng/governors/oyo
+
+Sabi does **not** adopt The Receipt's scores, rankings, labels or verdicts. Its methodology page is useful as a process reference: it says it tracks documented manifestos, inauguration addresses and formal early-term policy documents; keeps vague commitments visible but excludes them from its index; requires physical or budgetary evidence for an "in progress" state; treats press releases as claims rather than proof; separates citizen verdicts from editorial assessment; and offers a right-of-reply and public correction process.
+
+The public directory reports 98 promises across 36 governors, while the example state pages expose only a small subset of each governor's commitments. This is not enough to establish that each full manifesto has been catalogued. Sabi's separate 60% manifesto-catalogue gate is intended to prevent any score from being presented as comprehensive when the promise register is only a small sample. Use this site only to discover original promises and evidence leads, then independently locate and verify the original manifesto and primary records.
+
 ## 4. Scoring readiness and evidence gaps
 
 1. Do not publish a governor's Integrity Score until at least 60% of the identifiable commitments in that governor's original manifesto/pledge set have been catalogued. Show catalogue coverage separately from evidence coverage.
