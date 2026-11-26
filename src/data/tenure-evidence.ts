@@ -676,7 +676,7 @@ const nationalObservations: EvidenceObservation[] = [
   {
     id: "ndhs-under-five-mortality-national-2024", category: "health",
     label: "Under-five mortality — NDHS 2024",
-    value: "110 deaths per 1,000 live births for the five years before the survey (approx. 2020–2024; 95% CI 103–117), compared with 132 in 2015–2019 and 128 in 2010–2014.",
+    value: "110 deaths per 1,000 live births for the five years before the survey (approx. 2020–2024; 95% CI 103–117), compared with 132 in the period preceding the 2018 NDHS and 128 in the period preceding the 2013 NDHS.",
     period: "2020–2024 five-year reference period; report published 2025", geography: "Nigeria",
     publisher: "Federal Ministry of Health and Social Welfare / NPC / ICF",
     url: "https://www.health.gov.ng/wp-content/uploads/2025/10/NDHS-2024-Final-Report_Disseminated17102025.pdf",
