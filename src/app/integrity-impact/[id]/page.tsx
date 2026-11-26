@@ -49,9 +49,9 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
      {p.termStart?<div className="detail"><span>TERM / APPOINTMENT START</span><strong>{p.termStart}</strong></div>:null}
     </div>
     <div className="stat-strip">
+     <div className="stat"><strong>{scorecard.overallScore===null?"—":scorecard.overallScore.toFixed(1)+"/10"}</strong><span>Overall score</span></div>
+     <div className="stat"><strong>{scorecard.scoredCategoryCount}/{scorecard.totalAssessmentCategories}</strong><span>Scored categories</span></div>
      <div className="stat"><strong>{record.indicators.length}</strong><span>Published indicators</span></div>
-     <div className="stat"><strong>{periods.length}</strong><span>Reporting periods</span></div>
-     <div className="stat"><strong>{record.missing.length}</strong><span>Disclosed data gaps</span></div>
     </div>
     <div className="no-verdict-panel" style={{marginTop:18}}>
      <div className="eyebrow" style={{color:"#c5ff43"}}>THE RECORD / PLAIN-LANGUAGE SUMMARY</div>
@@ -60,6 +60,8 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
     <ShareCard kind="POLITICIAN PUBLIC RECORD" kicker={p.office} title={p.name} summary={summary} details={[
      {label:"Office",value:p.office},
      {label:"Jurisdiction",value:p.state||"Nigeria"},
+     {label:"Overall score",value:scorecard.overallScore===null?"Not scored":scorecard.overallScore.toFixed(1)+"/10"},
+     {label:"Score coverage",value:scorecard.scoredCategoryCount+" of "+scorecard.totalAssessmentCategories+" categories ("+scorecard.overallCoverage+"%)"},
      {label:"Published indicators",value:String(record.indicators.length)},
      {label:"Reporting periods",value:periods.join(", ")||"Not yet available"},
      {label:"Data gaps disclosed",value:String(record.missing.length)}
