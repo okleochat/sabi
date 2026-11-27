@@ -94,6 +94,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
      <div className="score-evidence">{category.evidenceLabel} · {category.scope==="national-snapshot"?"NATIONAL BENCHMARK": "STATE PEER INDEX"} · {category.provisional?"PROVISIONAL": "PUBLISHED"}{category.period?" · "+category.period:""}{category.comparisonGroup?" · "+category.comparisonGroup:""}</div>
      <p>{category.method}</p>
      <p>{category.interpretation}</p>
+     {category.benchmarkSourceUrl?<div className="source-note"><a href={category.benchmarkSourceUrl} target="_blank" rel="noreferrer">OPEN {category.benchmarkSourceLabel||"BENCHMARK SOURCE"} ↗</a></div>:null}
     </article>)}
    </div>
    <div className="not-scored-panel">
