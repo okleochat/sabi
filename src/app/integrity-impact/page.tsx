@@ -28,7 +28,7 @@ export default function IntegrityImpactPage(){
    <div className="no-verdict-panel">
     <div className="eyebrow" style={{color:"#c5ff43"}}>THE DATA DESK / FIRST RELEASE</div>
     <h3>NO MYSTERY NUMBERS. OPEN SOURCES. VISIBLE GAPS.</h3>
-    <p>This release publishes the underlying observations rather than converting unlike measures into a single political rating. Available records include NBS 2025 internally generated revenue, BudgIT's FY2025 education and health budget implementation tables, and NDHS 2023–24 childhood vaccination survey estimates. National inflation and GDP indicators are shown separately for the President. Each profile identifies missing datasets and the publisher's stated reason where known.</p>
+    <p>This release publishes source-linked public performance indices alongside the underlying observations. Each score is limited to the evidence and comparison method stated on the profile; missing categories are not assigned zero. Available records include NBS 2025 internally generated revenue, BudgIT's FY2025 education and health budget implementation tables, and NDHS 2023–24 childhood vaccination survey estimates. National inflation and GDP indicators are shown separately for the President. Each profile identifies missing datasets and the publisher's stated reason where known.</p>
     <p><a href="https://microdata.nigerianstat.gov.ng/index.php/catalog/170/related-materials" target="_blank" rel="noreferrer">NBS 2025 IGR report ↗</a> · <a href="https://budgit.org/wp-content/uploads/2026/11/States26SMDF1.pdf" target="_blank" rel="noreferrer">BudgIT State of States 2026 ↗</a> · <a href="https://budgit.org/wp-content/uploads/2026/04/HealthFinancingReport__.pdf" target="_blank" rel="noreferrer">BudgIT Health Financing 2026 ↗</a> · <a href="https://fmohconnect.gov.ng/wp-content/uploads/2025/05/The-State-of-Health-of-the-Nation-Report-2024.pdf" target="_blank" rel="noreferrer">NDHS / State of Health report ↗</a></p>
    </div>
    <div className="content-grid" style={{marginTop:22}}>
@@ -61,7 +61,7 @@ export default function IntegrityImpactPage(){
         <span className="overall-chip"><b>OVERALL</b> {scorecard.overallScore===null?"IN PROGRESS":scorecard.overallScore.toFixed(1)+"/10"}</span>
         {scorecard.categories.map(score=><span key={score.id}><b>{score.id==="economy"?"FISCAL":score.id==="education"?"EDUCATION":score.id==="health"?"HEALTH":score.id==="growth"?"GROWTH":"PRICES"}</b> {score.value.toFixed(1)}/10</span>)}
        </div>
-       <p className="directory-score-coverage">{scorecard.scoredCategoryCount} of {scorecard.totalAssessmentCategories} categories score-ready · numerical Overall Score requires at least 6 categories with full-tenure evidence</p>
+       <p className="directory-score-coverage">{scorecard.scoredCategoryCount} of {scorecard.totalAssessmentCategories} categories scored · Overall Score is the average of published category scores</p>
        <p className="notice"><b>{research.sources.length} source series indexed · {research.observations.length} extracted observations</b><br/>{record.indicators.map(item=>item.label+": "+item.displayValue).join(" · ")}{record.missing.length?" · "+record.missing.length+" disclosed research/data gap(s)":""}</p>
        {scorecard.notScored.length?<p className="notice">Scoring evidence still being built: {scorecard.notScored.map(x=>x.label).join(", ")}.</p>:null}
        <span>OPEN SOURCED PUBLIC RECORD ↗</span>
