@@ -25,6 +25,18 @@ Where no manifesto document is shown in the source snapshot, the dossier says th
 
 Source: https://openpolls.africa/manifestos
 
+
+## Contested nomination example: SDP presidential ticket
+
+The current dossier preserves a live discrepancy rather than resolving it editorially:
+
+- INEC's updated final list dated 31 October 2026 prints Adewole Adebayo as the SDP presidential candidate: https://inecnigeria.org/documents/uploads/2026/10/b5af9099-864c-4d5e-924d-e1a2c771c529-final-list-presidential.pdf
+- The SDP Media Directorate has published a statement saying Adebayo was expelled and was not its validly nominated presidential candidate: https://www.sdpnigeria.org/news/sdp-adewole-adebayo-was-long-expelled-from-the-party-and-was-never-its-presidential-candidate
+- TheCable reported on 27 October 2026 that a Federal High Court in Abuja reserved judgment in a suit filed by the SDP and its National Organising Secretary challenging INEC's publication of Adebayo's name. The plaintiffs sought recognition of Abimbola Akeem Atanda: https://www.thecable.ng/court-reserves-judgment-in-suit-challenging-inecs-publication-of-adewole-adebayo-as-sdp-presidential-candidate/
+- The candidate's campaign website publishes a 138-page manifesto, Farewell to Poverty and Insecurity, for 2027–2031: https://www.adewoleadebayo.com/manifesto
+
+These are distinct source records: an INEC publication, a party's position, court proceedings and candidate campaign material. The last court report located for this release said judgment was reserved on 27 October 2026; Sabi has not verified a later final judgment. The page does not decide the legal merits or substitute a campaign statement for the official election record.
+
 ## Current limitations
 
 - Some ticket profiles have independently sourced biographical summaries and licensed portraits; others still need individual sources and portrait permissions.
