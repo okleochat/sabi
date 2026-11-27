@@ -39,7 +39,18 @@ async function seedEditorialResearch(){
  const snapshots=await db.getAll(...refs);
  const batch=db.batch();let writes=0;
  snapshots.forEach((snap,index)=>{
-  if(!snap.exists){batch.set(refs[index],{...starterResearchClaims[index],status:starterResearchClaims[index].status||"researching",reviewStatus:"researching",origin:"sabi-research",originLabel:"Sabi newsroom research"});writes++;}
+  if(!snap.exists){
+   const record=starterResearchClaims[index];
+   batch.set(refs[index],{
+    ...record,
+    claimFingerprint:record.claimFingerprint||claimFingerprint(record.claim||""),
+    status:record.status||"researching",
+    reviewStatus:record.reviewStatus||record.status||"researching",
+    origin:"sabi-research",
+    originLabel:"Sabi newsroom research"
+   });
+   writes++;
+  }
  });
  if(writes)await batch.commit();
 }
