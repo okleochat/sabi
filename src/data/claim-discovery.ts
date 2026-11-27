@@ -1,4 +1,4 @@
-import { claimResearchUpdates, type ClaimResearchUpdate } from "./claim-research-updates";
+import { claimResearchUpdates, publishedSpotlightMeta, type ClaimResearchUpdate } from "./claim-research-updates";
 
 export type ClaimSpotlight = {
   id: string;
@@ -18,7 +18,7 @@ export type ClaimSpotlight = {
   priorityReason: string;
   claimType: "public-statement" | "campaign-promise" | "election-information" | "statistics" | "policy";
   context: string;
-  researchUpdate?: ClaimResearchUpdate;
+  researchUpdate?: ClaimResearchUpdate & { publishedSlug?: string; assessmentType?: string };
   supportingSources?: Array<{ publisher: string; title: string; url: string }>;
 };
 
@@ -238,5 +238,5 @@ const claimSpotlightRecords: ClaimSpotlight[] = [
 
 export const claimSpotlights: ClaimSpotlight[] = claimSpotlightRecords.map(item => ({
   ...item,
-  researchUpdate: claimResearchUpdates[item.id]
+  researchUpdate: claimResearchUpdates[item.id] ? {...claimResearchUpdates[item.id], ...publishedSpotlightMeta[item.id]} : undefined
 }));
