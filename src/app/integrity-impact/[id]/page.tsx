@@ -119,12 +119,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
      <p><b>Reporting period:</b> {item.period}{item.population?" · "+item.population:""}</p>
      {item.comparison?<p><b>Comparable reference:</b> {item.comparison.displayValue} ({item.comparison.period}). {item.comparison.note}</p>:null}
      <p>{item.note}</p>
-     {item.indicatorScore?<div className="indicator-score">
-      <div><span>INDICATOR SCORE</span><strong>{item.indicatorScore.value.toFixed(1)}/10</strong></div>
-      <small>{item.indicatorScore.basis}{item.indicatorScore.benchmark?" · "+item.indicatorScore.benchmark:""}</small>
-      <p>{item.indicatorScore.note}</p>
-      {item.indicatorScore.benchmarkSourceUrl?<a href={item.indicatorScore.benchmarkSourceUrl} target="_blank" rel="noreferrer">OPEN BENCHMARK SOURCE ↗</a>:null}
-     </div>:<div className="indicator-unscored">CONTEXTUAL FIGURE · NOT USED IN A CATEGORY SCORE</div>}
+     <div className="indicator-unscored">SOURCE-LINKED CONTEXT · NOT YET USED IN A TENURE SCORE</div>
      <div className="source-note"><b>{item.publisher}</b> · {item.sourceLabel} · Published {item.publishedAt}<br/><a href={item.sourceUrl} target="_blank" rel="noreferrer">OPEN PRIMARY SOURCE ↗</a>{item.secondarySourceUrl?<><span> · </span><a href={item.secondarySourceUrl} target="_blank" rel="noreferrer">TRANSCRIPTION / CROSS-CHECK ↗</a></>:null}</div>
     </article>)}
    </div>:<div className="empty-state">No comparable source-linked indicators have been added to this profile yet. The data gaps below explain the next records required.</div>}
