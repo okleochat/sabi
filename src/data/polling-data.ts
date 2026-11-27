@@ -183,7 +183,6 @@ export const polls:PollRecord[] = [
     nationalScope:true,
     eligibleForCandidateAverage:false,
   },
-,
 {
  id:"oxford-metro-national-trust-poll-2026-09",
  title:"Oxford-Metro Analytics National Trust Poll",
