@@ -66,4 +66,38 @@ export const starterFactchecks: Array<Record<string, any>> = [
     ],
     published:true,status:"published",publishedAt:"2026-11-27",createdAt:"2026-11-27T12:00:00.000Z",updatedAt:"2026-11-27T12:00:00.000Z",reviewStandard:"sabi-editorial-research",sourceClaimId:"sabi-research-obi-no-schools-anambra-2026"
   }
+
+  {
+    id:"sabi-research-akpabio-anti-north-quote-september-2026",slug:"akpabio-northerners-will-suffer-quote",
+    title:"Did Godswill Akpabio threaten that Northerners would suffer if Tinubu lost in 2027?",
+    claim:"A viral graphic attributed this statement to Senate President Godswill Akpabio: “Northerners, you will be the ones to suffer the most if you allow Tinubu to lose the election.”",
+    claimSource:"Viral social-media graphic circulated in September 2026",
+    claimType:"public-statement",subject:"Godswill Akpabio",subjectKey:"godswill-akpabio",subjectType:"public-official",impact:"negative",
+    origin:"sabi-research",originLabel:"Sabi newsroom research",verdict:"False",
+    summary:"Africa Check found no credible evidence that Akpabio made the statement. Akpabio denied it and petitioned the DSS over the circulation of the graphic. The graphic provides no verifiable date, venue, recording or original source.",
+    findings:"A graphic circulated on Facebook and other platforms in September 2026, attributing a threat against Northerners to Senate President Godswill Akpabio. The wording differed slightly across versions, but the claim was that Northerners would suffer if they allowed President Tinubu to lose the 2027 election.\n\nAfrica Check investigated the attribution and found no credible news report or verifiable original recording, speech, interview or transcript showing that Akpabio made the statement. On 9 September 2026, Akpabio's office said the quote was fabricated and petitioned the Department of State Services to investigate its creation and circulation. His official website also published a denial.\n\nThe existence of a petition or denial does not, on its own, prove a statement was never made. However, the circulating graphic offers no provenance, and the independent fact-check found no corroborating evidence for the attribution. Africa Check concluded that the claim is false. Sabi adopts that verdict while preserving the key distinction between a verified quotation and an unsourced graphic.\n\nThe impact label is negative for Akpabio because the attributed words portray him as threatening a region. It does not describe the truth of the allegation; that is addressed by the separate verdict.",
+    evidence:[
+      {title:"Nigeria’s senate president denies saying northerners will suffer if president Tinubu loses 2027 election",publisher:"Africa Check, 18 September 2026",url:"https://www.africacheck.org/index.php/fact-checks/meta-programme-fact-checks/nigerias-senate-president-denies-saying-northerners-will",sourceType:"independent-fact-check"},
+      {title:"Akpabio petitions DSS over alleged anti-North statement",publisher:"Channels Television, 9 September 2026",url:"https://www.channelstv.com/2026/09/09/akpabio-petitions-dss-over-alleged-anti-north-statement/",sourceType:"independent-reporting"},
+      {title:"Akpabio petitions DSS to probe viral quote linking him to anti-north remark",publisher:"Businessday, 9 September 2026",url:"https://businessday.ng/news/article/akpabio-petitions-dss-to-probe-viral-quote-linking-him-to-anti-north-remark/",sourceType:"independent-reporting"},
+      {title:"Akpabio reaffirms commitment to Northern Nigeria, national unity and peace",publisher:"Godswill Akpabio official website, 11 September 2026",url:"https://godswillakpabio.com/akpabio-reaffirms-commitment-to-northern-nigeria-national-unity-and-peace/",sourceType:"subject-response"}
+    ],
+    published:true,status:"published",publishedAt:"2026-11-27",createdAt:"2026-11-27T12:00:00.000Z",updatedAt:"2026-11-27T12:00:00.000Z",reviewStandard:"sabi-editorial-research",sourceClaimId:"sabi-research-akpabio-anti-north-quote-september-2026"
+  },
+  {
+    id:"sabi-research-atiku-sell-cbn-claim-september-2026",slug:"atiku-sell-cbn-if-elected-claim",
+    title:"Did Atiku Abubakar say he would sell the Central Bank if elected president?",
+    claim:"A viral screenshot of a purported Sahara Reporters story claimed Atiku Abubakar said: “I will sell Central Bank if I’m elected. Other countries have done it in the past.”",
+    claimSource:"Viral screenshot circulated on X in late August 2026",
+    claimType:"public-statement",subject:"Atiku Abubakar",subjectKey:"atiku-abubakar",subjectType:"presidential-candidate",impact:"negative",
+    origin:"sabi-research",originLabel:"Sabi newsroom research",verdict:"Unproven",
+    summary:"TheCable found no matching story on Sahara Reporters, no recording or public statement from Atiku or the ADC, and no corroborating mainstream report. Atiku’s spokesperson denied the quote. The attribution is unsupported by the public evidence reviewed.",
+    findings:"A screenshot circulated on X in late August 2026, claiming that Atiku Abubakar had said he would sell the Central Bank of Nigeria if elected president. The screenshot was presented as a Sahara Reporters story and attracted significant social-media engagement.\n\nTheCable's fact-check found no corresponding report on Sahara Reporters' website, noted that the graphic differed from the publication's usual design, and found no recording, official statement or post from Atiku or the African Democratic Congress supporting the quote. TheCable also found no corroborating reports from other mainstream news outlets. Atiku's senior assistant on public communication told the publication the statement was completely false and said Atiku's position was to strengthen the Central Bank's independence and credibility.\n\nThe public evidence reviewed does not authenticate the alleged quotation. Because the key conclusion is the absence of corroboration for a purported statement, Sabi uses “Unproven” rather than treating the screenshot itself as proof of what Atiku said. The responsible conclusion is that the quote should not be circulated as authentic.\n\nThe impact label is negative for Atiku because the alleged statement frames him as proposing to sell the country's monetary authority. The impact classification is independent of the evidence verdict.",
+    evidence:[
+      {title:"FACT CHECK: No evidence Atiku said he’d sell CBN if elected president",publisher:"TheCable Fact Check, 1 September 2026",url:"https://factcheck.thecable.ng/fact-check-no-atiku-did-not-say-he-would-sell-cbn-if-elected-president/",sourceType:"independent-fact-check"},
+      {title:"No evidence Atiku tok sey im go sell CBN if dem elect am as president",publisher:"TheCable Check Am for Wazobia, 3 September 2026",url:"https://factcheck.thecable.ng/no-evidence-atiku-tok-sey-im-go-sell-cbn-if-dem-elect-am-as-president/",sourceType:"independent-fact-check"},
+      {title:"Atiku says he will restore petrol subsidy if elected",publisher:"TheCable, August 2026",url:"https://www.thecable.ng/atiku-says-he-will-restore-petrol-subsidy-if-elected/",sourceType:"context"}
+    ],
+    published:true,status:"published",publishedAt:"2026-11-27",createdAt:"2026-11-27T12:00:00.000Z",updatedAt:"2026-11-27T12:00:00.000Z",reviewStandard:"sabi-editorial-research",sourceClaimId:"sabi-research-atiku-sell-cbn-claim-september-2026"
+  },
 ];
