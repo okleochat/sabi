@@ -202,3 +202,17 @@
 .polling-home-stat strong{font:700 clamp(27px,4vw,44px)/.9 var(--display);letter-spacing:-.06em}
 .polling-home-stat span{font-size:11px;line-height:1.55;color:#c9c7be}
 @media(max-width:720px){.polling-home-strip{grid-template-columns:1fr;gap:17px}.polling-home-stat{min-height:140px}}
+
+.candidate-tracker-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin:18px 0}
+.candidate-tracker-grid article{padding:17px;background:#fff;border:1px solid var(--line);min-width:0}
+.candidate-tracker-grid span{display:block;font:500 8px var(--mono);letter-spacing:.09em;color:var(--muted);margin-bottom:8px}
+.candidate-tracker-grid strong{font:700 clamp(24px,3vw,34px)/.9 var(--display);letter-spacing:-.06em;overflow-wrap:anywhere}
+.candidate-tracker-grid p{font-size:10px;line-height:1.5;color:#55564f;margin:8px 0 0}
+.candidate-tracker-links{display:flex;flex-wrap:wrap;gap:14px;margin:15px 0}
+.candidate-tracker-links a{font:600 9px var(--mono);color:var(--purple);text-decoration:underline}
+.candidate-manifesto-status{border:1px solid var(--line);background:var(--paper-2);padding:20px;margin-top:17px}
+.candidate-manifesto-status h3{font:700 clamp(22px,3vw,30px)/.95 var(--display);letter-spacing:-.05em;margin:10px 0}
+.candidate-manifesto-status p{font-size:12px;line-height:1.6;color:#55564f}
+.candidate-manifesto-status ul{padding-left:19px;display:grid;gap:7px}
+.candidate-manifesto-status li{font-size:11px;line-height:1.55;color:#45463f}
+@media(max-width:720px){.candidate-tracker-grid{grid-template-columns:1fr}.candidate-tracker-grid article{padding:13px}}
