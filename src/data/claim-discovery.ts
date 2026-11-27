@@ -213,7 +213,7 @@ export const claimSpotlights: ClaimSpotlight[] = [
     context: "Premium Times reports Atiku's denial, the group's endorsement and a separate legal dispute concerning the ADC leadership and nomination. Sabi should keep those issues separate."
   },
   {
-    id: "atiku-ny sc-certificate-amendment-case",
+    id: "atiku-nysc-certificate-amendment-case",
     title: "The court rejected Atiku's request to amend the NYSC certificate suit. What did it actually decide?",
     claim: "A Federal High Court dismissed an application by Atiku Abubakar and the ADC to amend their suit challenging Tinubu's eligibility over an alleged NYSC certificate forgery.",
     summary: "The reported ruling concerned the proposed amendment to the case. It should not be described as a court finding that the certificate was forged, or as a final determination of every issue in the substantive suit.",
