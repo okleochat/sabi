@@ -1,7 +1,8 @@
 "use client";
 import {FormEvent,useRef,useState} from "react";
 type Existing={title:string;url:string;subject:string;verdict:string;impact:string};
-export default function ClaimForm(){
+type Props={initialClaim?:string;initialSubject?:string;initialSourceUrl?:string;initialContext?:string;initialClaimType?:string};
+export default function ClaimForm({initialClaim="",initialSubject="",initialSourceUrl="",initialContext="",initialClaimType="public-statement"}:Props){
  const claimRef=useRef<HTMLTextAreaElement>(null);
  const [busy,setBusy]=useState(false),[checking,setChecking]=useState(false),[message,setMessage]=useState(""),[reference,setReference]=useState("");
  const [match,setMatch]=useState<Existing|null>(null),[queued,setQueued]=useState(false),[related,setRelated]=useState<Existing[]>([]),[checked,setChecked]=useState("");
@@ -30,7 +31,9 @@ export default function ClaimForm(){
    const data=await res.json();
    if(res.status===409){setMessage(data.error||"This claim already exists.");setReference(data.existingUrl||"");return;}
    if(!res.ok)throw new Error(data.error||"Submission failed.");
-   form.reset();setChecked("");setMatch(null);setQueued(false);setRelated([]);
+   form.reset();
+   for(const name of ["claim","subject","state","context","sourceUrl","supportingUrls","contact"]){const field=form.elements.namedItem(name) as HTMLInputElement|HTMLTextAreaElement|null;if(field)field.value="";}
+   setChecked("");setMatch(null);setQueued(false);setRelated([]);
    setMessage(data.alertStatus==="sent"?"Claim received. The newsroom has been alerted.":"Claim received and safely queued in the newsroom.");
    setReference("Your reference: "+data.id);
   }catch(err){setMessage(err instanceof Error?err.message:"Submission failed. Please try again.");}
@@ -38,17 +41,17 @@ export default function ClaimForm(){
  }
  const blocked=Boolean(match||queued);
  return <form className="form-panel form-stack" onSubmit={submit}>
-  <label>What claim should we check?<textarea ref={claimRef} name="claim" minLength={12} maxLength={2500} required placeholder="Paste the exact statement. Keep the wording as close to the original as possible." onChange={()=>{setChecked("");setMatch(null);setQueued(false);setRelated([]);}}/></label>
+  <label>What claim should we check?<textarea ref={claimRef} name="claim" defaultValue={initialClaim} minLength={12} maxLength={2500} required placeholder="Paste the exact statement. Keep the wording as close to the original as possible." onChange={()=>{setChecked("");setMatch(null);setQueued(false);setRelated([]);}}/></label>
   <button className="button secondary" type="button" onClick={checkArchive} disabled={checking||busy}>{checking?"Checking archive…":"Check existing claims first ↗"}</button>
   {message?<p role="status" className="notice">{message}</p>:null}
   {match?<article className="claim-duplicate-card"><div className="eyebrow">EXACT MATCH / PUBLISHED</div><strong>{match.title}</strong><p>{match.verdict} · {match.subject} · {match.impact}</p><a href={match.url}>OPEN FACT-CHECK ↗</a></article>:null}
   {queued?<p className="notice">The newsroom already has this exact claim. Please do not submit a second copy.</p>:null}
   {related.length?<div className="claim-match-list"><div className="eyebrow">RELATED PUBLISHED CHECKS</div>{related.map((item,i)=><article key={item.url||i}><strong>{item.title}</strong><p>{item.subject} · {item.verdict} · {item.impact}</p><a href={item.url}>READ RELATED CHECK ↗</a></article>)}</div>:null}
-  <label>What kind of claim is it?<select name="claimType" defaultValue="public-statement"><option value="public-statement">Public statement / speech</option><option value="campaign-promise">Campaign promise / manifesto</option><option value="election-information">Election information / INEC</option><option value="statistics">Statistic / chart / numerical claim</option><option value="image-video">Image / video / viral media</option><option value="policy">Policy / government action</option><option value="other">Other</option></select></label>
-  <label>Who or what is the claim about? (optional)<input name="subject" maxLength={160} placeholder="Candidate, public officeholder, party, agency or organisation"/></label>
+  <label>What kind of claim is it?<select name="claimType" defaultValue={initialClaimType}><option value="public-statement">Public statement / speech</option><option value="campaign-promise">Campaign promise / manifesto</option><option value="election-information">Election information / INEC</option><option value="statistics">Statistic / chart / numerical claim</option><option value="image-video">Image / video / viral media</option><option value="policy">Policy / government action</option><option value="other">Other</option></select></label>
+  <label>Who or what is the claim about? (optional)<input name="subject" defaultValue={initialSubject} maxLength={160} placeholder="Candidate, public officeholder, party, agency or organisation"/></label>
   <label>Which state or location is relevant? (optional)<input name="state" maxLength={80} placeholder="State, LGA or Nigeria-wide"/></label>
-  <label>Where did you see it? (optional)<textarea name="context" maxLength={800} placeholder="Date, speech, programme, platform or other context."/></label>
-  <label>Link to the original claim or source (recommended)<input type="url" name="sourceUrl" maxLength={1500} placeholder="https://"/></label>
+  <label>Where did you see it? (optional)<textarea name="context" defaultValue={initialContext} maxLength={800} placeholder="Date, speech, programme, platform or other context."/></label>
+  <label>Link to the original claim or source (recommended)<input type="url" name="sourceUrl" defaultValue={initialSourceUrl} maxLength={1500} placeholder="https://"/></label>
   <label>Other useful evidence links (optional)<textarea name="supportingUrls" maxLength={4000} placeholder="One URL per line. Add an official report, original video or independent source."/></label>
   <label>Email for follow-up (optional)<input type="email" name="contact" maxLength={200} placeholder="Only visible to the newsroom team"/></label>
   <label className="claim-urgent"><input type="checkbox" name="isTimeSensitive"/> This claim may affect an imminent vote, election deadline, public safety or fast-moving event.</label>
