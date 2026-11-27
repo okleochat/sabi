@@ -76,7 +76,7 @@ The origin field records how a claim entered Sabi:
 
 Reader contact details remain private. Sabi-origin research leads are inserted into the private newsroom queue with a research status and evidence trail. They are not automatically published. A newsroom-discovered claim becomes public only after the same evidence standard and human approval used for reader submissions.
 
-The initial newsroom research leads include the FCT Minister's July 2026 satellite-road completion statement and Abia Governor Alex Otti's May 2026 road-project totals. The public reports located so far repeat the officials' stated totals; project-level documentation is still needed. These are research leads, not verified findings.
+The initial newsroom research leads include the FCT Minister's July 2026 satellite-road completion statement; Abia Governor Alex Otti's May 2026 road-project totals; and Oyo Governor Seyi Makinde's six-year scorecard figures of 224.32 km completed and 345.79 km of ongoing road contracts. The public material provides starting inventories and official claims, but project-level reconciliation, contract records and independent site verification are still needed. These are research leads, not verified findings.
 
 The initial public Sabi-research fact-check seeds cover:
 - The President's September 2026 inflation-rate comparison, with a CPI-rebasing caveat and a distinction between disinflation and falling prices.
