@@ -7,7 +7,7 @@
 export const publicRecordMethodology = {
   version: "3.1.0",
   scale: {
-    minimum: 0,
+    minimum: 1,
     maximum: 10,
     precision: 1,
     rule: "Every published category score must be supported by a documented category-specific calculation and a clearly disclosed comparison basis. Where a current comparable snapshot exists but a full tenure series does not, publish it as a provisional peer index and state the reference period. Scores describe public outcomes and documented officeholder actions separately; they are not popularity ratings.",
@@ -29,7 +29,7 @@ export const publicRecordMethodology = {
     totalCategories: 8,
     publicationRule: "Publish the arithmetic mean as soon as at least one category score exists. Clearly label partial-coverage averages provisional and disclose the exact number of scored categories.",
     missingEvidence: "An unscored category is never converted to zero. The profile must show which categories are ready, which remain incomplete and why. The number of score-ready categories is not the same as the proportion of raw evidence collected.",
-    rankingRule: "A public league table or direct rank comparison requires all 8 category scores, matching office level, compatible term windows and comparable data definitions. A score based on 6 or 7 categories may be displayed with explicit missing-category disclosure, but must not be ranked against a different coverage set.",
+    rankingRule: "A public league table or direct rank comparison requires all 8 category scores, matching office level, compatible term windows and comparable data definitions. State peer-percentile indices and national target-benchmark indices are different methods and must never be compared numerically across office levels.",
     caution: "The Overall Score is a summary, not a claim that every outcome was caused by the officeholder. Keep observed jurisdictional performance distinct from evidence of the officeholder's own decisions and contribution.",
   },
   tenureWindow: {
@@ -83,6 +83,11 @@ export const publicRecordMethodology = {
       indicators: "Use original election manifesto and attributable pledges; court filings and final judgments; audit findings; procurement disclosures; asset declarations where public; and independently verified implementation evidence.",
       rule: "Track each commitment's wording, date, deadline, responsible tier of government, measurable output and delivery status. Distinguish allegations, investigations, charges, convictions and final appeals. Agency enforcement totals are not a personal integrity rating.",
     },
+  },
+  indexTypes: {
+    statePeerIndex: "For governors and the FCT Minister, convert each available state measure to a percentile-style 1–10 score against the 36 states and FCT, respecting whether higher or lower values indicate better outcomes. Component percentile scores are averaged equally within a category.",
+    nationalBenchmarkIndex: "For the President, use an explicit national policy benchmark where one exists and disclose the benchmark, period and any mismatch between the benchmark period and the observed series. National benchmark scores are not comparable with state peer-percentile scores.",
+    provisional: "All current indices are provisional snapshots. They describe observed jurisdictional conditions and do not, by themselves, establish causal responsibility or change from an inherited baseline.",
   },
   indexTypes: {
     statePeerIndex: "For governors and the FCT Minister, convert each available state measure to a percentile-style 1–10 score against the 36 states and FCT, respecting whether higher or lower values indicate better outcomes. Component percentile scores are averaged equally within a category.",
