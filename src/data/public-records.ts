@@ -1,7 +1,8 @@
 /**
  * Sabi Public Records — source-linked indicators and public performance indices.
  * Values are transcribed from published datasets and retain their original units,
- * population definitions and reporting periods. No composite score or ranking is derived.
+ * population definitions and reporting periods. Snapshot peer indices are explicitly
+ * separated from full-tenure causal assessments and disclose their comparison basis.
  */
 export type PublicIndicator = {
   id: string;
