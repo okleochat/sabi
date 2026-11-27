@@ -1,3 +1,5 @@
+import { claimResearchUpdates, type ClaimResearchUpdate } from "./claim-research-updates";
+
 export type ClaimSpotlight = {
   id: string;
   title: string;
@@ -16,12 +18,13 @@ export type ClaimSpotlight = {
   priorityReason: string;
   claimType: "public-statement" | "campaign-promise" | "election-information" | "statistics" | "policy";
   context: string;
+  researchUpdate?: ClaimResearchUpdate;
   supportingSources?: Array<{ publisher: string; title: string; url: string }>;
 };
 
 // Editorially selected claims and live public debates with traceable coverage.
 // "Trending" is an editorial radar, not a measured X engagement ranking.
-export const claimSpotlights: ClaimSpotlight[] = [
+const claimSpotlightRecords: ClaimSpotlight[] = [
   {
     id: "inec-voter-register-cleanup",
     title: "INEC removed 1.6 million invalid voter records. Does that settle the register concerns?",
@@ -232,3 +235,8 @@ export const claimSpotlights: ClaimSpotlight[] = [
     context: "TheCable reported that the judge rejected proposed amendments as introducing new facts after the defendants had responded. This card is about the scope of that ruling, not the truth of the underlying allegation."
   }
 ];
+
+export const claimSpotlights: ClaimSpotlight[] = claimSpotlightRecords.map(item => ({
+  ...item,
+  researchUpdate: claimResearchUpdates[item.id]
+}));
