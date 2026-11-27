@@ -96,7 +96,7 @@ export const starterFactchecks: Array<Record<string, any>> = [
     evidence:[
       {title:"FACT CHECK: No evidence Atiku said he’d sell CBN if elected president",publisher:"TheCable Fact Check, 1 September 2026",url:"https://factcheck.thecable.ng/fact-check-no-atiku-did-not-say-he-would-sell-cbn-if-elected-president/",sourceType:"independent-fact-check"},
       {title:"No evidence Atiku tok sey im go sell CBN if dem elect am as president",publisher:"TheCable Check Am for Wazobia, 3 September 2026",url:"https://factcheck.thecable.ng/no-evidence-atiku-tok-sey-im-go-sell-cbn-if-dem-elect-am-as-president/",sourceType:"independent-fact-check"},
-      {title:"Atiku says he will restore petrol subsidy if elected",publisher:"TheCable, August 2026",url:"https://www.thecable.ng/atiku-says-he-will-restore-petrol-subsidy-if-elected/",sourceType:"context"}
+      {title:"Atiku says he will restore petrol subsidy if elected",publisher:"TheCable, August 2026",url:"https://www.thecable.ng/atiku-says-hell-restore-petrol-subsidy-if-elected-president-alleges-savings-from-removal-stolen/",sourceType:"context"}
     ],
     published:true,status:"published",publishedAt:"2026-11-27",createdAt:"2026-11-27T12:00:00.000Z",updatedAt:"2026-11-27T12:00:00.000Z",reviewStandard:"sabi-editorial-research",sourceClaimId:"sabi-research-atiku-sell-cbn-claim-september-2026"
   },
