@@ -67,7 +67,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
      {label:"Published indicators",value:String(record.indicators.length)},
      {label:"Reporting periods",value:periods.join(", ")||"Not yet available"},
      {label:"Data gaps disclosed",value:String(record.missing.length)}
-    ]} assessmentDate="Public source snapshot: 26 November 2026" source={p.sourceLabel} path={"/integrity-impact/"+p.id}/>
+    ]} assessmentDate="Public source snapshot: 27 November 2026" source={p.sourceLabel} path={"/integrity-impact/"+p.id}/>
    </div>
   </section>
 
