@@ -39,4 +39,24 @@ export const starterResearchClaims: Array<Record<string, any>> = [
     contact:"",isTimeSensitive:false,createdAt:"2026-11-27T12:00:00.000Z",submittedAt:"2026-11-27T12:00:00.000Z",updatedAt:"2026-11-27T12:00:00.000Z",
     origin:"sabi-research",originLabel:"Sabi newsroom research",alertStatus:"not_applicable",seedVersion:1
   }
+
+  {
+    id:"sabi-research-makinde-oyo-road-delivery-august-2026",
+    claim:"Governor Seyi Makinde's six-year scorecard says 14 Oyo road projects totalling 224.32 kilometres were completed under Omituntun 2.0, while 25 road contracts covering 345.79 kilometres were ongoing.",
+    claimType:"statistics",subject:"Seyi Makinde",subjectKey:"seyi-makinde",subjectType:"elected-official",impact:"positive",
+    status:"researching",reviewStatus:"researching",reviewPriority:"standard",
+    researchNotes:"Sabi newsroom research lead. The Governor's six-year scorecard lists 14 roads completed (224.32 km) and 25 ongoing road contracts (345.79 km). Oyo's Feedback Service has a long project inventory through August 2026, including project details and photos, but it is a government-linked project register and not an independent engineering audit. Reconcile the 14 completed roads against the register one by one; check if the claimed 224.32 km includes separate sections, dual carriageways or old projects; identify project completion dates, contract records, commissioning certificates, independent site measurements and any road-quality assessments. The 25 contract list needs award amounts, start dates, progress certificates and site status. Do not publish a verdict until the project-level reconciliation is completed.",
+    reviewSummary:"A public scorecard gives precise completed and ongoing road totals, and an Oyo project register offers a verification starting point. Neither source alone independently verifies every kilometre or completion status.",
+    findings:"",verdict:"",
+    evidence:[
+      {title:"Governor Seyi Makinde's Achievements: Six Years in Office — Economy",publisher:"Seyi Makinde official/political website, six-year scorecard",url:"https://seyimakinde.com/achievements-six-years-in-office-economy/",sourceType:"subject-published-scorecard"},
+      {title:"Completed and Ongoing Projects by the Oyo State Government, May 2019 to August 2026",publisher:"Oyo State Feedback Service, 28 August 2026",url:"https://feedbackoysg.com/completed-and-ongoing-projects-oyo-2019-2026/",sourceType:"government-project-register"},
+      {title:"Oyo Deputy Governor Inspects RAAMP Projects, Reaffirms 2027 Completion Goal",publisher:"Oyo State Ministry of Agriculture, 8 July 2025",url:"https://agric.oyostate.gov.ng/oyo-deputy-governor-inspects-raamp-projects-reaffirms-2027-completion-goal/",sourceType:"official-project-inspection"}
+    ],
+    context:"The six-year Omituntun 2.0 public scorecard reports 14 completed roads totalling 224.32 km and 25 ongoing contracts totalling 345.79 km.",
+    sourceUrl:"https://seyimakinde.com/achievements-six-years-in-office-economy/",
+    supportingUrls:["https://feedbackoysg.com/completed-and-ongoing-projects-oyo-2019-2026/","https://agric.oyostate.gov.ng/oyo-deputy-governor-inspects-raamp-projects-reaffirms-2027-completion-goal/"],
+    contact:"",isTimeSensitive:false,createdAt:"2026-11-27T12:00:00.000Z",submittedAt:"2026-11-27T12:00:00.000Z",updatedAt:"2026-11-27T12:00:00.000Z",
+    origin:"sabi-research",originLabel:"Sabi newsroom research",alertStatus:"not_applicable",seedVersion:1
+  },
 ];
