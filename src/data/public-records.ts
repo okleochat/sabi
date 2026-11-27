@@ -92,8 +92,6 @@ const sources = {
     period: "2023–2024 survey",
     publishedAt: "May 2025",
   },
-};
-
   infrastructure: {
     label: "Nigeria Demographic and Health Survey 2024 — Tables 16.2 and 16.7",
     publisher: "Federal Ministry of Health and Social Welfare / National Population Commission / ICF",
@@ -101,6 +99,8 @@ const sources = {
     period: "2023–2024 survey",
     publishedAt: "September 2025",
   },
+};
+
 const stateData: Record<string, StateData> = {
   Abia: { igr: 70.4, educationExecution: 45.40, healthExecution: 34.77, vaccination: 38 },
   Adamawa: { igr: 33.8, educationExecution: 46.84, healthExecution: 41.10, vaccination: 38 },
