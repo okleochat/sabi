@@ -262,12 +262,12 @@ const tenureAssessmentCategories: UnscoredCategory[] = [
   {
     id: "cost-of-living",
     label: "Cost of living & household welfare",
-    reason: "The NDHS 2024 food-insecurity survey now supports a state peer index. Monthly food prices, healthy-diet costs, transport fares and purchasing-power trends are indexed as research leads but are not yet reconciled into a consistent state household-cost series.",
+    reason: "The NDHS 2024 food-insecurity survey now supports a state peer index. For the President, headline and food inflation are scored against the CBN medium-term single-digit inflation objective. Monthly state food prices, healthy-diet costs, transport fares and purchasing-power trends are not yet reconciled into a complete household-cost series.",
   },
   {
     id: "economy-jobs",
     label: "Economy, employment & productivity",
-    reason: "A provisional 2023 state labour-market peer index is available using unemployment and labour-force participation. It is a transition-year snapshot; comparable post-2023 state labour-market follow-up and job-quality measures are still missing.",
+    reason: "A provisional 2023 state labour-market peer index is available using unemployment and labour-force participation. For the President, current real GDP growth is benchmarked against the 5% average-growth objective in the completed 2021–2025 National Development Plan. These are different national/state methods and not directly comparable. State labour-market follow-up and job-quality measures are still missing.",
   },
   {
     id: "public-finance",
@@ -334,6 +334,49 @@ const igrPerCapitaPeers = stateJurisdictions.map(state => {
 }).filter((value): value is number => value !== undefined);
 const educationExecutionPeers = stateJurisdictions.map(state => stateData[state]?.educationExecution).filter((value): value is number => value !== undefined);
 const healthExecutionPeers = stateJurisdictions.map(state => stateData[state]?.healthExecution).filter((value): value is number => value !== undefined);
+
+function getNationalSnapshotScores(): CategoryScore[] {
+  const headline = nationalIndicators.find(item => item.id === "headline-inflation-2026-10");
+  const food = nationalIndicators.find(item => item.id === "food-inflation-2026-10");
+  const gdp = nationalIndicators.find(item => item.id === "real-gdp-growth-2026-q2");
+  const scores: CategoryScore[] = [];
+
+  // CBN's stated medium-term objective is single-digit inflation. Use 9% as
+  // the upper single-digit reference point, not as a claim of a formal target.
+  if (headline && food) {
+    const inflationScores = [headline.value, food.value].map(rate =>
+      Math.max(1, Math.min(10, 10 * 9 / rate))
+    );
+    scores.push({
+      id: "cost-of-living", label: "Cost of living & household welfare",
+      value: average(inflationScores) ?? 5.5,
+      evidenceCount: 2, expectedEvidence: 2,
+      evidenceLabel: "NBS/CBN headline + food inflation · national benchmark",
+      period: "October 2026", comparisonGroup: "CBN medium-term single-digit inflation objective",
+      scope: "national-snapshot", provisional: true,
+      method: "Each current inflation rate is scored as 10 × 9% divided by the observed rate, capped at 10 and floored at 1; headline and food inflation are then averaged equally. Nine percent is the upper edge of the CBN's stated medium-term single-digit inflation goal.",
+      interpretation: "This measures distance from a price-stability reference, not whether the price level has fallen or whether household incomes can afford essentials. National scores use an absolute policy benchmark and must not be compared numerically with state peer-percentile indices.",
+    });
+  }
+
+  // The 5% figure is the average real-GDP growth objective in the Federal
+  // Government's 2021–2025 National Development Plan. It is a historical
+  // planning benchmark, not a new 2026 target; Q2 year-on-year growth is not
+  // identical to a five-year annual average.
+  if (gdp) {
+    scores.push({
+      id: "economy-jobs", label: "Economy, employment & productivity",
+      value: Math.max(1, Math.min(10, Number((10 * gdp.value / 5).toFixed(1)))),
+      evidenceCount: 1, expectedEvidence: 1,
+      evidenceLabel: "CBN real GDP growth · historical national-plan benchmark",
+      period: gdp.period, comparisonGroup: "5% average real-GDP growth objective in NDP 2021–2025",
+      scope: "national-snapshot", provisional: true,
+      method: "Current real GDP year-on-year growth divided by the 5% average-growth objective published in the Federal Government's National Development Plan 2021–2025, multiplied by 10 and capped at 10.",
+      interpretation: "The NDP period has ended and this is a historical policy benchmark, not a current 2026 target. A single quarterly GDP growth rate does not measure job creation, productivity per person, income distribution or the full economic trajectory. National scores are not comparable with state peer-percentile indices.",
+    });
+  }
+  return scores;
+}
 
 function getStateSnapshotScores(state: string): CategoryScore[] {
   const data = stateData[state];
@@ -441,7 +484,7 @@ function getStateSnapshotScores(state: string): CategoryScore[] {
 }
 
 export function getPublicRecordScores(person: { name: string; office: string; state?: string }) {
-  const categories = person.office === "President" ? [] : getStateSnapshotScores(person.state || "");
+  const categories = person.office === "President" ? getNationalSnapshotScores() : getStateSnapshotScores(person.state || "");
   const scoredIds = new Set(categories.map(item => item.id));
   const notScored = tenureAssessmentCategories.filter(item => !scoredIds.has(item.id)).map(item => ({ ...item }));
   const overallScore = average(categories.map(item => item.value));
