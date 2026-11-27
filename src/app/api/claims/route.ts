@@ -67,7 +67,7 @@ export async function GET(req:NextRequest){
    .filter(item=>item.score>=0.55&&normalizeClaim(item.record.claim||"")!==normalized)
    .sort((a,b)=>b.score-a.score).slice(0,5).map(item=>publicSummary(item.record,false));
   const queued=Boolean(existing&&(existing.kind==="queue"||!existing.data.factcheckSlug));
-  return NextResponse.json({exactMatch,alreadyInQueue:queued,queueReference:queued?String(existing?.data.claimId||""):undefined,suggestions:similar.filter(item=>item.url!==exactMatch?.url)},{headers:{"Cache-Control":"no-store"}});
+  return NextResponse.json({exactMatch,alreadyInQueue:queued,suggestions:similar.filter(item=>item.url!==exactMatch?.url)},{headers:{"Cache-Control":"no-store"}});
  }catch(error){
   console.error("Claim duplicate check failed",error instanceof Error?error.message:"unknown error");
   return NextResponse.json({error:"We could not check the archive right now. You can try again shortly."},{status:503});
