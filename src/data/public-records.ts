@@ -302,7 +302,7 @@ export function getPublicRecordScores(_person: { name: string; office: string; s
     totalAssessmentCategories: tenureAssessmentCategories.length,
     overallCoverage: 0,
     publicationStatus: "in-progress" as const,
-    overallFormula: "The Sabi Overall Score will be the equal-weight arithmetic mean of the eight published category scores, rounded to one decimal place. It will only be released when at least six of the eight categories pass the tenure-wide evidence standard. Missing categories are never assigned zero.",
+    overallFormula: "The Sabi Overall Score will be the equal-weight arithmetic mean of the qualified category scores, rounded to one decimal place. It will only be released when at least six of the eight categories pass the tenure-wide evidence standard. Missing categories are never assigned zero.",
     publicationRequirement: "At least 6 of 8 categories must pass the evidence standard. Each scored category must use comparable, source-verified observations spanning the actual term and an inherited baseline; a one-year snapshot or source catalogue entry is not sufficient.",
   };
 }
