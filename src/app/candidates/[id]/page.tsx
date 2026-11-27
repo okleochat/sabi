@@ -38,8 +38,8 @@ export default async function CandidateProfile({params}:{params:Promise<{id:stri
     </div>
     {tracker?.disputes?.length?<div className="candidate-dispute-alert">
      <div className="eyebrow">PUBLIC NOMINATION DISPUTE / UNRESOLVED IN SOURCES CHECKED</div>
-     <strong>INEC's final list and the party's public position differ.</strong>
-     <p>The official list names this candidate for the ticket. A party statement and a court case challenge that nomination. The sources below record the competing positions; this profile does not decide the legal merits. Last reviewed {tracker.checkedAt}.</p>
+     <strong>The official nomination record is contested in public and/or court records.</strong>
+     <p>{tracker.disputeStatusNote || "The sources below record competing positions; this profile does not decide the legal merits."} Last reviewed {tracker.checkedAt}.</p>
     </div>:null}
     <ShareCard kind="2027 PRESIDENTIAL CANDIDATE DOSSIER" kicker={c.partyCode} title={c.displayName} summary={background?.summary||"Official candidate and running-mate particulars transcribed from INEC’s published final list. Biography and policy records are being independently sourced."} details={[
      {label:"Party",value:c.partyCode},
@@ -98,8 +98,28 @@ export default async function CandidateProfile({params}:{params:Promise<{id:stri
       <p>{item.position}</p>
       <a href={item.url} target="_blank" rel="noreferrer">OPEN SOURCE ↗</a>
      </article>)}</div>
-     <p className="notice">Status: the last located court report says judgment was reserved on 27 October 2026. No final judgment was located in the source check for this update. Recheck before treating the ballot position as settled.</p>
+     <p className="notice">{tracker.disputeStatusNote || "No final court judgment was located in the source check for this update. Recheck before treating the ballot position as settled."}</p>
     </div>:null}
+
+    {tracker.recentDevelopments?.length ? (
+     <div className="candidate-dispute-panel">
+      <div className="eyebrow">RECENT PUBLIC STATEMENTS · SOURCE-ATTRIBUTED</div>
+      <h3>Recent political developments</h3>
+      <p className="notice">These entries record who said what and when. Impact is classified separately from truth or legal status; a statement is not proof of its underlying claim.</p>
+      <div className="candidate-dispute-list">
+       {tracker.recentDevelopments.map(item=><article key={item.id}>
+        <div className="eyebrow">{item.date} · {item.status}</div>
+        <strong>{item.title}</strong>
+        <p><b>Speaker:</b> {item.speaker}</p>
+        <blockquote>{item.wording}</blockquote>
+        <p>{item.context}</p>
+        <p><b>Impact on subject:</b> {item.impact}</p>
+        <a href={item.url} target="_blank" rel="noreferrer">OPEN SOURCE ↗</a>
+        {item.supportingSources?.length?<ul>{item.supportingSources.map(source=><li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.publisher}: {source.title}</a></li>)}</ul>:null}
+       </article>)}
+      </div>
+     </div>
+    ) : null}
     <div className="candidate-manifesto-status">
      <div className="eyebrow">MANIFESTO DOCUMENT STATUS / SOURCE SNAPSHOT</div>
      <h3>{tracker.manifestoStatus==="document-located"?"A manifesto document is indexed":tracker.manifestoStatus==="launch-reported-document-not-located"?"Launch reported; full document not located":tracker.manifestoStatus==="no-document-found-in-tracker"?"No standalone document found in tracker":tracker.manifestoStatus==="tracker-entry-conflicted"?"Tracker entry requires clarification":"No clear status in the checked source snapshot"}</h3>
