@@ -13,6 +13,9 @@ The profile research desk currently indexes **46 source series and portals**, wi
 | Evidence file | Coverage | What is recorded | Important qualification |
 |---|---:|---|---|
 | `src/data/security-state-2024-25.ts` | 37 jurisdictions | ACLED/EUAA incidents and estimated fatalities, 2024–25 | Not the complete post-May-2023 tenure; estimated fatalities do not distinguish civilian/non-civilian deaths |
+| `src/data/mpi-baselines.ts` | 37 jurisdictions | 2021/22 National MPI, incidence, intensity, 95% confidence intervals and affected population | Pre-tenure baseline; not a monetary poverty measure; Borno state representativeness is limited |
+| `src/data/ndhs-food-insecurity.ts` | 37 jurisdictions | 2024 NDHS moderate/severe and severe food insecurity with sample-person counts | Survey measure over previous 12 months; not a direct attribution to an officeholder |
+| `src/data/ndhs-child-mortality.ts` | 37 jurisdictions | 2024 NDHS state under-five mortality estimate | Retrospective ten-year estimate, most of which predates May 2023 |
 | `src/data/mics-baselines.ts` | 37 jurisdictions × 9 measures | 333 observations across early learning, school attendance, WASH, child labour and child marriage | 2021 baseline, before current 2023 administrations; Borno sampled seven of 27 LGAs |
 | `src/data/nalabe-baselines.ts` | 37 jurisdictions × 3 grade levels | 111 mathematics observations: P3, P5, JS2 mean scale score and minimum proficiency | October 2022 baseline; not post-2023 outcomes; weighted table counts are not raw sample sizes |
 | `src/data/dhis2-immunisation.ts` | 36 states and FCT | 2023 and 2024 annualised fully-immunised-by-age-one coverage | DHIS2 administrative rate, not the NDHS household survey; rates above 100% are retained as published |
