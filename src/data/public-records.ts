@@ -94,6 +94,13 @@ const sources = {
   },
 };
 
+  infrastructure: {
+    label: "Nigeria Demographic and Health Survey 2024 — Tables 16.2 and 16.7",
+    publisher: "Federal Ministry of Health and Social Welfare / National Population Commission / ICF",
+    url: "https://www.health.gov.ng/wp-content/uploads/2025/10/NDHS-2024-Final-Report_Disseminated17102025.pdf",
+    period: "2023–2024 survey",
+    publishedAt: "September 2025",
+  },
 const stateData: Record<string, StateData> = {
   Abia: { igr: 70.4, educationExecution: 45.40, healthExecution: 34.77, vaccination: 38 },
   Adamawa: { igr: 33.8, educationExecution: 46.84, healthExecution: 41.10, vaccination: 38 },
@@ -141,6 +148,31 @@ const stateData: Record<string, StateData> = {
   Yobe: { igr: 16.0, educationExecution: 99.89, healthExecution: 99.89, vaccination: 37 },
   Zamfara: { igr: 30.1, educationExecution: 49.92, healthExecution: 39.06, vaccination: 10 },
   "Federal Capital Territory": { igr: 356.3, vaccination: 46 },
+};
+
+// NDHS 2024 state-level service-ladder estimates (de jure household population).
+// Water = at least basic drinking-water service; sanitation = at least basic sanitation.
+// These are jurisdiction snapshots, not outcomes attributable to a single governor.
+const stateInfrastructure2024: Record<string, { water: number; sanitation: number }> = {
+  "Federal Capital Territory": { water: 96.3, sanitation: 73.1 },
+  Benue: { water: 66.6, sanitation: 31.9 }, Kogi: { water: 53.0, sanitation: 20.6 },
+  Kwara: { water: 71.4, sanitation: 38.7 }, Nasarawa: { water: 70.0, sanitation: 52.9 },
+  Niger: { water: 43.5, sanitation: 30.9 }, Plateau: { water: 42.0, sanitation: 24.9 },
+  Adamawa: { water: 49.3, sanitation: 33.1 }, Bauchi: { water: 66.0, sanitation: 57.9 },
+  Borno: { water: 62.7, sanitation: 45.4 }, Gombe: { water: 57.4, sanitation: 51.1 },
+  Taraba: { water: 36.1, sanitation: 24.1 }, Yobe: { water: 76.8, sanitation: 32.7 },
+  Jigawa: { water: 80.7, sanitation: 44.7 }, Kaduna: { water: 71.2, sanitation: 41.3 },
+  Kano: { water: 91.5, sanitation: 82.8 }, Katsina: { water: 59.5, sanitation: 56.9 },
+  Kebbi: { water: 31.0, sanitation: 35.1 }, Sokoto: { water: 34.9, sanitation: 48.0 },
+  Zamfara: { water: 55.1, sanitation: 55.9 }, Abia: { water: 69.3, sanitation: 65.4 },
+  Anambra: { water: 93.4, sanitation: 65.8 }, Ebonyi: { water: 40.2, sanitation: 9.0 },
+  Enugu: { water: 74.4, sanitation: 37.0 }, Imo: { water: 91.5, sanitation: 74.4 },
+  "Akwa Ibom": { water: 80.6, sanitation: 43.7 }, Bayelsa: { water: 75.6, sanitation: 48.5 },
+  "Cross River": { water: 55.9, sanitation: 29.8 }, Delta: { water: 87.3, sanitation: 60.5 },
+  Edo: { water: 88.7, sanitation: 58.5 }, Rivers: { water: 91.2, sanitation: 54.3 },
+  Ekiti: { water: 88.4, sanitation: 42.1 }, Lagos: { water: 98.0, sanitation: 65.6 },
+  Ogun: { water: 96.6, sanitation: 56.6 }, Ondo: { water: 91.4, sanitation: 37.4 },
+  Osun: { water: 93.6, sanitation: 45.5 }, Oyo: { water: 92.0, sanitation: 37.3 },
 };
 
 const nationalIndicators: PublicIndicator[] = [
@@ -269,7 +301,7 @@ const nationalIndicators: PublicIndicator[] = [
 
 function makeIndicator(
   id: string, category: PublicIndicator["category"], label: string, value: number,
-  unit: string, displayValue: string, source: typeof sources.igr | typeof sources.education | typeof sources.health | typeof sources.vaccination,
+  unit: string, displayValue: string, source: typeof sources.igr | typeof sources.education | typeof sources.health | typeof sources.vaccination | typeof sources.infrastructure,
   note: string, population?: string,
 ): PublicIndicator {
   return {
@@ -308,6 +340,20 @@ export function getPublicRecordIndicators(person: { office: string; state?: stri
       "%", `${record.healthExecution.toFixed(2)}%`, sources.health,
       "Reported expenditure as a share of the approved health budget in the FY2025 state health-financing table. Values above 100% are displayed as reported and should be read with the underlying budget and reporting notes."));
   }
+  const infrastructure = stateInfrastructure2024[jurisdiction];
+  if (infrastructure) {
+    indicators.push(makeIndicator("ndhs-basic-water-state-2024", "infrastructure",
+      "Population using at least basic drinking water services", infrastructure.water, "%",
+      `${infrastructure.water.toFixed(1)}%`, sources.infrastructure,
+      "NDHS 2024 state estimate for the de jure household population. At least basic service means an improved source on premises or within a 30-minute round trip; it does not establish water quality, continuity or affordability.",
+      `De jure household population in ${jurisdiction}`));
+    indicators.push(makeIndicator("ndhs-basic-sanitation-state-2024", "infrastructure",
+      "Population using at least basic sanitation services", infrastructure.sanitation, "%",
+      `${infrastructure.sanitation.toFixed(1)}%`, sources.infrastructure,
+      "NDHS 2024 state estimate for the de jure household population. At least basic service means use of an improved facility not shared with other households; it does not establish safe treatment of all excreta.",
+      `De jure household population in ${jurisdiction}`));
+  }
+
   if (record.vaccination !== undefined) {
     indicators.push(makeIndicator("vaccination-ndhs-2023-24", "health", "Children aged 12–23 months fully vaccinated for basic antigens", record.vaccination,
       "%", `${record.vaccination}%`, sources.vaccination,
@@ -364,7 +410,7 @@ const tenureAssessmentCategories: UnscoredCategory[] = [
   {
     id: "infrastructure",
     label: "Infrastructure & basic services",
-    reason: "The MICS WASH figures are a 2021 pre-tenure baseline. Electricity-distribution data do not map cleanly to state governor jurisdictions, and the indexed project records do not yet provide a verified state-wide service reliability and completion series.",
+    reason: "A provisional NDHS 2024 state peer index now covers at least basic drinking-water and sanitation access for all 36 states and the FCT. It is a household WASH snapshot, not a comprehensive infrastructure assessment; electricity, roads, transport, broadband, service reliability and verified project completion remain outstanding.",
   },
   {
     id: "integrity-commitments",
@@ -396,6 +442,8 @@ const securityFatalityRate = (state: string) => {
 };
 const securityPeers = stateJurisdictions.map(securityFatalityRate).filter((value): value is number => value !== undefined);
 const ndhsVaccinationPeers = stateJurisdictions.map(state => stateData[state]?.vaccination).filter((value): value is number => value !== undefined);
+const stateWaterAccessPeers = Object.values(stateInfrastructure2024).map(value => value.water);
+const stateSanitationAccessPeers = Object.values(stateInfrastructure2024).map(value => value.sanitation);
 const dhis2VaccinationPeers = stateJurisdictions.map(state => stateDhIs2Immunisation2023To2024[state]?.year2024).filter((value): value is number => value !== undefined);
 const employmentToPopulationPeers = stateJurisdictions.map(state => {
   const labour = stateLabourBaseline2023[state];
@@ -593,6 +641,23 @@ function getStateSnapshotScores(state: string): CategoryScore[] {
       scope: "state-snapshot", provisional: true,
       method: "Estimated fatalities in ACLED-recorded events from 1 January 2024 to 31 December 2025 divided by the NBS 2023 projected population, expressed per 100,000 residents; lower rates rank higher.",
       interpretation: "A population-adjusted two-year monitoring estimate, not a complete death register or full-tenure trend. ACLED estimates do not distinguish civilian from non-civilian fatalities, and event reporting can vary by location.",
+    });
+  }
+
+  const infrastructure = stateInfrastructure2024[state];
+  if (infrastructure) {
+    scores.push({
+      id: "infrastructure", label: "Infrastructure & basic services",
+      value: average([
+        peerIndex(infrastructure.water, stateWaterAccessPeers, true),
+        peerIndex(infrastructure.sanitation, stateSanitationAccessPeers, true),
+      ]) ?? 5.5,
+      evidenceCount: 2, expectedEvidence: 2,
+      evidenceLabel: "NDHS 2024 basic drinking-water + sanitation service · state peer index",
+      period: "2023–2024 survey", comparisonGroup: "36 states and FCT",
+      scope: "state-snapshot", provisional: true,
+      method: "Equal-weight average of two separately ranked NDHS state indicators: share of the de jure household population with at least basic drinking-water service and share using at least basic sanitation service. Each percentage is converted to a percentile-style 1–10 score against all 36 states and the FCT; higher access ranks higher.",
+      interpretation: "This is a two-indicator household WASH access snapshot, not a comprehensive infrastructure score. It excludes electricity, roads, transport, broadband, reliability, affordability and service quality. The survey ran in 2023–2024 and overlaps the start of several governors' terms; it is not a tenure trend or causal estimate.",
     });
   }
 
