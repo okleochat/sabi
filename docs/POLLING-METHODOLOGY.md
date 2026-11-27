@@ -87,3 +87,23 @@ The Sabi Daily Research Desk runs on its existing 8 a.m. Africa/Lagos schedule. 
 - INEC candidate PDF: https://inecnigeria.org/documents/uploads/2026/10/b5af9099-864c-4d5e-924d-e1a2c771c529-final-list-presidential.pdf
 
 Editorial rule: if a source changes its numbers, sample description or methodology, preserve the earlier version and record the correction date. Do not quietly overwrite a result.
+
+## 27 November 2026 desk update — NOIPolls October governance approval
+
+Sabi added the NOIPolls Monthly Governance Tracker for October 2026 to the public polling desk as a **government-approval** record, not a candidate or party poll.
+
+- **Publisher / release:** NOIPolls, “Governance Approval Rating Plateaus at 41% for 2nd Straight Month,” published 13 November 2026: [original release](https://www.noi-polls.com/post/governance-approval-rating-plateaus-at-41-for-2nd-straight-month). Cross-check: [OpenPolls Nigeria 2027 poll catalogue](https://openpolls.africa/polls), catalogue last updated 15 November 2026.
+- **Reported results:** 41% approve (18% strongly approve + 23% approve); 54% disapprove (33% strongly disapprove + 21% disapprove); 5% neutral/undecided. NOIPolls says approval was unchanged from September and disapproval rose from 52% to 54%.
+- **Fieldwork:** October 2026; exact dates are not stated in the accessible release.
+- **Sample size / frame:** Not published in the accessible release.
+- **Geography:** Nigeria is the stated context; state coverage and geographic sampling frame are not disclosed.
+- **Mode / sampling design:** Not stated in the accessible release.
+- **Question wording:** Exact wording is not published. The release describes the measure as approval of the Federal Government's performance over the past month.
+- **Candidate / party field:** None. This is a government-approval measure.
+- **Weights / margin of error:** Not stated / not published.
+- **Sponsor:** NOIPolls is the publisher; external funding or sponsor is not disclosed.
+- **Sabi eligibility:** Not eligible for the candidate vote-intention average. It is displayed separately under government approval and must not be converted into candidate support, a winner prediction or a win probability.
+
+The accessible release does not provide enough methodological detail to assess representativeness or calculate sampling uncertainty. Sabi preserves those gaps rather than assuming a national probability sample from the pollster's national framing. The candidate vote-intention average remains withheld because the current published candidate-support records do not satisfy the three-independent-pollster, final-ballot, national-probability-sample and full-method requirements.
+
+**Desk check date:** 27 November 2026.
