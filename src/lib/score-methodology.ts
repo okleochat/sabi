@@ -5,12 +5,12 @@
  * a term is not, by that fact alone, attributable to the officeholder.
  */
 export const publicRecordMethodology = {
-  version: "3.0.0",
+  version: "3.2.0",
   scale: {
-    minimum: 0,
+    minimum: 1,
     maximum: 10,
     precision: 1,
-    rule: "Every published category score must be supported by a documented category-specific calculation, a predeclared benchmark and a comparable longitudinal evidence series. Scores describe public outcomes and documented officeholder actions separately; they are not popularity ratings.",
+    rule: "Every published category score must be supported by a documented category-specific calculation and a clearly disclosed comparison basis. Where a current comparable snapshot exists but a full tenure series does not, publish it as a provisional peer index and state the reference period. Scores describe public outcomes and documented officeholder actions separately; they are not popularity ratings.",
   },
   assessmentCategories: [
     { id: "cost-of-living", label: "Cost of living & household welfare" },
@@ -24,12 +24,12 @@ export const publicRecordMethodology = {
   ],
   overallScore: {
     label: "Sabi Overall Score",
-    formula: "Equal-weight arithmetic mean of the category scores that have passed the tenure-wide evidence standard, rounded to one decimal place.",
-    minimumScoredCategories: 6,
+    formula: "Simple arithmetic mean of every category score currently published for the profile, rounded to one decimal place. Unscored categories are excluded, never treated as zero.",
+    minimumScoredCategories: 1,
     totalCategories: 8,
-    publicationRule: "Do not publish a numerical Overall Score until at least 6 of the 8 assessment categories have independently passed their evidence standard. Keep the Overall Score panel visible and label it IN PROGRESS until then.",
+    publicationRule: "Publish the arithmetic mean as soon as at least one category score exists. Clearly label partial-coverage averages provisional and disclose the exact number of scored categories.",
     missingEvidence: "An unscored category is never converted to zero. The profile must show which categories are ready, which remain incomplete and why. The number of score-ready categories is not the same as the proportion of raw evidence collected.",
-    rankingRule: "A public league table or direct rank comparison requires all 8 category scores, matching office level, compatible term windows and comparable data definitions. A score based on 6 or 7 categories may be displayed with explicit missing-category disclosure, but must not be ranked against a different coverage set.",
+    rankingRule: "A public league table or direct rank comparison requires all 8 category scores, matching office level, compatible term windows and comparable data definitions. State peer-percentile indices and national target-benchmark indices are different methods and must never be compared numerically across office levels.",
     caution: "The Overall Score is a summary, not a claim that every outcome was caused by the officeholder. Keep observed jurisdictional performance distinct from evidence of the officeholder's own decisions and contribution.",
   },
   tenureWindow: {
@@ -38,6 +38,16 @@ export const publicRecordMethodology = {
     baseline: "For every category, establish inherited conditions using the strongest comparable pre-tenure evidence. Prefer a 2–3-year pre-tenure average or trend. Where only a survey or one comparable pre-tenure measure exists, disclose that limitation and do not imply a multi-year baseline.",
     minimumLongitudinalEvidence: "A category normally requires at least one defensible pre-tenure baseline and at least two comparable post-assumption observations spanning 12 months or more. For quarterly/monthly measures, use the full available series rather than cherry-picked endpoints. For surveys, use comparable rounds and report confidence intervals or design limitations.",
     overlap: "Split calendar/fiscal-year observations that straddle the assumption date where the source allows. Otherwise label them as transition or overlapping periods rather than attributing the whole year to one administration.",
+  },
+  nationalSnapshotScoring: {
+    description: "National officeholders are assessed with nationally representative indicators and explicit national reference points. State peer-percentile scores and national benchmark scores are different index families and are not numerically comparable.",
+    addedCategories: {
+      publicFinance: "A narrow federal debt-service pressure proxy uses IMF-estimated federal interest payments as a share of federal revenue. It is not a full public-finance audit.",
+      education: "NDHS 2024 organised-learning participation is an access indicator only; it is not a learning-achievement assessment.",
+      health: "NDHS 2024 DPT3, measles second-dose and pneumococcal conjugate vaccine coverage are averaged equally against universal-coverage reference values.",
+      infrastructure: "NDHS 2024 access to at least basic drinking water, at least basic sanitation and electricity are averaged equally against universal-access reference values.",
+    },
+    exclusions: "National security remains unscored until the pre-tenure and current-period security series use compatible event definitions and source vintages. Integrity and promise delivery remain unscored until individual-level legal outcomes and a verified presidential commitment ledger are published. Do not fill these gaps with agency-wide enforcement totals or incomparable ACLED extracts.",
   },
   categoryScoring: {
     commonRule: "Pre-register the category's indicators, direction of improvement, weights and benchmarks before calculating an officeholder's grade. Use the same indicator definitions and scoring transformations for every comparable officeholder. Weights reflect the indicator's substantive importance and measurement quality, not how many rows happen to be available.",
@@ -84,6 +94,11 @@ export const publicRecordMethodology = {
       rule: "Track each commitment's wording, date, deadline, responsible tier of government, measurable output and delivery status. Distinguish allegations, investigations, charges, convictions and final appeals. Agency enforcement totals are not a personal integrity rating.",
     },
   },
+  indexTypes: {
+    statePeerIndex: "For governors and the FCT Minister, convert each available state measure to a percentile-style 1–10 score against the 36 states and FCT, respecting whether higher or lower values indicate better outcomes. Component percentile scores are averaged equally within a category. The infrastructure snapshot is based on NDHS 2024 basic water and sanitation access only; it is not a comprehensive infrastructure index.",
+    nationalBenchmarkIndex: "For the President, use an explicit national policy benchmark where one exists and disclose the benchmark, period and any mismatch between the benchmark period and the observed series. National benchmark scores are not comparable with state peer-percentile scores.",
+    provisional: "All current indices are provisional snapshots. They describe observed jurisdictional conditions and do not, by themselves, establish causal responsibility or change from an inherited baseline.",
+  },
   evidenceTypes: {
     officialStatistics: "Survey and statistical releases with methods, periods, units, denominators and uncertainty.",
     administrativeRecords: "Government, regulator, budget and programme records; disclose reporting completeness and denominator quality.",
@@ -94,8 +109,8 @@ export const publicRecordMethodology = {
     "Use the actual assumption-of-office date and latest complete comparable reporting period.",
     "Show inherited baselines and the full available tenure trajectory; do not score a single snapshot as a tenure result.",
     "Respect revised statistical methods and series-vintage notes. Do not splice incompatible definitions without a published linking method.",
-    "Publish a category score only after its minimum longitudinal evidence and predeclared benchmark requirements are satisfied.",
-    "Keep the Overall Score panel visible, but publish a numeric result only after at least 6 of 8 categories pass.",
+    "Publish a provisional category peer index when a comparable, source-verified cross-jurisdiction snapshot supports a transparent calculation. Do not present a snapshot as a full-tenure trend or causal assessment.",
+    "Publish the arithmetic mean of available category scores; disclose coverage and never treat missing categories as zero.",
     "Never convert missing evidence into zero or describe a source index as completed extraction.",
     "Do not treat an outcome recorded during a term as proof of personal causation.",
     "Keep source documents, raw values, units, geography, period, data vintage, calculations, uncertainty and corrections accessible.",

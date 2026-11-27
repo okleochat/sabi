@@ -88,6 +88,16 @@ The initial public Sabi-research fact-check seeds cover:
 
 These starter records are seeded once by stable Firestore document IDs. Subsequent edits to the source seed file do not overwrite a fact-check that has already been created in Firestore; editors should update a live record through the newsroom process.
 
+## Owner-approved research publication — 27 November 2026
+
+On 27 November 2026, the Sabi owner/editor confirmed that all ten research updates from the November election-claims review had been read and instructed that they be updated officially. The ten resulting public research checks are stored in `src/data/approved-claim-factchecks.ts` and are seeded into the public `factchecks` archive by the normal server-side publishing data path. Their approval metadata records an owner/editor review standard and the date of approval; no individual reviewer name or UID is invented.
+
+The same publication seed synchronises the corresponding private `claims` documents to `closed` / `published`, attaches the public fact-check slug and editorial finding, and registers the claim fingerprint. This avoids leaving an already published newsroom item in the open review queue or accepting an exact duplicate through the submission flow.
+
+The ten publications cover the INEC register clean-up arithmetic; SERAP's court filing and unresolved allegations; the National Peace Committee's reported 109-incident tally; Fashola's attributed 11-million electricity-access figure; the precise wording of Tinubu's electricity promise; the Obi–Kwankwaso 10,000 MW pledge; Obi's PHC and classroom pledges; the planned opposition summit; the Atiku voluntary-withdrawal rumour; and the procedural ruling in the NYSC certificate case.
+
+The public finding labels deliberately distinguish factual verdicts from legal filings, committee-reported monitoring tallies, attributed statistical claims, campaign promises, political negotiations and procedural rulings. Confirming that a candidate made a pledge does not establish feasibility or delivery. Confirming that a lawsuit was filed does not establish the allegations in it. The opposition summit entry is time-bounded to the 27 November research cutoff and should be updated after the planned 30 November meeting.
+
 ## Duplicate and related-claim handling
 
 Before submission, the public form calls the claim lookup endpoint. The system normalizes case, punctuation, accents, whitespace and embedded URLs and calculates a SHA-256 fingerprint. A Firestore claimFingerprints document provides an atomic duplicate guard, so concurrent submissions with the same normalized wording cannot both enter the queue. Existing archived fact-checks and recent legacy queue entries are also checked.
