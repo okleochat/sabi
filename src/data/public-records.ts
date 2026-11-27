@@ -12,7 +12,7 @@ import { stateLabourBaseline2023 } from "@/data/tenure-evidence";
 
 export type PublicIndicator = {
   id: string;
-  category: "economy" | "education" | "health" | "national-economy";
+  category: "economy" | "education" | "health" | "infrastructure" | "national-economy";
   label: string;
   value: number;
   unit: string;
@@ -92,6 +92,13 @@ const sources = {
     period: "2023–2024 survey",
     publishedAt: "May 2025",
   },
+  infrastructure: {
+    label: "Nigeria Demographic and Health Survey 2024 — Tables 16.2 and 16.7",
+    publisher: "Federal Ministry of Health and Social Welfare / National Population Commission / ICF",
+    url: "https://www.health.gov.ng/wp-content/uploads/2025/10/NDHS-2024-Final-Report_Disseminated17102025.pdf",
+    period: "2023–2024 survey",
+    publishedAt: "September 2025",
+  },
 };
 
 const stateData: Record<string, StateData> = {
@@ -141,6 +148,31 @@ const stateData: Record<string, StateData> = {
   Yobe: { igr: 16.0, educationExecution: 99.89, healthExecution: 99.89, vaccination: 37 },
   Zamfara: { igr: 30.1, educationExecution: 49.92, healthExecution: 39.06, vaccination: 10 },
   "Federal Capital Territory": { igr: 356.3, vaccination: 46 },
+};
+
+// NDHS 2024 state-level service-ladder estimates (de jure household population).
+// Water = at least basic drinking-water service; sanitation = at least basic sanitation.
+// These are jurisdiction snapshots, not outcomes attributable to a single governor.
+const stateInfrastructure2024: Record<string, { water: number; sanitation: number }> = {
+  "Federal Capital Territory": { water: 96.3, sanitation: 73.1 },
+  Benue: { water: 66.6, sanitation: 31.9 }, Kogi: { water: 53.0, sanitation: 20.6 },
+  Kwara: { water: 71.4, sanitation: 38.7 }, Nasarawa: { water: 70.0, sanitation: 52.9 },
+  Niger: { water: 43.5, sanitation: 30.9 }, Plateau: { water: 42.0, sanitation: 24.9 },
+  Adamawa: { water: 49.3, sanitation: 33.1 }, Bauchi: { water: 66.0, sanitation: 57.9 },
+  Borno: { water: 62.7, sanitation: 45.4 }, Gombe: { water: 57.4, sanitation: 51.1 },
+  Taraba: { water: 36.1, sanitation: 24.1 }, Yobe: { water: 76.8, sanitation: 32.7 },
+  Jigawa: { water: 80.7, sanitation: 44.7 }, Kaduna: { water: 71.2, sanitation: 41.3 },
+  Kano: { water: 91.5, sanitation: 82.8 }, Katsina: { water: 59.5, sanitation: 56.9 },
+  Kebbi: { water: 31.0, sanitation: 35.1 }, Sokoto: { water: 34.9, sanitation: 48.0 },
+  Zamfara: { water: 55.1, sanitation: 55.9 }, Abia: { water: 69.3, sanitation: 65.4 },
+  Anambra: { water: 93.4, sanitation: 65.8 }, Ebonyi: { water: 40.2, sanitation: 9.0 },
+  Enugu: { water: 74.4, sanitation: 37.0 }, Imo: { water: 91.5, sanitation: 74.4 },
+  "Akwa Ibom": { water: 80.6, sanitation: 43.7 }, Bayelsa: { water: 75.6, sanitation: 48.5 },
+  "Cross River": { water: 55.9, sanitation: 29.8 }, Delta: { water: 87.3, sanitation: 60.5 },
+  Edo: { water: 88.7, sanitation: 58.5 }, Rivers: { water: 91.2, sanitation: 54.3 },
+  Ekiti: { water: 88.4, sanitation: 42.1 }, Lagos: { water: 98.0, sanitation: 65.6 },
+  Ogun: { water: 96.6, sanitation: 56.6 }, Ondo: { water: 91.4, sanitation: 37.4 },
+  Osun: { water: 93.6, sanitation: 45.5 }, Oyo: { water: 92.0, sanitation: 37.3 },
 };
 
 const nationalIndicators: PublicIndicator[] = [
@@ -195,11 +227,81 @@ const nationalIndicators: PublicIndicator[] = [
     sourceUrl: sources.vaccination.url, publishedAt: sources.vaccination.publishedAt,
     note: "NDHS survey estimate. It is not interchangeable with routine DHIS2 administrative coverage and predates the latest year shown in this profile.",
   },
+  {
+    id: "ndhs-organised-learning-2024", category: "education",
+    label: "Participation in organised learning one year before primary entry age", value: 58.6, unit: "%",
+    displayValue: "58.6%", period: "2023–2024 survey", population: "Children one year below official primary entry age, nationally",
+    sourceLabel: "Nigeria Demographic and Health Survey 2024 — SDG indicator 4.2.2",
+    publisher: "Federal Ministry of Health and Social Welfare / National Population Commission / ICF",
+    sourceUrl: "https://www.health.gov.ng/wp-content/uploads/2025/10/NDHS-2024-Final-Report_Disseminated17102025.pdf",
+    publishedAt: "September 2025",
+    note: "This measures early-learning participation, not literacy, numeracy, learning proficiency, school completion or the quality of teaching. Survey fieldwork ran from December 2023 to May 2024 and is an early-term snapshot.",
+  },
+  {
+    id: "ndhs-basic-drinking-water-2024", category: "infrastructure",
+    label: "Population using at least basic drinking water services", value: 70.5, unit: "%",
+    displayValue: "70.5%", period: "2023–2024 survey", population: "National household population",
+    sourceLabel: "Nigeria Demographic and Health Survey 2024 — SDG indicator 1.4.1(a)",
+    publisher: "Federal Ministry of Health and Social Welfare / National Population Commission / ICF",
+    sourceUrl: "https://www.health.gov.ng/wp-content/uploads/2025/10/NDHS-2024-Final-Report_Disseminated17102025.pdf",
+    publishedAt: "September 2025",
+    note: "Basic drinking-water access, not safely managed water. The indicator does not establish continuity, affordability or water quality at every household.",
+  },
+  {
+    id: "ndhs-basic-sanitation-2024", category: "infrastructure",
+    label: "Population using at least basic sanitation services", value: 49.1, unit: "%",
+    displayValue: "49.1%", period: "2023–2024 survey", population: "National household population",
+    sourceLabel: "Nigeria Demographic and Health Survey 2024 — SDG indicator 1.4.1(b)",
+    publisher: "Federal Ministry of Health and Social Welfare / National Population Commission / ICF",
+    sourceUrl: "https://www.health.gov.ng/wp-content/uploads/2025/10/NDHS-2024-Final-Report_Disseminated17102025.pdf",
+    publishedAt: "September 2025",
+    note: "Basic sanitation access, not safely managed sanitation. It does not measure the quality or reliability of sanitation infrastructure.",
+  },
+  {
+    id: "ndhs-electricity-access-2024", category: "infrastructure",
+    label: "Population with access to electricity", value: 30.7, unit: "%",
+    displayValue: "30.7%", period: "2023–2024 survey", population: "National household population",
+    sourceLabel: "Nigeria Demographic and Health Survey 2024 — SDG indicator 7.1.1",
+    publisher: "Federal Ministry of Health and Social Welfare / National Population Commission / ICF",
+    sourceUrl: "https://www.health.gov.ng/wp-content/uploads/2025/10/NDHS-2024-Final-Report_Disseminated17102025.pdf",
+    publishedAt: "September 2025",
+    note: "Household electricity access as reported in the NDHS SDG table. It is not a measure of hours of supply, affordability, grid reliability or generation capacity.",
+  },
+  {
+    id: "ndhs-dpt3-coverage-2024", category: "health",
+    label: "Children receiving third dose of DPT-containing vaccine", value: 53.4, unit: "%",
+    displayValue: "53.4%", period: "2023–2024 survey", population: "Children in the NDHS vaccination reference population, nationally",
+    sourceLabel: "Nigeria Demographic and Health Survey 2024 — SDG indicator 3.b.1(a)",
+    publisher: "Federal Ministry of Health and Social Welfare / National Population Commission / ICF",
+    sourceUrl: "https://www.health.gov.ng/wp-content/uploads/2025/10/NDHS-2024-Final-Report_Disseminated17102025.pdf",
+    publishedAt: "September 2025",
+    note: "Household-survey vaccination coverage; this is distinct from administrative DHIS2 coverage.",
+  },
+  {
+    id: "ndhs-measles2-coverage-2024", category: "health",
+    label: "Children receiving second dose of measles-containing vaccine", value: 30.3, unit: "%",
+    displayValue: "30.3%", period: "2023–2024 survey", population: "Children in the NDHS vaccination reference population, nationally",
+    sourceLabel: "Nigeria Demographic and Health Survey 2024 — SDG indicator 3.b.1(b)",
+    publisher: "Federal Ministry of Health and Social Welfare / National Population Commission / ICF",
+    sourceUrl: "https://www.health.gov.ng/wp-content/uploads/2025/10/NDHS-2024-Final-Report_Disseminated17102025.pdf",
+    publishedAt: "September 2025",
+    note: "Household-survey vaccination coverage; this is distinct from administrative DHIS2 coverage.",
+  },
+  {
+    id: "ndhs-pcv-coverage-2024", category: "health",
+    label: "Children receiving final dose of pneumococcal conjugate vaccine", value: 53.3, unit: "%",
+    displayValue: "53.3%", period: "2023–2024 survey", population: "Children in the NDHS vaccination reference population, nationally",
+    sourceLabel: "Nigeria Demographic and Health Survey 2024 — SDG indicator 3.b.1(c)",
+    publisher: "Federal Ministry of Health and Social Welfare / National Population Commission / ICF",
+    sourceUrl: "https://www.health.gov.ng/wp-content/uploads/2025/10/NDHS-2024-Final-Report_Disseminated17102025.pdf",
+    publishedAt: "September 2025",
+    note: "Household-survey vaccination coverage; this is distinct from administrative DHIS2 coverage.",
+  },
 ];
 
 function makeIndicator(
   id: string, category: PublicIndicator["category"], label: string, value: number,
-  unit: string, displayValue: string, source: typeof sources.igr | typeof sources.education | typeof sources.health | typeof sources.vaccination,
+  unit: string, displayValue: string, source: typeof sources.igr | typeof sources.education | typeof sources.health | typeof sources.vaccination | typeof sources.infrastructure,
   note: string, population?: string,
 ): PublicIndicator {
   return {
@@ -238,6 +340,20 @@ export function getPublicRecordIndicators(person: { office: string; state?: stri
       "%", `${record.healthExecution.toFixed(2)}%`, sources.health,
       "Reported expenditure as a share of the approved health budget in the FY2025 state health-financing table. Values above 100% are displayed as reported and should be read with the underlying budget and reporting notes."));
   }
+  const infrastructure = stateInfrastructure2024[jurisdiction];
+  if (infrastructure) {
+    indicators.push(makeIndicator("ndhs-basic-water-state-2024", "infrastructure",
+      "Population using at least basic drinking water services", infrastructure.water, "%",
+      `${infrastructure.water.toFixed(1)}%`, sources.infrastructure,
+      "NDHS 2024 state estimate for the de jure household population. At least basic service means an improved source on premises or within a 30-minute round trip; it does not establish water quality, continuity or affordability.",
+      `De jure household population in ${jurisdiction}`));
+    indicators.push(makeIndicator("ndhs-basic-sanitation-state-2024", "infrastructure",
+      "Population using at least basic sanitation services", infrastructure.sanitation, "%",
+      `${infrastructure.sanitation.toFixed(1)}%`, sources.infrastructure,
+      "NDHS 2024 state estimate for the de jure household population. At least basic service means use of an improved facility not shared with other households; it does not establish safe treatment of all excreta.",
+      `De jure household population in ${jurisdiction}`));
+  }
+
   if (record.vaccination !== undefined) {
     indicators.push(makeIndicator("vaccination-ndhs-2023-24", "health", "Children aged 12–23 months fully vaccinated for basic antigens", record.vaccination,
       "%", `${record.vaccination}%`, sources.vaccination,
@@ -294,7 +410,7 @@ const tenureAssessmentCategories: UnscoredCategory[] = [
   {
     id: "infrastructure",
     label: "Infrastructure & basic services",
-    reason: "The MICS WASH figures are a 2021 pre-tenure baseline. Electricity-distribution data do not map cleanly to state governor jurisdictions, and the indexed project records do not yet provide a verified state-wide service reliability and completion series.",
+    reason: "A provisional NDHS 2024 state peer index now covers at least basic drinking-water and sanitation access for all 36 states and the FCT. It is a household WASH snapshot, not a comprehensive infrastructure assessment; electricity, roads, transport, broadband, service reliability and verified project completion remain outstanding.",
   },
   {
     id: "integrity-commitments",
@@ -326,6 +442,8 @@ const securityFatalityRate = (state: string) => {
 };
 const securityPeers = stateJurisdictions.map(securityFatalityRate).filter((value): value is number => value !== undefined);
 const ndhsVaccinationPeers = stateJurisdictions.map(state => stateData[state]?.vaccination).filter((value): value is number => value !== undefined);
+const stateWaterAccessPeers = Object.values(stateInfrastructure2024).map(value => value.water);
+const stateSanitationAccessPeers = Object.values(stateInfrastructure2024).map(value => value.sanitation);
 const dhis2VaccinationPeers = stateJurisdictions.map(state => stateDhIs2Immunisation2023To2024[state]?.year2024).filter((value): value is number => value !== undefined);
 const employmentToPopulationPeers = stateJurisdictions.map(state => {
   const labour = stateLabourBaseline2023[state];
@@ -383,6 +501,67 @@ function getNationalSnapshotScores(): CategoryScore[] {
       interpretation: "The NDP period has ended and this is a historical policy benchmark, not a current 2026 target. A single quarterly GDP growth rate does not measure job creation, productivity per person, income distribution or the full economic trajectory. National scores are not comparable with state peer-percentile indices.",
     });
   }
+
+  // Federal public-finance pressure proxy. IMF staff report estimates federal
+  // interest payments at 53.2% of federal revenue in 2025. The score is the
+  // remaining revenue share after interest payments, expressed on a 0–10 scale.
+  // This is deliberately a narrow debt-service burden measure, not a full fiscal grade.
+  const debtService = 53.2;
+  scores.push({
+    id: "public-finance", label: "Public finance & fiscal management",
+    value: Number((10 * (1 - debtService / 100)).toFixed(1)),
+    evidenceCount: 1, expectedEvidence: 1,
+    evidenceLabel: "IMF estimate: federal interest payments as share of federal revenue",
+    period: "2025 estimate", comparisonGroup: "100% of federal revenue consumed by interest payments = 0/10",
+    scope: "national-snapshot", provisional: true,
+    benchmarkSourceUrl: "https://www.elibrary.imf.org/view/journals/002/2026/125/article-A001-en.xml",
+    benchmarkSourceLabel: "IMF 2026 Article IV Consultation",
+    method: "10 × (1 − 0.532), using the IMF's 2025 estimate that federal interest payments equalled 53.2% of federal revenue. The scale has an explicit arithmetic ceiling: 100% of revenue absorbed by interest leaves zero fiscal headroom. This is one debt-service pressure indicator, not a composite audit of revenue mobilisation, deficits, arrears or spending quality.",
+    interpretation: "A lower interest-to-revenue burden leaves more revenue available for public services and investment. The figure is an IMF staff estimate for 2025, not a complete audited account or proof of presidential causation.",
+  });
+
+  // NDHS national early-learning participation indicator. It measures access,
+  // not learning achievement, and is an early-term survey snapshot.
+  const earlyLearning = nationalIndicators.find(item => item.id === "ndhs-organised-learning-2024");
+  if (earlyLearning) scores.push({
+    id: "education", label: "Education & learning",
+    value: Number((earlyLearning.value / 10).toFixed(1)),
+    evidenceCount: 1, expectedEvidence: 1,
+    evidenceLabel: "NDHS 2024 organised-learning participation",
+    period: earlyLearning.period, comparisonGroup: "100% participation reference",
+    scope: "national-snapshot", provisional: true,
+    method: "The published participation percentage is divided by 10 to express it on the 1–10 display scale, using universal participation (100%) as the reference ceiling.",
+    interpretation: "This is an access/participation indicator for children one year below primary entry age. It is not a test of literacy, numeracy, learning proficiency, completion or teaching quality. The NDHS fieldwork ran from December 2023 to May 2024, early in the current administration.",
+  });
+
+  const healthMeasures = ["ndhs-dpt3-coverage-2024", "ndhs-measles2-coverage-2024", "ndhs-pcv-coverage-2024"]
+    .map(id => nationalIndicators.find(item => item.id === id)?.value)
+    .filter((value): value is number => value !== undefined);
+  if (healthMeasures.length) scores.push({
+    id: "health", label: "Healthcare & health outcomes",
+    value: Number((average(healthMeasures.map(value => value / 10)) ?? 0).toFixed(1)),
+    evidenceCount: healthMeasures.length, expectedEvidence: 3,
+    evidenceLabel: "NDHS 2024 DPT3, measles second dose and PCV coverage",
+    period: "2023–2024 survey", comparisonGroup: "100% coverage reference for each vaccine",
+    scope: "national-snapshot", provisional: true,
+    method: "Equal-weight average of three NDHS household-survey vaccination coverage rates, each divided by 10 on a 1–10 display scale against universal (100%) coverage.",
+    interpretation: "These are three distinct vaccine-coverage indicators, not a complete health-system score. The survey estimates are not interchangeable with DHIS2 administrative coverage and do not measure maternal mortality, child mortality, quality of care or access to essential services.",
+  });
+
+  const infrastructureMeasures = ["ndhs-basic-drinking-water-2024", "ndhs-basic-sanitation-2024", "ndhs-electricity-access-2024"]
+    .map(id => nationalIndicators.find(item => item.id === id)?.value)
+    .filter((value): value is number => value !== undefined);
+  if (infrastructureMeasures.length) scores.push({
+    id: "infrastructure", label: "Infrastructure & basic services",
+    value: Number((average(infrastructureMeasures.map(value => value / 10)) ?? 0).toFixed(1)),
+    evidenceCount: infrastructureMeasures.length, expectedEvidence: 3,
+    evidenceLabel: "NDHS 2024 basic water, sanitation and electricity access",
+    period: "2023–2024 survey", comparisonGroup: "100% access reference for each service",
+    scope: "national-snapshot", provisional: true,
+    method: "Equal-weight average of national household access rates for at least basic drinking water, at least basic sanitation and electricity, each divided by 10 on a 1–10 display scale against universal access.",
+    interpretation: "This is a basic-services access index, not a complete infrastructure assessment. It excludes roads, rail, ports, broadband, reliability, affordability and service quality. NDHS household access is not equivalent to infrastructure delivered solely by the Federal Government.",
+  });
+
   return scores;
 }
 
@@ -462,6 +641,23 @@ function getStateSnapshotScores(state: string): CategoryScore[] {
       scope: "state-snapshot", provisional: true,
       method: "Estimated fatalities in ACLED-recorded events from 1 January 2024 to 31 December 2025 divided by the NBS 2023 projected population, expressed per 100,000 residents; lower rates rank higher.",
       interpretation: "A population-adjusted two-year monitoring estimate, not a complete death register or full-tenure trend. ACLED estimates do not distinguish civilian from non-civilian fatalities, and event reporting can vary by location.",
+    });
+  }
+
+  const infrastructure = stateInfrastructure2024[state];
+  if (infrastructure) {
+    scores.push({
+      id: "infrastructure", label: "Infrastructure & basic services",
+      value: average([
+        peerIndex(infrastructure.water, stateWaterAccessPeers, true),
+        peerIndex(infrastructure.sanitation, stateSanitationAccessPeers, true),
+      ]) ?? 5.5,
+      evidenceCount: 2, expectedEvidence: 2,
+      evidenceLabel: "NDHS 2024 basic drinking-water + sanitation service · state peer index",
+      period: "2023–2024 survey", comparisonGroup: "36 states and FCT",
+      scope: "state-snapshot", provisional: true,
+      method: "Equal-weight average of two separately ranked NDHS state indicators: share of the de jure household population with at least basic drinking-water service and share using at least basic sanitation service. Each percentage is converted to a percentile-style 1–10 score against all 36 states and the FCT; higher access ranks higher.",
+      interpretation: "This is a two-indicator household WASH access snapshot, not a comprehensive infrastructure score. It excludes electricity, roads, transport, broadband, reliability, affordability and service quality. The survey ran in 2023–2024 and overlaps the start of several governors' terms; it is not a tenure trend or causal estimate.",
     });
   }
 
