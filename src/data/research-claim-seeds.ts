@@ -38,8 +38,7 @@ export const starterResearchClaims: Array<Record<string, any>> = [
     supportingUrls:["https://environment.abiastate.gov.ng/gov-otti-holds-third-anniversary-parade-reaffirms-commitment-to-dignity-development-of-abia/","https://punchng.com/my-govt-built-414-roads-cut-debt-by-60-in-three-years-otti/"],
     contact:"",isTimeSensitive:false,createdAt:"2026-11-27T12:00:00.000Z",submittedAt:"2026-11-27T12:00:00.000Z",updatedAt:"2026-11-27T12:00:00.000Z",
     origin:"sabi-research",originLabel:"Sabi newsroom research",alertStatus:"not_applicable",seedVersion:1
-  }
-
+  },
   {
     id:"sabi-research-makinde-oyo-road-delivery-august-2026",
     claim:"Governor Seyi Makinde's six-year scorecard says 14 Oyo road projects totalling 224.32 kilometres were completed under Omituntun 2.0, while 25 road contracts covering 345.79 kilometres were ongoing.",
