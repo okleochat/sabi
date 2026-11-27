@@ -7,6 +7,20 @@ export type ManifestoResearchStatus =
 
 export type CandidateDossierDispute = { title:string; publisher:string; url:string; position:string; publishedAt:string };
 
+export type CandidateDossierUpdate = {
+  id:string;
+  date:string;
+  speaker:string;
+  wording:string;
+  context:string;
+  impact:"positive"|"negative"|"mixed"|"neutral"|"unclear";
+  status:string;
+  publisher:string;
+  title:string;
+  url:string;
+  supportingSources?:Array<{publisher:string;title:string;url:string}>;
+};
+
 export type CandidateDossierEvidence = {
   reviewedRecords?:number;
   documentedCampaignEvents?:number;
@@ -16,6 +30,8 @@ export type CandidateDossierEvidence = {
   manifestoNote:string;
   notableCommitments?:string[];
   disputes?:CandidateDossierDispute[];
+  disputeStatusNote?:string;
+  recentDevelopments?:CandidateDossierUpdate[];
   checkedAt:string;
   sourceUrl:string;
   manifestoSourceUrl:string;
@@ -45,6 +61,10 @@ export const candidateDossierEvidence:Record<string,CandidateDossierEvidence> = 
     reviewedRecords:16,documentedCampaignEvents:6,financeRecords:2,activityStatus:"records-listed",
     manifestoStatus:"launch-reported-document-not-located",
     manifestoNote:"OpenPolls records the Atiku Economic Recovery Plan 2027 as announced in a campaign statement, but says it did not locate a complete online document in the checked snapshot.",
+    disputes:[
+      {title:"Federal High Court ruling on David Mark-led ADC leadership and subsequent 17-ground appeal",publisher:"TheCable / Reuters",url:"https://www.thecable.ng/adc-files-appeal-against-lifus-judgment-seeks-to-stop-inec-from-altering-party-records/",position:"The Federal High Court set aside the David Mark-led leadership process and actions taken under it. ADC filed a 17-ground appeal and asked the Court of Appeal to restrain INEC from altering party records. ADC's lawyer says the judgment did not expressly void Atiku Abubakar's candidacy; Reuters described the ruling as affecting the process that produced his nomination. No appellate stay or final ruling located as of 27 Nov.",publishedAt:"2026-11-18"}
+    ],
+    disputeStatusNote:"The 5 November Federal High Court judgment is under appeal. ADC filed 17 grounds and sought interim protection against INEC altering party records; no stay or final appellate decision was located by 27 November. Filing an appeal does not itself suspend the judgment. The operative effect on Atiku's nomination remains a legal question pending the certified judgment and appeal record.",
     checkedAt,sourceUrl:tracker,manifestoSourceUrl:manifestos,
   },
   sdp:{
@@ -56,6 +76,7 @@ export const candidateDossierEvidence:Record<string,CandidateDossierEvidence> = 
       {title:"SDP statement disputing Adebayo's nomination",publisher:"Social Democratic Party — Media Directorate",url:"https://www.sdpnigeria.org/news/sdp-adewole-adebayo-was-long-expelled-from-the-party-and-was-never-its-presidential-candidate",position:"The SDP's statement says Adebayo had been expelled and was not validly nominated; this is the party's stated position, not a court finding.",publishedAt:"2026-11"},
       {title:"Federal High Court reserves judgment in SDP suit against INEC",publisher:"TheCable",url:"https://www.thecable.ng/court-reserves-judgment-in-suit-challenging-inecs-publication-of-adewole-adebayo-as-sdp-presidential-candidate/",position:"The report says the SDP and its National Organising Secretary challenged INEC's publication of Adebayo's name and sought recognition of Abimbola Akeem Atanda; the court reserved judgment on 27 October 2026.",publishedAt:"2026-10-27"},
     ],
+    disputeStatusNote:"The court reserved judgment on 27 October 2026. The SDP's statement is a party position, while INEC's published list is an official administrative record; no final court judgment was located in this review.",
     checkedAt,sourceUrl:tracker,manifestoSourceUrl:"https://www.adewoleadebayo.com/manifesto",
   },
   dla:{
@@ -86,6 +107,10 @@ export const candidateDossierEvidence:Record<string,CandidateDossierEvidence> = 
     reviewedRecords:15,documentedCampaignEvents:6,financeRecords:0,activityStatus:"records-listed",
     manifestoStatus:"not-stated-in-source-snapshot",
     manifestoNote:"The checked OpenPolls manifesto summary does not provide a clear document status for this ticket. This is not proof that no manifesto exists.",
+    recentDevelopments:[
+      {id:"makinde-collaboration-2026-11-13",date:"2026-11-13",speaker:"Seyi Makinde, Oyo governor and APM presidential candidate, in an Arise Television interview",wording:"I've had engagement with former Vice-President Atiku Abubakar. I've had engagement with H.E. Peter Obi.",context:"Makinde said discussions could produce rivalry or collaboration depending on political circumstances. This confirms engagement and openness, not a completed pact, merger or common ticket.",impact:"neutral",status:"Attributed statement; negotiations not concluded",publisher:"TheCable",title:"Makinde: I'm open to collaboration with Atiku, Obi",url:"https://www.thecable.ng/makinde-im-open-to-collaboration-with-atiku-obi-tinubu-broke-agreement-with-me/",supportingSources:[{publisher:"PUNCH",title:"2027: APC unfazed as Atiku, Obi, Makinde meet Monday",url:"https://punchng.com/2027-apc-unfazed-as-atiku-obi-makinde-meet-monday/"}]},
+      {id:"makinde-campaign-denial-2026-11-27",date:"2026-11-27",speaker:"Richard Nnanna Ihediwa, Director of Strategic Communications, Makinde Diaspora and Political Contact Organisation",wording:"Engr. Makinde is fully in the 2027 Presidential race with his RESET Nigeria Agenda on the platform of the APM.",context:"The campaign organisation rejected social-media reports that Makinde would step down for Atiku and seek the SGF position. This is a campaign denial; it does not rule out continued opposition discussions, and no signed withdrawal or formal agreement was located.",impact:"neutral",status:"Campaign response; underlying social-media allegation unverified",publisher:"TheCable",title:"Makinde denies stepping down for Atiku, says campaign organisation",url:"https://www.thecable.ng/makinde-denies-stepping-down-for-atiku-says-campaign-organisation/"}
+    ],
     checkedAt,sourceUrl:tracker,manifestoSourceUrl:manifestos,
   },
   zlp:{
@@ -98,6 +123,10 @@ export const candidateDossierEvidence:Record<string,CandidateDossierEvidence> = 
     reviewedRecords:13,documentedCampaignEvents:6,financeRecords:2,activityStatus:"records-listed",
     manifestoStatus:"launch-reported-document-not-located",
     manifestoNote:"OpenPolls reports a manifesto launch and a party download page, but says the document link returned no document when checked.",
+    recentDevelopments:[
+      {id:"ok-movement-withdrawal-2026-11-27",date:"2026-11-27",speaker:"John Ozyl Ughulu, National Director-General of the OK Movement",wording:"Following this development, the National Leadership of the OK Movement has resolved to officially discontinue all campaign, mobilisation and operational support for the NDC Party, effective immediately.",context:"Ughulu said the group had been informed that Obi and NDC had ended their relationship with it. He claimed ward, local-government and state structures were withdrawn; membership, leadership authority and scale have not been independently verified.",impact:"unclear",status:"Group statement; organisational authority disputed",publisher:"PUNCH / The Sun",title:"OK Movement faction withdraws support for Obi, NDC",url:"https://punchng.com/ok-movement-faction-withdraws-support-for-obi-ndc/",supportingSources:[{publisher:"The Sun",title:"2027: OK Movement announces withdrawal of support for Obi, Kwankwaso, NDC",url:"https://thesun.ng/2027-ok-movement-announces-withdrawal-of-support-for-obi-kwankwaso-ndc/"}]},
+      {id:"ndc-rebuttal-ok-movement-2026-11-27",date:"2026-11-27",speaker:"Osa Director, NDC National Publicity Secretary",wording:"There are several rogue elements masquerading as members of the OK Movement. The real OK Movement leadership and members are still supporting Peter Obi and the NDC.",context:"The NDC rejected Ughulu's authority to speak for the movement. Peter Obi's spokesman Idris Zekeri separately said the campaign did not recognise Ughulu's group and identified the Obidient and Kwankwasiyya movements as recognised support organisations.",impact:"neutral",status:"Party rebuttal; competing organisational claims unresolved",publisher:"PUNCH",title:"OK Movement faction withdraws support for Obi, NDC",url:"https://punchng.com/ok-movement-faction-withdraws-support-for-obi-ndc/"}
+    ],
     checkedAt,sourceUrl:tracker,manifestoSourceUrl:manifestos,
   },
   nrm:{
