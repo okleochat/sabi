@@ -29,6 +29,8 @@ const subjectAliases: Record<string, { key: string; label: string; type: string 
   "nyesom wike": { key: "nyesom-wike", label: "Nyesom Wike", type: "public-official" },
   "fct minister wike": { key: "nyesom-wike", label: "Nyesom Wike", type: "public-official" },
   "wike": { key: "nyesom-wike", label: "Nyesom Wike", type: "public-official" },
+  "seyi makinde": { key: "seyi-makinde", label: "Seyi Makinde", type: "elected-official" },
+  "oluseyi makinde": { key: "seyi-makinde", label: "Seyi Makinde", type: "elected-official" },
   "atiku abubakar": { key: "atiku-abubakar", label: "Atiku Abubakar", type: "presidential-candidate" },
   "former vice president atiku": { key: "atiku-abubakar", label: "Atiku Abubakar", type: "presidential-candidate" },
   "godswill akpabio": { key: "godswill-akpabio", label: "Godswill Akpabio", type: "public-official" },
