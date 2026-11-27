@@ -79,10 +79,12 @@ Reader contact details remain private. Sabi-origin research leads are inserted i
 The initial newsroom research leads include the FCT Minister's July 2026 satellite-road completion statement and Abia Governor Alex Otti's May 2026 road-project totals. The public reports located so far repeat the officials' stated totals; project-level documentation is still needed. These are research leads, not verified findings.
 
 The initial public Sabi-research fact-check seeds cover:
-- The President's September 2026 inflation-rate comparison, with a distinction between disinflation and falling prices.
+- The President's September 2026 inflation-rate comparison, with a CPI-rebasing caveat and a distinction between disinflation and falling prices.
 - The President's October 2026 claim of more than 4% economic growth, qualified to the available first-half 2026 GDP data.
 - The Anambra debt figures in the 2026 public dispute about Peter Obi's 2014 handover, distinguishing original facility amounts, a 2026 remaining balance and the nearest DMO snapshots.
 - The viral claim that Peter Obi did not build any school facilities, distinguishing new standalone schools from classroom construction and school rehabilitation.
+- The fabricated anti-North quote attributed to Senate President Godswill Akpabio, cross-checked against independent fact-checking, the official denial and reporting on his DSS petition.
+- The viral screenshot claiming Atiku Abubakar proposed selling the Central Bank of Nigeria. This is labelled Unproven because the available reporting found no authenticated original statement or corroborating source, rather than treating an absence of public evidence as definitive proof.
 
 These starter records are seeded once by stable Firestore document IDs. Subsequent edits to the source seed file do not overwrite a fact-check that has already been created in Firestore; editors should update a live record through the newsroom process.
 
