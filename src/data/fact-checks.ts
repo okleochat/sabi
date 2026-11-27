@@ -59,8 +59,8 @@ export const starterFactchecks: Array<Record<string, any>> = [
     evidence:[
       {title:"FACT CHECK: Did Peter Obi Spend Eight Years as Anambra Governor Without Building a Single School?",publisher:"FactCheckAfrica, November 2026",url:"https://factcheckafrica.net/fact-check-did-peter-obi-spend-eight-years-as-anambra-governor-without-building-a-single-school/",sourceType:"independent-fact-check"},
       {title:"The record: Peter Obi's achievements in Anambra, 2014 publication",publisher:"Anambra State Government record hosted as a document archive",url:"https://peterobi.online/anambra-achievements/",sourceType:"historical-government-record"},
-      {title:"Anambra State Education Rebirth: The Peter Obi Model",publisher:"Policy assessment referenced by FactCheckAfrica",url:"https://selonnes.com/",sourceType:"policy-assessment"},
-      {title:"2013 school infrastructure support under SEPIP",publisher:"Channels Television (as cited by FactCheckAfrica)",url:"https://www.channelstv.com/",sourceType:"independent-reporting"}
+      {title:"Anambra State Education Rebirth: The Peter Obi Model",publisher:"Policy assessment referenced by FactCheckAfrica",url:"https://selonnes.com/2018/02/01/anambra-state-education-rebirth-the-peter-obi-model/",sourceType:"policy-assessment"},
+      {title:"Anambra presents ₦1.5bn to 150 schools for infrastructure upgrade",publisher:"Channels Television, November 2013",url:"https://www.channelstv.com/2013/11/13/obiano-presents-n1-5bn-to-150-schools-for-infrastructure-upgrade/",sourceType:"independent-reporting"}
     ],
     published:true,status:"published",publishedAt:"2026-11-27",createdAt:"2026-11-27T12:00:00.000Z",updatedAt:"2026-11-27T12:00:00.000Z",reviewStandard:"sabi-editorial-research",sourceClaimId:"sabi-research-obi-no-schools-anambra-2026"
   }
