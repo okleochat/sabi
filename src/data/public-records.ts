@@ -41,6 +41,8 @@ export type CategoryScore = {
   period?: string;
   comparisonGroup?: string;
   scope?: "state-snapshot" | "national-snapshot";
+  benchmarkSourceUrl?: string;
+  benchmarkSourceLabel?: string;
 };
 
 export type UnscoredCategory = { id: string; label: string; reason: string };
@@ -354,6 +356,8 @@ function getNationalSnapshotScores(): CategoryScore[] {
       evidenceLabel: "NBS/CBN headline + food inflation · national benchmark",
       period: "October 2026", comparisonGroup: "CBN medium-term single-digit inflation objective",
       scope: "national-snapshot", provisional: true,
+      benchmarkSourceUrl: "https://www.cbn.gov.ng/Out/2026/CCD/Personal%20Statements%20of%20Members%20for%20the%20306th%20Meeting%20of%20the%20MPC%20JULY%202026.pdf",
+      benchmarkSourceLabel: "CBN medium-term inflation objective",
       method: "Each current inflation rate is scored as 10 × 9% divided by the observed rate, capped at 10 and floored at 1; headline and food inflation are then averaged equally. Nine percent is the upper edge of the CBN's stated medium-term single-digit inflation goal.",
       interpretation: "This measures distance from a price-stability reference, not whether the price level has fallen or whether household incomes can afford essentials. National scores use an absolute policy benchmark and must not be compared numerically with state peer-percentile indices.",
     });
@@ -371,6 +375,8 @@ function getNationalSnapshotScores(): CategoryScore[] {
       evidenceLabel: "CBN real GDP growth · historical national-plan benchmark",
       period: gdp.period, comparisonGroup: "5% average real-GDP growth objective in NDP 2021–2025",
       scope: "national-snapshot", provisional: true,
+      benchmarkSourceUrl: "https://nigeriareposit.nln.gov.ng/items/1e1972a6-84c2-4465-949d-7ce24834e0b2/full",
+      benchmarkSourceLabel: "National Development Plan 2021–2025",
       method: "Current real GDP year-on-year growth divided by the 5% average-growth objective published in the Federal Government's National Development Plan 2021–2025, multiplied by 10 and capped at 10.",
       interpretation: "The NDP period has ended and this is a historical policy benchmark, not a current 2026 target. A single quarterly GDP growth rate does not measure job creation, productivity per person, income distribution or the full economic trajectory. National scores are not comparable with state peer-percentile indices.",
     });
