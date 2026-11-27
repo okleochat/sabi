@@ -10,7 +10,7 @@ export default function FactCheckLibrary({records}:{records:RecordItem[]}){
  const visible=useMemo(()=>records.filter(r=>{
   const source=(r.evidence||[]).map(e=>e.publisher||e.url||"").join(" ");
   const haystack=[r.title,r.claim,r.summary,r.subject,r.findings,source].join(" ").toLowerCase();
-  const recordOrigin=r.origin==="reader-submission"?"reader-submission":"sabi-research";
+  const recordOrigin=r.origin==="reader-submission"?"reader-submission":r.origin==="sabi-research"?"sabi-research":"unspecified";
   return (!query||haystack.includes(query.toLowerCase()))&&(subject==="all"||String(r.subjectKey||r.subject)===subject)&&(impact==="all"||(r.impact||"unclear")===impact)&&(origin==="all"||recordOrigin===origin)&&(verdict==="all"||(r.verdict||"Unrated")===verdict);
  }),[records,query,subject,impact,origin,verdict]);
  return <>
@@ -18,14 +18,14 @@ export default function FactCheckLibrary({records}:{records:RecordItem[]}){
    <label>Search the archive<input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search a claim, person, phrase or source"/></label>
    <label>Person / subject<select value={subject} onChange={e=>setSubject(e.target.value)}><option value="all">All subjects</option>{subjects.map(([key,label])=><option key={key} value={key}>{label}</option>)}</select></label>
    <label>Impact on subject<select value={impact} onChange={e=>setImpact(e.target.value)}><option value="all">All impact types</option>{Object.entries(impactLabel).map(([key,label])=><option key={key} value={key}>{label}</option>)}</select></label>
-   <label>How it entered Sabi<select value={origin} onChange={e=>setOrigin(e.target.value)}><option value="all">All sources</option><option value="sabi-research">Found by Sabi newsroom</option><option value="reader-submission">Submitted by reader</option></select></label>
+   <label>How it entered Sabi<select value={origin} onChange={e=>setOrigin(e.target.value)}><option value="all">All sources</option><option value="sabi-research">Found by Sabi newsroom</option><option value="reader-submission">Submitted by reader</option><option value="unspecified">Origin not recorded</option></select></label>
    <label>Verdict<select value={verdict} onChange={e=>setVerdict(e.target.value)}><option value="all">All verdicts</option>{verdicts.map(v=><option value={v} key={v}>{v}</option>)}</select></label>
    <span className="factcheck-results-count">{visible.length} of {records.length} published checks</span>
   </div>
   <p className="factcheck-taxonomy-note">Impact describes whether the claim frames the subject favourably or unfavourably. The verdict is a separate assessment of whether the claim is supported by evidence. Neither label substitutes for the full fact-check.</p>
   {visible.length?<div className="content-grid factcheck-grid">{visible.map((r,i)=>{
    const url="/fact-check/"+(r.slug||r.id);
-   const recordOrigin=r.origin==="reader-submission"?"Reader submission":"Sabi newsroom research";
+   const recordOrigin=r.origin==="reader-submission"?"Reader submission":r.origin==="sabi-research"?"Sabi newsroom research":"Origin not recorded";
    return <article className="content-card factcheck-card" key={r.id||i}>
     <div className="eyebrow">{r.verdict||"Editorial review"} / {r.publishedAt||"Date not stated"}</div>
     <h3>{r.title||r.claim}</h3>
