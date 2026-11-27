@@ -64,6 +64,8 @@ export default function PollingDeskPage(){
       <div><span>SAMPLE</span><strong>{poll.sampleSize?.toLocaleString("en-NG")||"Not published"}</strong></div>
       <div><span>GEOGRAPHY</span><strong>{poll.geography}</strong></div>
       <div><span>MODE</span><strong>{poll.mode}</strong></div>
+      <div><span>SPONSOR</span><strong>{poll.sponsor}</strong></div>
+      <div><span>QUESTION</span><strong>{poll.question||"Not published in the source located"}</strong></div>
       <div><span>MARGIN OF ERROR</span><strong>{poll.marginOfError}</strong></div>
      </div>
      <div className="poll-results-list">
