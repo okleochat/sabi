@@ -100,7 +100,7 @@ export default function PollingDeskPage(){
     <h3>{poll.pollster}</h3>
     <p>{poll.fieldwork} · Published {poll.publishedAt}</p>
     <div className="poll-meta-grid">
-     <div><span>RESPONSES</span><strong>{poll.sampleSize.toLocaleString("en-NG")}</strong></div>
+     <div><span>RESPONSES</span><strong>{poll.sampleSize?.toLocaleString("en-NG")||"Not published"}</strong></div>
      <div><span>POPULATION</span><strong>{poll.population}</strong></div>
      <div><span>GEOGRAPHY</span><strong>{poll.geography}</strong></div>
      <div><span>MODE</span><strong>{poll.mode}</strong></div>
