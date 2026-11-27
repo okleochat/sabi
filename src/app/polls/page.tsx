@@ -34,7 +34,7 @@ export default function PollingDeskPage(){
     <div>
      <div className="eyebrow">NATIONAL CANDIDATE VOTE-INTENTION ESTIMATE</div>
      <div className="poll-status-value">{average?"POLLING AVERAGE AVAILABLE":"NOT YET CALCULATED"}</div>
-     <p>{average?average.note:"As of 27 November 2026, the published records reviewed do not meet Sabi's entry rules for a final-ballot, national probability-sample average. The available presidential party-preference figures use non-random or undisclosed sampling; other national surveys measure turnout intention and election confidence, not candidate vote shares."}</p>
+     <p>{average?average.note:"As of 27 November 2026, no published survey meets Sabi's entry rules for a final-ballot, national probability-sample average. Two self-selected online ticket exercises are shown separately as context only; neither meets the sampling, question-transparency and final-ballot requirements. Party-preference, turnout-intention and election-confidence measures remain separate from candidate vote intention."}</p>
     </div>
     <div className="poll-status-meta">
      <div className="eyebrow">WHEN THE AVERAGE CAN APPEAR</div>
