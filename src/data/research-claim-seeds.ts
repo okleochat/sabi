@@ -1,3 +1,5 @@
+import { reviewedClaimResearch } from "./claim-research-updates";
+
 export const starterResearchClaims: Array<Record<string, any>> = [
   {
     id:"sabi-research-wike-satellite-roads-july-2026",
@@ -58,4 +60,5 @@ export const starterResearchClaims: Array<Record<string, any>> = [
     contact:"",isTimeSensitive:false,createdAt:"2026-11-27T12:00:00.000Z",submittedAt:"2026-11-27T12:00:00.000Z",updatedAt:"2026-11-27T12:00:00.000Z",
     origin:"sabi-research",originLabel:"Sabi newsroom research",alertStatus:"not_applicable",seedVersion:1
   },
+  ...reviewedClaimResearch
 ];

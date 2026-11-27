@@ -396,3 +396,7 @@
  .sabi-check-bottom-links{gap:13px}
  .sabi-check-bottom-links a{font-size:8px}
 }
+
+.sabi-check-research-update{background:#f0eefc;border-left-color:var(--purple)}
+.sabi-check-research-update strong{display:block;margin-bottom:5px}
+.sabi-check-research-update small{display:block;margin-top:7px;color:#68675f;font:500 8px/1.5 var(--mono);letter-spacing:.035em}
