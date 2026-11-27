@@ -3,8 +3,9 @@ import {useMemo,useState} from "react";
 import {GoogleAuthProvider,signInWithPopup,signOut} from "firebase/auth";
 import {auth} from "@/lib/firebase-client";
 type EvidenceLink={title:string;publisher?:string;url:string;sourceType?:string};
-type Claim={id:string;claim:string;status:string;createdAt:string;claimType?:string;subject?:string;subjectKey?:string;subjectType?:string;impact?:string;origin?:string;originLabel?:string;state?:string;context?:string;sourceUrl?:string;supportingUrls?:string[];contact?:string;isTimeSensitive?:boolean;reviewPriority?:string;alertStatus?:string;researchNotes?:string;reviewSummary?:string;findings?:string;verdict?:string;evidence?:EvidenceLink[]};
-const verdicts=["True","Mostly true","Half true","Misleading","Mostly false","False","Unproven","Outdated","Insufficient evidence"];
+type Claim={id:string;claim:string;status:string;createdAt:string;claimType?:string;subject?:string;subjectKey?:string;subjectType?:string;impact?:string;origin?:string;originLabel?:string;state?:string;context?:string;sourceUrl?:string;supportingUrls?:string[];contact?:string;isTimeSensitive?:boolean;reviewPriority?:string;alertStatus?:string;researchNotes?:string;reviewSummary?:string;findings?:string;verdict?:string;assessmentType?:string;evidence?:EvidenceLink[]};
+const verdicts=["True","Mostly true","Half true","Misleading","Mostly false","False","Unproven","Outdated","Insufficient evidence","Mostly true — correction required","Filing confirmed; allegations unproven","Committee-reported tally confirmed","Insufficient evidence for the exact figure","Misleading as an exact quotation","Campaign pledge confirmed; delivery not assessable","Summit scheduled; pact pending","False as a claim of voluntary withdrawal","Procedural ruling confirmed; forgery allegation undecided"];
+const assessmentTypes=["Factual claim","Numerical claim / official register clean-up","Legal filing / unresolved allegations","Committee monitoring tally","Attributed statistical claim","Campaign promise / wording","Campaign promise","Political negotiation / planned event","Candidate withdrawal / party nomination status","Court ruling / procedural development"];
 const impacts=["positive","negative","mixed","neutral","unclear"];
 const labels:Record<string,string>={"public-statement":"Public statement","campaign-promise":"Campaign promise","election-information":"Election information",statistics:"Statistics","image-video":"Image / video",policy:"Policy",other:"Other"};
 const impactLabels:Record<string,string>={positive:"Positive for subject",negative:"Negative for subject",mixed:"Mixed impact",neutral:"Neutral / factual",unclear:"Not assessed"};
@@ -17,8 +18,8 @@ function ClaimReviewCard({claim,token,refresh,setMessage}:{claim:Claim;token:()=
    const evidence=evidenceText.split(/\r?\n/).map(url=>url.trim()).filter(Boolean).slice(0,20).map(url=>({title:url,url,sourceType:"editor-added"}));
    const body:any={action,id:claim.id};
    if(action==="update-claim")body.status=status;
-   if(action==="save-claim-research")Object.assign(body,{status,verdict,researchNotes:notes,reviewSummary:summary,findings,evidence,subject,subjectType,impact});
-   if(action==="publish-factcheck")Object.assign(body,{title,summary,findings,verdict,evidence,subject,subjectType,impact,humanReviewConfirmed:confirmed});
+   if(action==="save-claim-research")Object.assign(body,{status,verdict,researchNotes:notes,reviewSummary:summary,findings,evidence,subject,subjectType,impact,assessmentType});
+   if(action==="publish-factcheck")Object.assign(body,{title,summary,findings,verdict,evidence,subject,subjectType,impact,assessmentType,humanReviewConfirmed:confirmed});
    const res=await fetch("/api/studio",{method:"POST",headers:{"Content-Type":"application/json",Authorization:"Bearer "+await token()},body:JSON.stringify(body)});
    const data=await res.json();if(!res.ok)throw new Error(data.error||"Newsroom action failed.");
    setMessage(action==="publish-factcheck"?"Fact-check published: "+data.url:action==="save-claim-research"?"Research, subject and impact classification saved.":"Workflow status updated.");
@@ -40,6 +41,7 @@ function ClaimReviewCard({claim,token,refresh,setMessage}:{claim:Claim;token:()=
    <p className="notice">This is about whether the claim paints the subject favourably or unfavourably. It is separate from the truth verdict below.</p>
    <label className="status-label">Workflow status<select value={status} disabled={busy} onChange={e=>setStatus(e.target.value)}><option value="submitted">Submitted</option><option value="triaged">Triaged</option><option value="researching">Researching</option><option value="editor_review">Editor review</option><option value="closed">Closed</option></select></label>
    <label>Editorial verdict (draft only)<select value={verdict} disabled={busy} onChange={e=>setVerdict(e.target.value)}><option value="">Not assessed</option>{verdicts.map(v=><option value={v} key={v}>{v}</option>)}</select></label>
+   <label>Assessment type<select value={assessmentType} disabled={busy} onChange={e=>setAssessmentType(e.target.value)}>{assessmentTypes.map(v=><option value={v} key={v}>{v}</option>)}</select></label>
    <label>Research notes / source checks<textarea value={notes} onChange={e=>setNotes(e.target.value)} maxLength={8000} rows={4} placeholder="Record primary documents, corroboration, conflicting sources and what remains unknown."/></label>
    <label>Short explanation for publication<textarea value={summary} onChange={e=>setSummary(e.target.value)} maxLength={2500} rows={3} placeholder="A clear, neutral summary of what the evidence supports."/></label>
    <label>Detailed findings<textarea value={findings} onChange={e=>setFindings(e.target.value)} maxLength={12000} rows={6} placeholder="Explain the exact wording, source, context, evidence, counter-evidence and limitations."/></label>
