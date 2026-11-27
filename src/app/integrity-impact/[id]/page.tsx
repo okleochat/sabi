@@ -51,8 +51,8 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
      {p.termStart?<div className="detail"><span>TERM / APPOINTMENT START</span><strong>{p.termStart}</strong></div>:null}
     </div>
     <div className="stat-strip">
-     <div className="stat"><strong>{scorecard.overallScore===null?"—":scorecard.overallScore.toFixed(1)+"/10"}</strong><span>Overall score</span></div>
-     <div className="stat"><strong>{scorecard.scoredCategoryCount}/{scorecard.totalAssessmentCategories}</strong><span>Scored categories</span></div>
+     <div className="stat"><strong>{scorecard.overallScore===null?"IN PROGRESS":scorecard.overallScore.toFixed(1)+"/10"}</strong><span>Overall score</span></div>
+     <div className="stat"><strong>{scorecard.scoredCategoryCount}/{scorecard.totalAssessmentCategories}</strong><span>Score-ready categories</span></div>
      <div className="stat"><strong>{record.indicators.length}</strong><span>Published indicators</span></div>
     </div>
     <div className="no-verdict-panel" style={{marginTop:18}}>
@@ -62,8 +62,8 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
     <ShareCard kind="POLITICIAN PUBLIC RECORD" kicker={p.office} title={p.name} summary={summary} details={[
      {label:"Office",value:p.office},
      {label:"Jurisdiction",value:p.state||"Nigeria"},
-     {label:"Overall score",value:scorecard.overallScore===null?"Not scored":scorecard.overallScore.toFixed(1)+"/10"},
-     {label:"Score coverage",value:scorecard.scoredCategoryCount+" of "+scorecard.totalAssessmentCategories+" categories ("+scorecard.overallCoverage+"%)"},
+     {label:"Overall score",value:scorecard.overallScore===null?"In progress — tenure evidence threshold not met":scorecard.overallScore.toFixed(1)+"/10"},
+     {label:"Score readiness",value:scorecard.scoredCategoryCount+" of "+scorecard.totalAssessmentCategories+" categories score-ready"},
      {label:"Published indicators",value:String(record.indicators.length)},
      {label:"Reporting periods",value:periods.join(", ")||"Not yet available"},
      {label:"Data gaps disclosed",value:String(record.missing.length)}
@@ -72,19 +72,19 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
   </section>
 
   <section className="profile-research">
-   <div className="eyebrow"><span/>SABI CATEGORY SCORES / 0–10</div>
+   <div className="eyebrow"><span/>SABI OVERALL SCORE / TENURE ASSESSMENT</div>
    <h2>THE SCORECARD.<br/>SHOW THE MATH.</h2>
-   <p className="notice">The Overall Score is the equal-weight average of every published category score below. Categories marked Not scored yet are excluded, never counted as zero; the coverage figure shows how much of the assessment is currently scored. These provisional scores describe recorded jurisdictional results or benchmark positions, not proof that one officeholder caused them.</p>
+   <p className="notice">The Sabi Overall Score remains a permanent part of this profile. We are withholding a numerical grade until the category assessments cover the actual period in office, use an inherited baseline, and pass the published evidence standard. A single quarter, one-year fiscal snapshot, source catalogue or pre-tenure survey cannot qualify as a full-tenure performance score.</p>
    <div className="overall-score-panel">
     <div>
      <div className="eyebrow">SABI OVERALL SCORE / 0–10</div>
-     <div className="overall-score-value">{scorecard.overallScore===null?"NOT SCORED":scorecard.overallScore.toFixed(1)}<span>{scorecard.overallScore===null?"":"/10"}</span></div>
-     <div className="overall-score-coverage">{scorecard.scoredCategoryCount} OF {scorecard.totalAssessmentCategories} CATEGORIES SCORED · {scorecard.overallCoverage}% COVERAGE</div>
+     <div className="overall-score-value">{scorecard.overallScore===null?"IN PROGRESS":scorecard.overallScore.toFixed(1)}<span>{scorecard.overallScore===null?"":"/10"}</span></div>
+     <div className="overall-score-coverage">{scorecard.scoredCategoryCount} OF {scorecard.totalAssessmentCategories} CATEGORIES SCORE-READY · 6 REQUIRED TO PUBLISH</div>
     </div>
     <div className="overall-score-method">
      <strong>HOW IT IS CALCULATED</strong>
      <p>{scorecard.overallFormula}</p>
-     <p>Equal weight per scored category. The overall result is provisional and should be read alongside the category scores and unscored evidence gaps.</p>
+     <p>{scorecard.publicationRequirement}</p>
     </div>
    </div>
    <div className="score-grid">
@@ -97,7 +97,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
     </article>)}
    </div>
    <div className="not-scored-panel">
-    <div className="eyebrow">NOT SCORED YET / EVIDENCE REGISTER INCOMPLETE</div>
+    <div className="eyebrow">CATEGORY READINESS / EVIDENCE REGISTER INCOMPLETE</div>
     <div className="not-scored-grid">
      {scorecard.notScored.map(category=><article key={category.id}>
       <strong>{category.label}</strong>
@@ -198,7 +198,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
     <article className="content-card"><div className="eyebrow">02 / CAUSATION</div><h3>Tenure is not proof</h3><p>A national or state indicator can change during an administration for many reasons, including inherited conditions, federal policy, economic shocks and decisions by other institutions.</p></article>
     <article className="content-card"><div className="eyebrow">03 / CORRECTIONS</div><h3>Challenge the evidence</h3><p>Every figure links to its publisher. Submit an alternate primary source or correction through the editorial workspace so the public record can be checked and updated.</p><Link href="/studio">OPEN EDITORIAL WORKSPACE ↗</Link></article>
    </div>
-   <div className="source-note">PUBLIC RECORD METHODOLOGY VERSION {publicRecordMethodology.version}. This profile reports evidence, not a composite rating or a ranking of officeholders.</div>
+   <div className="source-note">PUBLIC RECORD METHODOLOGY VERSION {publicRecordMethodology.version}. The Overall Score will be published when at least six of eight categories meet the full-tenure evidence standard. A complete eight-category assessment is required for like-for-like overall comparisons.</div>
   </section>
  </div>;
 }
