@@ -62,7 +62,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
     <ShareCard kind="POLITICIAN PUBLIC RECORD" kicker={p.office} title={p.name} summary={summary} details={[
      {label:"Office",value:p.office},
      {label:"Jurisdiction",value:p.state||"Nigeria"},
-     {label:"Overall score",value:scorecard.overallScore===null?"In progress — tenure evidence threshold not met":scorecard.overallScore.toFixed(1)+"/10"},
+     {label:"Overall score",value:scorecard.overallScore===null?"No category scores published yet":scorecard.overallScore.toFixed(1)+"/10"},
      {label:"Score readiness",value:scorecard.scoredCategoryCount+" of "+scorecard.totalAssessmentCategories+" categories score-ready"},
      {label:"Published indicators",value:String(record.indicators.length)},
      {label:"Reporting periods",value:periods.join(", ")||"Not yet available"},
@@ -193,7 +193,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
     <article className="content-card"><div className="eyebrow">02 / CAUSATION</div><h3>Tenure is not proof</h3><p>A national or state indicator can change during an administration for many reasons, including inherited conditions, federal policy, economic shocks and decisions by other institutions.</p></article>
     <article className="content-card"><div className="eyebrow">03 / CORRECTIONS</div><h3>Challenge the evidence</h3><p>Every figure links to its publisher. Submit an alternate primary source or correction through the editorial workspace so the public record can be checked and updated.</p><Link href="/studio">OPEN EDITORIAL WORKSPACE ↗</Link></article>
    </div>
-   <div className="source-note">PUBLIC RECORD METHODOLOGY VERSION {publicRecordMethodology.version}. The Overall Score will be published when at least six of eight categories meet the full-tenure evidence standard. A complete eight-category assessment is required for like-for-like overall comparisons.</div>
+   <div className="source-note">PUBLIC RECORD METHODOLOGY VERSION {publicRecordMethodology.version}. The Overall Score is the arithmetic mean of published category scores. Missing categories are excluded, never treated as zero. A complete eight-category assessment is required for like-for-like overall comparisons.</div>
   </section>
  </div>;
 }
