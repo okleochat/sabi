@@ -89,6 +89,29 @@ export default function PollingDeskPage(){
     </article>)}
    </div>
   </section>
+  {candidateVoteSnapshots.length>0?<section className="profile-research">
+   <div className="eyebrow"><span/>NON-PROBABILITY CANDIDATE-VOTE SNAPSHOTS / {candidateVoteSnapshots.length}</div>
+   <h2>RESPONSE COUNTS<br/>ARE NOT A NATIONAL POLL.</h2>
+   <p className="notice">These online exercises are shown because they circulated publicly. Participation was self-selected and/or organised by a movement with a position in the contest. They are not representative surveys and are excluded from every candidate average, ranking and forecast.</p>
+   <div className="poll-record-grid">{candidateVoteSnapshots.map(poll=><article className="content-card poll-record" key={poll.id}>
+    <div className="eyebrow">CANDIDATE VOTE INTENTION / NOT REPRESENTATIVE</div>
+    <h3>{poll.pollster}</h3>
+    <p>{poll.fieldwork} · Published {poll.publishedAt}</p>
+    <div className="poll-meta-grid">
+     <div><span>RESPONSES</span><strong>{poll.sampleSize.toLocaleString("en-NG")}</strong></div>
+     <div><span>POPULATION</span><strong>{poll.population}</strong></div>
+     <div><span>GEOGRAPHY</span><strong>{poll.geography}</strong></div>
+     <div><span>MODE</span><strong>{poll.mode}</strong></div>
+     <div><span>SPONSOR</span><strong>{poll.sponsor}</strong></div>
+     <div><span>QUESTION WORDING</span><strong>{poll.question||"Not published in the source located"}</strong></div>
+     <div><span>SAMPLING</span><strong>{poll.samplingMethod}</strong></div>
+     <div><span>MARGIN OF ERROR</span><strong>{poll.marginOfError}</strong></div>
+    </div>
+    <div className="poll-results"><h4>REPORTED RESULTS — PARTICIPANTS ONLY</h4>{poll.results.map(result=><div className="poll-result" key={result.label}><span>{result.label}</span><strong>{result.value}</strong></div>)}</div>
+    <div className="poll-limitations"><h4>WHY THIS IS NOT A NATIONAL ESTIMATE</h4><ul>{poll.limitations.map(item=><li key={item}>{item}</li>)}</ul></div>
+    <div className="poll-source-links"><a href={poll.sourceUrl} target="_blank" rel="noreferrer">OPEN REPORTED RESULTS ↗</a>{poll.methodologyUrl?<a href={poll.methodologyUrl} target="_blank" rel="noreferrer">METHODOLOGY CROSS-CHECK ↗</a>:null}</div>
+   </article>)}</div>
+  </section>:null}
   <section className="profile-research">
    <div className="eyebrow"><span/>VOTER READINESS & ELECTION CONFIDENCE</div>
    <h2>HOW VOTERS VIEW<br/>THE PROCESS.</h2>
@@ -99,7 +122,7 @@ export default function PollingDeskPage(){
      <div className="poll-metadata-grid">
       <div><span>FIELDWORK</span><strong>{poll.fieldwork}</strong></div><div><span>PUBLISHED</span><strong>{poll.publishedAt}</strong></div>
       <div><span>SAMPLE</span><strong>{poll.sampleSize?.toLocaleString("en-NG")||"Not published"}</strong></div><div><span>GEOGRAPHY</span><strong>{poll.geography}</strong></div>
-      <div><span>MODE</span><strong>{poll.mode}</strong></div><div><span>MARGIN OF ERROR</span><strong>{poll.marginOfError}</strong></div>
+      <div><span>MODE</span><strong>{poll.mode}</strong></div><div><span>SPONSOR</span><strong>{poll.sponsor}</strong></div><div><span>QUESTION</span><strong>{poll.question||"Not published in the source located"}</strong></div><div><span>MARGIN OF ERROR</span><strong>{poll.marginOfError}</strong></div>
      </div>
      <div className="poll-results-list">{poll.results.map(result=><div className="poll-result" key={result.label}>
       <div className="poll-result-head"><strong>{result.label}</strong><b>{result.value.toFixed(1)}%</b></div><div className="poll-track"><span style={{width:Math.min(100,Math.max(0,result.value))+"%"}}/></div>{result.note?<small>{result.note}</small>:null}
