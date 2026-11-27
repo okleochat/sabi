@@ -150,11 +150,10 @@ export default function ShareCard({kind="SABI / PUBLIC INTEREST",kicker,title,su
   ctx.fillStyle=PALETTE.lime;ctx.font="700 19px 'DM Mono', monospace";ctx.fillText("sabipolitics.web.app",pad,footerY+91);
   const trail=[assessmentDate,source].filter(Boolean).join("  /  ");
   ctx.fillStyle="#b8b7ae";ctx.font="400 14px 'DM Mono', monospace";
-  ctx.fillText(oneLine(ctx,trail||"INDEPENDENT / NON-PARTISAN / SOURCE-LED",pad+0,930),pad,footerY+126);
+  ctx.fillText(oneLine(ctx,trail||"INDEPENDENT / NON-PARTISAN / SOURCE-LED",760),pad,footerY+126);
   ctx.fillStyle=PALETTE.purple;ctx.fillRect(866,footerY+31,150,84);
   ctx.fillStyle=PALETTE.white;ctx.font="700 32px 'Space Grotesk', Arial, sans-serif";ctx.fillText("S/",902,footerY+87);
   ctx.fillStyle=PALETTE.lime;ctx.fillRect(846,footerY+31,12,84);
-  ctx.fillStyle=PALETTE.paper;ctx.font="500 11px 'DM Mono', monospace";ctx.fillText("SABI / 2027",pad,height-18);
 
   return await new Promise<Blob>((resolve,reject)=>canvas.toBlob(blob=>blob?resolve(blob):reject(new Error("Could not create the image.")),"image/png"));
  }
