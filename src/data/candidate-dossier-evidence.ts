@@ -5,6 +5,8 @@ export type ManifestoResearchStatus =
  | "tracker-entry-conflicted"
  | "not-stated-in-source-snapshot";
 
+export type CandidateDossierDispute = { title:string; publisher:string; url:string; position:string; publishedAt:string };
+
 export type CandidateDossierEvidence = {
   reviewedRecords?:number;
   documentedCampaignEvents?:number;
@@ -13,6 +15,7 @@ export type CandidateDossierEvidence = {
   manifestoStatus:ManifestoResearchStatus;
   manifestoNote:string;
   notableCommitments?:string[];
+  disputes?:CandidateDossierDispute[];
   checkedAt:string;
   sourceUrl:string;
   manifestoSourceUrl:string;
@@ -46,9 +49,14 @@ export const candidateDossierEvidence:Record<string,CandidateDossierEvidence> = 
   },
   sdp:{
     reviewedRecords:12,documentedCampaignEvents:6,financeRecords:0,activityStatus:"records-listed",
-    manifestoStatus:"tracker-entry-conflicted",
-    manifestoNote:"The OpenPolls manifesto index labels the SDP entry as published, but its accompanying note says the party would publish a policy blueprint in due course. Sabi therefore marks the original document as not yet independently retrieved.",
-    checkedAt,sourceUrl:tracker,manifestoSourceUrl:manifestos,
+    manifestoStatus:"document-located",
+    manifestoNote:"A 138-page 2027–2031 manifesto titled Farewell to Poverty and Insecurity is published on Adewole Adebayo's candidate campaign website and describes twelve presidential missions. This is campaign-authored material. The OpenPolls catalogue summary has a conflicting description, so Sabi links the original candidate document and preserves the discrepancy.",
+    disputes:[
+      {title:"INEC updated final presidential candidate list",publisher:"Independent National Electoral Commission",url:"https://inecnigeria.org/documents/uploads/2026/10/b5af9099-864c-4d5e-924d-e1a2c771c529-final-list-presidential.pdf",position:"INEC's 31 October 2026 final list names Adewole Adebayo under the SDP.",publishedAt:"2026-10-31"},
+      {title:"SDP statement disputing Adebayo's nomination",publisher:"Social Democratic Party — Media Directorate",url:"https://www.sdpnigeria.org/news/sdp-adewole-adebayo-was-long-expelled-from-the-party-and-was-never-its-presidential-candidate",position:"The SDP's statement says Adebayo had been expelled and was not validly nominated; this is the party's stated position, not a court finding.",publishedAt:"2026-11"},
+      {title:"Federal High Court reserves judgment in SDP suit against INEC",publisher:"TheCable",url:"https://www.thecable.ng/court-reserves-judgment-in-suit-challenging-inecs-publication-of-adewole-adebayo-as-sdp-presidential-candidate/",position:"The report says the SDP and its National Organising Secretary challenged INEC's publication of Adebayo's name and sought recognition of Abimbola Akeem Atanda; the court reserved judgment on 27 October 2026.",publishedAt:"2026-10-27"},
+    ],
+    checkedAt,sourceUrl:tracker,manifestoSourceUrl:"https://www.adewoleadebayo.com/manifesto",
   },
   dla:{
     reviewedRecords:4,documentedCampaignEvents:3,financeRecords:0,activityStatus:"records-listed",
