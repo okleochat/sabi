@@ -110,12 +110,12 @@ export default function SabiCheckDesk({spotlights,publishedChecks}:{spotlights:C
 
   <section className="sabi-check-feed" aria-label="Claim discovery feed">
    <div className="sabi-check-feed-top">
-    <div><div className="eyebrow"><span/>THE CLAIMS DESK / LIVE COVERAGE</div><h2>WHAT'S<br/>IN THE <em>CONVERSATION?</em></h2></div>
+    <div><div className="eyebrow"><span/>THE CLAIMS DESK / EDITORIAL RADAR</div><h2>WHAT'S<br/>IN THE <em>CONVERSATION?</em></h2></div>
     <p>Fresh claims, public statements and campaign promises worth checking. We show the source and context—not a verdict until the evidence has been reviewed.</p>
    </div>
 
-   <div className="sabi-check-tabs" role="tablist" aria-label="Claim feed sections">
-    {tabs.map(tab=><button key={tab.id} type="button" role="tab" aria-selected={activeTab===tab.id} className={activeTab===tab.id?"is-active":""} onClick={()=>{setActiveTab(tab.id);setTopic("all");}}>
+   <div className="sabi-check-tabs" role="group" aria-label="Claim feed sections">
+    {tabs.map(tab=><button key={tab.id} type="button" aria-pressed={activeTab===tab.id} className={activeTab===tab.id?"is-active":""} onClick={()=>{setActiveTab(tab.id);setTopic("all");}}>
      <span>{tab.label}</span><b>{tab.count}</b>
     </button>)}
    </div>
