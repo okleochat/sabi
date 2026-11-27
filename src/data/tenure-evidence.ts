@@ -380,7 +380,7 @@ export const tenureEvidenceSources: EvidenceSource[] = [
     period: "Annualised 2023 and 2024 reporting",
     geography: "All 36 states and FCT",
     resolution: "state-and-national", evidenceType: "official-administrative",
-    use: "State-by-state annualised fully-immunised-by-age-one DHIS2 coverage in 2023 and 2024, allowing a year-to-year administrative trend rather than a single survey snapshot.",
+    use: "State-by-state annualised fully-immunised-by-age-one DHIS2 coverage in 2023 and 2024 for the 36 states, allowing a year-to-year administrative trend rather than a single survey snapshot.",
     limitation: "Administrative coverage is not equivalent to NDHS household survey coverage for 12–23-month-olds. Values above 100% are reported as published and signal denominator/catchment quality limits; the ministry reports declines in Enugu, FCT, Kebbi, Sokoto and Zamfara. Do not infer causal responsibility from a single two-year interval.",
     officeScope: "both",
   },
