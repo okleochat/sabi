@@ -89,11 +89,6 @@ export const publicRecordMethodology = {
     nationalBenchmarkIndex: "For the President, use an explicit national policy benchmark where one exists and disclose the benchmark, period and any mismatch between the benchmark period and the observed series. National benchmark scores are not comparable with state peer-percentile scores.",
     provisional: "All current indices are provisional snapshots. They describe observed jurisdictional conditions and do not, by themselves, establish causal responsibility or change from an inherited baseline.",
   },
-  indexTypes: {
-    statePeerIndex: "For governors and the FCT Minister, convert each available state measure to a percentile-style 1–10 score against the 36 states and FCT, respecting whether higher or lower values indicate better outcomes. Component percentile scores are averaged equally within a category.",
-    nationalBenchmarkIndex: "For the President, use an explicit national policy benchmark where one exists and disclose the benchmark, period and any mismatch between the benchmark period and the observed series. National benchmark scores are not comparable with state peer-percentile scores.",
-    provisional: "All current indices are provisional snapshots. They describe observed jurisdictional conditions and do not, by themselves, establish causal responsibility or change from an inherited baseline.",
-  },
   evidenceTypes: {
     officialStatistics: "Survey and statistical releases with methods, periods, units, denominators and uncertainty.",
     administrativeRecords: "Government, regulator, budget and programme records; disclose reporting completeness and denominator quality.",
