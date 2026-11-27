@@ -186,6 +186,7 @@ export const polls:PollRecord[] = [
 ,
 {
  id:"oxford-metro-national-trust-poll-2026-09",
+ title:"Oxford-Metro Analytics National Trust Poll",
  pollster:"Oxford-Metro Analytics",
  category:"candidate-vote-intention",
  publishedAt:"2026-09-08",
@@ -199,10 +200,10 @@ export const polls:PollRecord[] = [
  sponsor:"Not stated in the release; the results were distributed in a Newsfile press release",
  question:"The release reports candidate response totals but does not reproduce the exact vote-intention question wording.",
  results:[
-  {label:"Bola Ahmed Tinubu",value:"35.41%"},
-  {label:"Peter Obi",value:"33.86%"},
-  {label:"Atiku Abubakar",value:"26.67%"},
-  {label:"Other candidates / remaining options",value:"4.06%"}
+  {label:"Bola Ahmed Tinubu",value:35.41,unit:"percent"},
+  {label:"Peter Obi",value:33.86,unit:"percent"},
+  {label:"Atiku Abubakar",value:26.67,unit:"percent"},
+  {label:"Other candidates / remaining options",value:4.06,unit:"percent"}
  ],
  limitations:[
   "This was an opt-in, self-selected online exercise, not a probability sample of the electorate.",
@@ -223,6 +224,7 @@ export const polls:PollRecord[] = [
 },
 {
  id:"tinubu-must-go-movement-online-ticket-poll-2026-09",
+ title:"Tinubu Must Go movement online ticket poll",
  pollster:"Tinubu Must Go movement",
  category:"candidate-vote-intention",
  publishedAt:"2026-09-26",
@@ -236,9 +238,9 @@ export const polls:PollRecord[] = [
  sponsor:"Tinubu Must Go movement; no independent sponsor identified",
  question:"Press reports describe a choice among leading opposition presidential tickets; the exact wording was not published, and whether Tinubu was offered as an option is not stated.",
  results:[
-  {label:"Atiku Abubakar / Rotimi Amaechi ticket",value:"73.6%"},
-  {label:"Peter Obi / Rabiu Kwankwaso ticket",value:"22.3%"},
-  {label:"Other candidates / options",value:"4.1%"}
+  {label:"Atiku Abubakar / Rotimi Amaechi ticket",value:73.6,unit:"percent"},
+  {label:"Peter Obi / Rabiu Kwankwaso ticket",value:22.3,unit:"percent"},
+  {label:"Other candidates / options",value:4.1,unit:"percent"}
  ],
  limitations:[
   "This was a movement-run, self-selected online exercise, not a probability sample of Nigerian voters.",
