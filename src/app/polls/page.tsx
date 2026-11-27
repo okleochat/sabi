@@ -17,7 +17,7 @@ const categoryLabel:Record<string,string>={
 export default function PollingDeskPage(){
  const average=calculatePollingAverage();
  const partyPolls=polls.filter(p=>p.category==="party-preference");
- const publicMood=polls.filter(p=>p.category!=="party-preference");
+ const publicMood=polls.filter(p=>p.category!=="party-preference"&&p.category!=="candidate-vote-intention");
  return <div className="page-shell">
   <section className="page-intro">
    <div className="eyebrow"><span/>SABI POLLING DESK / NIGERIA 2027</div>
@@ -107,7 +107,7 @@ export default function PollingDeskPage(){
      <div><span>SAMPLING</span><strong>{poll.samplingMethod}</strong></div>
      <div><span>MARGIN OF ERROR</span><strong>{poll.marginOfError}</strong></div>
     </div>
-    <div className="poll-results"><h4>REPORTED RESULTS — PARTICIPANTS ONLY</h4>{poll.results.map(result=><div className="poll-result" key={result.label}><span>{result.label}</span><strong>{result.value}</strong></div>)}</div>
+    <div className="poll-results"><h4>REPORTED RESULTS — PARTICIPANTS ONLY</h4>{poll.results.map(result=><div className="poll-result" key={result.label}><span>{result.label}</span><strong>{result.value}{result.unit==="percent"?"%":""}</strong></div>)}</div>
     <div className="poll-limitations"><h4>WHY THIS IS NOT A NATIONAL ESTIMATE</h4><ul>{poll.limitations.map(item=><li key={item}>{item}</li>)}</ul></div>
     <div className="poll-source-links"><a href={poll.sourceUrl} target="_blank" rel="noreferrer">OPEN REPORTED RESULTS ↗</a>{poll.methodologyUrl?<a href={poll.methodologyUrl} target="_blank" rel="noreferrer">METHODOLOGY CROSS-CHECK ↗</a>:null}</div>
    </article>)}</div>
