@@ -25,9 +25,9 @@ Sources:
 - The Receipt methodology: https://www.thereceipt.ng/methodology
 - State promise ledgers: https://www.thereceipt.ng/governors/abia, /governors/delta, /governors/enugu, /governors/kaduna, /governors/kano, /governors/lagos, /governors/oyo and /governors/rivers.
 
-### Sabi score publication rule update
+### Sabi score publication rule update — superseded 27 November 2026
 
-The 60% manifesto-catalogue threshold is now a **completeness label**, not a blanket publication blocker. If at least one commitment has approved, assessable evidence, the engine can publish a provisional score with its assessed sample and coverage caveat. Reaching 60% of identifiable commitments upgrades it to a complete-register assessment. The full Sabi Impact Score still requires at least 3 of 5 dimensions and 60% of planned indicator weight. External pSPI percentiles and third-party promise-ledger references must never be relabelled as Sabi's own scores.
+The earlier sample-based promise score and 3-of-5 impact-dimension publication rule have been retired. A small sample of promises or isolated indicators must not be presented as a tenure-wide political grade. The current eight-domain methodology requires a source-verified inherited baseline and comparable post-assumption trajectory for each category. The Sabi Overall Score remains in the product but is labelled IN PROGRESS until at least 6 of 8 categories qualify. See [SABI-INTELLIGENCE-METHODOLOGY.md](./SABI-INTELLIGENCE-METHODOLOGY.md). Third-party rankings or pledge trackers must never be relabelled as Sabi's own scores.
 
 ## 1. State fiscal and service-delivery evidence
 
