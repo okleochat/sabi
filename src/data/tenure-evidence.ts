@@ -109,6 +109,17 @@ export const quarterlyLabourSeries2022To2024 = [
 // "Source discovered" is not the same as "every record has been extracted".
 export const tenureEvidenceSources: EvidenceSource[] = [
   {
+    id: "nbs-state-population-2023", category: "public-finance",
+    title: "NBS Demographic Bulletin 2023 — Annex 3: Projected Population by State",
+    publisher: "National Population Commission, reproduced by National Bureau of Statistics",
+    url: "https://microdata.nigerianstat.gov.ng/index.php/catalog/182/download/1392/Demographic%20Bulletin%202023.pdf",
+    period: "2023 population projection", geography: "All 36 states and FCT",
+    resolution: "state-and-national", evidenceType: "official-statistics",
+    use: "Population denominator used to express 2024–2025 ACLED-derived estimated fatalities per 100,000 residents and 2025 IGR per resident.",
+    limitation: "Projection based on the 2006 census, not a new census or a precise 2025 population estimate. It is an approximate denominator and should be replaced when a newer consistent official state population series is published.",
+    officeScope: "both",
+  },
+  {
     id: "undp-global-mpi-2026-nigeria", category: "cost-of-living",
     title: "Global Multidimensional Poverty Index 2026 — Nigeria country profile",
     publisher: "UNDP Human Development Report Office and Oxford Poverty and Human Development Initiative",
@@ -994,6 +1005,7 @@ import {stateDhIs2Immunisation2023To2024,dhis2ImmunisationSource} from "@/data/d
 import {stateMpi2022,stateMpiSource} from "@/data/mpi-baselines";
 import {stateFoodInsecurity2024,ndhsFoodInsecuritySource} from "@/data/ndhs-food-insecurity";
 import {stateUnderFiveMortality2024,ndhsChildMortalitySource} from "@/data/ndhs-child-mortality";
+import {statePopulation2023,statePopulation2023Source} from "@/data/state-population-2023";
 
 export function getTenureEvidence(person: { office: string; state?: string; termStart?: string }) {
   const scope = person.office === "President" ? "national" : "subnational";
@@ -1073,6 +1085,20 @@ export function getTenureEvidence(person: { office: string; state?: string; term
     });
   }
   const stateRecord = person.state ? stateLabourBaseline2023[person.state] : undefined;
+  const population2023 = person.state ? statePopulation2023[person.state] : undefined;
+  if (population2023 !== undefined) {
+    observations.unshift({
+      id: "state-population-denominator-2023", category: "public-finance",
+      label: "Projected population used for per-capita normalization",
+      value: population2023.toLocaleString("en-NG") + " residents",
+      period: statePopulation2023Source.period,
+      geography: person.state || "State",
+      publisher: statePopulation2023Source.publisher,
+      url: statePopulation2023Source.url,
+      evidenceType: "official-statistics",
+      note: statePopulation2023Source.note,
+    });
+  }
   const micsRecord = person.state ? micsStateBaseline2021[person.state] : undefined;
   const educationCensus = person.state ? stateEducationCensus2024[person.state] : undefined;
   const dhis2Immunisation = person.state ? stateDhIs2Immunisation2023To2024[person.state] : undefined;
