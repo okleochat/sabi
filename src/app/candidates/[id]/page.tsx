@@ -36,6 +36,11 @@ export default async function CandidateProfile({params}:{params:Promise<{id:stri
      <div className="detail"><span>QUALIFICATIONS AS FILED</span><strong>{c.qualifications||"Not stated in the list"}</strong></div>
      <div className="detail"><span>INEC RECORD STATUS</span><strong>{c.recordStatus||"Source-captured"}</strong></div>
     </div>
+    {tracker?.disputes?.length?<div className="candidate-dispute-alert">
+     <div className="eyebrow">PUBLIC NOMINATION DISPUTE / UNRESOLVED IN SOURCES CHECKED</div>
+     <strong>INEC's final list and the party's public position differ.</strong>
+     <p>The official list names this candidate for the ticket. A party statement and a court case challenge that nomination. The sources below record the competing positions; this profile does not decide the legal merits. Last reviewed {tracker.checkedAt}.</p>
+    </div>:null}
     <ShareCard kind="2027 PRESIDENTIAL CANDIDATE DOSSIER" kicker={c.partyCode} title={c.displayName} summary={background?.summary||"Official candidate and running-mate particulars transcribed from INEC’s published final list. Biography and policy records are being independently sourced."} details={[
      {label:"Party",value:c.partyCode},
      {label:"Running mate",value:c.runningMateOfficialName||"Not stated"},
@@ -84,6 +89,17 @@ export default async function CandidateProfile({params}:{params:Promise<{id:stri
      <article><span>CAMPAIGN FINANCE RECORDS</span><strong>{tracker.financeRecords===undefined?"Not stated":tracker.financeRecords}</strong><p>Public disclosures located by the tracker. A zero means none was found there, not that no spending or disclosure exists.</p></article>
     </div>
     <div className="candidate-tracker-links"><a href={tracker.sourceUrl} target="_blank" rel="noreferrer">OPEN OPENPOLLS CAMPAIGN RECORD ↗</a><a href={tracker.manifestoSourceUrl} target="_blank" rel="noreferrer">OPEN MANIFESTO TRACKER ↗</a></div>
+    {tracker.disputes?.length?<div className="candidate-dispute-panel">
+     <div className="eyebrow">COMPETING PUBLIC RECORDS / DO NOT COLLAPSE INTO ONE CLAIM</div>
+     <h3>What each source says</h3>
+     <div className="candidate-dispute-list">{tracker.disputes.map(item=><article key={item.url}>
+      <div className="eyebrow">{item.publisher} · {item.publishedAt}</div>
+      <strong>{item.title}</strong>
+      <p>{item.position}</p>
+      <a href={item.url} target="_blank" rel="noreferrer">OPEN SOURCE ↗</a>
+     </article>)}</div>
+     <p className="notice">Status: the last located court report says judgment was reserved on 27 October 2026. No final judgment was located in the source check for this update. Recheck before treating the ballot position as settled.</p>
+    </div>:null}
     <div className="candidate-manifesto-status">
      <div className="eyebrow">MANIFESTO DOCUMENT STATUS / SOURCE SNAPSHOT</div>
      <h3>{tracker.manifestoStatus==="document-located"?"A manifesto document is indexed":tracker.manifestoStatus==="launch-reported-document-not-located"?"Launch reported; full document not located":tracker.manifestoStatus==="no-document-found-in-tracker"?"No standalone document found in tracker":tracker.manifestoStatus==="tracker-entry-conflicted"?"Tracker entry requires clarification":"No clear status in the checked source snapshot"}</h3>
