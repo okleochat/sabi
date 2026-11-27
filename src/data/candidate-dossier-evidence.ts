@@ -16,6 +16,7 @@ export type CandidateDossierEvidence = {
   manifestoNote:string;
   notableCommitments?:string[];
   disputes?:CandidateDossierDispute[];
+  disputeStatusNote?:string;
   checkedAt:string;
   sourceUrl:string;
   manifestoSourceUrl:string;
@@ -45,6 +46,13 @@ export const candidateDossierEvidence:Record<string,CandidateDossierEvidence> = 
     reviewedRecords:16,documentedCampaignEvents:6,financeRecords:2,activityStatus:"records-listed",
     manifestoStatus:"launch-reported-document-not-located",
     manifestoNote:"OpenPolls records the Atiku Economic Recovery Plan 2027 as announced in a campaign statement, but says it did not locate a complete online document in the checked snapshot.",
+    disputes:[
+      {title:"INEC updated final presidential candidate list",publisher:"Independent National Electoral Commission",url:"https://inecnigeria.org/documents/uploads/2026/10/b5af9099-864c-4d5e-924d-e1a2c771c529-final-list-presidential.pdf",position:"INEC's 31 October 2026 list names Atiku Abubakar as the ADC presidential candidate. This list predates the 5 November court judgment.",publishedAt:"2026-10-31"},
+      {title:"Federal High Court judgment in the ADC leadership dispute",publisher:"Reuters",url:"https://www.reuters.com/world/africa/nigerian-court-voids-candidacy-opposition-adcs-atiku-2027-election-2026-11-05/",position:"Reuters reported that the 5 November judgment set aside the Mark-led ADC leadership and the process that produced Atiku's nomination. Sabi has not reviewed the certified judgment in this update.",publishedAt:"2026-11-05"},
+      {title:"ADC says it filed a 17-ground appeal and asks INEC to preserve candidate records",publisher:"Channels Television",url:"https://www.channelstv.com/2026/11/18/2027-adc-files-17-ground-appeal-against-inec-over-nullification-of-atikus-candidacy/",position:"ADC says it filed a 17-ground appeal and asked the Court of Appeal to restrain INEC from changing party and candidate records while the appeal is pending. This is the party's stated position, not a court order.",publishedAt:"2026-11-18"},
+      {title:"ADC appeal and stay application reported as pending",publisher:"Premium Times",url:"https://www.premiumtimesng.com/news/top-news/923361-adc-appeals-annulment-of-atikus-presidential-ticket-urges-inec-to-wait.html",position:"Premium Times reported that the stay application had not been determined and said it had not independently obtained the notice of appeal or stay application. Filing an appeal or applying for a stay does not itself suspend the judgment.",publishedAt:"2026-11-18"},
+    ],
+    disputeStatusNote:"Status as at 27 November 2026: the 5 November Federal High Court judgment is under challenge. ADC says it filed a 17-ground appeal and requested interim relief to prevent INEC from changing its records; Premium Times reported that the stay application had not been determined. No appellate ruling or order granting a stay was located in this source check. INEC's 31 October candidate list predates the judgment. The list is not proof that the dispute has been resolved, and the appeal filing is not itself a stay.",
     checkedAt,sourceUrl:tracker,manifestoSourceUrl:manifestos,
   },
   sdp:{
@@ -56,6 +64,7 @@ export const candidateDossierEvidence:Record<string,CandidateDossierEvidence> = 
       {title:"SDP statement disputing Adebayo's nomination",publisher:"Social Democratic Party — Media Directorate",url:"https://www.sdpnigeria.org/news/sdp-adewole-adebayo-was-long-expelled-from-the-party-and-was-never-its-presidential-candidate",position:"The SDP's statement says Adebayo had been expelled and was not validly nominated; this is the party's stated position, not a court finding.",publishedAt:"2026-11"},
       {title:"Federal High Court reserves judgment in SDP suit against INEC",publisher:"TheCable",url:"https://www.thecable.ng/court-reserves-judgment-in-suit-challenging-inecs-publication-of-adewole-adebayo-as-sdp-presidential-candidate/",position:"The report says the SDP and its National Organising Secretary challenged INEC's publication of Adebayo's name and sought recognition of Abimbola Akeem Atanda; the court reserved judgment on 27 October 2026.",publishedAt:"2026-10-27"},
     ],
+    disputeStatusNote:"Status as at 27 November 2026: the last located court report says judgment was reserved for 27 October 2026. No final judgment was located in this source check.",
     checkedAt,sourceUrl:tracker,manifestoSourceUrl:"https://www.adewoleadebayo.com/manifesto",
   },
   dla:{
