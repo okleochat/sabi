@@ -434,3 +434,36 @@ No new national probability-sample poll of the final INEC presidential candidate
 ### Polling rule applied
 
 Candidate vote intention, party preference, candidate favourability, turnout intention and electoral confidence remain separate. A large opt-in response count is not a substitute for probability sampling. These two exercises are context records only; they are not averaged, ranked or converted into win probabilities.
+
+
+## 1D. Opposition summit and candidate coordination — 27 November 2026
+
+### Confirmed public arrangements
+
+- The Coalition for Democracy announced that the Second Summit of Nigeria's Opposition Political Parties would proceed on Monday, 30 November 2026, at the NAF Conference Centre, Abuja.
+- The six participating groupings reported are ADC, APM, NDC, a PDP faction, PRP and SDP. The Sun identifies the PDP group as the Tanimu Turaki-led faction.
+- Expected presidential candidates include Atiku Abubakar (ADC), Peter Obi (NDC), Seyi Makinde (APM), Donald Duke (PRP) and Adewole Adebayo (SDP).
+- The coalition says the summit will consider the National Covenant for Democratic Renewal, the Framework for Opposition Unity and the National Reform Programme. The documents were developed after the inaugural summit of 31 August. They are proposed for consideration; no adoption or signed agreement is verified as of 27 November.
+- Makinde publicly said he, Atiku and Obi would have an arrangement to challenge President Tinubu, while distinguishing the arrangement from a formal 2015-style party merger. This is a statement of intention, not proof of a settled ticket or merger.
+
+### Disputed withdrawal / SGF allegation
+
+PUNCH reproduced a Facebook/X post by Lere Olayinka, a media aide to Nyesom Wike, alleging that Makinde would step down for Atiku on 30 November and negotiate a Secretary to the Government of the Federation appointment. The original post URL was not located. PUNCH also reported:
+
+- An Atiku ally confirmed talks but did not confirm a withdrawal or SGF agreement.
+- APM campaign spokesperson Richard Ihediwa said there was no decision for Makinde to withdraw and that he remained in the race.
+- Atiku's public-communication aide questioned Olayinka's authority to speak for the ADC; the ADC declined to confirm the arrangement.
+
+**Editorial position:** Treat the step-down/SGF story as a disputed allegation. The existence of consultations is not proof of a deal. Obtain the original post, direct candidate statements, formal party resolutions and the summit's signed documents before reaching a verdict.
+
+### Atiku legal status
+
+Reuters reported that a Federal High Court on 5 November set aside the processes that produced the ADC leadership and Atiku's nomination. ADC rejected the decision and said it would appeal. This desk did not locate a final appellate outcome by 27 November. Report the ruling and appeal position precisely; do not describe the candidate field as finally settled on this basis alone.
+
+### Sources (publication dates)
+
+- PUNCH, *2027: APC unfazed as Atiku, Obi, Makinde meet Monday*, 27 November 2026: https://punchng.com/2027-apc-unfazed-as-atiku-obi-makinde-meet-monday/
+- The Sun, *Atiku, Obi, others expected at November 30 Opposition Summit*, 27 November 2026: https://thesun.ng/atiku-obi-others-expected-november-30-opposition-summit/
+- Nigeria Info FM, *Atiku, Obi, Makinde expected to sign opposition unity pact on Monday*, 27 November 2026: https://www.nigeriainfo.fm/news/2027-elections/atiku-obi-makinde-expected-to-sign-opposition-unity-pact-on-monday/
+- TheCable, *Makinde: Opposition will enter into an arrangement to defeat Tinubu in 2027*, 26 November 2026: https://www.thecable.ng/makinde-opposition-will-enter-into-an-arrangement-to-defeat-tinubu-in-2027/
+- Reuters, *Nigerian court voids candidacy of opposition ADC's Atiku for 2027 election*, 5 November 2026: https://www.reuters.com/world/africa/nigerian-court-voids-candidacy-opposition-adcs-atiku-2027-election-2026-11-05/
