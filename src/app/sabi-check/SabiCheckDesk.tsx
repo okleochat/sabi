@@ -145,7 +145,7 @@ export default function SabiCheckDesk({spotlights,publishedChecks}:{spotlights:C
     {activeTab==="trending"?<p className="sabi-check-curation-note">Curated from fresh interviews, public statements and reporting. This is an editorial radar—not a live X engagement leaderboard or a claim about post counts.</p>:null}
     {activeTab==="top"?<p className="sabi-check-curation-note">Priority reflects Sabi's editorial judgement of public impact and verifiability, not votes, popularity or a measured social ranking.</p>:null}
     {visibleSpotlights.length?<div className="sabi-check-spotlight-grid">{visibleSpotlights.map((item,index)=><article className={"sabi-check-spotlight-card "+(index===0?"is-lead":"")} key={item.id}>
-     <div className="sabi-check-card-top"><span className="sabi-check-card-tag">{item.topic}</span><span className="sabi-check-status">{item.researchUpdate?"PRELIMINARY · EDITOR REVIEW":"NO SABI VERDICT YET"}</span></div>
+     <div className="sabi-check-card-top"><span className="sabi-check-card-tag">{item.topic}</span><span className="sabi-check-status">{item.researchUpdate?.publishedSlug?"PUBLISHED · SABI CHECK":item.researchUpdate?"PRELIMINARY · EDITOR REVIEW":"NO SABI VERDICT YET"}</span></div>
      <div className="sabi-check-card-index">{String(index+1).padStart(2,"0")}</div>
      <h3>{item.title}</h3>
      <blockquote>{item.claim}</blockquote>
