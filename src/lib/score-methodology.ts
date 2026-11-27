@@ -1,65 +1,105 @@
 /**
- * Published Sabi 0–10 category-score methodology.
- * Scores describe measured records and reference benchmarks, not causal attribution.
+ * Sabi tenure-wide public performance methodology.
+ *
+ * A source being catalogued is not a scored observation. A metric observed during
+ * a term is not, by that fact alone, attributable to the officeholder.
  */
 export const publicRecordMethodology = {
-  version: "2.2.0",
+  version: "3.0.0",
   scale: {
     minimum: 0,
     maximum: 10,
     precision: 1,
-    rule: "Every score is calculated from a named indicator and a published benchmark. Category scores are the arithmetic mean of the available indicator scores in that category. Missing indicators are excluded and coverage is shown.",
+    rule: "Every published category score must be supported by a documented category-specific calculation, a predeclared benchmark and a comparable longitudinal evidence series. Scores describe public outcomes and documented officeholder actions separately; they are not popularity ratings.",
   },
+  assessmentCategories: [
+    { id: "cost-of-living", label: "Cost of living & household welfare" },
+    { id: "economy-jobs", label: "Economy, employment & productivity" },
+    { id: "public-finance", label: "Public finance & fiscal management" },
+    { id: "security", label: "Security & public safety" },
+    { id: "education", label: "Education & learning" },
+    { id: "health", label: "Healthcare & health outcomes" },
+    { id: "infrastructure", label: "Infrastructure & basic services" },
+    { id: "integrity-commitments", label: "Integrity, governance & promise delivery" },
+  ],
   overallScore: {
-    label: "Overall Score",
-    formula: "Arithmetic mean of all currently published category scores for that officeholder, rounded to one decimal place.",
-    weighting: "Each published category score receives equal weight.",
-    missingEvidence: "Categories labelled Not scored yet are excluded from the numerator and denominator of the arithmetic mean; they are not assigned zero. The score always displays the number of scored categories, the total applicable assessment categories and coverage percentage.",
-    caution: "The overall score is provisional when category coverage is incomplete. Because jurisdictions may have different numbers and types of available categories, it must not be used as a league table without matching category coverage and comparable evidence.",
+    label: "Sabi Overall Score",
+    formula: "Equal-weight arithmetic mean of the category scores that have passed the tenure-wide evidence standard, rounded to one decimal place.",
+    minimumScoredCategories: 6,
+    totalCategories: 8,
+    publicationRule: "Do not publish a numerical Overall Score until at least 6 of the 8 assessment categories have independently passed their evidence standard. Keep the Overall Score panel visible and label it IN PROGRESS until then.",
+    missingEvidence: "An unscored category is never converted to zero. The profile must show which categories are ready, which remain incomplete and why. The number of score-ready categories is not the same as the proportion of raw evidence collected.",
+    rankingRule: "A public league table or direct rank comparison requires all 8 category scores, matching office level, compatible term windows and comparable data definitions. A score based on 6 or 7 categories may be displayed with explicit missing-category disclosure, but must not be ranked against a different coverage set.",
+    caution: "The Overall Score is a summary, not a claim that every outcome was caused by the officeholder. Keep observed jurisdictional performance distinct from evidence of the officeholder's own decisions and contribution.",
+  },
+  tenureWindow: {
+    start: "Use the actual date the officeholder assumed the relevant elected or appointed office. Do not assume 1 January of the election year.",
+    end: "Use the latest complete reporting period available at the date of publication. Record the exact cut-off and source-data vintage.",
+    baseline: "For every category, establish inherited conditions using the strongest comparable pre-tenure evidence. Prefer a 2–3-year pre-tenure average or trend. Where only a survey or one comparable pre-tenure measure exists, disclose that limitation and do not imply a multi-year baseline.",
+    minimumLongitudinalEvidence: "A category normally requires at least one defensible pre-tenure baseline and at least two comparable post-assumption observations spanning 12 months or more. For quarterly/monthly measures, use the full available series rather than cherry-picked endpoints. For surveys, use comparable rounds and report confidence intervals or design limitations.",
+    overlap: "Split calendar/fiscal-year observations that straddle the assumption date where the source allows. Otherwise label them as transition or overlapping periods rather than attributing the whole year to one administration.",
+  },
+  categoryScoring: {
+    commonRule: "Pre-register the category's indicators, direction of improvement, weights and benchmarks before calculating an officeholder's grade. Use the same indicator definitions and scoring transformations for every comparable officeholder. Weights reflect the indicator's substantive importance and measurement quality, not how many rows happen to be available.",
+    components: [
+      "Inherited baseline: the condition at the start of the administration, supported by comparable pre-tenure evidence.",
+      "Trajectory: the change over the tenure, using all available comparable periods rather than one selected quarter or year.",
+      "Current condition: the latest complete outcome compared with a published target, standard or appropriate peer reference.",
+      "Distribution and quality: where data allow, test per-capita, regional, rural/urban, gender, income or service-quality differences rather than relying on national or nominal aggregates.",
+      "Attribution: describe which decisions, budgets, legislation, delivery actions or institutional responsibilities can be linked to the officeholder. Do not infer personal credit or blame from timing alone.",
+    ],
+    aggregation: "Each category score is a documented weighted combination of its predeclared indicators after each indicator has been mapped to 0–10 using a published, directionally correct standard. Do not invent a benchmark, interpolate missing data or adjust a formula to obtain a preferred political result. Publish the indicator list, weights, benchmark, calculation and uncertainty with the score.",
   },
   categories: {
-    economy: {
-      governors: "2025 state IGR rank among the 36 states. Score = 10 × (36 − rank) ÷ 35. Highest nominal total receives 10.0; lowest receives 0.0. FCT Minister is benchmarked separately against all 36 states plus the FCT.",
-      president: "Economic growth and price stability are shown as separate scores. Growth score = min(10, actual Q2 year-on-year growth ÷ 4.68% × 10). Price-stability score = min(10, 16.5% budget inflation assumption ÷ October year-on-year inflation × 10). These are partial-year readings compared directionally with full-year assumptions, not final annual results; they are not averaged into a broad economy grade.",
+    costOfLiving: {
+      indicators: "Use a linked CPI index and rates (respecting NBS rebasing), matched state/month food prices, healthy-diet cost, transport fares and real household income/consumption or wages.",
+      rule: "Measure cumulative price-level change and affordability, not just the latest year-on-year inflation rate. Separate disinflation from an actual fall in prices and compare prices with household purchasing power.",
+    },
+    economyJobs: {
+      indicators: "Use annual and quarterly real GDP, real GDP per capita, sector composition, labour-force participation, employment-to-population ratio, underemployment, informality, youth employment and real earnings.",
+      rule: "Use the entire comparable time series. Do not award a high grade merely because one quarter approaches a budget projection or because unemployment falls while participation also collapses.",
+    },
+    publicFinance: {
+      indicators: "Use actual revenue, IGR, FAAC dependence, actual recurrent and capital expenditure, audited accounts, debt stock, debt service, arrears and sector implementation.",
+      rule: "Report nominal and inflation-adjusted values, per-capita measures and the share of own-source revenue. Separate approved budgets, releases, actual expenditure and service outcomes.",
+    },
+    security: {
+      indicators: "Use dated event and fatality records, population-adjusted rates, kidnappings, displacement, returns, incident type and geographic spread, cross-checked across compatible sources.",
+      rule: "Use a full office-term series and pre-tenure baseline, account for revisions and reporting bias, and do not add event counts with different definitions. Separate civilian fatalities from total estimated deaths where the source allows.",
     },
     education: {
-      governors: "FY2025 education budget execution score = max(0, 10 − |100 − execution percentage| ÷ 10), capped at 10.0. Exact execution of 100% earns 10.0; under- or over-execution moves away from 10. This is a budget-credibility indicator, not a learning-outcome measure.",
+      indicators: "Use comparable assessment results and proficiency, attendance, completion/dropout, literacy/numeracy, teacher availability and school access/infrastructure.",
+      rule: "Budget execution and incomplete school-census returns are contextual indicators, not sufficient learning-performance scores. Preserve sample sizes, confidence intervals and data-return completeness.",
     },
     health: {
-      governors: "Equal-weight mean of (a) FY2025 health budget execution score, using the same distance-from-100 formula, and (b) NDHS 2024 fully-vaccinated basic-antigen coverage percentage ÷ 10. If the health budget dataset excludes a state, the available NDHS score is shown alone and evidence coverage is reduced.",
-      president: "NDHS 2024 national percentage of children aged 12–23 months fully vaccinated for all basic antigens, divided by 10.",
-      fct: "NDHS 2024 FCT vaccination coverage percentage divided by 10; no state-budget execution score is inferred from the state-only dataset.",
+      indicators: "Use maternal, neonatal, infant and under-five mortality; vaccination; access to primary care; skilled birth attendance; insurance and essential-service availability.",
+      rule: "Keep household-survey outcomes distinct from DHIS2 administrative rates and budget execution. Align reference periods and report survey uncertainty and denominator quality.",
+    },
+    infrastructure: {
+      indicators: "Use service availability and reliability for electricity, roads, water, sanitation, transport and housing, plus verified project milestones and operational status.",
+      rule: "A budget line, contract award, ground-breaking or press release is not proof of completion or service delivery. Record geolocation, contractor, value, deadline, physical verification and operational outcome.",
+    },
+    integrityCommitments: {
+      indicators: "Use original election manifesto and attributable pledges; court filings and final judgments; audit findings; procurement disclosures; asset declarations where public; and independently verified implementation evidence.",
+      rule: "Track each commitment's wording, date, deadline, responsible tier of government, measurable output and delivery status. Distinguish allegations, investigations, charges, convictions and final appeals. Agency enforcement totals are not a personal integrity rating.",
     },
   },
-  principles: [
-    "Category scores are evidence scores for the named measure; they are not a causal assessment of an individual officeholder.",
-    "The overall score is a transparent average of all available category scores, not a weighted causal model.",
-    "Do not infer that the officeholder caused a change merely because it occurred during their tenure.",
-    "Keep raw values, units, populations, periods, sources and limitations visible beside scores.",
-    "Do not convert missing or unpublished data into zero. Display a reason and the evidence coverage.",
-    "Do not treat nominal total IGR as per-capita prosperity, inflation-adjusted growth or the whole economy.",
-    "Do not treat budget execution as a service outcome; overspending is not rewarded above 10.",
-    "Do not treat an NDHS survey level as a change during tenure or as direct proof of an individual officeholder's contribution.",
-    "Separate official statistics, administrative records, budget execution, government claims and editorial analysis.",
-    "Commitment scores require an attributable promise, a defined deadline and an approved evidence decision for every scored item.",
-    "Give officials a clear correction and right-of-reply route; log changes and preserve the earlier public record.",
-  ],
-  statusDefinitions: {
-    fulfilled: "Evidence supports delivery of the specific promised output or outcome.",
-    partlyReported: "Some elements are documented, but full delivery is not established.",
-    underway: "An implementation step is documented; this is not the same as delivery.",
-    notYetDue: "The published deadline has not passed.",
-    evidenceNotFound: "A reasonable review did not locate evidence; this is not proof that no action occurred.",
-    disputed: "Credible sources materially disagree, so the disagreement is shown rather than collapsed into one status.",
+  evidenceTypes: {
+    officialStatistics: "Survey and statistical releases with methods, periods, units, denominators and uncertainty.",
+    administrativeRecords: "Government, regulator, budget and programme records; disclose reporting completeness and denominator quality.",
+    independentMonitoring: "Independent research and monitoring with published collection methods and limitations.",
+    claims: "Campaign and government claims establish what was promised or asserted, not whether it was delivered.",
   },
   publicationRules: [
-    "Publish each available category score to one decimal place out of 10.",
-    "Show the scoring formula, score benchmark, metric count and evidence coverage beside the category score.",
-    "Publish an Overall Score as the equal-weight mean of all currently available category scores; always show scored-category coverage beside it.",
-    "Exclude categories marked Not scored yet from the overall calculation; never silently assign zero.",
-    "Do not use overall scores as a league table when category coverage or evidence definitions differ.",
-    "For the President, keep economic growth and price stability as separate category scores rather than combining them into a broad economy grade.",
-    "Keep the President's national record and the FCT Minister's FCT record separate from governor state comparisons.",
-    "Disclose when a category score is provisional because its reporting period does not match the full period or benchmark.",
+    "Use the actual assumption-of-office date and latest complete comparable reporting period.",
+    "Show inherited baselines and the full available tenure trajectory; do not score a single snapshot as a tenure result.",
+    "Respect revised statistical methods and series-vintage notes. Do not splice incompatible definitions without a published linking method.",
+    "Publish a category score only after its minimum longitudinal evidence and predeclared benchmark requirements are satisfied.",
+    "Keep the Overall Score panel visible, but publish a numeric result only after at least 6 of 8 categories pass.",
+    "Never convert missing evidence into zero or describe a source index as completed extraction.",
+    "Do not treat an outcome recorded during a term as proof of personal causation.",
+    "Keep source documents, raw values, units, geography, period, data vintage, calculations, uncertainty and corrections accessible.",
+    "Do not compare politicians in a league table unless all eight category scores and term windows are comparable.",
+    "Give officials a correction and right-of-reply route without granting editorial control over Sabi's findings.",
   ],
 } as const;
