@@ -341,52 +341,17 @@ The public-record dashboard publishes the source observations below with their u
 - **Limitations:** indicators have different definitions and reference dates. A lower inflation rate means prices are rising more slowly, not that the overall price level fell. Debt stock must be read with debt service, revenue, GDP and maturity profile. Macroeconomic trends do not by themselves establish how much change was caused by the President.
 
 
-## 0–10 category score release (checked 27 November 2026)
+## Withdrawal of snapshot-based scores and updated publication rule (27 November 2026)
 
-Category scores are provisional indicator scores. They are not averaged into a single politician rating. The exact formulas and limitations are published in `SABI-INTELLIGENCE-METHODOLOGY.md`.
+The provisional snapshot-based 0–10 formulas previously documented below have been withdrawn and removed from active profile scoring. They relied on isolated values such as FY2025 budget execution, 2025 nominal IGR rank, Q2 2026 GDP, October 2026 inflation and a single NDHS vaccination measure. Those observations remain in the research file as sourced context, but they do not represent full-tenure performance and must not generate a politician grade.
 
-### Fiscal revenue peer score
-- 2025 state IGR values are from the NBS 2025 release and are ranked among the 36 states.
-- The FCT is kept out of the 36-state governor comparison; the FCT Minister's FCT score is separately ranked against all 37 jurisdictions.
-- Formula: 10 × (N − rank) ÷ (N − 1); highest total nominal IGR receives 10.0, lowest receives 0.0.
-- 2024 comparison/reporting context: Joint Tax Board, 2024/2025 Year Book, page 14: https://cms-api.jrb.gov.ng/api/publication-assets/file/2024-2025-jtb-year-book.pdf
-- This is total nominal revenue, not per-capita revenue, inflation-adjusted growth or a complete measure of prosperity. The peer position is a descriptive fiscal-scale score only.
+The **Sabi Overall Score remains a core product feature**. Its numerical value will be published only after at least six of the eight categories have independently passed the tenure-wide evidence standard in [SABI-INTELLIGENCE-METHODOLOGY.md](./SABI-INTELLIGENCE-METHODOLOGY.md).
 
-### Education and health execution scores
-- Education: BudgIT, 2026 State of States Report, page 155, FY2025 education implementation table: https://budgit.org/wp-content/uploads/2026/11/States26SMDF1.pdf
-- Health: BudgIT, 2026 Health Financing Report, FY2025 health budget performance table: https://budgit.org/wp-content/uploads/2026/04/HealthFinancingReport__.pdf
-- Formula for each budget execution indicator: max(0, 10 − |100 − execution percentage| ÷ 10), capped at 10.0.
-- Exact 100% execution receives 10.0. Spending below or above the approved budget receives a lower score; overspending is not rewarded. Budget execution does not prove service quality, learning or health outcomes.
-- Dataset omissions remain disclosed. The education report excludes Rivers; the health table excludes Akwa Ibom and Rivers. An excluded jurisdiction is not assigned zero.
+The eight domains are cost of living and household welfare; economy, employment and productivity; public finance and fiscal management; security and public safety; education and learning; healthcare and health outcomes; infrastructure and basic services; integrity, governance and promise delivery.
 
-### NDHS health outcome score
-- Primary source: Nigeria Demographic and Health Survey 2024, published September 2025: https://www.health.gov.ng/wp-content/uploads/2025/10/NDHS-2024-Final-Report_Disseminated17102025.pdf
-- Indicator: percentage of children aged 12–23 months fully vaccinated for all basic antigens.
-- Formula: coverage percentage ÷ 10.
-- Limitation: survey coverage level, not change during a specific governor's tenure or proof of a single officeholder's contribution. It is not interchangeable with routine administrative immunisation reporting.
+For each officeholder, use the actual assumption-of-office date, an inherited pre-tenure baseline, the full comparable trajectory through the latest complete reporting period, and documented limitations. A source catalogue entry, incomplete administrative return, single survey snapshot or event table covering only part of a term is not by itself score-ready evidence.
 
-### President's 2026 macro benchmark scores
-- Actual values: Federal Ministry of Finance Nigeria Macro Dashboard, https://finance.gov.ng/?page_id=26
-- Official 2026 assumptions: National Assembly document, https://nass.gov.ng/documents/download/11234 (real GDP growth projection 4.68%; inflation assumption 16.5%).
-- GDP score formula: min(10, Q2 2026 real GDP growth ÷ 4.68 × 10).
-- Inflation score formula: min(10, 16.5 ÷ October 2026 year-on-year headline inflation × 10).
-- The category score is the arithmetic mean of these two benchmark scores.
-- Limitation: the current readings are partial-year observations and do not match the full-year budget-assumption period exactly. This is provisional directional benchmark tracking, not a final annual score. Food inflation, external reserves and public debt remain contextual indicators and are not included in this score.
-
-### Coverage and non-scored categories
-- Each category shows its number of available indicators. Health coverage may be 1/2 in states omitted from the FY2025 health budget table.
-- Integrity and manifesto delivery remain explicitly "Not scored yet" until the item-by-item commitment registers and approved evidence decisions are complete.
-- Security and infrastructure remain unscored until comparable, source-validated indicators with appropriate baselines have been added.
-- No missing category is assigned zero; no overall average is calculated across unlike categories.
-
-
-### Overall Score rule (27 November 2026)
-- Each officeholder profile now displays an Overall Score out of 10.
-- Formula: arithmetic mean of all category scores currently published for that officeholder, with equal weight for each category; rounded to one decimal place.
-- Categories marked "Not scored yet" are excluded from both the sum and the mean. They are never assigned zero.
-- Every Overall Score displays scored categories / total applicable assessment categories and the resulting coverage percentage.
-- Because the available categories and periods can differ between the President, governors and FCT Minister, the Overall Score is provisional and must not be used as an unqualified league table. Inspect the separate category scores, source dates and disclosed gaps.
-
+The app currently keeps the Overall Score panel visible as **IN PROGRESS** and shows all eight category readiness explanations. The earlier snapshot-derived numerical grades are no longer active and must not be quoted as Sabi Overall Scores.
 
 ---
 
