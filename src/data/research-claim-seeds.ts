@@ -139,4 +139,83 @@ export const starterResearchClaims: Array<Record<string, any>> = [
  alertStatus:"not_applicable",
  seedVersion:1
 }
+,
+{
+ id:"sabi-research-makinde-opposition-arrangement-nov-2026",
+ claim:"Seyi Makinde said: “There will be an arrangement between Atiku, Obi and me to stop President Tinubu from winning the 2027 presidential election.”",
+ claimType:"public-statement",
+ subject:"Seyi Makinde",
+ subjectKey:"seyi-makinde",
+ subjectType:"elected-official",
+ impact:"positive",
+ status:"researching",
+ reviewStatus:"researching",
+ reviewPriority:"standard",
+ claimSource:"Seyi Makinde, interview with Chude Jideonwo published 25–26 November 2026, as quoted by PUNCH on 27 November; TheCable also reported the interview on 26 November. The original video link was not independently located in this scan.",
+ context:"Makinde is Oyo State Governor and the APM presidential candidate. He described a proposed loose arrangement with Atiku Abubakar and Peter Obi, while distinguishing it from a formal merger of parties like the 2015 APC formation.",
+ sourceUrl:"https://punchng.com/2027-apc-unfazed-as-atiku-obi-makinde-meet-monday/",
+ supportingUrls:[
+  "https://www.thecable.ng/makinde-opposition-will-enter-into-an-arrangement-to-defeat-tinubu-in-2027/",
+  "https://thesun.ng/atiku-obi-others-expected-november-30-opposition-summit/",
+  "https://www.nigeriainfo.fm/news/2027-elections/atiku-obi-makinde-expected-to-sign-opposition-unity-pact-on-monday/",
+  "https://www.reuters.com/world/africa/nigerian-court-voids-candidacy-opposition-adcs-atiku-2027-election-2026-11-05/"
+ ],
+ researchNotes:"This is a public statement of political intention, not evidence that a coalition, joint ticket or candidate-selection agreement has been completed. The second opposition summit is scheduled for 30 November and is expected to consider three cooperation documents. Obtain the original interview recording, any signed pact, party and candidate resolutions, the agreed selection process and direct responses from Atiku and Obi. Atiku's ADC nomination was set aside by a Federal High Court on 5 November; Reuters reported that ADC rejected the ruling and said it would appeal. No final appellate outcome was located in this scan. Do not infer a settled ticket or eligibility outcome from negotiations alone.",
+ reviewSummary:"Makinde publicly confirms a loose arrangement with Atiku and Obi. The form, signatories, candidate-selection process and legal status of any joint ticket remain unresolved.",
+ findings:"",
+ verdict:"",
+ evidence:[
+  {title:"2027: APC unfazed as Atiku, Obi, Makinde meet Monday",publisher:"PUNCH",url:"https://punchng.com/2027-apc-unfazed-as-atiku-obi-makinde-meet-monday/",sourceType:"reported-interview-and-party-responses"},
+  {title:"Makinde: Opposition will enter into an arrangement to defeat Tinubu in 2027",publisher:"TheCable",url:"https://www.thecable.ng/makinde-opposition-will-enter-into-an-arrangement-to-defeat-tinubu-in-2027/",sourceType:"reported-interview"},
+  {title:"Atiku, Obi, others expected at November 30 Opposition Summit",publisher:"The Sun",url:"https://thesun.ng/atiku-obi-others-expected-november-30-opposition-summit/",sourceType:"coalition-statement-reported"}
+ ],
+ state:"Oyo",
+ contact:"",
+ isTimeSensitive:true,
+ createdAt:"2026-11-27T09:30:00.000Z",
+ submittedAt:"2026-11-27T09:30:00.000Z",
+ updatedAt:"2026-11-27T09:30:00.000Z",
+ origin:"sabi-research",
+ originLabel:"Sabi newsroom research",
+ alertStatus:"not_applicable",
+ seedVersion:1
+},
+{
+ id:"sabi-research-lere-olayinka-makinde-stepdown-sgf-claim-2026-11",
+ claim:"Lere Olayinka posted: “APM presidential candidate, Seyi Makinde, to step down for Atiku on November 30, negotiates for SGF, to collapse Oyo APM for ADC candidates.”",
+ claimType:"public-statement",
+ subject:"Seyi Makinde",
+ subjectKey:"seyi-makinde",
+ subjectType:"elected-official",
+ impact:"negative",
+ status:"researching",
+ reviewStatus:"researching",
+ reviewPriority:"high",
+ claimSource:"Lere Olayinka, media aide to Nyesom Wike, Facebook/X post reproduced by PUNCH on 27 November 2026; original post URL not located.",
+ context:"The post alleged that Makinde would withdraw from the APM presidential race for Atiku and seek an SGF appointment as part of opposition negotiations ahead of the 30 November summit.",
+ sourceUrl:"https://punchng.com/2027-apc-unfazed-as-atiku-obi-makinde-meet-monday/",
+ supportingUrls:[
+  "https://thesun.ng/atiku-obi-others-expected-november-30-opposition-summit/",
+  "https://www.nigeriainfo.fm/news/2027-elections/atiku-obi-makinde-expected-to-sign-opposition-unity-pact-on-monday/",
+  "https://www.thecable.ng/makinde-opposition-will-enter-into-an-arrangement-to-defeat-tinubu-in-2027/"
+ ],
+ researchNotes:"This is an allegation by a media aide, not a verified agreement. PUNCH reproduced the post but the original Facebook/X URL was not located. The same PUNCH report says an Atiku ally confirmed talks but did not confirm a withdrawal or SGF deal; APM campaign spokesperson Richard Ihediwa said there was no decision for Makinde to withdraw and that he remained in the race; Atiku's aide Phrank Shaibu questioned Olayinka's authority to speak for ADC, and ADC declined to confirm the claim. Obtain the original post, a direct response from Makinde, formal APM/ADC resolutions and the 30 November summit documents and outcome. Do not infer a secret deal from the existence of consultations. No truth verdict is assigned.",
+ reviewSummary:"The withdrawal/SGF allegation is disputed and lacks a located primary post or formal party decision. Makinde's campaign publicly says he remains in the race.",
+ findings:"",
+ verdict:"",
+ evidence:[
+  {title:"2027: APC unfazed as Atiku, Obi, Makinde meet Monday",publisher:"PUNCH",url:"https://punchng.com/2027-apc-unfazed-as-atiku-obi-makinde-meet-monday/",sourceType:"reported-social-media-post-and-party-response"},
+  {title:"Atiku, Obi, others expected at November 30 Opposition Summit",publisher:"The Sun",url:"https://thesun.ng/atiku-obi-others-expected-november-30-opposition-summit/",sourceType:"coalition-statement-reported"}
+ ],
+ state:"Oyo",
+ contact:"",
+ isTimeSensitive:true,
+ createdAt:"2026-11-27T09:35:00.000Z",
+ submittedAt:"2026-11-27T09:35:00.000Z",
+ updatedAt:"2026-11-27T09:35:00.000Z",
+ origin:"sabi-research",
+ originLabel:"Sabi newsroom research",
+ alertStatus:"not_applicable",
+ seedVersion:1
+}
 ];
