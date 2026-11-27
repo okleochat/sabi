@@ -56,7 +56,7 @@ export default function SabiCheckDesk({spotlights,publishedChecks}:{spotlights:C
  },[activeTab,spotlights]);
 
  const visibleSpotlights=useMemo(()=>ordered.filter(item=>{
-  const haystack=[item.title,item.claim,item.summary,item.topic,item.subject,item.sourcePublisher].join(" ").toLowerCase();
+  const haystack=[item.title,item.claim,item.summary,item.topic,item.subject,item.sourcePublisher,item.researchUpdate?.label,item.researchUpdate?.summary,item.researchUpdate?.caveat].join(" ").toLowerCase();
   return (topic==="all"||item.topicKey===topic)&&(!query||haystack.includes(query.toLowerCase()));
  }),[ordered,topic,query]);
 
@@ -89,7 +89,7 @@ export default function SabiCheckDesk({spotlights,publishedChecks}:{spotlights:C
    <div className="sabi-check-intro-copy">
     <div className="eyebrow"><span/>THE VERIFICATION DESK / 002</div>
     <h1>SABI<br/><em>CHECK.</em></h1>
-    <p>Claims move fast. Evidence should move faster. Explore the claims shaping the conversation, read checks already published, or send something you think deserves scrutiny.</p>
+    <p>Claims move fast. Evidence should move faster. Explore current claims, read preliminary newsroom research and published fact-checks, or send something you think deserves scrutiny.</p>
    </div>
    <div className="sabi-check-intro-art" aria-hidden="true">
     <span className="sabi-check-art-kicker">NO CAP.</span>
@@ -111,7 +111,7 @@ export default function SabiCheckDesk({spotlights,publishedChecks}:{spotlights:C
   <section className="sabi-check-feed" aria-label="Claim discovery feed">
    <div className="sabi-check-feed-top">
     <div><div className="eyebrow"><span/>THE CLAIMS DESK / EDITORIAL RADAR</div><h2>WHAT'S<br/>IN THE <em>CONVERSATION?</em></h2></div>
-    <p>Fresh claims, public statements and campaign promises worth checking. We show the source and context—not a verdict until the evidence has been reviewed.</p>
+    <p>Fresh claims, source-linked preliminary research and campaign promises. Research notes are not published verdicts; final fact-checks appear only after editorial approval.</p>
    </div>
 
    <div className="sabi-check-tabs" role="group" aria-label="Claim feed sections">
@@ -145,11 +145,12 @@ export default function SabiCheckDesk({spotlights,publishedChecks}:{spotlights:C
     {activeTab==="trending"?<p className="sabi-check-curation-note">Curated from fresh interviews, public statements and reporting. This is an editorial radar—not a live X engagement leaderboard or a claim about post counts.</p>:null}
     {activeTab==="top"?<p className="sabi-check-curation-note">Priority reflects Sabi's editorial judgement of public impact and verifiability, not votes, popularity or a measured social ranking.</p>:null}
     {visibleSpotlights.length?<div className="sabi-check-spotlight-grid">{visibleSpotlights.map((item,index)=><article className={"sabi-check-spotlight-card "+(index===0?"is-lead":"")} key={item.id}>
-     <div className="sabi-check-card-top"><span className="sabi-check-card-tag">{item.topic}</span><span className="sabi-check-status">NO SABI VERDICT YET</span></div>
+     <div className="sabi-check-card-top"><span className="sabi-check-card-tag">{item.topic}</span><span className="sabi-check-status">{item.researchUpdate?"PRELIMINARY · EDITOR REVIEW":"NO SABI VERDICT YET"}</span></div>
      <div className="sabi-check-card-index">{String(index+1).padStart(2,"0")}</div>
      <h3>{item.title}</h3>
      <blockquote>{item.claim}</blockquote>
      <p>{item.summary}</p>
+     {item.researchUpdate?<div className="sabi-check-claim-context sabi-check-research-update"><strong>RESEARCH UPDATE</strong><span><b>{item.researchUpdate.label}</b><br/>{item.researchUpdate.summary}<br/><small>{item.researchUpdate.caveat}</small><small>PRELIMINARY NEWSROOM RESEARCH · NOT A PUBLISHED SABI VERDICT</small></span></div>:null}
      <div className="sabi-check-claim-context"><strong>WHY IT MATTERS</strong><span>{item.priorityReason}</span></div>
      <div className="sabi-check-source-line"><span>{item.sourcePublisher} · {item.sourceDate}</span><a href={item.sourceUrl} target="_blank" rel="noreferrer">SOURCE ↗</a></div>
      {item.supportingSources?.length?<div className="sabi-check-more-sources">{item.supportingSources.slice(0,2).map(source=><a href={source.url} target="_blank" rel="noreferrer" key={source.url}>{source.publisher} ↗</a>)}</div>:null}
