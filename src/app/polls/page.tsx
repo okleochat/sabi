@@ -34,7 +34,7 @@ export default function PollingDeskPage(){
     <div>
      <div className="eyebrow">NATIONAL CANDIDATE VOTE-INTENTION ESTIMATE</div>
      <div className="poll-status-value">{average?"POLLING AVERAGE AVAILABLE":"NOT YET CALCULATED"}</div>
-     <p>{average?average.note:"As of 27 November 2026, the published records reviewed do not meet Sabi's entry rules for a final-ballot, national probability-sample average. The available presidential party-preference figures use non-random or undisclosed sampling; other national surveys measure turnout intention and election confidence, not candidate vote shares."}</p>
+     <p>{average?average.note:"As of 27 November 2026, the published records reviewed do not meet Sabi's entry rules for a final-ballot, national probability-sample average. The available presidential party-preference figures use non-random or undisclosed sampling; other national surveys measure government approval, turnout intention and election confidence, not candidate vote shares."}</p>
     </div>
     <div className="poll-status-meta">
      <div className="eyebrow">WHEN THE AVERAGE CAN APPEAR</div>
@@ -83,6 +83,10 @@ export default function PollingDeskPage(){
      </div>:null}
      <p className="poll-method"><b>Who was asked:</b> {poll.population}</p>
      <p className="poll-method"><b>Sampling:</b> {poll.samplingMethod}</p>
+     <p className="poll-method"><b>Question:</b> {poll.question}</p>
+     <p className="poll-method"><b>Party / candidate field:</b> {poll.fieldCoverage}</p>
+     <p className="poll-method"><b>Weighting:</b> {poll.weighting}</p>
+     <p className="poll-method"><b>Sponsor / funding:</b> {poll.sponsor}</p>
      <div className="poll-limitations"><strong>LIMITATIONS</strong><ul>{poll.limitations.map(x=><li key={x}>{x}</li>)}</ul></div>
      <div className="poll-source-links"><a href={poll.sourceUrl} target="_blank" rel="noreferrer">OPEN POLL RECORD ↗</a>{poll.methodologyUrl?<a href={poll.methodologyUrl} target="_blank" rel="noreferrer">METHODOLOGY / SOURCE ↗</a>:null}</div>
      <div className="poll-ineligible">NOT INCLUDED IN THE NATIONAL CANDIDATE-SUPPORT AVERAGE</div>
@@ -90,8 +94,8 @@ export default function PollingDeskPage(){
    </div>
   </section>
   <section className="profile-research">
-   <div className="eyebrow"><span/>VOTER READINESS & ELECTION CONFIDENCE</div>
-   <h2>HOW VOTERS VIEW<br/>THE PROCESS.</h2>
+   <div className="eyebrow"><span/>GOVERNMENT APPROVAL, TURNOUT & ELECTION CONFIDENCE</div>
+   <h2>HOW CITIZENS RATE<br/>GOVERNMENT AND THE PROCESS.</h2>
    <p className="notice">These surveys ask different questions from candidate vote intention. Results stay attached to their original subject and are not converted into support for any candidate or party.</p>
    <div className="poll-record-grid">
     {publicMood.map(poll=><article className="poll-record-card" key={poll.id}>
@@ -105,6 +109,10 @@ export default function PollingDeskPage(){
       <div className="poll-result-head"><strong>{result.label}</strong><b>{result.value.toFixed(1)}%</b></div><div className="poll-track"><span style={{width:Math.min(100,Math.max(0,result.value))+"%"}}/></div>{result.note?<small>{result.note}</small>:null}
      </div>)}</div>
      <p className="poll-method"><b>Who was asked:</b> {poll.population}</p><p className="poll-method"><b>Sampling:</b> {poll.samplingMethod}</p>
+     <p className="poll-method"><b>Question:</b> {poll.question}</p>
+     <p className="poll-method"><b>Party / candidate field:</b> {poll.fieldCoverage}</p>
+     <p className="poll-method"><b>Weighting:</b> {poll.weighting}</p>
+     <p className="poll-method"><b>Sponsor / funding:</b> {poll.sponsor}</p>
      <div className="poll-limitations"><strong>LIMITATIONS</strong><ul>{poll.limitations.map(x=><li key={x}>{x}</li>)}</ul></div>
      <div className="poll-source-links"><a href={poll.sourceUrl} target="_blank" rel="noreferrer">OPEN PRIMARY RELEASE ↗</a>{poll.methodologyUrl?<a href={poll.methodologyUrl} target="_blank" rel="noreferrer">METHODOLOGY / CROSS-CHECK ↗</a>:null}</div>
      <div className="poll-ineligible">NOT A CANDIDATE VOTE-INTENTION POLL</div>
