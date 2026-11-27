@@ -25,7 +25,7 @@ export const claimSpotlights: ClaimSpotlight[] = [
   {
     id: "inec-voter-register-cleanup",
     title: "INEC removed 1.6 million invalid voter records. Does that settle the register concerns?",
-    claim: "INEC said it removed 1,608,660 confirmed invalid registrations and a separate 873 records belonging to verified deceased persons after reviewing the preliminary voters' register.",
+    claim: "INEC said it removed 1,608,660 confirmed invalid registrations and 873 separate records belonging to verified deceased persons after reviewing the preliminary voters' register.",
     summary: "The commission also said 54 officials across 10 states had been identified for disciplinary action. The key questions are what the clean-up covered, how the reported irregularities were adjudicated, and what remains in the final register.",
     topic: "Elections & INEC",
     topicKey: "elections",
