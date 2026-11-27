@@ -15,6 +15,9 @@ export type PollRecord = {
   samplingMethod:string;
   marginOfError:string;
   sponsor:string;
+  question:string;
+  fieldCoverage:string;
+  weighting:string;
   results:PollResult[];
   candidateSentiment?:CandidateSentimentResult[];
   sourceUrl:string;
@@ -51,6 +54,9 @@ export const polls:PollRecord[] = [
     samplingMethod:"Interviews in markets, schools, viewing centres and hotels; no probability sampling method is described in the published summary.",
     marginOfError:"Not published",
     sponsor:"Not stated in the catalogue entry",
+    question:"Exact wording is not reproduced in the accessible summary; the release reports party preference and separate candidate net-favourability items.",
+    fieldCoverage:"NDC, APC, ADC, undecided and other/unreported categories; Tinubu and Peter Obi net-favourability are separate measures, not vote shares.",
+    weighting:"Not disclosed in the accessible summary.",
     results:[
       {label:"NDC",value:57.4,unit:"percent"},
       {label:"APC",value:11.3,unit:"percent"},
@@ -89,6 +95,9 @@ export const polls:PollRecord[] = [
     samplingMethod:"Sampling method not stated in the published summary.",
     marginOfError:"Not published",
     sponsor:"Not stated in the catalogue entry",
+    question:"Exact wording is not reproduced in the accessible summary; the release reports party preference and separate candidate net-favourability items.",
+    fieldCoverage:"NDC and APC are the only party shares disclosed in the free summary; the remaining 32.3% is not broken down. Candidate net-favourability is reported separately.",
+    weighting:"Not disclosed in the accessible summary.",
     results:[
       {label:"NDC",value:42.2,unit:"percent"},
       {label:"APC",value:25.5,unit:"percent"},
@@ -127,6 +136,9 @@ export const polls:PollRecord[] = [
     samplingMethod:"Telephone sample stratified by zone and state in proportion to NPC 2024 adult projections; random dialling and validated contact lists. Rural face-to-face interviews used one convenience-selected site per zone; weighted by sex within geopolitical zone.",
     marginOfError:"±2.1 percentage points at 95% confidence is described by the report as a nominal guide for the combined sample; the rural component was not randomly selected.",
     sponsor:"Commissioned by Yiaga Africa with support from the European Union (EU-SDGN II)",
+    question:"Exact questionnaire wording is not reproduced on the landing page; the report measures likelihood to vote, confidence in INEC, candidate uncertainty and barriers to participation.",
+    fieldCoverage:"No named-candidate or party vote-share field; turnout intention and candidate uncertainty are measured separately.",
+    weighting:"Telephone sample stratified by zone and state in proportion to NPC 2024 adult projections; rural interviews weighted by sex within geopolitical zone. Full weighting factors are not published.",
     results:[
       {label:"Likely or very likely to vote in 2027",value:84,unit:"percent"},
       {label:"Very likely to vote (within the 84%)",value:47,unit:"percent"},
@@ -149,6 +161,41 @@ export const polls:PollRecord[] = [
     eligibleForCandidateAverage:false,
   },
   {
+    id:"noipolls-governance-approval-october-2026",
+    title:"Monthly Governance Tracker — October 2026",
+    pollster:"NOIPolls",
+    category:"government-approval",
+    fieldwork:"October 2026 (exact dates not published)",
+    publishedAt:"2026-11-13",
+    sampleSize:null,
+    population:"Nigerian respondents; age and eligibility criteria are not stated in the accessible release.",
+    geography:"Nigeria is the stated context; state coverage and the geographic sampling frame are not disclosed.",
+    mode:"Not stated in accessible release",
+    samplingMethod:"Not stated in accessible release",
+    marginOfError:"Not published",
+    sponsor:"NOIPolls Limited (publisher); funding/sponsor not disclosed",
+    question:"Exact wording is not published; the release describes approval of the Federal Government's performance over the past month.",
+    fieldCoverage:"Federal Government approval only; no candidate or party options.",
+    weighting:"Not stated in accessible release.",
+    results:[
+      {label:"Approve",value:41,unit:"percent",note:"18% strongly approve + 23% approve; unchanged from September."},
+      {label:"Disapprove",value:54,unit:"percent",note:"33% strongly disapprove + 21% disapprove; up from 52% in September."},
+      {label:"Neutral / undecided",value:5,unit:"percent",note:"Down from 7% in September."},
+    ],
+    sourceUrl:"https://www.noi-polls.com/post/governance-approval-rating-plateaus-at-41-for-2nd-straight-month",
+    limitations:[
+      "The release identifies fieldwork only as October 2026; exact dates are not published.",
+      "The accessible release does not publish sample size, sample frame, mode, sampling design, weights, margin of error or funding/sponsor.",
+      "Exact question wording is not published; the release describes approval of government performance over the past month.",
+      "This is government approval, not party preference, candidate vote intention, turnout intention or a forecast. It must not be combined with candidate-support measures.",
+    ],
+    finalBallotMatched:false,
+    probabilitySample:false,
+    methodologyPublished:false,
+    nationalScope:false,
+    eligibleForCandidateAverage:false,
+  },
+  {
     id:"afrobarometer-round-11-election-expectations",
     title:"Afrobarometer Round 11 — expectations of the 2027 elections",
     pollster:"Afrobarometer; Nigeria network led by NOIPolls",
@@ -162,6 +209,9 @@ export const polls:PollRecord[] = [
     samplingMethod:"Nationally representative, random, stratified probability sample (as described by the catalogue).",
     marginOfError:"±2.5 percentage points at 95% confidence",
     sponsor:"Afrobarometer Nigeria network",
+    question:"How free and fair do you expect the 2027 presidential and legislative elections to be?",
+    fieldCoverage:"No candidate or party field; the survey measures election-fairness expectations, turnout intention and policy priorities.",
+    weighting:"The release describes a nationally representative, random, stratified probability sample; specific weighting factors are not stated in the accessible release.",
     results:[
       {label:"Expect election to be largely free and fair",value:37,unit:"percent"},
       {label:"Expect election not to be free and fair / major problems",value:48,unit:"percent"},
