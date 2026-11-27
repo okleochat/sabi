@@ -73,6 +73,14 @@ export default function PollingDeskPage(){
        {result.note?<small>{result.note}</small>:null}
       </div>)}
      </div>
+     {poll.candidateSentiment?.length?<div className="poll-sentiment-panel">
+      <div className="eyebrow">CANDIDATE NET FAVOURABILITY / NOT VOTE SHARE</div>
+      {poll.candidateSentiment.map(item=><div className="poll-sentiment-row" key={item.candidate}>
+       <strong>{item.candidate}</strong><b>{item.value>0?"+":""}{item.value.toFixed(1)} points</b>
+       {item.note?<small>{item.note}</small>:null}
+      </div>)}
+      <p className="notice">Net favourability is a separate survey measure; it does not mean the same percentage would vote for the person.</p>
+     </div>:null}
      <p className="poll-method"><b>Who was asked:</b> {poll.population}</p>
      <p className="poll-method"><b>Sampling:</b> {poll.samplingMethod}</p>
      <div className="poll-limitations"><strong>LIMITATIONS</strong><ul>{poll.limitations.map(x=><li key={x}>{x}</li>)}</ul></div>
