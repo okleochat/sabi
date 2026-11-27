@@ -42,7 +42,9 @@ const subjectAliases: Record<string, { key: string; label: string; type: string 
   "akpabio": { key: "godswill-akpabio", label: "Godswill Akpabio", type: "public-official" },
   "charles soludo": { key: "charles-soludo", label: "Chukwuma Charles Soludo", type: "elected-official" },
   "soludo": { key: "charles-soludo", label: "Chukwuma Charles Soludo", type: "elected-official" },
-  "chukwuma soludo": { key: "charles-soludo", label: "Chukwuma Charles Soludo", type: "elected-official" }
+  "chukwuma soludo": { key: "charles-soludo", label: "Chukwuma Charles Soludo", type: "elected-official" },
+  "plateau state government": { key: "plateau-state-government", label: "Plateau State Government", type: "public-agency" },
+  "plateau government": { key: "plateau-state-government", label: "Plateau State Government", type: "public-agency" }
 };
 
 export function resolveClaimSubject(value: unknown, preferredType = ""): { subject: string; subjectKey: string; subjectType: string } {
