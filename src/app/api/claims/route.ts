@@ -33,10 +33,13 @@ async function findExistingClaim(fingerprint:string,normalized:string){
  if(!queued.empty)return {kind:"queue" as const,data:{claimId:queued.docs[0].id,origin:"reader-submission",queueStatus:"queued"}};
  const legacy=await db.collection("claims").where("normalizedClaim","==",normalized).limit(1).get();
  if(!legacy.empty)return {kind:"queue" as const,data:{claimId:legacy.docs[0].id,origin:"reader-submission",queueStatus:"queued"}};
+ const recentClaims=await db.collection("claims").orderBy("createdAt","desc").limit(300).get();
+ const legacyDuplicate=recentClaims.docs.find(doc=>normalizeClaim(doc.data().claim||"")===normalized);
+ if(legacyDuplicate)return {kind:"queue" as const,data:{claimId:legacyDuplicate.id,origin:"reader-submission",queueStatus:"queued"}};
  return null;
 }
 function publicSummary(record:Record<string,any>,exact=false){
- return {title:String(record.title||record.claim||"Previously reviewed claim"),claim:String(record.claim||""),url:"/fact-check/"+String(record.slug||record.id||""),subject:String(record.subject||""),subjectKey:String(record.subjectKey||""),verdict:String(record.verdict||""),impact:String(record.impact||"unclear"),origin:String(record.origin||"sabi-research"),originLabel:String(record.originLabel||"Sabi newsroom research"),publishedAt:String(record.publishedAt||""),exact};
+ return {title:String(record.title||record.claim||"Previously reviewed claim"),claim:String(record.claim||""),url:"/fact-check/"+String(record.slug||record.id||""),subject:String(record.subject||""),subjectKey:String(record.subjectKey||""),verdict:String(record.verdict||""),impact:String(record.impact||"unclear"),origin:String(record.origin||"unspecified"),originLabel:String(record.originLabel||(record.origin==="reader-submission"?"Reader submission":record.origin==="sabi-research"?"Sabi newsroom research":"Origin not recorded")),publishedAt:String(record.publishedAt||""),exact};
 }
 async function dispatchClaimAlert(payload:Record<string,unknown>){
  const endpoint=process.env.SABI_CLAIM_ALERT_WEBHOOK_URL;
