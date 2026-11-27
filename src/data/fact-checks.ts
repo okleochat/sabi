@@ -65,8 +65,7 @@ export const starterFactchecks: Array<Record<string, any>> = [
       {title:"Peter Obi At 55",publisher:"THISDAY, 22 July 2016",url:"https://www.thisdaylive.com/2016/07/22/peter-obi-at-55/",sourceType:"independent-reporting"}
     ],
     published:true,status:"published",publishedAt:"2026-11-27",createdAt:"2026-11-27T12:00:00.000Z",updatedAt:"2026-11-27T12:00:00.000Z",reviewStandard:"sabi-editorial-research",sourceClaimId:"sabi-research-obi-no-schools-anambra-2026"
-  }
-
+  },
   {
     id:"sabi-research-akpabio-anti-north-quote-september-2026",slug:"akpabio-northerners-will-suffer-quote",
     title:"Did Godswill Akpabio threaten that Northerners would suffer if Tinubu lost in 2027?",
