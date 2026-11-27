@@ -129,20 +129,70 @@ export const polls:PollRecord[] = [
     marginOfError:"±2.1 percentage points at 95% confidence is described by the report as a nominal guide for the combined sample; the rural component was not randomly selected.",
     sponsor:"Commissioned by Yiaga Africa with support from the European Union (EU-SDGN II)",
     results:[
-      {label:"Likely or very likely to vote in 2027",value:84,unit:"percent"},
-      {label:"Very likely to vote (within the 84%)",value:47,unit:"percent"},
-      {label:"Confident in INEC",value:34,unit:"percent"},
-      {label:"Undecided on a presidential candidate",value:29,unit:"percent"},
-      {label:"Intend to vote but have not settled on a choice",value:44,unit:"percent",note:"Reported as a separate question among all respondents; it is not additive with the 29% undecided figure."},
-    ],
+      {
+            "label": "Likely or very likely to vote",
+            "value": 84,
+            "unit": "percent",
+            "note": "Main survey story and contemporaneous reporting; not candidate vote intention."
+      },
+      {
+            "label": "Very likely to vote (within the 84%)",
+            "value": 47,
+            "unit": "percent"
+      },
+      {
+            "label": "Likely to vote and very certain of candidate choice",
+            "value": 41,
+            "unit": "percent",
+            "note": "Choice certainty is not a candidate vote share."
+      },
+      {
+            "label": "Fear of violence could prevent voting",
+            "value": 61,
+            "unit": "percent"
+      },
+      {
+            "label": "Confident in INEC to conduct credible elections",
+            "value": 34,
+            "unit": "percent",
+            "note": "Detailed story and contemporaneous reports; landing-page overview shows a conflicting 29%."
+      },
+      {
+            "label": "Disapprove of the President's performance",
+            "value": 54,
+            "unit": "percent",
+            "note": "Government approval measure, not candidate favourability."
+      },
+      {
+            "label": "Rate the economy poor or very poor",
+            "value": 71,
+            "unit": "percent",
+            "note": "Economic sentiment, not vote intention."
+      },
+      {
+            "label": "Want a change in national leadership",
+            "value": 49,
+            "unit": "percent"
+      },
+      {
+            "label": "Identify the economy and jobs as a leading issue",
+            "value": 38,
+            "unit": "percent"
+      },
+      {
+            "label": "Identify security as a leading issue",
+            "value": 36,
+            "unit": "percent"
+      }
+],
     sourceUrl:"https://yiaga.org/resources/willing-but-wary-report-of-the-national-voting-intentions",
     methodologyUrl:"https://nvis.yiaga.org/",
     limitations:[
-      "This survey does not publish national candidate or party vote shares.",
-      "Yiaga\u2019s own landing page has a conflicting 29% overview callout for confidence in INEC, while its detailed trust section and contemporaneous reports state 34%; Sabi records 34% and flags the inconsistency.",
+      "Yiaga's landing page is internally inconsistent: its main interactive story and contemporaneous reporting show 84% likely/very likely to vote, 61% fearing violence could deter them, and 34% confident in INEC, while the landing-page Big Picture callouts show 71%, 52%, and 29% respectively. Sabi records the detailed-story figures and flags the conflict.",
+      "The OpenPolls catalogue also lists 29% undecided on candidate choice and 44% not settled on a choice, but the original question wording and denominator were not located in the visible primary summary; those secondary-only figures are excluded from verified results pending the full report.",
       "The combined margin of error is a nominal guide because the 404 rural face-to-face interviews were not randomly selected.",
-      "Turnout intention and candidate uncertainty must not be converted into candidate vote shares.",
-    ],
+      "This survey contains no candidate vote-share estimate and must not be used as one."
+],
     finalBallotMatched:false,
     probabilitySample:false,
     methodologyPublished:true,
@@ -150,39 +200,130 @@ export const polls:PollRecord[] = [
     eligibleForCandidateAverage:false,
   },
   {
-    id:"afrobarometer-round-11-election-expectations",
-    title:"Afrobarometer Round 11 — expectations of the 2027 elections",
+    id:"afrobarometer-nigeria-2024-election-expectations",
+    title:"Afrobarometer Nigeria survey (June–July 2024) — 2027 election expectations, released November 2026",
     pollster:"Afrobarometer; Nigeria network led by NOIPolls",
     category:"election-confidence",
-    fieldwork:"June–July 2024 as printed in the release; fieldwork date is internally inconsistent with the release's Round 11 chronology and is not treated as a current 2026 measure.",
+    fieldwork:"June–July 2024 (Nigeria Round 10 fieldwork; release published 11 November 2026)",
     publishedAt:"2026-11-11",
     sampleSize:1600,
     population:"Adult Nigerians",
     geography:"Nigeria, nationally representative",
-    mode:"Not stated in the news release",
-    samplingMethod:"Nationally representative, random, stratified probability sample (as described by the catalogue).",
+    mode:"Face-to-face household interviews",
+    samplingMethod:"Nationally representative, random, stratified probability sample of 1,600 adult Nigerians.",
     marginOfError:"±2.5 percentage points at 95% confidence",
     sponsor:"Afrobarometer Nigeria network",
     results:[
-      {label:"Expect election to be largely free and fair",value:37,unit:"percent"},
-      {label:"Expect election not to be free and fair / major problems",value:48,unit:"percent"},
-      {label:"Likely to vote in 2027",value:64,unit:"percent"},
-      {label:"Very likely to vote (within the 64%)",value:48,unit:"percent"},
-      {label:"Say candidate policy positions will guide their vote",value:92,unit:"percent"},
-    ],
-    sourceUrl:"https://www.afrobarometer.org/articles/nigerians-doubt-electoral-fairness-ahead-of-2027-polls-expect-widespread-abuses-latest-afrobarometer-survey-shows/",
-    methodologyUrl:"https://openpolls.africa/polls",
+      {
+            "label": "Likely to vote in 2027",
+            "value": 64,
+            "unit": "percent",
+            "note": "Turnout intention, not candidate vote intention."
+      },
+      {
+            "label": "Very likely to vote",
+            "value": 48,
+            "unit": "percent"
+      },
+      {
+            "label": "Expect the 2027 election to be largely free and fair",
+            "value": 37,
+            "unit": "percent"
+      },
+      {
+            "label": "Expect the 2027 election not to be free and fair or to have major problems",
+            "value": 48,
+            "unit": "percent"
+      },
+      {
+            "label": "Say vote-buying is likely in the 2027 election",
+            "value": 89,
+            "unit": "percent"
+      },
+      {
+            "label": "Expect valid votes may not be counted accurately",
+            "value": 79,
+            "unit": "percent"
+      },
+      {
+            "label": "Expect political violence during the election",
+            "value": 79,
+            "unit": "percent"
+      },
+      {
+            "label": "Expect electoral laws may be disregarded",
+            "value": 78,
+            "unit": "percent"
+      },
+      {
+            "label": "Expect incorrect results may be announced",
+            "value": 78,
+            "unit": "percent"
+      },
+      {
+            "label": "Say candidate policy positions influence their vote",
+            "value": 92,
+            "unit": "percent",
+            "note": "Voting motivation, not candidate preference."
+      }
+],
+    sourceUrl:"https://www.afrobarometer.org/wp-content/uploads/2026/11/News-release-Nigerians-doubt-quality-of-upcoming-election-Afrobarometer-bh-11nov26.pdf",
+    methodologyUrl:"https://www.afrobarometer.org/wp-content/uploads/2025/08/R10-Summary-of-results-Nigeria-Afrobarometer-bh-7aug25.pdf",
     limitations:[
-      "This survey measures election expectations and turnout/policy attitudes, not candidate vote intention.",
-      "The release's printed June–July 2024 fieldwork dates appear inconsistent with its Round 11 / 2026 context; Sabi preserves and flags the discrepancy rather than silently correcting it.",
-      "The 37% and 48% categories do not exhaust responses; the remaining response categories are not reproduced here.",
-    ],
+      "The news release was published 11 November 2026, but its own methodology section says the 1,600-person Nigeria fieldwork took place in June–July 2024; the official Nigeria Round 10 summary confirms this is the 2024 survey baseline. The 2026 publication date must not be presented as 2026 fieldwork or current opinion.",
+      "This is an election-expectations and turnout survey, not a candidate vote-intention poll, party-preference poll or favourability rating."
+],
     finalBallotMatched:false,
     probabilitySample:true,
     methodologyPublished:true,
     nationalScope:true,
     eligibleForCandidateAverage:false,
   },
+{
+  "id": "noi-polls-october-2026-government-approval",
+  "title": "NOIPolls October 2026 federal-government performance approval",
+  "pollster": "NOIPolls",
+  "category": "government-approval",
+  "fieldwork": "October 2026 (exact field dates not disclosed)",
+  "publishedAt": "2026-11-13",
+  "sampleSize": null,
+  "population": "Nigerians; the October release does not specify age or voter eligibility.",
+  "geography": "Described as a national governance tracker; exact state coverage not disclosed in the release.",
+  "mode": "Not stated for this wave.",
+  "samplingMethod": "Wave-specific sample design, respondent selection, weighting and response rate are not disclosed in the October release. General NOIPolls methodology cannot be assumed to describe this particular monthly wave.",
+  "marginOfError": "Not published for the October 2026 wave.",
+  "sponsor": "Not stated.",
+  "sourceUrl": "https://www.noi-polls.com/post/governance-approval-rating-plateaus-at-41-for-2nd-straight-month",
+  "results": [
+    {
+      "label": "Approve of federal-government performance",
+      "value": 41,
+      "unit": "percent",
+      "note": "18% strongly approve and 23% somewhat approve."
+    },
+    {
+      "label": "Disapprove of federal-government performance",
+      "value": 54,
+      "unit": "percent",
+      "note": "33% strongly disapprove and 21% somewhat disapprove."
+    },
+    {
+      "label": "Neutral or undecided",
+      "value": 5,
+      "unit": "percent"
+    }
+  ],
+  "limitations": [
+    "This is a government-performance approval measure, not President Tinubu's personal favourability, candidate vote intention or party preference.",
+    "The official release does not disclose the October wave's sample size, exact field dates, response rate, weighting, mode or margin of error. Do not classify it as a verified probability sample or average it with candidate polls until wave-level methodology is supplied."
+  ],
+  "finalBallotMatched": false,
+  "probabilitySample": false,
+  "methodologyPublished": false,
+  "nationalScope": true,
+  "eligibleForCandidateAverage": false
+},
+
 {
  id:"oxford-metro-national-trust-poll-2026-09",
  title:"Oxford-Metro Analytics National Trust Poll",
