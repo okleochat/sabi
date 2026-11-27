@@ -1,1 +1,23 @@
 .studio-box{max-width:980px}.studio-dashboard{display:grid;gap:20px}.studio-claims{display:grid;gap:14px}.studio-claims .content-card{min-height:0}.status-label{display:grid;gap:7px;font-size:11px;font-weight:800;margin-top:16px;max-width:260px}.status-label select{padding:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}.studio-box .form-panel h2{font:700 28px 'Space Grotesk';margin:0 0 12px}.studio-box .form-panel .hero-actions{margin-top:20px}.studio-box .button:disabled{opacity:.55;cursor:wait}.story-body{max-width:780px;font-size:17px;line-height:1.85}.story-body>p{margin:0 0 1.5em}.story-body a{color:var(--purple);text-decoration:underline}.story-body ul{line-height:1.8}
+.claim-urgent{display:flex!important;grid-template-columns:18px 1fr!important;align-items:center;gap:10px!important;background:var(--paper-2);padding:12px;font-weight:600}
+.claim-urgent input,.publish-confirm input{width:16px;height:16px;accent-color:var(--purple)}
+.claim-reference{font:500 9px var(--mono);color:var(--purple);overflow-wrap:anywhere}
+.studio-claim-card{min-height:0;gap:13px}
+.studio-claim-top{display:flex;justify-content:space-between;gap:15px;align-items:flex-start}
+.studio-claim-top h3{overflow-wrap:anywhere}
+.claim-priority{background:var(--paper-2);padding:6px 8px;font:600 8px var(--mono);white-space:nowrap}
+.claim-priority.urgent{background:#fce8d9;color:#8c3518}
+.studio-claim-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.studio-claim-facts>div{background:var(--paper-2);padding:9px;min-width:0}
+.studio-claim-facts span{display:block;font:500 8px var(--mono);letter-spacing:.08em;color:var(--muted);margin-bottom:5px}
+.studio-claim-facts strong{font-size:11px;line-height:1.45;overflow-wrap:anywhere}
+.studio-review-fields{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:15px;margin-top:5px}
+.studio-review-fields>label{display:grid;gap:6px;font-size:11px;font-weight:700}
+.studio-review-fields textarea,.studio-review-fields select,.studio-review-fields input{width:100%;border:1px solid var(--line);background:#fff;color:var(--ink);padding:11px;font:inherit;font-size:12px}
+.studio-review-fields textarea{resize:vertical;line-height:1.5}
+.publish-review{display:grid;gap:10px;background:var(--paper-2);padding:15px}
+.publish-review>label:not(.publish-confirm){display:grid;gap:6px;font-size:11px;font-weight:700}
+.publish-confirm{display:flex;gap:9px;align-items:flex-start;font-size:10px;line-height:1.5}
+.publish-confirm input{flex:0 0 auto;margin-top:1px}
+.publish-review small{font-size:9px;color:var(--muted);line-height:1.5}
+@media(max-width:720px){.studio-claim-facts{grid-template-columns:1fr 1fr}.studio-claim-top{display:block}.claim-priority{display:inline-block;margin-top:8px}}
