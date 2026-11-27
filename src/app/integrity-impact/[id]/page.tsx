@@ -20,6 +20,7 @@ const categoryLabel:Record<string,string>={
  economy:"ECONOMY & LIVELIHOODS",
  education:"EDUCATION",
  health:"HEALTH",
+ infrastructure:"INFRASTRUCTURE & BASIC SERVICES",
  "national-economy":"NATIONAL ECONOMY",
 };
 
