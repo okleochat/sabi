@@ -89,7 +89,7 @@ export default function SabiCheckDesk({spotlights,publishedChecks}:{spotlights:C
    <div className="sabi-check-intro-copy">
     <div className="eyebrow"><span/>THE VERIFICATION DESK / 002</div>
     <h1>SABI<br/><em>CHECK.</em></h1>
-    <p>Claims move fast. Evidence should move faster. Explore current claims, read preliminary newsroom research and published fact-checks, or send something you think deserves scrutiny.</p>
+    <p>Claims move fast. Evidence should move faster. Explore current claims, read source-linked newsroom findings and published fact-checks, or send something you think deserves scrutiny.</p>
    </div>
    <div className="sabi-check-intro-art" aria-hidden="true">
     <span className="sabi-check-art-kicker">NO CAP.</span>
@@ -111,7 +111,7 @@ export default function SabiCheckDesk({spotlights,publishedChecks}:{spotlights:C
   <section className="sabi-check-feed" aria-label="Claim discovery feed">
    <div className="sabi-check-feed-top">
     <div><div className="eyebrow"><span/>THE CLAIMS DESK / EDITORIAL RADAR</div><h2>WHAT'S<br/>IN THE <em>CONVERSATION?</em></h2></div>
-    <p>Fresh claims, source-linked preliminary research and campaign promises. Research notes are not published verdicts; final fact-checks appear only after editorial approval.</p>
+    <p>Source-linked claims, published editorial findings, and campaign pledges. A verified pledge means the promise was made; it does not mean the promised delivery has happened.</p>
    </div>
 
    <div className="sabi-check-tabs" role="group" aria-label="Claim feed sections">
@@ -150,11 +150,11 @@ export default function SabiCheckDesk({spotlights,publishedChecks}:{spotlights:C
      <h3>{item.title}</h3>
      <blockquote>{item.claim}</blockquote>
      <p>{item.summary}</p>
-     {item.researchUpdate?<div className="sabi-check-claim-context sabi-check-research-update"><strong>RESEARCH UPDATE</strong><span><b>{item.researchUpdate.label}</b><br/>{item.researchUpdate.summary}<br/><small>{item.researchUpdate.caveat}</small><small>PRELIMINARY NEWSROOM RESEARCH · NOT A PUBLISHED SABI VERDICT</small></span></div>:null}
+     {item.researchUpdate?<div className="sabi-check-claim-context sabi-check-research-update"><strong>{item.researchUpdate.publishedSlug?"EDITORIAL FINDING":"RESEARCH UPDATE"}</strong><span><b>{item.researchUpdate.label}</b><br/>{item.researchUpdate.summary}<br/><small>{item.researchUpdate.caveat}</small>{item.researchUpdate.assessmentType?<small>ASSESSMENT TYPE / {item.researchUpdate.assessmentType}</small>:null}<small>{item.researchUpdate.publishedSlug?"PUBLISHED SABI CHECK · OWNER/EDITOR APPROVED":"PRELIMINARY NEWSROOM RESEARCH · NOT A PUBLISHED SABI VERDICT"}</small></span></div>:null}
      <div className="sabi-check-claim-context"><strong>WHY IT MATTERS</strong><span>{item.priorityReason}</span></div>
      <div className="sabi-check-source-line"><span>{item.sourcePublisher} · {item.sourceDate}</span><a href={item.sourceUrl} target="_blank" rel="noreferrer">SOURCE ↗</a></div>
      {item.supportingSources?.length?<div className="sabi-check-more-sources">{item.supportingSources.slice(0,2).map(source=><a href={source.url} target="_blank" rel="noreferrer" key={source.url}>{source.publisher} ↗</a>)}</div>:null}
-     <button type="button" className="sabi-check-card-cta" onClick={()=>openForm(item)}>SUBMIT THIS CLAIM FOR CHECKING <b>↗</b></button>
+     {item.researchUpdate?.publishedSlug?<Link className="sabi-check-card-cta" href={"/fact-check/"+item.researchUpdate.publishedSlug}>READ THE PUBLISHED CHECK <b>↗</b></Link>:<button type="button" className="sabi-check-card-cta" onClick={()=>openForm(item)}>SUBMIT THIS CLAIM FOR CHECKING <b>↗</b></button>}
     </article>)}</div>:<div className="sabi-check-empty"><strong>NO CLAIMS MATCH THAT FILTER.</strong><p>Try a broader search, choose another topic, or share a claim with the newsroom.</p><button type="button" onClick={()=>openForm()}>SHARE A CLAIM ↗</button></div>}
    </>}
   </section>
