@@ -8,7 +8,7 @@ This register is a research index, not a political verdict. It does not assign n
 
 ## Research coverage added in this pass
 
-The profile research desk currently indexes **46 source series and portals**, with **31 national-level observation cards**. Several state-level source files have also been extracted:
+The profile research desk currently indexes **46 source series and portals**, with **32 national-level observation cards**. Several state-level source files have also been extracted:
 
 | Evidence file | Coverage | What is recorded | Important qualification |
 |---|---:|---|---|
