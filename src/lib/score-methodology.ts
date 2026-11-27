@@ -5,7 +5,7 @@
  * a term is not, by that fact alone, attributable to the officeholder.
  */
 export const publicRecordMethodology = {
-  version: "3.1.0",
+  version: "3.2.0",
   scale: {
     minimum: 1,
     maximum: 10,
@@ -38,6 +38,16 @@ export const publicRecordMethodology = {
     baseline: "For every category, establish inherited conditions using the strongest comparable pre-tenure evidence. Prefer a 2–3-year pre-tenure average or trend. Where only a survey or one comparable pre-tenure measure exists, disclose that limitation and do not imply a multi-year baseline.",
     minimumLongitudinalEvidence: "A category normally requires at least one defensible pre-tenure baseline and at least two comparable post-assumption observations spanning 12 months or more. For quarterly/monthly measures, use the full available series rather than cherry-picked endpoints. For surveys, use comparable rounds and report confidence intervals or design limitations.",
     overlap: "Split calendar/fiscal-year observations that straddle the assumption date where the source allows. Otherwise label them as transition or overlapping periods rather than attributing the whole year to one administration.",
+  },
+  nationalSnapshotScoring: {
+    description: "National officeholders are assessed with nationally representative indicators and explicit national reference points. State peer-percentile scores and national benchmark scores are different index families and are not numerically comparable.",
+    addedCategories: {
+      publicFinance: "A narrow federal debt-service pressure proxy uses IMF-estimated federal interest payments as a share of federal revenue. It is not a full public-finance audit.",
+      education: "NDHS 2024 organised-learning participation is an access indicator only; it is not a learning-achievement assessment.",
+      health: "NDHS 2024 DPT3, measles second-dose and pneumococcal conjugate vaccine coverage are averaged equally against universal-coverage reference values.",
+      infrastructure: "NDHS 2024 access to at least basic drinking water, at least basic sanitation and electricity are averaged equally against universal-access reference values.",
+    },
+    exclusions: "National security remains unscored until the pre-tenure and current-period security series use compatible event definitions and source vintages. Integrity and promise delivery remain unscored until individual-level legal outcomes and a verified presidential commitment ledger are published. Do not fill these gaps with agency-wide enforcement totals or incomparable ACLED extracts.",
   },
   categoryScoring: {
     commonRule: "Pre-register the category's indicators, direction of improvement, weights and benchmarks before calculating an officeholder's grade. Use the same indicator definitions and scoring transformations for every comparable officeholder. Weights reflect the indicator's substantive importance and measurement quality, not how many rows happen to be available.",
