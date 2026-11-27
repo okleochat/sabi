@@ -35,7 +35,7 @@ export const candidateDossierEvidence:Record<string,CandidateDossierEvidence> = 
   adp:{
     reviewedRecords:3,documentedCampaignEvents:1,financeRecords:0,activityStatus:"records-listed",
     manifestoStatus:"launch-reported-document-not-located",
-    manifestoNote:"OpenPolls records an September 2026 campaign statement saying manifesto work was continuing; a full original document was not located in the catalogue snapshot.",
+    manifestoNote:"OpenPolls records a September 2026 campaign statement saying manifesto work was continuing; a full original document was not located in the catalogue snapshot.",
     checkedAt,sourceUrl:tracker,manifestoSourceUrl:manifestos,
   },
   adc:{
