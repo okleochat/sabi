@@ -1,5 +1,6 @@
 import seed from "../data/inec-presidential-candidates.json";
 import {starterArticles} from "../data/articles";
+import {starterFactchecks} from "../data/fact-checks";
 import {db} from "./firebase-admin";
 
 export type Candidate={id:string;officialName:string;displayName:string;partyCode:string;runningMateOfficialName?:string;ageAtPublication?:number;genderCode?:string;qualifications?:string;runningMateQualifications?:string;source?:{title:string;publisher:string;publishedAt:string;url:string;relatedUrl?:string;accessedAt?:string};recordStatus?:string};
@@ -32,15 +33,31 @@ async function seedArticles(){
  if(writes)await batch.commit();
 }
 
+async function seedFactchecks(){
+ const collection=db.collection("factchecks");
+ const refs=starterFactchecks.map(record=>collection.doc(String(record.id)));
+ const snapshots=await db.getAll(...refs);
+ const batch=db.batch();let writes=0;
+ snapshots.forEach((snap,i)=>{
+  if(!snap.exists){
+   const record=starterFactchecks[i];
+   batch.set(refs[i],{...record,published:true,status:"published",createdAt:record.createdAt||new Date().toISOString(),updatedAt:new Date().toISOString()});
+   writes++;
+  }
+ });
+ if(writes)await batch.commit();
+}
+
 export async function getPublishedRecords(name:"articles"|"factchecks"):Promise<Array<Record<string,any>>>{
  try{
   if(name==="articles")await seedArticles();
+  if(name==="factchecks")await seedFactchecks();
   const snapshot=await db.collection(name).where("published","==",true).get();
   const records=snapshot.docs.map(doc=>({...doc.data(),id:doc.id} as Record<string,any>));
   return records.sort((a,b)=>String(b.publishedAt||"").localeCompare(String(a.publishedAt||"")));
  }catch(error){
   console.error("Could not load "+name+" from Firestore.",error);
-  return name==="articles"?starterArticles.map(article=>({...article,published:true})): [];
+  return name==="articles"?starterArticles.map(article=>({...article,published:true})):starterFactchecks.map(record=>({...record,published:true}));
  }
 }
 
