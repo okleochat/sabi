@@ -22,7 +22,7 @@ export type PublicIndicator = {
 };
 
 export type CategoryScore = {
-  id: "economy" | "education" | "health" | "growth" | "price-stability";
+  id: string;
   label: string;
   value: number;
   evidenceCount: number;
