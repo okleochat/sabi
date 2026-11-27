@@ -52,7 +52,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
     </div>
     <div className="stat-strip">
      <div className="stat"><strong>{scorecard.overallScore===null?"IN PROGRESS":scorecard.overallScore.toFixed(1)+"/10"}</strong><span>Overall score</span></div>
-     <div className="stat"><strong>{scorecard.scoredCategoryCount}/{scorecard.totalAssessmentCategories}</strong><span>Score-ready categories</span></div>
+     <div className="stat"><strong>{scorecard.scoredCategoryCount}/{scorecard.totalAssessmentCategories}</strong><span>Scored categories</span></div>
      <div className="stat"><strong>{record.indicators.length}</strong><span>Published indicators</span></div>
     </div>
     <div className="no-verdict-panel" style={{marginTop:18}}>
@@ -74,7 +74,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
   <section className="profile-research">
    <div className="eyebrow"><span/>SABI OVERALL SCORE / TENURE ASSESSMENT</div>
    <h2>THE SCORECARD.<br/>SHOW THE MATH.</h2>
-   <p className="notice">The Sabi Overall Score remains a permanent part of this profile. Category scores are published when a defined, comparable indicator supports a transparent calculation. Snapshot and peer-comparison indices are labelled provisional; they are not presented as full-tenure causal assessments.</p>
+   <p className="notice">The Sabi Overall Score is the simple average of the published category indices below. Snapshot peer indices are provisional and describe measured jurisdictional outcomes for their stated periods; they are not presented as full-tenure causal assessments.</p>
    <div className="overall-score-panel">
     <div>
      <div className="eyebrow">SABI OVERALL SCORE / 0–10</div>
@@ -91,13 +91,13 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
     {scorecard.categories.map(category=><article className="score-card" key={category.id}>
      <div className="eyebrow">{category.label.toUpperCase()}</div>
      <div className="score-card-value">{category.value.toFixed(1)}<span>/10</span></div>
-     <div className="score-evidence">{category.evidenceLabel} · {category.provisional?"PROVISIONAL": "PUBLISHED"}</div>
+     <div className="score-evidence">{category.evidenceLabel} · {category.provisional?"PROVISIONAL": "PUBLISHED"}{category.period?" · "+category.period:""}{category.comparisonGroup?" · "+category.comparisonGroup:""}</div>
      <p>{category.method}</p>
      <p>{category.interpretation}</p>
     </article>)}
    </div>
    <div className="not-scored-panel">
-    <div className="eyebrow">CATEGORY READINESS / EVIDENCE REGISTER INCOMPLETE</div>
+    <div className="eyebrow">OTHER CATEGORIES / EVIDENCE REGISTER</div>
     <div className="not-scored-grid">
      {scorecard.notScored.map(category=><article key={category.id}>
       <strong>{category.label}</strong>
@@ -119,7 +119,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
      <p><b>Reporting period:</b> {item.period}{item.population?" · "+item.population:""}</p>
      {item.comparison?<p><b>Comparable reference:</b> {item.comparison.displayValue} ({item.comparison.period}). {item.comparison.note}</p>:null}
      <p>{item.note}</p>
-     <div className="indicator-unscored">SOURCE-LINKED CONTEXT · NOT YET USED IN A TENURE SCORE</div>
+     <div className="indicator-unscored">SOURCE-LINKED INDICATOR · SEE CATEGORY INDEX AND METHOD ABOVE</div>
      <div className="source-note"><b>{item.publisher}</b> · {item.sourceLabel} · Published {item.publishedAt}<br/><a href={item.sourceUrl} target="_blank" rel="noreferrer">OPEN PRIMARY SOURCE ↗</a>{item.secondarySourceUrl?<><span> · </span><a href={item.secondarySourceUrl} target="_blank" rel="noreferrer">TRANSCRIPTION / CROSS-CHECK ↗</a></>:null}</div>
     </article>)}
    </div>:<div className="empty-state">No comparable source-linked indicators have been added to this profile yet. The data gaps below explain the next records required.</div>}
@@ -193,7 +193,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
     <article className="content-card"><div className="eyebrow">02 / CAUSATION</div><h3>Tenure is not proof</h3><p>A national or state indicator can change during an administration for many reasons, including inherited conditions, federal policy, economic shocks and decisions by other institutions.</p></article>
     <article className="content-card"><div className="eyebrow">03 / CORRECTIONS</div><h3>Challenge the evidence</h3><p>Every figure links to its publisher. Submit an alternate primary source or correction through the editorial workspace so the public record can be checked and updated.</p><Link href="/studio">OPEN EDITORIAL WORKSPACE ↗</Link></article>
    </div>
-   <div className="source-note">PUBLIC RECORD METHODOLOGY VERSION {publicRecordMethodology.version}. The Overall Score is the arithmetic mean of published category scores. Missing categories are excluded, never treated as zero. A complete eight-category assessment is required for like-for-like overall comparisons.</div>
+   <div className="source-note">PUBLIC RECORD METHODOLOGY VERSION {publicRecordMethodology.version}. The Overall Score is the arithmetic mean of published category scores. Missing categories are excluded, never treated as zero. Compare overall scores only when the category coverage, reference periods and comparison methods match.</div>
   </section>
  </div>;
 }
