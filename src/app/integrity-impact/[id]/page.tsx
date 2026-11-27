@@ -51,7 +51,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
      {p.termStart?<div className="detail"><span>TERM / APPOINTMENT START</span><strong>{p.termStart}</strong></div>:null}
     </div>
     <div className="stat-strip">
-     <div className="stat"><strong>{scorecard.overallScore===null?"IN PROGRESS":scorecard.overallScore.toFixed(1)+"/10"}</strong><span>Overall score</span></div>
+     <div className="stat"><strong>{scorecard.overallScore===null?"IN PROGRESS":scorecard.overallScore.toFixed(1)+"/10"}</strong><span>Provisional overall score</span></div>
      <div className="stat"><strong>{scorecard.scoredCategoryCount}/{scorecard.totalAssessmentCategories}</strong><span>Scored categories</span></div>
      <div className="stat"><strong>{record.indicators.length}</strong><span>Published indicators</span></div>
     </div>
@@ -79,7 +79,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
     <div>
      <div className="eyebrow">SABI OVERALL SCORE / 0–10</div>
      <div className="overall-score-value">{scorecard.overallScore===null?"IN PROGRESS":scorecard.overallScore.toFixed(1)}<span>{scorecard.overallScore===null?"":"/10"}</span></div>
-     <div className="overall-score-coverage">{scorecard.scoredCategoryCount} OF {scorecard.totalAssessmentCategories} CATEGORY SCORES INCLUDED IN THE AVERAGE</div>
+     <div className="overall-score-coverage">{scorecard.scoredCategoryCount} OF {scorecard.totalAssessmentCategories} CATEGORY SCORES INCLUDED IN THE AVERAGE · PROVISIONAL</div>
     </div>
     <div className="overall-score-method">
      <strong>HOW IT IS CALCULATED</strong>
