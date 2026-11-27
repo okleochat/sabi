@@ -15,6 +15,7 @@ export type PollRecord = {
   samplingMethod:string;
   marginOfError:string;
   sponsor:string;
+  question?:string;
   results:PollResult[];
   candidateSentiment?:CandidateSentimentResult[];
   sourceUrl:string;
@@ -182,6 +183,80 @@ export const polls:PollRecord[] = [
     nationalScope:true,
     eligibleForCandidateAverage:false,
   },
+,
+{
+ id:"oxford-metro-national-trust-poll-2026-09",
+ pollster:"Oxford-Metro Analytics",
+ category:"candidate-vote-intention",
+ publishedAt:"2026-09-08",
+ fieldwork:"Closed 7 September 2026; start date not stated in the release located",
+ sampleSize:69110,
+ population:"Voluntary online participants; not a probability sample of Nigeria's eligible voters",
+ geography:"State and FCT results reported; 56 diaspora responses were excluded from regional tallies; Lagos and the FCT accounted for 54.44% of responses",
+ mode:"Open online participation",
+ samplingMethod:"Self-selected online participation; results unweighted; no probability sampling frame or weighting reported",
+ marginOfError:"Not applicable; non-probability self-selected responses",
+ sponsor:"Not stated in the release; the results were distributed in a Newsfile press release",
+ question:"The release reports candidate response totals but does not reproduce the exact vote-intention question wording.",
+ results:[
+  {label:"Bola Ahmed Tinubu",value:"35.41%"},
+  {label:"Peter Obi",value:"33.86%"},
+  {label:"Atiku Abubakar",value:"26.67%"},
+  {label:"Other candidates / remaining options",value:"4.06%"}
+ ],
+ limitations:[
+  "This was an opt-in, self-selected online exercise, not a probability sample of the electorate.",
+  "The figures are unweighted and cannot be generalised to Nigerian voters; no conventional margin of error applies.",
+  "Lagos and the FCT contributed 54.44% of all responses, creating strong geographic concentration.",
+  "The final dataset included 56 diaspora responses; the release says these were excluded from domestic regional tallies.",
+  "The exact question wording, recruitment frame and full questionnaire were not published in the release located.",
+  "The fieldwork ended before INEC's final candidate list; the candidate field is not matched to the final ballot.",
+  "Not eligible for a national candidate-vote average, winner prediction or probability estimate."
+ ],
+ probabilitySample:false,
+ methodologyPublished:false,
+ nationalScope:true,
+ finalBallotMatched:false,
+ eligibleForCandidateAverage:false,
+ sourceUrl:"https://www.newsfilecorp.com/release/313361",
+ methodologyUrl:"https://openpolls.africa/polls"
+},
+{
+ id:"tinubu-must-go-movement-online-ticket-poll-2026-09",
+ pollster:"Tinubu Must Go movement",
+ category:"candidate-vote-intention",
+ publishedAt:"2026-09-26",
+ fieldwork:"24–25 September 2026; 24-hour online exercise",
+ sampleSize:109799,
+ population:"People who voluntarily participated online; no eligible-voter sampling frame was published",
+ geography:"Online; geographic distribution was not published in the reports located",
+ mode:"Opt-in online poll",
+ samplingMethod:"Self-selected online exercise organised by a movement publicly opposing the incumbent administration; no probability sampling or weighting reported",
+ marginOfError:"Not applicable; non-probability self-selected responses",
+ sponsor:"Tinubu Must Go movement; no independent sponsor identified",
+ question:"Press reports describe a choice among leading opposition presidential tickets; the exact wording was not published, and whether Tinubu was offered as an option is not stated.",
+ results:[
+  {label:"Atiku Abubakar / Rotimi Amaechi ticket",value:"73.6%"},
+  {label:"Peter Obi / Rabiu Kwankwaso ticket",value:"22.3%"},
+  {label:"Other candidates / options",value:"4.1%"}
+ ],
+ limitations:[
+  "This was a movement-run, self-selected online exercise, not a probability sample of Nigerian voters.",
+  "The organiser publicly opposed the incumbent; its position in the political contest must be disclosed.",
+  "The published reports describe a choice among leading opposition tickets. Whether Bola Tinubu was an option is not stated.",
+  "No full questionnaire, recruitment frame, geographic distribution, weighting or independent methodology report was located.",
+  "No conventional margin of error applies.",
+  "The ticket field was not matched to INEC's final candidate list.",
+  "Not eligible for a national candidate-vote average, winner prediction or probability estimate."
+ ],
+ probabilitySample:false,
+ methodologyPublished:false,
+ nationalScope:false,
+ finalBallotMatched:false,
+ eligibleForCandidateAverage:false,
+ sourceUrl:"https://www.vanguardngr.com/2026/09/tinubu-must-go-poll-puts-atiku-ahead-of-obi-others-for-2027/",
+ methodologyUrl:"https://openpolls.africa/polls"
+}
 ];
 
 export type CandidateVotePoll = PollRecord & {
