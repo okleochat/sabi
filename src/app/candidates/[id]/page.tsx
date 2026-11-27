@@ -3,6 +3,7 @@ import Link from "next/link";
 import {notFound} from "next/navigation";
 import {getCandidate} from "@/lib/data";
 import {candidatePortraits,candidateBackgrounds} from "@/data/candidate-media";
+import {candidateDossierEvidence} from "@/data/candidate-dossier-evidence";
 import ShareCard from "@/app/components/ShareCard";
 export const dynamic="force-dynamic";
 export async function generateMetadata({params}:{params:Promise<{id:string}>}):Promise<Metadata>{const {id}=await params;const c=await getCandidate(id);return {title:c?.displayName||"Candidate profile"};}
@@ -16,6 +17,7 @@ const citizenQuestions=[
 export default async function CandidateProfile({params}:{params:Promise<{id:string}>}){
  const {id}=await params;const c=await getCandidate(id);if(!c)notFound();
  const portrait=candidatePortraits[c.id],background=candidateBackgrounds[c.id];
+ const tracker=candidateDossierEvidence[c.id];
  const initials=c.displayName.split(" ").slice(0,2).map(x=>x[0]).join("");
  const sourceDate=c.source?.publishedAt||"Date not stated";
  return <div className="page-shell">
@@ -44,7 +46,7 @@ export default async function CandidateProfile({params}:{params:Promise<{id:stri
    </div>
   </section>
   <section className="candidate-dossier-nav">
-   <a href="#ticket">THE TICKET</a><a href="#background">BACKGROUND</a><a href="#platform">POLICIES & MANIFESTO</a><a href="#record">PUBLIC RECORD</a><a href="#questions">QUESTIONS FOR THE TICKET</a>
+   <a href="#ticket">THE TICKET</a><a href="#background">BACKGROUND</a><a href="#campaign">CAMPAIGN & MANIFESTO TRACKER</a><a href="#platform">POLICIES</a><a href="#record">PUBLIC RECORD</a><a href="#questions">QUESTIONS FOR THE TICKET</a>
   </section>
   <section id="ticket" className="profile-research">
    <div className="eyebrow"><span/>THE PRESIDENTIAL TICKET / {c.partyCode}</div>
@@ -71,6 +73,24 @@ export default async function CandidateProfile({params}:{params:Promise<{id:stri
     <article><span>02 / ELECTION HISTORY</span><strong>Past contests being verified</strong><p>Previous candidacies and results will be separated from current official ballot status.</p></article>
     <article><span>03 / DECLARATIONS</span><strong>Disclosure records to be sourced</strong><p>Publicly available asset declarations, interests or legal disclosures will only be included where lawfully accessible and attributable.</p></article>
    </div>
+  </section>
+  <section id="campaign" className="profile-research">
+   <div className="eyebrow"><span/>CAMPAIGN RECORD / THIRD-PARTY SOURCE REVIEW</div>
+   <h2>WHAT HAS BEEN<br/>DOCUMENTED?</h2>
+   {tracker?<><p className="notice">The figures below are from OpenPolls Africa's public 2027 campaign tracker, snapshot checked {tracker.checkedAt}. They count records found by that tracker, not all campaign activity, popularity, voter support or performance. A short record list is not proof that a campaign is inactive; a long one is not proof of support.</p>
+    <div className="candidate-tracker-grid">
+     <article><span>RECORDS REVIEWED</span><strong>{tracker.reviewedRecords===undefined?"Tracking scheduled":tracker.reviewedRecords}</strong><p>Items reviewed and indexed by the external tracker.</p></article>
+     <article><span>DOCUMENTED CAMPAIGN EVENTS</span><strong>{tracker.documentedCampaignEvents===undefined?"Not stated":tracker.documentedCampaignEvents}</strong><p>Public events identified in the tracker snapshot.</p></article>
+     <article><span>CAMPAIGN FINANCE RECORDS</span><strong>{tracker.financeRecords===undefined?"Not stated":tracker.financeRecords}</strong><p>Public disclosures located by the tracker. A zero means none was found there, not that no spending or disclosure exists.</p></article>
+    </div>
+    <div className="candidate-tracker-links"><a href={tracker.sourceUrl} target="_blank" rel="noreferrer">OPEN OPENPOLLS CAMPAIGN RECORD ↗</a><a href={tracker.manifestoSourceUrl} target="_blank" rel="noreferrer">OPEN MANIFESTO TRACKER ↗</a></div>
+    <div className="candidate-manifesto-status">
+     <div className="eyebrow">MANIFESTO DOCUMENT STATUS / SOURCE SNAPSHOT</div>
+     <h3>{tracker.manifestoStatus==="document-located"?"A manifesto document is indexed":tracker.manifestoStatus==="launch-reported-document-not-located"?"Launch reported; full document not located":tracker.manifestoStatus==="no-document-found-in-tracker"?"No standalone document found in tracker":tracker.manifestoStatus==="tracker-entry-conflicted"?"Tracker entry requires clarification":"No clear status in the checked source snapshot"}</h3>
+     <p>{tracker.manifestoNote}</p>
+     {tracker.notableCommitments?.length?<ul>{tracker.notableCommitments.map(x=><li key={x}>{x}</li>)}</ul>:null}
+    </div>
+   </>:<div className="empty-state">No third-party campaign-tracker entry has been added to this profile yet.</div>}
   </section>
   <section id="platform" className="profile-research">
    <div className="eyebrow"><span/>POLICY FILE / MANIFESTO</div><h2>WHAT DOES THE<br/>TICKET PROPOSE?</h2>
