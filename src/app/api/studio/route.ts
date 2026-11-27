@@ -124,11 +124,10 @@ export async function POST(req:NextRequest){
      const indexSnap=await tx.get(indexRef);
      const factSnap=await tx.get(factRef);
      if(factSnap.exists)return "slug-taken";
-     if(indexSnap.exists&&String(indexSnap.data()?.claimId||"")!==id&&indexSnap.data()?.factcheckSlug)return "duplicate";
+     if(indexSnap.exists&&String(indexSnap.data()?.claimId||"")!==id)return "duplicate";
      tx.set(factRef,factcheck);
-     tx.update(claimRef,{status:"closed",reviewStatus:"published",publishedAt,factcheckSlug:slug,publishedBy:editor.uid,updatedAt:now,updatedBy:editor.uid,...classification,verdict});
+     tx.update(claimRef,{status:"closed",reviewStatus:"published",publishedAt,factcheckSlug:slug,publishedBy:editor.uid,updatedAt:now,updatedBy:editor.uid,...classification,verdict,reviewHistory:FieldValue.arrayUnion({action:"factcheck-published",slug,verdict,impact:classification.impact,at:now,by:editor.uid,evidenceCount:evidence.length})});
      tx.set(indexRef,{fingerprint,claimId:id,queueStatus:"published",factcheckSlug:slug,origin,subjectKey:classification.subjectKey,updatedAt:now},{merge:true});
-     tx.update(claimRef,{reviewHistory:FieldValue.arrayUnion({action:"factcheck-published",slug,verdict,impact:classification.impact,at:now,by:editor.uid,evidenceCount:evidence.length})});
      return "published";
     });
     if(outcome==="published"){createdSlug=slug;break;}
