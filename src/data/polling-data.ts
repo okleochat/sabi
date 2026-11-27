@@ -188,6 +188,7 @@ export type CandidateVotePoll = PollRecord & {
   eligibleForCandidateAverage:true;
   pollsterId:string;
   effectiveSampleSize:number;
+  fieldworkEndDate:string;
   candidateShares:Record<string,number>;
 };
 
