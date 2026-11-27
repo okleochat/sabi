@@ -43,7 +43,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
    <div className="profile-title">
     <div className="eyebrow"><span/>SABI PUBLIC RECORD / {p.office.toUpperCase()}</div>
     <h1>{p.name}</h1>
-    <p>{roleDescription}. This page brings together sourced public indicators, government records and attributable commitments for the relevant jurisdiction and period. It is an evidence file, not a political rating.</p>
+    <p>{roleDescription}. This page brings together sourced public indicators, government records and attributable commitments for the relevant jurisdiction and period. Its performance indices describe measured public outcomes and disclosed administrative evidence, not a person’s character.</p>
     <div className="profile-details">
      <div className="detail"><span>OFFICE</span><strong>{p.office}</strong></div>
      {p.state?<div className="detail"><span>JURISDICTION</span><strong>{p.state}</strong></div>:null}
@@ -74,12 +74,12 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
   <section className="profile-research">
    <div className="eyebrow"><span/>SABI OVERALL SCORE / TENURE ASSESSMENT</div>
    <h2>THE SCORECARD.<br/>SHOW THE MATH.</h2>
-   <p className="notice">The Sabi Overall Score remains a permanent part of this profile. We are withholding a numerical grade until the category assessments cover the actual period in office, use an inherited baseline, and pass the published evidence standard. A single quarter, one-year fiscal snapshot, source catalogue or pre-tenure survey cannot qualify as a full-tenure performance score.</p>
+   <p className="notice">The Sabi Overall Score remains a permanent part of this profile. Category scores are published when a defined, comparable indicator supports a transparent calculation. Snapshot and peer-comparison indices are labelled provisional; they are not presented as full-tenure causal assessments.</p>
    <div className="overall-score-panel">
     <div>
      <div className="eyebrow">SABI OVERALL SCORE / 0–10</div>
      <div className="overall-score-value">{scorecard.overallScore===null?"IN PROGRESS":scorecard.overallScore.toFixed(1)}<span>{scorecard.overallScore===null?"":"/10"}</span></div>
-     <div className="overall-score-coverage">{scorecard.scoredCategoryCount} OF {scorecard.totalAssessmentCategories} CATEGORIES SCORE-READY · 6 REQUIRED TO PUBLISH</div>
+     <div className="overall-score-coverage">{scorecard.scoredCategoryCount} OF {scorecard.totalAssessmentCategories} CATEGORY SCORES INCLUDED IN THE AVERAGE</div>
     </div>
     <div className="overall-score-method">
      <strong>HOW IT IS CALCULATED</strong>
