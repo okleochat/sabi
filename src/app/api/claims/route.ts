@@ -26,7 +26,7 @@ function similarity(a:string,b:string){
  const containment=overlap/Math.min(left.size,right.size);
  return Math.max(jaccard,containment*0.82);
 }
-async function findExistingClaim(fingerprint:string,normalized:string){
+async function findExistingClaim(fingerprint:string,normalized:string):Promise<{kind:"index"|"queue";data:Record<string,any>}|null>{
  const index=await db.collection("claimFingerprints").doc(fingerprint).get();
  if(index.exists)return {kind:"index" as const,data:index.data()||{}};
  const queued=await db.collection("claims").where("claimFingerprint","==",fingerprint).limit(1).get();
