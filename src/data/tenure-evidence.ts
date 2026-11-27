@@ -664,6 +664,18 @@ export const tenureEvidenceSources: EvidenceSource[] = [
 
 const nationalObservations: EvidenceObservation[] = [
   {
+    id: "fme-school-census-2024-25-national", category: "education",
+    label: "Annual School Census — national 2024/25 portal return",
+    value: "230,844 listed schools · 124,066 returns (53.7%) · 39,825,932 learners · 1,185,610 teachers · 725,778 classrooms · 604,479 toilets.",
+    period: "School year 2024/2025; portal snapshot generated 22 September 2026",
+    geography: "Nigeria",
+    publisher: "Federal Ministry of Education",
+    url: "https://emis.education.gov.ng/portal/",
+    evidenceType: "official-administrative",
+    note: "The portal's 53.7% school-return rate means the data are incomplete administrative returns, not a full census or a representative learner sample. Non-returning schools must not be treated as having zero learners; state counts and ratios require validation against EMIS returns and are not learning-outcome measures.",
+  },
+
+  {
     id: "global-mpi-2024-survey", category: "cost-of-living",
     label: "Global Multidimensional Poverty Index — latest Nigerian survey",
     value: "MPI 0.269 · 48.7% multidimensionally poor (113.316m people) · 18.1% vulnerable (42.225m) · 28.7% in severe multidimensional poverty · intensity 55.1%.",
@@ -993,7 +1005,7 @@ export function getTenureEvidence(person: { office: string; state?: string; term
   const observations = nationalObservations.filter(item => {
     if (person.office === "President") return true;
     // National series remain visible as context, not as state-level outcomes.
-    return ["acled-security-2024-25", "child-mortality-2023-24", "wash-baseline-2021", "nerc-generation-2021-24", "budgit-state-revenue-2023-24"].includes(item.id);
+    return ["acled-security-2024-25", "child-mortality-2023-24", "wash-baseline-2021", "nerc-generation-2021-24", "budgit-state-revenue-2023-24", "fme-school-census-2024-25-national"].includes(item.id);
   });
 
   const nalabeRecords = person.state ? nalabeStateLearning2022 : undefined;
