@@ -63,7 +63,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
      {label:"Office",value:p.office},
      {label:"Jurisdiction",value:p.state||"Nigeria"},
      {label:"Overall score",value:scorecard.overallScore===null?"No category scores published yet":scorecard.overallScore.toFixed(1)+"/10"},
-     {label:"Score readiness",value:scorecard.scoredCategoryCount+" of "+scorecard.totalAssessmentCategories+" categories score-ready"},
+     {label:"Category scores included",value:scorecard.scoredCategoryCount+" of "+scorecard.totalAssessmentCategories},
      {label:"Published indicators",value:String(record.indicators.length)},
      {label:"Reporting periods",value:periods.join(", ")||"Not yet available"},
      {label:"Data gaps disclosed",value:String(record.missing.length)}
@@ -72,7 +72,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
   </section>
 
   <section className="profile-research">
-   <div className="eyebrow"><span/>SABI OVERALL SCORE / TENURE ASSESSMENT</div>
+   <div className="eyebrow"><span/>SABI PUBLIC PERFORMANCE INDEX / CATEGORY ASSESSMENT</div>
    <h2>THE SCORECARD.<br/>SHOW THE MATH.</h2>
    <p className="notice">The Sabi Overall Score is the simple average of the published category indices below. Snapshot peer indices are provisional and describe measured jurisdictional outcomes for their stated periods; they are not presented as full-tenure causal assessments.</p>
    <div className="overall-score-panel">
@@ -91,7 +91,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
     {scorecard.categories.map(category=><article className="score-card" key={category.id}>
      <div className="eyebrow">{category.label.toUpperCase()}</div>
      <div className="score-card-value">{category.value.toFixed(1)}<span>/10</span></div>
-     <div className="score-evidence">{category.evidenceLabel} · {category.provisional?"PROVISIONAL": "PUBLISHED"}{category.period?" · "+category.period:""}{category.comparisonGroup?" · "+category.comparisonGroup:""}</div>
+     <div className="score-evidence">{category.evidenceLabel} · {category.scope==="national-snapshot"?"NATIONAL BENCHMARK": "STATE PEER INDEX"} · {category.provisional?"PROVISIONAL": "PUBLISHED"}{category.period?" · "+category.period:""}{category.comparisonGroup?" · "+category.comparisonGroup:""}</div>
      <p>{category.method}</p>
      <p>{category.interpretation}</p>
     </article>)}
