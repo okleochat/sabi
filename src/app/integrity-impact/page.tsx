@@ -63,7 +63,7 @@ export default function IntegrityImpactPage(){
        </div>
        <p className="directory-score-coverage">{scorecard.scoredCategoryCount} of {scorecard.totalAssessmentCategories} categories scored · Overall Score is the average of published category scores</p>
        <p className="notice"><b>{research.sources.length} source series indexed · {research.observations.length} extracted observations</b><br/>{record.indicators.map(item=>item.label+": "+item.displayValue).join(" · ")}{record.missing.length?" · "+record.missing.length+" disclosed research/data gap(s)":""}</p>
-       {scorecard.notScored.length?<p className="notice">Scoring evidence still being built: {scorecard.notScored.map(x=>x.label).join(", ")}.</p>:null}
+       {scorecard.notScored.length?<p className="notice">Not yet scored from comparable current evidence: {scorecard.notScored.map(x=>x.label).join(", ")}.</p>:null}
        <span>OPEN SOURCED PUBLIC RECORD ↗</span>
       </div>
      </Link>;

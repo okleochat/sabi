@@ -4,6 +4,12 @@
  * population definitions and reporting periods. Snapshot peer indices are explicitly
  * separated from full-tenure causal assessments and disclose their comparison basis.
  */
+import { stateFoodInsecurity2024, ndhsFoodInsecuritySource } from "@/data/ndhs-food-insecurity";
+import { stateSecurity2024To2025, stateSecuritySource } from "@/data/security-state-2024-25";
+import { stateDhIs2Immunisation2023To2024 } from "@/data/dhis2-immunisation";
+import { statePopulation2023 } from "@/data/state-population-2023";
+import { stateLabourBaseline2023 } from "@/data/tenure-evidence";
+
 export type PublicIndicator = {
   id: string;
   category: "economy" | "education" | "health" | "national-economy";
@@ -32,6 +38,11 @@ export type CategoryScore = {
   method: string;
   interpretation: string;
   provisional: boolean;
+  period?: string;
+  comparisonGroup?: string;
+  scope?: "state-snapshot" | "national-snapshot";
+  benchmarkSourceUrl?: string;
+  benchmarkSourceLabel?: string;
 };
 
 export type UnscoredCategory = { id: string; label: string; reason: string };
@@ -253,98 +264,235 @@ const tenureAssessmentCategories: UnscoredCategory[] = [
   {
     id: "cost-of-living",
     label: "Cost of living & household welfare",
-    reason: "The source desk includes CPI, food-price, healthy-diet, transport and poverty records, but a fully comparable, tenure-wide series of household costs and purchasing power has not yet been extracted and checked against the officeholder's inherited baseline.",
+    reason: "The NDHS 2024 food-insecurity survey now supports a state peer index. For the President, headline and food inflation are scored against the CBN medium-term single-digit inflation objective. Monthly state food prices, healthy-diet costs, transport fares and purchasing-power trends are not yet reconciled into a complete household-cost series.",
   },
   {
     id: "economy-jobs",
     label: "Economy, employment & productivity",
-    reason: "GDP and labour-market observations have been added, but the complete tenure series, consistent population-adjusted measures, job-quality indicators and comparable baseline are not yet complete.",
+    reason: "A provisional 2023 state labour-market peer index is available using unemployment and labour-force participation. For the President, current real GDP growth is benchmarked against the 5% average-growth objective in the completed 2021–2025 National Development Plan. These are different national/state methods and not directly comparable. State labour-market follow-up and job-quality measures are still missing.",
   },
   {
     id: "public-finance",
     label: "Public finance & fiscal management",
-    reason: "Revenue and budget reports are available for selected years, but comparable multi-year audited revenue, expenditure, debt, debt service and service-delivery series are not yet complete for every jurisdiction.",
+    reason: "A provisional fiscal snapshot now combines available FY2025 budget execution and 2025 IGR per 2023 projected resident. Audited multi-year accounts, debt service, arrears, spending quality and complete FCT/state comparability remain outstanding.",
   },
   {
     id: "security",
     label: "Security & public safety",
-    reason: "The current state table covers 2024–2025 only. A full-term event series, comparable pre-tenure baseline, population-adjusted rates and reconciled incident definitions are still required.",
+    reason: "A provisional 2024–2025 state fatality-rate peer index is now calculated using NBS 2023 population projections. A comparable pre-tenure baseline, longer event series, civilian-only fatalities and reconciled incident definitions remain outstanding.",
   },
   {
     id: "education",
     label: "Education & learning",
-    reason: "Pre-tenure MICS/NALABE baselines and an incomplete 2024/25 school-census snapshot are available, but comparable post-tenure learning, attendance and completion outcomes are not yet established.",
+    reason: "NALABE learning results are a 2022 pre-tenure baseline. The 2024/25 school-census portal has only 53.7% school reporting and contains unreconciled state anomalies; it is not safe to turn those figures into a current education performance score. A comparable post-tenure learning assessment is needed.",
   },
   {
     id: "health",
     label: "Healthcare & health outcomes",
-    reason: "NDHS and DHIS2 records provide useful survey and administrative observations, but the available periods and definitions do not yet establish a full, comparable tenure trajectory for all jurisdictions.",
+    reason: "A provisional health-coverage peer index now combines separately ranked NDHS 2023–24 survey coverage and DHIS2 2024 administrative coverage. Child mortality, maternal outcomes, PHC access and a comparable full-tenure trajectory remain outstanding.",
   },
   {
     id: "infrastructure",
     label: "Infrastructure & basic services",
-    reason: "Electricity, WASH and project records are indexed, but they do not yet provide complete, comparable state-level service availability and project-completion trajectories across the full term.",
+    reason: "The MICS WASH figures are a 2021 pre-tenure baseline. Electricity-distribution data do not map cleanly to state governor jurisdictions, and the indexed project records do not yet provide a verified state-wide service reliability and completion series.",
   },
   {
     id: "integrity-commitments",
     label: "Integrity, governance & promise delivery",
-    reason: "Agency enforcement reports and manifesto leads are indexed, but politician-specific legal-outcome registers and complete original-term pledge ledgers with independently verified delivery decisions are not yet complete.",
+    reason: "EFCC and other enforcement records are agency-level activity, not individual integrity findings. The politician-specific legal-outcome register and original-term manifesto/pledge ledger with independently verified delivery decisions are not yet complete.",
   },
 ];
 
-function peerIndex(value: number, values: number[], higherIsBetter: boolean) {
-  const sorted = [...values].sort((a, b) => a - b);
-  const rank = sorted.filter(item => higherIsBetter ? item <= value : item >= value).length;
-  return Math.max(1, Math.min(10, Number((1 + 9 * rank / Math.max(1, sorted.length)).toFixed(1))));
+function peerIndex(value: number, peerValues: number[], higherIsBetter: boolean) {
+  const valid = peerValues.filter(Number.isFinite);
+  if (!valid.length) return 5.5;
+  const better = valid.filter(item => higherIsBetter ? item < value : item > value).length;
+  const equal = valid.filter(item => item === value).length;
+  const percentile = (better + equal / 2) / valid.length;
+  return Number((1 + 9 * percentile).toFixed(1));
+}
+
+function average(values: number[]) {
+  return values.length ? Number((values.reduce((sum, value) => sum + value, 0) / values.length).toFixed(1)) : null;
+}
+
+const stateJurisdictions = Object.keys(stateData);
+const foodModeratePeers = stateJurisdictions.map(state => stateFoodInsecurity2024[state]?.moderateOrSevere).filter((value): value is number => value !== undefined);
+const foodSeverePeers = stateJurisdictions.map(state => stateFoodInsecurity2024[state]?.severe).filter((value): value is number => value !== undefined);
+const securityFatalityRate = (state: string) => {
+  const row = stateSecurity2024To2025[state];
+  const population = statePopulation2023[state];
+  return row && population ? row.estimatedFatalities / population * 100000 : undefined;
+};
+const securityPeers = stateJurisdictions.map(securityFatalityRate).filter((value): value is number => value !== undefined);
+const ndhsVaccinationPeers = stateJurisdictions.map(state => stateData[state]?.vaccination).filter((value): value is number => value !== undefined);
+const dhis2VaccinationPeers = stateJurisdictions.map(state => stateDhIs2Immunisation2023To2024[state]?.year2024).filter((value): value is number => value !== undefined);
+const employmentToPopulationPeers = stateJurisdictions.map(state => {
+  const labour = stateLabourBaseline2023[state];
+  return labour ? labour.labourForceParticipationRate * (1 - labour.unemploymentRate / 100) : undefined;
+}).filter((value): value is number => value !== undefined);
+const igrPerCapitaPeers = stateJurisdictions.map(state => {
+  const revenue = stateData[state]?.igr;
+  const population = statePopulation2023[state];
+  return revenue !== undefined && population ? revenue * 1000000000 / population : undefined;
+}).filter((value): value is number => value !== undefined);
+const educationExecutionPeers = stateJurisdictions.map(state => stateData[state]?.educationExecution).filter((value): value is number => value !== undefined);
+const healthExecutionPeers = stateJurisdictions.map(state => stateData[state]?.healthExecution).filter((value): value is number => value !== undefined);
+
+function getNationalSnapshotScores(): CategoryScore[] {
+  const headline = nationalIndicators.find(item => item.id === "headline-inflation-2026-10");
+  const food = nationalIndicators.find(item => item.id === "food-inflation-2026-10");
+  const gdp = nationalIndicators.find(item => item.id === "real-gdp-growth-2026-q2");
+  const scores: CategoryScore[] = [];
+
+  // CBN's stated medium-term objective is single-digit inflation. Use 9% as
+  // the upper single-digit reference point, not as a claim of a formal target.
+  if (headline && food) {
+    const inflationScores = [headline.value, food.value].map(rate =>
+      Math.max(1, Math.min(10, 10 * 9 / rate))
+    );
+    scores.push({
+      id: "cost-of-living", label: "Cost of living & household welfare",
+      value: average(inflationScores) ?? 5.5,
+      evidenceCount: 2, expectedEvidence: 2,
+      evidenceLabel: "NBS/CBN headline + food inflation · national benchmark",
+      period: "October 2026", comparisonGroup: "CBN medium-term single-digit inflation objective",
+      scope: "national-snapshot", provisional: true,
+      benchmarkSourceUrl: "https://www.cbn.gov.ng/Out/2026/CCD/Personal%20Statements%20of%20Members%20for%20the%20306th%20Meeting%20of%20the%20MPC%20JULY%202026.pdf",
+      benchmarkSourceLabel: "CBN medium-term inflation objective",
+      method: "Each current inflation rate is scored as 10 × 9% divided by the observed rate, capped at 10 and floored at 1; headline and food inflation are then averaged equally. Nine percent is the upper edge of the CBN's stated medium-term single-digit inflation goal.",
+      interpretation: "This measures distance from a price-stability reference, not whether the price level has fallen or whether household incomes can afford essentials. National scores use an absolute policy benchmark and must not be compared numerically with state peer-percentile indices.",
+    });
+  }
+
+  // The 5% figure is the average real-GDP growth objective in the Federal
+  // Government's 2021–2025 National Development Plan. It is a historical
+  // planning benchmark, not a new 2026 target; Q2 year-on-year growth is not
+  // identical to a five-year annual average.
+  if (gdp) {
+    scores.push({
+      id: "economy-jobs", label: "Economy, employment & productivity",
+      value: Math.max(1, Math.min(10, Number((10 * gdp.value / 5).toFixed(1)))),
+      evidenceCount: 1, expectedEvidence: 1,
+      evidenceLabel: "CBN real GDP growth · historical national-plan benchmark",
+      period: gdp.period, comparisonGroup: "5% average real-GDP growth objective in NDP 2021–2025",
+      scope: "national-snapshot", provisional: true,
+      benchmarkSourceUrl: "https://nigeriareposit.nln.gov.ng/items/1e1972a6-84c2-4465-949d-7ce24834e0b2/full",
+      benchmarkSourceLabel: "National Development Plan 2021–2025",
+      method: "Current real GDP year-on-year growth divided by the 5% average-growth objective published in the Federal Government's National Development Plan 2021–2025, multiplied by 10 and capped at 10.",
+      interpretation: "The NDP period has ended and this is a historical policy benchmark, not a current 2026 target. A single quarterly GDP growth rate does not measure job creation, productivity per person, income distribution or the full economic trajectory. National scores are not comparable with state peer-percentile indices.",
+    });
+  }
+  return scores;
+}
+
+function getStateSnapshotScores(state: string): CategoryScore[] {
+  const data = stateData[state];
+  if (!data) return [];
+  const scores: CategoryScore[] = [];
+  const food = stateFoodInsecurity2024[state];
+  if (food) {
+    scores.push({
+      id: "cost-of-living", label: "Cost of living & household welfare",
+      value: average([
+        peerIndex(food.moderateOrSevere, foodModeratePeers, false),
+        peerIndex(food.severe, foodSeverePeers, false),
+      ]) ?? 5.5,
+      evidenceCount: 2, expectedEvidence: 2,
+      evidenceLabel: "NDHS 2024 food-insecurity survey · state peer index",
+      period: ndhsFoodInsecuritySource.period, comparisonGroup: "36 states and FCT",
+      scope: "state-snapshot", provisional: true,
+      method: "Equal-weight average of two separately ranked state indicators: moderate/severe and severe food insecurity among the de jure population. Lower prevalence ranks higher. Each indicator is converted to a percentile-style 1–10 score before averaging.",
+      interpretation: "A 2024 household-welfare snapshot, not a measured change from the governor's inherited baseline. The severe-food-insecurity measure is a subset of moderate/severe food insecurity, so the two components are overlapping severity indicators, not independent samples. Survey estimates reflect the 12 months before interview and are not monthly food-price inflation.",
+    });
+  }
+
+  const labour = stateLabourBaseline2023[state];
+  if (labour) {
+    scores.push({
+      id: "economy-jobs", label: "Economy, employment & productivity",
+      value: peerIndex(labour.labourForceParticipationRate * (1 - labour.unemploymentRate / 100), employmentToPopulationPeers, true),
+      evidenceCount: 2, expectedEvidence: 2,
+      evidenceLabel: "NBS Annual Labour Force Survey 2023 · state peer index",
+      period: "Calendar year 2023", comparisonGroup: "36 states and FCT",
+      scope: "state-snapshot", provisional: true,
+      method: "Derives an employment-to-working-age-population proxy as labour-force participation × (1 − unemployment rate), then converts that rate to a 1–10 state percentile index. This avoids assuming that higher labour-force participation alone is always better.",
+      interpretation: "The 2023 annual survey overlaps the transition into office for many governors and predates later administrations. The derived ratio does not measure wages, hours, informality, job security or productivity; this is a labour-market snapshot, not a tenure trend or causal assessment.",
+    });
+  }
+
+  const financeComponents: number[] = [];
+  const financeLabels: string[] = [];
+  const revenue = data.igr;
+  const population = statePopulation2023[state];
+  if (revenue !== undefined && population) {
+    financeComponents.push(peerIndex(revenue * 1000000000 / population, igrPerCapitaPeers, true));
+    financeLabels.push("2025 IGR per 2023 projected resident");
+  }
+  if (data.educationExecution !== undefined) {
+    financeComponents.push(peerIndex(data.educationExecution, educationExecutionPeers, true));
+    financeLabels.push("FY2025 education budget execution");
+  }
+  if (data.healthExecution !== undefined) {
+    financeComponents.push(peerIndex(data.healthExecution, healthExecutionPeers, true));
+    financeLabels.push("FY2025 health budget execution");
+  }
+  if (financeComponents.length) {
+    scores.push({
+      id: "public-finance", label: "Public finance & fiscal management",
+      value: average(financeComponents) ?? 5.5,
+      evidenceCount: financeComponents.length, expectedEvidence: 3,
+      evidenceLabel: financeLabels.join(" · "),
+      period: "FY2025 revenue and budget reporting; 2023 population denominator",
+      comparisonGroup: "States with the corresponding published measure",
+      scope: "state-snapshot", provisional: true,
+      method: "Equal-weight average of available component percentile scores: 2025 internally generated revenue per 2023 projected resident, FY2025 education budget execution and FY2025 health budget execution. Each component is ranked separately; unavailable components are omitted, not treated as zero.",
+      interpretation: "IGR per resident is nominal and does not measure tax fairness or fiscal effort. Budget execution is not spending quality or service delivery; execution above 100% is retained as reported. This is a narrow fiscal-capacity/implementation snapshot, not a complete audit of public finances.",
+    });
+  }
+
+  const fatalityRate = securityFatalityRate(state);
+  if (fatalityRate !== undefined) {
+    scores.push({
+      id: "security", label: "Security & public safety",
+      value: peerIndex(fatalityRate, securityPeers, false),
+      evidenceCount: 1, expectedEvidence: 1,
+      evidenceLabel: "EUAA / ACLED estimated fatalities per 100,000 residents",
+      period: stateSecuritySource.period, comparisonGroup: "36 states and FCT",
+      scope: "state-snapshot", provisional: true,
+      method: "Estimated fatalities in ACLED-recorded events from 1 January 2024 to 31 December 2025 divided by the NBS 2023 projected population, expressed per 100,000 residents; lower rates rank higher.",
+      interpretation: "A population-adjusted two-year monitoring estimate, not a complete death register or full-tenure trend. ACLED estimates do not distinguish civilian from non-civilian fatalities, and event reporting can vary by location.",
+    });
+  }
+
+  const healthComponents: number[] = [];
+  if (data.vaccination !== undefined) {
+    healthComponents.push(peerIndex(data.vaccination, ndhsVaccinationPeers, true));
+  }
+  const dhis2 = stateDhIs2Immunisation2023To2024[state];
+  if (dhis2) {
+    healthComponents.push(peerIndex(dhis2.year2024, dhis2VaccinationPeers, true));
+  }
+  if (healthComponents.length) {
+    scores.push({
+      id: "health", label: "Healthcare & health outcomes",
+      value: average(healthComponents) ?? 5.5,
+      evidenceCount: healthComponents.length, expectedEvidence: 2,
+      evidenceLabel: "NDHS 2023–24 survey + DHIS2 2024 administrative coverage",
+      period: "2023–2024", comparisonGroup: "36 states and FCT",
+      scope: "state-snapshot", provisional: true,
+      method: "Equal-weight average of two separately calculated state percentile scores: NDHS share of children aged 12–23 months fully vaccinated for basic antigens, and DHIS2 fully-immunised-by-age-one administrative coverage in 2024. The measures are ranked separately because their definitions differ.",
+      interpretation: "The household survey and routine administrative coverage are not interchangeable. DHIS2 coverage can exceed 100% because of denominator and catchment issues. These are coverage snapshots, not a causal estimate of the governor's contribution.",
+    });
+  }
+  return scores;
 }
 
 export function getPublicRecordScores(person: { name: string; office: string; state?: string }) {
-  const categories: CategoryScore[] = [];
-  const notScored = tenureAssessmentCategories.map(item => ({ ...item }));
-  const jurisdiction = person.state || "";
-  const current = stateData[jurisdiction];
-
-  // These are explicitly labelled snapshot/peer indices. They describe published
-  // jurisdictional evidence, not a causal or full-tenure grade for an officeholder.
-  if (person.office !== "President" && current?.vaccination !== undefined) {
-    const peers = Object.values(stateData).map(item => item.vaccination).filter((value): value is number => value !== undefined);
-    categories.push({
-      id: "health", label: "Healthcare & health outcomes",
-      value: peerIndex(current.vaccination, peers, true),
-      evidenceCount: 1, expectedEvidence: 1, evidenceLabel: "NDHS 2023–24 · state peer index",
-      method: "State's NDHS 2023–24 fully vaccinated share for children aged 12–23 months, converted to a 1–10 percentile-style index against jurisdictions with published values. Higher coverage ranks higher.",
-      interpretation: "A cross-sectional health-outcome comparison, not a before-and-after estimate of this administration's contribution. The survey's reference period and sampling limitations remain applicable.",
-      provisional: true,
-    });
-    const index = notScored.findIndex(item => item.id === "health");
-    if (index >= 0) notScored.splice(index, 1);
-  }
-
-  if (person.office !== "President" && current && (current.educationExecution !== undefined || current.healthExecution !== undefined)) {
-    const execution = [current.educationExecution, current.healthExecution].filter((value): value is number => value !== undefined);
-    const peerValues = Object.values(stateData)
-      .map(item => {
-        const values = [item.educationExecution, item.healthExecution].filter((value): value is number => value !== undefined);
-        return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : undefined;
-      })
-      .filter((value): value is number => value !== undefined);
-    const own = execution.reduce((sum, value) => sum + value, 0) / execution.length;
-    categories.push({
-      id: "public-finance", label: "Public finance & fiscal management",
-      value: peerIndex(own, peerValues, true),
-      evidenceCount: execution.length, expectedEvidence: 2,
-      evidenceLabel: "FY2025 budget execution · state peer index",
-      method: "Equal-weight average of the published FY2025 education and health budget execution percentages available for this jurisdiction, compared with the same available measures across states. This is a narrow budget-implementation proxy, not a complete fiscal-management score.",
-      interpretation: "Higher reported execution ranks higher in this snapshot. It does not establish spending quality, value for money, audited fiscal health or service outcomes; missing sector data are disclosed.",
-      provisional: true,
-    });
-    const index = notScored.findIndex(item => item.id === "public-finance");
-    if (index >= 0) notScored.splice(index, 1);
-  }
-
-  const overallScore = categories.length
-    ? Number((categories.reduce((sum, item) => sum + item.value, 0) / categories.length).toFixed(1))
-    : null;
+  const categories = person.office === "President" ? getNationalSnapshotScores() : getStateSnapshotScores(person.state || "");
+  const scoredIds = new Set(categories.map(item => item.id));
+  const notScored = tenureAssessmentCategories.filter(item => !scoredIds.has(item.id)).map(item => ({ ...item }));
+  const overallScore = average(categories.map(item => item.value));
   return {
     categories,
     notScored,
@@ -353,8 +501,8 @@ export function getPublicRecordScores(person: { name: string; office: string; st
     totalAssessmentCategories: tenureAssessmentCategories.length,
     overallCoverage: Number((categories.length / tenureAssessmentCategories.length * 100).toFixed(1)),
     publicationStatus: categories.length ? "provisional" as const : "in-progress" as const,
-    overallFormula: "The Sabi Overall Score is the simple arithmetic average of every category score currently published for this profile, rounded to one decimal place. Unscored categories are excluded, never treated as zero. The page states exactly how many category scores contribute.",
-    publicationRequirement: "There is no minimum category-count threshold for the arithmetic average. The score is provisional when only some categories are available; coverage and the missing categories are shown beside it. A complete like-for-like comparison requires matching category coverage and methods.",
+    overallFormula: "The Sabi Overall Score is the simple arithmetic average of every published category score for this profile, rounded to one decimal place. Unscored categories are excluded, never treated as zero.",
+    publicationRequirement: "No minimum category count applies. The number of included categories, reference periods and comparison group are disclosed. Partial coverage is provisional and should not be used as a like-for-like league-table ranking.",
   };
 }
 
