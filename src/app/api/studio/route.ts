@@ -6,8 +6,9 @@ import {starterResearchClaims} from "@/data/research-claim-seeds";
 import {claimFingerprint,resolveClaimSubject} from "@/lib/claim-utils";
 export const runtime="nodejs";
 const statuses=["submitted","triaged","researching","editor_review","closed"];
-const verdicts=["True","Mostly true","Half true","Misleading","Mostly false","False","Unproven","Outdated","Insufficient evidence"];
+const verdicts=["True","Mostly true","Half true","Misleading","Mostly false","False","Unproven","Outdated","Insufficient evidence","Mostly true — correction required","Filing confirmed; allegations unproven","Committee-reported tally confirmed","Insufficient evidence for the exact figure","Misleading as an exact quotation","Campaign pledge confirmed; delivery not assessable","Summit scheduled; pact pending","False as a claim of voluntary withdrawal","Procedural ruling confirmed; forgery allegation undecided"];
 const impacts=["positive","negative","mixed","neutral","unclear"];
+const assessmentTypes=["Factual claim","Numerical claim / official register clean-up","Legal filing / unresolved allegations","Committee monitoring tally","Attributed statistical claim","Campaign promise / wording","Campaign promise","Political negotiation / planned event","Candidate withdrawal / party nomination status","Court ruling / procedural development"];
 async function requireEditor(req:NextRequest){
  const header=req.headers.get("authorization")||"";
  const token=header.startsWith("Bearer ")?header.slice(7):"";
@@ -28,6 +29,10 @@ function safeEvidence(value:unknown){
  return value.slice(0,20).map((item:any)=>({title:String(item?.title||"").trim().slice(0,240),publisher:String(item?.publisher||"").trim().slice(0,160),url:safeUrl(item?.url),sourceType:String(item?.sourceType||"").trim().slice(0,80)})).filter(item=>item.url);
 }
 function slugify(value:string){return value.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,90)||"fact-check";}
+function claimAssessmentType(body:any,current:any){
+ const requested=String(body.assessmentType||current.assessmentType||"Factual claim");
+ return assessmentTypes.includes(requested)?requested:"Factual claim";
+}
 function claimClassification(body:any,current:any){
  const subjectInfo=resolveClaimSubject(body.subject!==undefined?body.subject:current.subject, String(body.subjectType||current.subjectType||""));
  const requestedImpact=String(body.impact||current.impact||"unclear");
@@ -96,7 +101,7 @@ export async function POST(req:NextRequest){
    const verdict=verdicts.includes(String(body.verdict||""))?String(body.verdict):"";
    const evidence=safeEvidence(body.evidence);
    const classification=claimClassification(body,current);
-   const patch={status,reviewStatus:status,verdict,...classification,
+   const patch={status,reviewStatus:status,verdict,assessmentType:claimAssessmentType(body,current),...classification,
     researchNotes:String(body.researchNotes||"").trim().slice(0,8000),
     reviewSummary:String(body.reviewSummary||"").trim().slice(0,2500),
     findings:String(body.findings||"").trim().slice(0,12000),
@@ -128,7 +133,7 @@ export async function POST(req:NextRequest){
     const factRef=db.collection("factchecks").doc(slug);
     const publishedAt=now.slice(0,10);
     const factcheck={slug,title,claim:String(current.claim||""),claimType:String(current.claimType||"other"),
-     claimSource:String(current.claimSource||current.sourceUrl||""),summary,findings,verdict,evidence,
+     claimSource:String(current.claimSource||current.sourceUrl||""),summary,findings,verdict,assessmentType:claimAssessmentType(body,current),evidence,
      ...classification,origin,originLabel,published:true,status:"published",publishedAt,createdAt:now,updatedAt:now,
      sourceClaimId:id,claimFingerprint:fingerprint,publishedBy:editor.uid,reviewedBy:editor.uid,reviewStandard:"human-editor-approved"};
     const outcome=await db.runTransaction(async tx=>{
@@ -137,7 +142,7 @@ export async function POST(req:NextRequest){
      if(factSnap.exists)return "slug-taken";
      if(indexSnap.exists&&String(indexSnap.data()?.claimId||"")!==id)return "duplicate";
      tx.set(factRef,factcheck);
-     tx.update(claimRef,{status:"closed",reviewStatus:"published",publishedAt,factcheckSlug:slug,publishedBy:editor.uid,updatedAt:now,updatedBy:editor.uid,...classification,verdict,reviewHistory:FieldValue.arrayUnion({action:"factcheck-published",slug,verdict,impact:classification.impact,at:now,by:editor.uid,evidenceCount:evidence.length})});
+     tx.update(claimRef,{status:"closed",reviewStatus:"published",publishedAt,factcheckSlug:slug,publishedBy:editor.uid,updatedAt:now,updatedBy:editor.uid,...classification,verdict,assessmentType:claimAssessmentType(body,current),reviewHistory:FieldValue.arrayUnion({action:"factcheck-published",slug,verdict,impact:classification.impact,at:now,by:editor.uid,evidenceCount:evidence.length})});
      tx.set(indexRef,{fingerprint,claimId:id,queueStatus:"published",factcheckSlug:slug,origin,subjectKey:classification.subjectKey,updatedAt:now},{merge:true});
      return "published";
     });
