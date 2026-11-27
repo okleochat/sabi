@@ -5,12 +5,12 @@
  * a term is not, by that fact alone, attributable to the officeholder.
  */
 export const publicRecordMethodology = {
-  version: "3.0.0",
+  version: "3.1.0",
   scale: {
     minimum: 0,
     maximum: 10,
     precision: 1,
-    rule: "Every published category score must be supported by a documented category-specific calculation, a predeclared benchmark and a comparable longitudinal evidence series. Scores describe public outcomes and documented officeholder actions separately; they are not popularity ratings.",
+    rule: "Every published category score must be supported by a documented category-specific calculation and a clearly disclosed comparison basis. Where a current comparable snapshot exists but a full tenure series does not, publish it as a provisional peer index and state the reference period. Scores describe public outcomes and documented officeholder actions separately; they are not popularity ratings.",
   },
   assessmentCategories: [
     { id: "cost-of-living", label: "Cost of living & household welfare" },
@@ -94,7 +94,7 @@ export const publicRecordMethodology = {
     "Use the actual assumption-of-office date and latest complete comparable reporting period.",
     "Show inherited baselines and the full available tenure trajectory; do not score a single snapshot as a tenure result.",
     "Respect revised statistical methods and series-vintage notes. Do not splice incompatible definitions without a published linking method.",
-    "Publish a category score only after its minimum longitudinal evidence and predeclared benchmark requirements are satisfied.",
+    "Publish a provisional category peer index when a comparable, source-verified cross-jurisdiction snapshot supports a transparent calculation. Do not present a snapshot as a full-tenure trend or causal assessment.",
     "Publish the arithmetic mean of available category scores; disclose coverage and never treat missing categories as zero.",
     "Never convert missing evidence into zero or describe a source index as completed extraction.",
     "Do not treat an outcome recorded during a term as proof of personal causation.",
