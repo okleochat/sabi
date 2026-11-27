@@ -1,5 +1,5 @@
 /**
- * Sabi Public Records — source-linked indicators, not ratings.
+ * Sabi Public Records — source-linked indicators and public performance indices.
  * Values are transcribed from published datasets and retain their original units,
  * population definitions and reporting periods. No composite score or ranking is derived.
  */
@@ -291,19 +291,69 @@ const tenureAssessmentCategories: UnscoredCategory[] = [
   },
 ];
 
-export function getPublicRecordScores(_person: { name: string; office: string; state?: string }) {
+function peerIndex(value: number, values: number[], higherIsBetter: boolean) {
+  const sorted = [...values].sort((a, b) => a - b);
+  const rank = sorted.filter(item => higherIsBetter ? item <= value : item >= value).length;
+  return Math.max(1, Math.min(10, Number((1 + 9 * rank / Math.max(1, sorted.length)).toFixed(1))));
+}
+
+export function getPublicRecordScores(person: { name: string; office: string; state?: string }) {
   const categories: CategoryScore[] = [];
   const notScored = tenureAssessmentCategories.map(item => ({ ...item }));
+  const jurisdiction = person.state || "";
+  const current = stateData[jurisdiction];
+
+  // These are explicitly labelled snapshot/peer indices. They describe published
+  // jurisdictional evidence, not a causal or full-tenure grade for an officeholder.
+  if (person.office !== "President" && current?.vaccination !== undefined) {
+    const peers = Object.values(stateData).map(item => item.vaccination).filter((value): value is number => value !== undefined);
+    categories.push({
+      id: "health", label: "Healthcare & health outcomes",
+      value: peerIndex(current.vaccination, peers, true),
+      evidenceCount: 1, expectedEvidence: 1, evidenceLabel: "NDHS 2023–24 · state peer index",
+      method: "State's NDHS 2023–24 fully vaccinated share for children aged 12–23 months, converted to a 1–10 percentile-style index against jurisdictions with published values. Higher coverage ranks higher.",
+      interpretation: "A cross-sectional health-outcome comparison, not a before-and-after estimate of this administration's contribution. The survey's reference period and sampling limitations remain applicable.",
+      provisional: true,
+    });
+    const index = notScored.findIndex(item => item.id === "health");
+    if (index >= 0) notScored.splice(index, 1);
+  }
+
+  if (person.office !== "President" && current && (current.educationExecution !== undefined || current.healthExecution !== undefined)) {
+    const execution = [current.educationExecution, current.healthExecution].filter((value): value is number => value !== undefined);
+    const peerValues = Object.values(stateData)
+      .map(item => {
+        const values = [item.educationExecution, item.healthExecution].filter((value): value is number => value !== undefined);
+        return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : undefined;
+      })
+      .filter((value): value is number => value !== undefined);
+    const own = execution.reduce((sum, value) => sum + value, 0) / execution.length;
+    categories.push({
+      id: "public-finance", label: "Public finance & fiscal management",
+      value: peerIndex(own, peerValues, true),
+      evidenceCount: execution.length, expectedEvidence: 2,
+      evidenceLabel: "FY2025 budget execution · state peer index",
+      method: "Equal-weight average of the published FY2025 education and health budget execution percentages available for this jurisdiction, compared with the same available measures across states. This is a narrow budget-implementation proxy, not a complete fiscal-management score.",
+      interpretation: "Higher reported execution ranks higher in this snapshot. It does not establish spending quality, value for money, audited fiscal health or service outcomes; missing sector data are disclosed.",
+      provisional: true,
+    });
+    const index = notScored.findIndex(item => item.id === "public-finance");
+    if (index >= 0) notScored.splice(index, 1);
+  }
+
+  const overallScore = categories.length
+    ? Number((categories.reduce((sum, item) => sum + item.value, 0) / categories.length).toFixed(1))
+    : null;
   return {
     categories,
     notScored,
-    overallScore: null as number | null,
-    scoredCategoryCount: 0,
+    overallScore,
+    scoredCategoryCount: categories.length,
     totalAssessmentCategories: tenureAssessmentCategories.length,
-    overallCoverage: 0,
-    publicationStatus: "in-progress" as const,
-    overallFormula: "The Sabi Overall Score will be the equal-weight arithmetic mean of the qualified category scores, rounded to one decimal place. It will only be released when at least six of the eight categories pass the tenure-wide evidence standard. Missing categories are never assigned zero.",
-    publicationRequirement: "At least 6 of 8 categories must pass the evidence standard. Each scored category must use comparable, source-verified observations spanning the actual term and an inherited baseline; a one-year snapshot or source catalogue entry is not sufficient.",
+    overallCoverage: Number((categories.length / tenureAssessmentCategories.length * 100).toFixed(1)),
+    publicationStatus: categories.length ? "provisional" as const : "in-progress" as const,
+    overallFormula: "The Sabi Overall Score is the simple arithmetic average of every category score currently published for this profile, rounded to one decimal place. Unscored categories are excluded, never treated as zero. The page states exactly how many category scores contribute.",
+    publicationRequirement: "There is no minimum category-count threshold for the arithmetic average. The score is provisional when only some categories are available; coverage and the missing categories are shown beside it. A complete like-for-like comparison requires matching category coverage and methods.",
   };
 }
 
