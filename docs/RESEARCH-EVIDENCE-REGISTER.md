@@ -266,12 +266,15 @@ The following sources materially expand the governor manifesto archive. Where a 
 
 ## 4. Scoring readiness and evidence gaps
 
-1. Do not publish a governor's Integrity Score until at least 60% of the identifiable commitments in that governor's original manifesto/pledge set have been catalogued. Show catalogue coverage separately from evidence coverage.
-2. Do not publish an Impact Score until at least 3 of 5 dimensions and 60% of planned indicator weight are assessable.
-3. Do not translate fiscal rankings, budget execution or ministry press releases into overall performance scores.
-4. For every state, collect the original manifesto, budget and Q4 implementation report, audited accounts, procurement and project records, and comparable outcome series.
-5. Rivers requires special source work because the cited BudgIT report excludes it for missing audited and implementation reports. Seek state records, Auditor-General reports, legislative records, procurement evidence and credible independent reporting; label unresolved gaps.
-6. No politician's Integrity or Impact score has been calculated or changed by this evidence register.
+The earlier sample-based Integrity Score / Impact Score release thresholds have been superseded by the eight-category tenure-wide methodology.
+
+1. Do not publish a numerical category grade without the actual office assumption date, defensible inherited baseline, comparable post-assumption trajectory, predeclared indicator weights/benchmarks and source/uncertainty disclosures.
+2. The eight categories are cost of living and household welfare; economy, employment and productivity; public finance and fiscal management; security and public safety; education and learning; healthcare and health outcomes; infrastructure and basic services; integrity, governance and promise delivery.
+3. Keep the Sabi Overall Score panel visible, but label it IN PROGRESS until at least six categories independently pass the evidence standard. Missing categories are never assigned zero.
+4. Require all eight categories, compatible term windows and comparable definitions before direct overall-score league tables or rank comparisons.
+5. Treat third-party pSPI percentiles and external promise-ledger figures as attributed references, never as Sabi category scores.
+6. The current source inventory is not yet a complete extraction of all relevant archives. The remaining work is listed in [TENURE-EVIDENCE-REGISTER.md](./TENURE-EVIDENCE-REGISTER.md).
+7. No numerical Sabi category or Overall Score is currently published by this release; earlier snapshot-derived values have been withdrawn.
 
 ## 5. Source-quality hierarchy
 
