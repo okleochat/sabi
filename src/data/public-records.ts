@@ -327,8 +327,10 @@ const securityFatalityRate = (state: string) => {
 const securityPeers = stateJurisdictions.map(securityFatalityRate).filter((value): value is number => value !== undefined);
 const ndhsVaccinationPeers = stateJurisdictions.map(state => stateData[state]?.vaccination).filter((value): value is number => value !== undefined);
 const dhis2VaccinationPeers = stateJurisdictions.map(state => stateDhIs2Immunisation2023To2024[state]?.year2024).filter((value): value is number => value !== undefined);
-const unemploymentPeers = stateJurisdictions.map(state => stateLabourBaseline2023[state]?.unemploymentRate).filter((value): value is number => value !== undefined);
-const participationPeers = stateJurisdictions.map(state => stateLabourBaseline2023[state]?.labourForceParticipationRate).filter((value): value is number => value !== undefined);
+const employmentToPopulationPeers = stateJurisdictions.map(state => {
+  const labour = stateLabourBaseline2023[state];
+  return labour ? labour.labourForceParticipationRate * (1 - labour.unemploymentRate / 100) : undefined;
+}).filter((value): value is number => value !== undefined);
 const igrPerCapitaPeers = stateJurisdictions.map(state => {
   const revenue = stateData[state]?.igr;
   const population = statePopulation2023[state];
@@ -401,7 +403,7 @@ function getStateSnapshotScores(state: string): CategoryScore[] {
       period: ndhsFoodInsecuritySource.period, comparisonGroup: "36 states and FCT",
       scope: "state-snapshot", provisional: true,
       method: "Equal-weight average of two separately ranked state indicators: moderate/severe and severe food insecurity among the de jure population. Lower prevalence ranks higher. Each indicator is converted to a percentile-style 1–10 score before averaging.",
-      interpretation: "A 2024 household-welfare snapshot, not a measured change from the governor's inherited baseline. Survey estimates reflect the 12 months before interview and are not monthly food-price inflation.",
+      interpretation: "A 2024 household-welfare snapshot, not a measured change from the governor's inherited baseline. The severe-food-insecurity measure is a subset of moderate/severe food insecurity, so the two components are overlapping severity indicators, not independent samples. Survey estimates reflect the 12 months before interview and are not monthly food-price inflation.",
     });
   }
 
@@ -409,16 +411,13 @@ function getStateSnapshotScores(state: string): CategoryScore[] {
   if (labour) {
     scores.push({
       id: "economy-jobs", label: "Economy, employment & productivity",
-      value: average([
-        peerIndex(labour.unemploymentRate, unemploymentPeers, false),
-        peerIndex(labour.labourForceParticipationRate, participationPeers, true),
-      ]) ?? 5.5,
+      value: peerIndex(labour.labourForceParticipationRate * (1 - labour.unemploymentRate / 100), employmentToPopulationPeers, true),
       evidenceCount: 2, expectedEvidence: 2,
       evidenceLabel: "NBS Annual Labour Force Survey 2023 · state peer index",
       period: "Calendar year 2023", comparisonGroup: "36 states and FCT",
       scope: "state-snapshot", provisional: true,
-      method: "Equal-weight average of separately ranked state indicators: unemployment (lower is better) and labour-force participation (higher is better).",
-      interpretation: "The 2023 annual survey overlaps the transition into office for many governors and predates later administrations. Participation is not a job-quality measure; this is a labour-market snapshot, not a tenure trend or causal assessment.",
+      method: "Derives an employment-to-working-age-population proxy as labour-force participation × (1 − unemployment rate), then converts that rate to a 1–10 state percentile index. This avoids assuming that higher labour-force participation alone is always better.",
+      interpretation: "The 2023 annual survey overlaps the transition into office for many governors and predates later administrations. The derived ratio does not measure wages, hours, informality, job security or productivity; this is a labour-market snapshot, not a tenure trend or causal assessment.",
     });
   }
 
