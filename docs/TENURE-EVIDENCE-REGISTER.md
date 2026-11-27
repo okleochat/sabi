@@ -19,12 +19,25 @@ The profile research desk currently indexes **46 source series and portals**, wi
 | `src/data/mics-baselines.ts` | 37 jurisdictions × 9 measures | 333 observations across early learning, school attendance, WASH, child labour and child marriage | 2021 baseline, before current 2023 administrations; Borno sampled seven of 27 LGAs |
 | `src/data/nalabe-baselines.ts` | 37 jurisdictions × 3 grade levels | 111 mathematics observations: P3, P5, JS2 mean scale score and minimum proficiency | October 2022 baseline; not post-2023 outcomes; weighted table counts are not raw sample sizes |
 | `src/data/dhis2-immunisation.ts` | 36 states and FCT | 2023 and 2024 annualised fully-immunised-by-age-one coverage | DHIS2 administrative rate, not the NDHS household survey; rates above 100% are retained as published |
-| `src/data/education-census-baseline.ts` | 34 jurisdiction rows, 33 with numeric returns | 2024/25 learner, teacher, classroom, toilet and inclusion counts/ratios | The portal reports 57.9% national school reporting; Rivers row has no usable return; Taraba, Yobe and Zamfara are absent from the table |
+| `src/data/education-census-baseline.ts` | 34 jurisdiction rows, 33 with numeric returns | 2024/25 learner, teacher, classroom, toilet and inclusion counts/ratios (latest portal snapshot 22 September 2026) | September 2026 portal snapshot reports 53.7% national school reporting; Rivers row has no usable return; several state ratios/counts are anomalous and require reconciliation |
 | `src/data/public-records.ts` | 36 states + FCT where reported | IGR, FY2025 budget execution and NDHS 2023/24 vaccination; national macro indicators | Several are one-year observations, not tenure-wide measures |
 
 The `getTenureEvidence()` helper connects state-specific records to the corresponding profile. The President's profile receives the national time-series and source observations; governor profiles receive state records plus selected national context.
 
 **Source count is not a performance-coverage percentage.** A portal in the catalogue is a place to investigate. It does not mean all of its files have been downloaded, parsed, verified, compared across years or converted into a complete tenure series.
+
+
+### Updated Federal Ministry of Education school-census portal snapshot
+
+The live Nigeria Education Statistics 2024 / Annual School Census portal was rechecked on 27 November 2026. Its latest dated portal snapshot is generated **22 September 2026**, replacing the earlier 18 July 2026 extract.
+
+- Nationally, the portal lists **230,844 schools**, of which **124,066 submitted returns (53.7%)**. It reports 39,825,932 learners, 1,185,610 teachers, 725,778 classrooms and 604,479 toilets.
+- The state table now contains rows for all 36 states and the FCT. Rivers remains a zero/blank return and is treated as unavailable, never as zero learners.
+- Several reported values require verification before comparison or scoring: Cross River reports only 9,231 learners; Enugu reports 3 learners per toilet; Taraba reports 831.1 learners per toilet; Kwara reports 79,744 learners with special needs. These are preserved as publisher values but flagged as anomalies.
+- The portal has a low response rate, so non-reporting schools are not evidence of zero learners, teachers or facilities. These raw administrative returns are not a representative full-school census and are not learning outcomes.
+- Do not mix the July and September portal vintages in a trend. Retain the snapshot date and use the September table as the current display, pending state EMIS reconciliation.
+
+Source: Federal Ministry of Education, [Nigeria Education Statistics portal](https://emis.education.gov.ng/portal/), snapshot generated 22 September 2026; checked 27 November 2026.
 
 ## 1. Cost of living and household welfare
 
