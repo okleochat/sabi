@@ -103,3 +103,7 @@ The public `/fact-checks` archive supports search across claim wording, title, s
 - Editorial verdict.
 
 The public detail page repeats subject, impact, provenance and verdict separately. No private queue content, submitter contact details or private research notes are exposed.
+
+### Review status of seeded Sabi research
+
+The initial fact-check records in `src/data/fact-checks.ts` are published Sabi-origin editorial research items. Their `reviewStandard` is `sabi-editorial-research`; they are not attributed to a named human reviewer. They include citations and explicit qualifications, and the newsroom should continue to correct them when new evidence appears. Reader-submitted claims and newly researched leads remain private and cannot be published through the normal workflow without an editor/admin account and explicit human-review confirmation.
