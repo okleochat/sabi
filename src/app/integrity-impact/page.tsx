@@ -58,8 +58,8 @@ export default function IntegrityImpactPage(){
         <div className="stat"><strong>{record.missing.length}</strong><span>Disclosed data gaps</span></div>
        </div>
        <div className="directory-score-list">
-        <span className="overall-chip"><b>OVERALL</b> {scorecard.overallScore===null?"IN PROGRESS":scorecard.overallScore.toFixed(1)+"/10"}</span>
-        {scorecard.categories.map(score=><span key={score.id}><b>{score.id==="economy"?"FISCAL":score.id==="education"?"EDUCATION":score.id==="health"?"HEALTH":score.id==="growth"?"GROWTH":"PRICES"}</b> {score.value.toFixed(1)}/10</span>)}
+        <span className="overall-chip"><b>OVERALL · {scorecard.publicationStatus==="provisional"?"PROVISIONAL":"PENDING"}</b> {scorecard.overallScore===null?"IN PROGRESS":scorecard.overallScore.toFixed(1)+"/10"}</span>
+        {scorecard.categories.map(score=><span key={score.id}><b>{score.id==="public-finance"?"FISCAL":score.id==="education"?"EDUCATION":score.id==="health"?"HEALTH":score.id==="security"?"SECURITY":score.id==="cost-of-living"?"COST OF LIVING":score.id==="economy-jobs"?"JOBS":score.id==="infrastructure"?"INFRASTRUCTURE":"GOVERNANCE"}</b> {score.value.toFixed(1)}/10</span>)}
        </div>
        <p className="directory-score-coverage">{scorecard.scoredCategoryCount} of {scorecard.totalAssessmentCategories} categories scored · Overall Score is the average of published category scores</p>
        <p className="notice"><b>{research.sources.length} source series indexed · {research.observations.length} extracted observations</b><br/>{record.indicators.map(item=>item.label+": "+item.displayValue).join(" · ")}{record.missing.length?" · "+record.missing.length+" disclosed research/data gap(s)":""}</p>
