@@ -1,7 +1,7 @@
 "use client";
 import {useMemo,useState} from "react";
 import Link from "next/link";
-type RecordItem={id:string;slug?:string;title?:string;claim?:string;summary?:string;verdict?:string;publishedAt?:string;subject?:string;subjectKey?:string;impact?:string;origin?:string;originLabel?:string;evidence?:Array<{url?:string;publisher?:string}>;claimType?:string};
+type RecordItem={id:string;slug?:string;title?:string;claim?:string;summary?:string;findings?:string;verdict?:string;publishedAt?:string;subject?:string;subjectKey?:string;impact?:string;origin?:string;originLabel?:string;evidence?:Array<{url?:string;publisher?:string}>;claimType?:string};
 const impactLabel:Record<string,string>={positive:"Positive for subject",negative:"Negative for subject",mixed:"Mixed impact",neutral:"Neutral / factual",unclear:"Not assessed"};
 export default function FactCheckLibrary({records}:{records:RecordItem[]}){
  const [query,setQuery]=useState(""),[subject,setSubject]=useState("all"),[impact,setImpact]=useState("all"),[origin,setOrigin]=useState("all"),[verdict,setVerdict]=useState("all");
