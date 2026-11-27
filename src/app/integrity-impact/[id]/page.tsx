@@ -91,7 +91,7 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
     {scorecard.categories.map(category=><article className="score-card" key={category.id}>
      <div className="eyebrow">{category.label.toUpperCase()}</div>
      <div className="score-card-value">{category.value.toFixed(1)}<span>/10</span></div>
-     <div className="score-evidence">{category.evidenceLabel} · {category.scope==="national-snapshot"?"NATIONAL BENCHMARK": "STATE PEER INDEX"} · {category.provisional?"PROVISIONAL": "PUBLISHED"}{category.period?" · "+category.period:""}{category.comparisonGroup?" · "+category.comparisonGroup:""}</div>
+     <div className="score-evidence">{category.evidenceCount}/{category.expectedEvidence} MEASURES · {category.evidenceLabel} · {category.scope==="national-snapshot"?"NATIONAL BENCHMARK": "STATE PEER INDEX"} · {category.provisional?"PROVISIONAL": "PUBLISHED"}{category.period?" · "+category.period:""}{category.comparisonGroup?" · "+category.comparisonGroup:""}</div>
      <p>{category.method}</p>
      <p>{category.interpretation}</p>
      {category.benchmarkSourceUrl?<div className="source-note"><a href={category.benchmarkSourceUrl} target="_blank" rel="noreferrer">OPEN {category.benchmarkSourceLabel||"BENCHMARK SOURCE"} ↗</a></div>:null}
