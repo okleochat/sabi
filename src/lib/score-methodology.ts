@@ -1,1 +1,105 @@
-export const scoreMethodology={version:"1.2.0",integrity:{name:"Integrity Score",range:"0–100",formula:"100 × sum(commitment importance weight × fulfilment value) / sum(weights for commitments with assessable evidence)",catalogueCoverageThreshold:60,catalogueCoverageRule:"The 60% catalogue threshold marks a complete-register assessment. It no longer blocks publication of a provisional score: whenever at least one commitment has approved, assessable evidence, publish the sample score with an explicit provisional label and show catalogue coverage as unknown or incomplete. Upgrade to a complete assessment once at least 60% of identifiable commitments have been catalogued.",statusValues:{completed:1,substantially_completed:0.75,partially_completed:0.5,not_started:0,abandoned:0,not_verifiable:null},rules:["Commitments must be traceable to a dated manifesto, official campaign document or attributable public pledge.","Publish provisional scores when assessable evidence exists; clearly label sample size and catalogue coverage.","At 60% catalogue coverage, the score may be labelled a complete-register assessment, subject to evidence coverage.","Each commitment has a published importance weight from 1 to 5 and a documented reason.","Unverifiable commitments are listed separately and reduce evidence coverage; they are not treated as completed.","Show catalogue coverage and evidence coverage separately beside any score.","Completion requires independently evidenced delivery, not an announcement, budget allocation, contract award or groundbreaking.","Disclose inherited projects and shared responsibility."]},impact:{name:"Impact Score",range:"0–100",dimensions:[{id:"living-standards",label:"Living standards & poverty",weight:20},{id:"health",label:"Health outcomes & access",weight:20},{id:"education",label:"Education & skills",weight:20},{id:"economy-infrastructure",label:"Jobs, economy & infrastructure",weight:20},{id:"safety-governance",label:"Safety, public services & governance",weight:20}],formula:"Each dimension is scored 0–100 from pre-declared outcome indicators; overall score is the weighted mean. Publish indicator direction, baseline, endline, period, comparator and data quality.",rules:["Use official statistical series, budgets, audited accounts, sector regulators and reputable datasets.","Compare pre-office baseline to current outcomes and, where feasible, national trend or comparable states.","Do not infer causation from correlation; disclose the share reasonably attributable to the officeholder.","Publish the full Sabi Impact Score when at least 3 of 5 dimensions and 60% of planned indicator weight are assessable; until then, show each available dimension and external benchmarks separately.","Show absolute outcomes and per-capita / inflation-adjusted measures where relevant.","External indices and rank-normalised benchmarks must be labelled as external references, never presented as Sabi's own Impact Score."]},confidence:{formula:"Evidence coverage = assessed indicator or commitment weight / total planned weight × 100. Integrity catalogue coverage is reported separately. Confidence is shown separately and never blended into performance."},governance:["Every input and revision has a source URL, publisher, publication date, access date and evidence reference.","AI extracts candidate facts and drafts summaries; human editors approve final statuses, weights and scores.","Corrections and appeals are logged with old value, new value, reason, editor and timestamp.","Scores are versioned; methodology changes trigger recalculation and a visible change log."]} as const;
+/**
+ * Sabi tenure-wide public performance methodology.
+ *
+ * A source being catalogued is not a scored observation. A metric observed during
+ * a term is not, by that fact alone, attributable to the officeholder.
+ */
+export const publicRecordMethodology = {
+  version: "3.0.0",
+  scale: {
+    minimum: 0,
+    maximum: 10,
+    precision: 1,
+    rule: "Every published category score must be supported by a documented category-specific calculation, a predeclared benchmark and a comparable longitudinal evidence series. Scores describe public outcomes and documented officeholder actions separately; they are not popularity ratings.",
+  },
+  assessmentCategories: [
+    { id: "cost-of-living", label: "Cost of living & household welfare" },
+    { id: "economy-jobs", label: "Economy, employment & productivity" },
+    { id: "public-finance", label: "Public finance & fiscal management" },
+    { id: "security", label: "Security & public safety" },
+    { id: "education", label: "Education & learning" },
+    { id: "health", label: "Healthcare & health outcomes" },
+    { id: "infrastructure", label: "Infrastructure & basic services" },
+    { id: "integrity-commitments", label: "Integrity, governance & promise delivery" },
+  ],
+  overallScore: {
+    label: "Sabi Overall Score",
+    formula: "Equal-weight arithmetic mean of the category scores that have passed the tenure-wide evidence standard, rounded to one decimal place.",
+    minimumScoredCategories: 6,
+    totalCategories: 8,
+    publicationRule: "Do not publish a numerical Overall Score until at least 6 of the 8 assessment categories have independently passed their evidence standard. Keep the Overall Score panel visible and label it IN PROGRESS until then.",
+    missingEvidence: "An unscored category is never converted to zero. The profile must show which categories are ready, which remain incomplete and why. The number of score-ready categories is not the same as the proportion of raw evidence collected.",
+    rankingRule: "A public league table or direct rank comparison requires all 8 category scores, matching office level, compatible term windows and comparable data definitions. A score based on 6 or 7 categories may be displayed with explicit missing-category disclosure, but must not be ranked against a different coverage set.",
+    caution: "The Overall Score is a summary, not a claim that every outcome was caused by the officeholder. Keep observed jurisdictional performance distinct from evidence of the officeholder's own decisions and contribution.",
+  },
+  tenureWindow: {
+    start: "Use the actual date the officeholder assumed the relevant elected or appointed office. Do not assume 1 January of the election year.",
+    end: "Use the latest complete reporting period available at the date of publication. Record the exact cut-off and source-data vintage.",
+    baseline: "For every category, establish inherited conditions using the strongest comparable pre-tenure evidence. Prefer a 2–3-year pre-tenure average or trend. Where only a survey or one comparable pre-tenure measure exists, disclose that limitation and do not imply a multi-year baseline.",
+    minimumLongitudinalEvidence: "A category normally requires at least one defensible pre-tenure baseline and at least two comparable post-assumption observations spanning 12 months or more. For quarterly/monthly measures, use the full available series rather than cherry-picked endpoints. For surveys, use comparable rounds and report confidence intervals or design limitations.",
+    overlap: "Split calendar/fiscal-year observations that straddle the assumption date where the source allows. Otherwise label them as transition or overlapping periods rather than attributing the whole year to one administration.",
+  },
+  categoryScoring: {
+    commonRule: "Pre-register the category's indicators, direction of improvement, weights and benchmarks before calculating an officeholder's grade. Use the same indicator definitions and scoring transformations for every comparable officeholder. Weights reflect the indicator's substantive importance and measurement quality, not how many rows happen to be available.",
+    components: [
+      "Inherited baseline: the condition at the start of the administration, supported by comparable pre-tenure evidence.",
+      "Trajectory: the change over the tenure, using all available comparable periods rather than one selected quarter or year.",
+      "Current condition: the latest complete outcome compared with a published target, standard or appropriate peer reference.",
+      "Distribution and quality: where data allow, test per-capita, regional, rural/urban, gender, income or service-quality differences rather than relying on national or nominal aggregates.",
+      "Attribution: describe which decisions, budgets, legislation, delivery actions or institutional responsibilities can be linked to the officeholder. Do not infer personal credit or blame from timing alone.",
+    ],
+    aggregation: "Each category score is a documented weighted combination of its predeclared indicators after each indicator has been mapped to 0–10 using a published, directionally correct standard. Do not invent a benchmark, interpolate missing data or adjust a formula to obtain a preferred political result. Publish the indicator list, weights, benchmark, calculation and uncertainty with the score.",
+  },
+  categories: {
+    costOfLiving: {
+      indicators: "Use a linked CPI index and rates (respecting NBS rebasing), matched state/month food prices, healthy-diet cost, transport fares and real household income/consumption or wages.",
+      rule: "Measure cumulative price-level change and affordability, not just the latest year-on-year inflation rate. Separate disinflation from an actual fall in prices and compare prices with household purchasing power.",
+    },
+    economyJobs: {
+      indicators: "Use annual and quarterly real GDP, real GDP per capita, sector composition, labour-force participation, employment-to-population ratio, underemployment, informality, youth employment and real earnings.",
+      rule: "Use the entire comparable time series. Do not award a high grade merely because one quarter approaches a budget projection or because unemployment falls while participation also collapses.",
+    },
+    publicFinance: {
+      indicators: "Use actual revenue, IGR, FAAC dependence, actual recurrent and capital expenditure, audited accounts, debt stock, debt service, arrears and sector implementation.",
+      rule: "Report nominal and inflation-adjusted values, per-capita measures and the share of own-source revenue. Separate approved budgets, releases, actual expenditure and service outcomes.",
+    },
+    security: {
+      indicators: "Use dated event and fatality records, population-adjusted rates, kidnappings, displacement, returns, incident type and geographic spread, cross-checked across compatible sources.",
+      rule: "Use a full office-term series and pre-tenure baseline, account for revisions and reporting bias, and do not add event counts with different definitions. Separate civilian fatalities from total estimated deaths where the source allows.",
+    },
+    education: {
+      indicators: "Use comparable assessment results and proficiency, attendance, completion/dropout, literacy/numeracy, teacher availability and school access/infrastructure.",
+      rule: "Budget execution and incomplete school-census returns are contextual indicators, not sufficient learning-performance scores. Preserve sample sizes, confidence intervals and data-return completeness.",
+    },
+    health: {
+      indicators: "Use maternal, neonatal, infant and under-five mortality; vaccination; access to primary care; skilled birth attendance; insurance and essential-service availability.",
+      rule: "Keep household-survey outcomes distinct from DHIS2 administrative rates and budget execution. Align reference periods and report survey uncertainty and denominator quality.",
+    },
+    infrastructure: {
+      indicators: "Use service availability and reliability for electricity, roads, water, sanitation, transport and housing, plus verified project milestones and operational status.",
+      rule: "A budget line, contract award, ground-breaking or press release is not proof of completion or service delivery. Record geolocation, contractor, value, deadline, physical verification and operational outcome.",
+    },
+    integrityCommitments: {
+      indicators: "Use original election manifesto and attributable pledges; court filings and final judgments; audit findings; procurement disclosures; asset declarations where public; and independently verified implementation evidence.",
+      rule: "Track each commitment's wording, date, deadline, responsible tier of government, measurable output and delivery status. Distinguish allegations, investigations, charges, convictions and final appeals. Agency enforcement totals are not a personal integrity rating.",
+    },
+  },
+  evidenceTypes: {
+    officialStatistics: "Survey and statistical releases with methods, periods, units, denominators and uncertainty.",
+    administrativeRecords: "Government, regulator, budget and programme records; disclose reporting completeness and denominator quality.",
+    independentMonitoring: "Independent research and monitoring with published collection methods and limitations.",
+    claims: "Campaign and government claims establish what was promised or asserted, not whether it was delivered.",
+  },
+  publicationRules: [
+    "Use the actual assumption-of-office date and latest complete comparable reporting period.",
+    "Show inherited baselines and the full available tenure trajectory; do not score a single snapshot as a tenure result.",
+    "Respect revised statistical methods and series-vintage notes. Do not splice incompatible definitions without a published linking method.",
+    "Publish a category score only after its minimum longitudinal evidence and predeclared benchmark requirements are satisfied.",
+    "Keep the Overall Score panel visible, but publish a numeric result only after at least 6 of 8 categories pass.",
+    "Never convert missing evidence into zero or describe a source index as completed extraction.",
+    "Do not treat an outcome recorded during a term as proof of personal causation.",
+    "Keep source documents, raw values, units, geography, period, data vintage, calculations, uncertainty and corrections accessible.",
+    "Do not compare politicians in a league table unless all eight category scores and term windows are comparable.",
+    "Give officials a correction and right-of-reply route without granting editorial control over Sabi's findings.",
+  ],
+} as const;

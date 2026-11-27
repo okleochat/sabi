@@ -25,9 +25,9 @@ Sources:
 - The Receipt methodology: https://www.thereceipt.ng/methodology
 - State promise ledgers: https://www.thereceipt.ng/governors/abia, /governors/delta, /governors/enugu, /governors/kaduna, /governors/kano, /governors/lagos, /governors/oyo and /governors/rivers.
 
-### Sabi score publication rule update
+### Sabi score publication rule update — superseded 27 November 2026
 
-The 60% manifesto-catalogue threshold is now a **completeness label**, not a blanket publication blocker. If at least one commitment has approved, assessable evidence, the engine can publish a provisional score with its assessed sample and coverage caveat. Reaching 60% of identifiable commitments upgrades it to a complete-register assessment. The full Sabi Impact Score still requires at least 3 of 5 dimensions and 60% of planned indicator weight. External pSPI percentiles and third-party promise-ledger references must never be relabelled as Sabi's own scores.
+The earlier sample-based promise score and 3-of-5 impact-dimension publication rule have been retired. A small sample of promises or isolated indicators must not be presented as a tenure-wide political grade. The current eight-domain methodology requires a source-verified inherited baseline and comparable post-assumption trajectory for each category. The Sabi Overall Score remains in the product but is labelled IN PROGRESS until at least 6 of 8 categories qualify. See [SABI-INTELLIGENCE-METHODOLOGY.md](./SABI-INTELLIGENCE-METHODOLOGY.md). Third-party rankings or pledge trackers must never be relabelled as Sabi's own scores.
 
 ## 1. State fiscal and service-delivery evidence
 
@@ -266,12 +266,15 @@ The following sources materially expand the governor manifesto archive. Where a 
 
 ## 4. Scoring readiness and evidence gaps
 
-1. Do not publish a governor's Integrity Score until at least 60% of the identifiable commitments in that governor's original manifesto/pledge set have been catalogued. Show catalogue coverage separately from evidence coverage.
-2. Do not publish an Impact Score until at least 3 of 5 dimensions and 60% of planned indicator weight are assessable.
-3. Do not translate fiscal rankings, budget execution or ministry press releases into overall performance scores.
-4. For every state, collect the original manifesto, budget and Q4 implementation report, audited accounts, procurement and project records, and comparable outcome series.
-5. Rivers requires special source work because the cited BudgIT report excludes it for missing audited and implementation reports. Seek state records, Auditor-General reports, legislative records, procurement evidence and credible independent reporting; label unresolved gaps.
-6. No politician's Integrity or Impact score has been calculated or changed by this evidence register.
+The earlier sample-based Integrity Score / Impact Score release thresholds have been superseded by the eight-category tenure-wide methodology.
+
+1. Do not publish a numerical category grade without the actual office assumption date, defensible inherited baseline, comparable post-assumption trajectory, predeclared indicator weights/benchmarks and source/uncertainty disclosures.
+2. The eight categories are cost of living and household welfare; economy, employment and productivity; public finance and fiscal management; security and public safety; education and learning; healthcare and health outcomes; infrastructure and basic services; integrity, governance and promise delivery.
+3. Keep the Sabi Overall Score panel visible, but label it IN PROGRESS until at least six categories independently pass the evidence standard. Missing categories are never assigned zero.
+4. Require all eight categories, compatible term windows and comparable definitions before direct overall-score league tables or rank comparisons.
+5. Treat third-party pSPI percentiles and external promise-ledger figures as attributed references, never as Sabi category scores.
+6. The current source inventory is not yet a complete extraction of all relevant archives. The remaining work is listed in [TENURE-EVIDENCE-REGISTER.md](./TENURE-EVIDENCE-REGISTER.md).
+7. No numerical Sabi category or Overall Score is currently published by this release; earlier snapshot-derived values have been withdrawn.
 
 ## 5. Source-quality hierarchy
 
@@ -280,3 +283,83 @@ The following sources materially expand the governor manifesto archive. Where a 
 3. Independent fiscal and sector research with published methods and downloadable datasets.
 4. Credible reporting for context and cross-checking.
 5. Campaign material and press releases as evidence of what was promised or claimed, not proof that delivery occurred.
+
+
+## Evidence pack: public-record indicator release (checked 26 November 2026)
+
+The public-record dashboard publishes the source observations below with their units and periods. These observations are not combined into political ratings or used to order officeholders.
+
+### Internally generated revenue, FY2025
+
+- **Primary source:** National Bureau of Statistics, 2025 Internally Generated Revenue report and related materials: https://microdata.nigerianstat.gov.ng/index.php/catalog/170/related-materials
+- **Cross-check/transcription:** The Public Interest, State Internally Generated Revenue 2025: https://www.thepublicinterest.ng/data/state-internally-generated-revenue-2025
+- **Coverage:** 36 states and the FCT.
+- **Presentation:** nominal Naira billions, rounded to the nearest ₦0.1bn.
+- **Limitations:** total IGR is not per-capita revenue, household income, service quality or a measure of causal contribution by an officeholder. It should be read with the state population, revenue composition and fiscal context before drawing broader conclusions.
+
+### Education budget execution, FY2025
+
+- **Primary source:** BudgIT, 2026 State of States Report: https://budgit.org/wp-content/uploads/2026/11/States26SMDF1.pdf
+- **Coverage:** 35 states.
+- **Rivers:** omitted by the report because 2025 audited state accounts / budget implementation reports were unavailable at publication. The source's note is reproduced on the Rivers profile.
+- **Limitations:** reported expenditure as a share of the approved education budget. This is a budget implementation measure, not a learning outcome, school quality measure or causal assessment of a governor.
+
+### Health budget execution, FY2025
+
+- **Primary source:** BudgIT, 2026 Health Financing Report: https://budgit.org/wp-content/uploads/2026/04/HealthFinancingReport__.pdf
+- **Coverage:** 34 states.
+- **Akwa Ibom:** the report notes that the available micro summaries did not provide the classified expenditure detail required for this calculation.
+- **Rivers:** the required 2025 fourth-quarter budget implementation report was unavailable.
+- **Limitations:** reported expenditure as a share of the approved health budget. A figure above 100% is retained as published and must be read with the underlying allocation and reporting notes. Budget execution is not a health outcome or a causal assessment of the governor.
+
+### Childhood vaccination outcome, NDHS 2023–2024
+
+- **Primary source:** Federal Ministry of Health and Social Welfare, The State of Health of the Nation Report 2024: https://fmohconnect.gov.ng/wp-content/uploads/2025/05/The-State-of-Health-of-the-Nation-Report-2024.pdf
+- **Coverage:** all 36 states and the FCT.
+- **Indicator:** percentage of children aged 12–23 months who had received all basic antigens, as reported in the NDHS-based table.
+- **Limitations:** a household-survey estimate for the stated age group and survey period. It is not interchangeable with routine DHIS2 administrative coverage, a 2026 live figure or proof that one officeholder caused the observed level.
+
+### National indicators displayed on the President's profile
+
+- **Headline inflation:** 14.06% year-on-year, October 2026; Central Bank of Nigeria Monetary Policy Communiqué No. 165, published 24 November 2026: https://www.cbn.gov.ng/Out/2026/CCD/MPC%20Communique%20No%20165%20of%20November%202026.pdf
+- **Real GDP growth:** 4.43% year-on-year, Q2 2026; Central Bank of Nigeria Second Quarter 2026 Economic Report: https://www.cbn.gov.ng/Out/2026/RSD/Second%20Quarter%202026%20Economic%20Report.pdf
+- **Childhood vaccination:** 39% fully vaccinated for basic antigens among children aged 12–23 months, NDHS 2023–2024; same Federal Ministry report linked above.
+- **Limitations:** national series measure different parts of the economy and population and have different reporting periods. They do not isolate the contribution of the President. Security and federal commitment ledgers remain separate research work and are explicitly identified as not yet compiled on the profile.
+
+### Release rules and data corrections
+
+- Do not turn these indicators into a combined score, a leaderboard or a political verdict.
+- Display source value, unit, definition, population, reporting period and limitations together.
+- Never replace a missing observation with zero. If a publisher excludes a state, display the publisher's reason.
+- Keep the FCT Minister's FCT record distinct from the 36 governor profiles. Use national series for the President.
+- Any correction must retain the prior value, cite the replacement source and record the reason/date of change.
+
+
+### Presidential macroeconomic and fiscal context (November 2026 snapshot)
+
+- **Source:** Federal Ministry of Finance, Nigeria Macro Dashboard: https://finance.gov.ng/?page_id=26
+- **Reported values:** headline inflation 14.06% year-on-year (October 2026); food inflation 19.13% year-on-year (October 2026); real GDP growth 4.43% year-on-year (Q2 2026); gross external reserves US$55.2bn (30 October 2026); total public debt ₦166.7tn (Q2 2026).
+- **Comparators shown:** headline inflation 18.97% year-on-year (October 2025); real GDP growth 4.23% year-on-year (Q2 2025).
+- **Cross-check:** CBN Monetary Policy Communiqué No. 165 (24 November 2026): https://www.cbn.gov.ng/Out/2026/CCD/MPC%20Communique%20No%20165%20of%20November%202026.pdf
+- **Limitations:** indicators have different definitions and reference dates. A lower inflation rate means prices are rising more slowly, not that the overall price level fell. Debt stock must be read with debt service, revenue, GDP and maturity profile. Macroeconomic trends do not by themselves establish how much change was caused by the President.
+
+
+## Withdrawal of snapshot-based scores and updated publication rule (27 November 2026)
+
+The provisional snapshot-based 0–10 formulas previously documented below have been withdrawn and removed from active profile scoring. They relied on isolated values such as FY2025 budget execution, 2025 nominal IGR rank, Q2 2026 GDP, October 2026 inflation and a single NDHS vaccination measure. Those observations remain in the research file as sourced context, but they do not represent full-tenure performance and must not generate a politician grade.
+
+The **Sabi Overall Score remains a core product feature**. Its numerical value will be published only after at least six of the eight categories have independently passed the tenure-wide evidence standard in [SABI-INTELLIGENCE-METHODOLOGY.md](./SABI-INTELLIGENCE-METHODOLOGY.md).
+
+The eight domains are cost of living and household welfare; economy, employment and productivity; public finance and fiscal management; security and public safety; education and learning; healthcare and health outcomes; infrastructure and basic services; integrity, governance and promise delivery.
+
+For each officeholder, use the actual assumption-of-office date, an inherited pre-tenure baseline, the full comparable trajectory through the latest complete reporting period, and documented limitations. A source catalogue entry, incomplete administrative return, single survey snapshot or event table covering only part of a term is not by itself score-ready evidence.
+
+The app currently keeps the Overall Score panel visible as **IN PROGRESS** and shows all eight category readiness explanations. The earlier snapshot-derived numerical grades are no longer active and must not be quoted as Sabi Overall Scores.
+
+---
+
+## Longitudinal evidence research expansion — 27 November 2026
+
+The expanded source and observation inventory is maintained in [TENURE-EVIDENCE-REGISTER.md](./TENURE-EVIDENCE-REGISTER.md). This adds historical and qualitative evidence across cost of living, jobs, security, education, health, infrastructure, integrity, public finance and promises.
+
+The source catalogue and structured extracts are deliberately reported separately: a source being indexed does not mean its entire archive has been scraped or that it supplies a comparable observation for every year of an officeholder's tenure. Pre-tenure baselines, official claims, survey results, administrative rates, independent estimates and project leads retain their own labels and limitations.
