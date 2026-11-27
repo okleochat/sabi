@@ -134,10 +134,11 @@ export const polls:PollRecord[] = [
       {label:"Undecided on a presidential candidate",value:29,unit:"percent"},
       {label:"Intend to vote but have not settled on a choice",value:44,unit:"percent",note:"Reported as a separate question among all respondents; it is not additive with the 29% undecided figure."},
     ],
-    sourceUrl:"https://openpolls.africa/polls",
+    sourceUrl:"https://yiaga.org/resources/willing-but-wary-report-of-the-national-voting-intentions",
     methodologyUrl:"https://nvis.yiaga.org/",
     limitations:[
       "This survey does not publish national candidate or party vote shares.",
+      "Yiaga\u2019s own landing page has a conflicting 29% overview callout for confidence in INEC, while its detailed trust section and contemporaneous reports state 34%; Sabi records 34% and flags the inconsistency.",
       "The combined margin of error is a nominal guide because the 404 rural face-to-face interviews were not randomly selected.",
       "Turnout intention and candidate uncertainty must not be converted into candidate vote shares.",
     ],
