@@ -92,7 +92,7 @@ export const currentAffairsArticles:StarterArticle[]=[
  id:"tafi-gana-plateau-attack-casualty-update-2026-11-27",
  slug:"tafi-gana-plateau-attack-casualty-update-2026-11-27",
  title:"Tafi-Gana attack: casualty reports rise, official picture remains incomplete",
- summary:"Community leaders confirmed 16 deaths initially; later reports cite 19 or 22. Plateau’s government says security measures were ordered, but no official casualty tally or police incident account was located in this review.",
+ summary:"Police later reported 17 deaths and four injured; community reports give 19 or 22. The final casualty tally and incident timeline remain unresolved.",
  category:"Security & public safety",
  label:"FIELD UPDATE / 27 NOV 2026",
  author:"The Sabi Desk",
@@ -104,10 +104,10 @@ export const currentAffairsArticles:StarterArticle[]=[
  body:[
   {type:"paragraph",text:"Residents of Tafi-Gana, a hamlet of Kyie Ihwien near Jebbu Miango in Bassa Local Government Area, Plateau State, were attacked late on 25 November and into the early hours of 26 November. The Irigwe Development Association and the Traditional Council of Rigwe land initially reported 16 deaths and four injured survivors. The association published the names of 16 people it said had been killed."},
   {type:"heading",text:"The casualty count is not settled"},
-  {type:"paragraph",text:"Later reporting gives different totals. Vanguard reported 19 deaths on 26 November after three injured people died in hospital; the Guardian reported the same figure on 27 November. A Daily Post report on 27 November quoted a youth leader giving a figure of 22, including two bodies said to have been found later. The Plateau State Government’s statement did not publish a casualty total. Until police, hospital or another independently verifiable record is available, 19 is the latest figure corroborated by more than one major report, while 22 remains an unconfirmed higher account."},
+  {type:"paragraph",text:"The official picture changed when Channels Television quoted a Plateau Police Command statement on 26 November: police put the toll at 17 dead and four injured. The police quotation gives the time of attack as 11:55 a.m. on 25 November, while community accounts describe an attack around 11:30 p.m. that night; the discrepancy needs clarification. Later community-based reports give higher totals: The Guardian reported 19 deaths, citing a resident who said three injured people died in hospital, while Daily Post quoted a youth leader at 22, including two bodies said to have been found later. No revised police tally, hospital register or identified-victim list was located. The 22 figure remains a single-source community account, not a confirmed final count."},
   {type:"heading",text:"What the state government says"},
   {type:"paragraph",text:"In a statement signed by Commissioner for Information and Communication Joyce Lohya Ramnap on 26 November, the Plateau State Government condemned the attack and said Governor Caleb Mutfwang had directed security operatives to take strategic measures to protect residents. The statement said “relative calm has been established” and urged residents to avoid reprisals and the circulation of unverified information. That is the government’s account of its response; the statement did not set out the number of personnel deployed, the operational plan, arrests or an investigation timetable."},
-  {type:"paragraph",text:"PUNCH reported on 27 November that the Plateau Police Command and Operation Enduring Peace had not responded to its enquiries at the time of filing. We have not located a published police incident report or a verified account identifying the attackers or their motive. Claims about the attackers’ ethnicity in some eyewitness accounts have not been independently established and are not presented here as fact."},
+  {type:"paragraph",text:"PUNCH reported earlier on 27 November that the Plateau Police Command and Operation Enduring Peace had not responded to its enquiries. Channels Television later quoted a police statement, but we have not located a detailed incident report, reconciled casualty register or verified account identifying the attackers or their motive. Claims about the attackers’ ethnicity in some eyewitness accounts have not been independently established and are not presented here as fact."},
   {type:"heading",text:"What remains to be checked"},
   {type:"list",items:[
    "An official police and military incident report, including the time security agencies were notified and when units arrived.",
@@ -119,6 +119,7 @@ export const currentAffairsArticles:StarterArticle[]=[
   {type:"callout",text:"This is a serious security and public-protection incident in Plateau State. The available reports do not establish an electoral motive, identify the perpetrators or justify attributing collective responsibility to any ethnic or religious group."}
  ],
  sources:[
+  {title:"16 killed as gunmen attack Plateau community",publisher:"Channels Television",publishedAt:"2026-11-26",url:"https://www.channelstv.com/2026/11/26/16-killed-as-gunmen-attack-plateau-community/"},
   {title:"Death toll in Plateau community attack rises to 19",publisher:"The Guardian",publishedAt:"2026-11-27",url:"https://guardian.ng/news/death-toll-rises-to-19-in-plateau-community-attack-four-injured/"},
   {title:"16 feared killed as gunmen attack Plateau community",publisher:"PUNCH",publishedAt:"2026-11-27",url:"https://punchng.com/16-feared-killed-as-gunmen-attack-plateau-community-2/"},
   {title:"Plateau condemns attack on community",publisher:"PUNCH",publishedAt:"2026-11-26",url:"https://punchng.com/plateau-condemns-attack-on-community/"},
