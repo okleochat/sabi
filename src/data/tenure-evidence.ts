@@ -1007,7 +1007,108 @@ import {stateFoodInsecurity2024,ndhsFoodInsecuritySource} from "@/data/ndhs-food
 import {stateUnderFiveMortality2024,ndhsChildMortalitySource} from "@/data/ndhs-child-mortality";
 import {statePopulation2023,statePopulation2023Source} from "@/data/state-population-2023";
 
-export function getTenureEvidence(person: { office: string; state?: string; termStart?: string }) {
+
+export type OfficeholderDossierUpdate = {
+  id:string;
+  subjectId:string;
+  date:string;
+  speaker:string;
+  wording:string;
+  context:string;
+  impact:"positive"|"negative"|"mixed"|"neutral"|"unclear";
+  status:string;
+  publisher:string;
+  title:string;
+  url:string;
+  supportingSources?:Array<{publisher:string;title:string;url:string}>;
+};
+
+export const officeholderDossierUpdates:OfficeholderDossierUpdate[] = [
+  {
+    id:"tinubu-northeast-peace-pledge-2026-11-25",
+    subjectId:"bola-ahmed-tinubu",
+    date:"2026-11-25",
+    speaker:"President Bola Tinubu, speaking in Maiduguri",
+    wording:"We will achieve that peace, the terrorism will go.",
+    context:"Tinubu urged insurgents to lay down their arms and surrender their weapons during a visit to Maiduguri. This is a public security pledge, not evidence that peace has been achieved; no delivery deadline or measurable target was stated in the report.",
+    impact:"positive",
+    status:"Attributed presidential pledge; outcome not assessable at statement date",
+    publisher:"Reuters",
+    title:"Nigeria's Tinubu promises peace in insurgency-hit region",
+    url:"https://www.reuters.com/world/africa/nigerias-tinubu-promises-peace-insurgency-hit-region-2026-11-25/"
+  },
+  {
+    id:"makinde-opposition-collaboration-2026-11-13",
+    subjectId:"seyi-makinde",
+    date:"2026-11-13",
+    speaker:"Seyi Makinde, Oyo governor and APM presidential candidate, in an Arise Television interview",
+    wording:"I've had engagement with former Vice-President Atiku Abubakar. I've had engagement with H.E. Peter Obi.",
+    context:"Makinde said discussions could lead to rivalry or collaboration depending on circumstances before the 2027 election. A summit involving opposition groups is scheduled for 30 Nov, but no common ticket, formal merger or completed pact had been announced by 27 Nov.",
+    impact:"neutral",
+    status:"Attributed political statement; negotiations pending",
+    publisher:"TheCable",
+    title:"Makinde: I'm open to collaboration with Atiku, Obi",
+    url:"https://www.thecable.ng/makinde-im-open-to-collaboration-with-atiku-obi-tinubu-broke-agreement-with-me/",
+    supportingSources:[{publisher:"TheCable",title:"Makinde denies stepping down for Atiku, says campaign organisation",url:"https://www.thecable.ng/makinde-denies-stepping-down-for-atiku-says-campaign-organisation/"}]
+  },
+  {
+    id:"sanwo-olu-sanitation-cancellation-2026-11-27",
+    subjectId:"babajide-sanwo-olu",
+    date:"2026-11-27",
+    speaker:"Gaji Omobolaji Tajudeen, Permanent Secretary, Office of Environmental Services, in an updated Lagos State Government statement",
+    wording:"The governor is keen on ensuring that the sanitation exercise, which is billed to end at 8:30 am, does not in any way affect the smooth commencement of the mock accreditation at 8:30 am.",
+    context:"Lagos cancelled the monthly environmental sanitation exercise scheduled for 28 Nov after a 26 Nov statement had said it would proceed. The reversal was made to avoid overlap with INEC's mock accreditation and result-upload exercise. This is an administrative coordination decision, not evidence of election quality or environmental outcomes.",
+    impact:"neutral",
+    status:"Official decision reported; original statement not separately retrieved",
+    publisher:"The Sun",
+    title:"Why Sanwo-Olu cancelled November sanitation exercise in Lagos",
+    url:"https://thesun.ng/why-sanwo-olu-cancelled-november-sanitation-exercise-in-lagos/"
+  },
+  {
+    id:"mutfwang-tafi-gana-response-2026-11-26",
+    subjectId:"caleb-mutfwang",
+    date:"2026-11-26",
+    speaker:"Joyce Lohya Ramnap, Plateau Commissioner for Information and Communication, speaking for the state government",
+    wording:"So far, relative calm has been established.",
+    context:"The government said Governor Mutfwang directed security operatives to take strategic measures after the Tafi-Gana attack. Channels later quoted police at 17 dead and four injured; The Guardian reported 19 deaths and Daily Post quoted a community youth leader at 22. No revised police tally or hospital register was located. The government's assessment of relative calm remains unverified.",
+    impact:"unclear",
+    status:"Attributed government statement; security outcome and final casualty count unresolved",
+    publisher:"Premium Times / Channels Television",
+    title:"Plateau condemns attack on community; casualty figures remain unresolved",
+    url:"https://www.premiumtimesng.com/news/top-news/928234-16-die-in-plateau-attacks-mutfwang-orders-security-measures.html",
+    supportingSources:[{publisher:"Channels Television",title:"16 killed as gunmen attack Plateau community",url:"https://www.channelstv.com/2026/11/26/16-killed-as-gunmen-attack-plateau-community/"},{publisher:"The Guardian",title:"Death toll rises to 19 in Plateau community attack",url:"https://guardian.ng/news/death-toll-rises-to-19-in-plateau-community-attack-four-injured/"},{publisher:"Daily Post",title:"Death toll in Plateau community attack rises to 22",url:"https://dailypost.ng/2026/11/27/death-toll-in-plateau-community-attack-rises-to-22/"}]
+  },
+  {
+    id:"nwifuru-opposition-poverty-budget-claim-2026-11-27",
+    subjectId:"francis-nwifuru",
+    date:"2026-11-26",
+    speaker:"Ifeanyi Chukwuma Odii, PDP Ebonyi governorship candidate, at the party's campaign flag-off",
+    wording:"Reported paraphrase: Odii said national assessments showed nearly eight in ten Ebonyi residents were multidimensionally poor and that agriculture received less than two per cent of the 2025 state budget.",
+    context:"The NBS 2022 MPI records 78.0% incidence for Ebonyi in its 2021/22 reference period. The original 2025 approved budget PDF gives agriculture N6.57202bn of N444.978bn (about 1.48%); a 2026 approved-budget historical table lists N5.67202bn (about 1.28%). Both are below 2%, but the exact allocation conflicts. These historical figures do not establish current 2026 poverty or prove the governor caused the outcome.",
+    impact:"negative",
+    status:"Attributed opposition criticism; historical poverty figure and less-than-2% budget threshold supported, exact budget allocation discrepant",
+    publisher:"The Sun / NBS / Ebonyi State Government",
+    title:"Odii challenges Ebonyi poverty and agriculture priorities",
+    url:"https://thesun.ng/2027-odii-vows-to-end-poverty-industrialise-ebonyi/",
+    supportingSources:[{publisher:"National Bureau of Statistics",title:"Nigeria Multidimensional Poverty Index Survey Results 2022",url:"https://www.nigerianstat.gov.ng/pdfuploads/NIGERIA%20MULTIDIMENSIONAL%20POVERTY%20INDEX%20SURVEY%20RESULTS%202022.pdf"},{publisher:"Ebonyi State Government",title:"2025 Approved Budget",url:"https://ebonyistate.gov.ng/storage/documents/min-1-ebsg-2025-approved-budgetpdf-1738259476.pdf"},{publisher:"Ebonyi State Government",title:"2026 Approved Budget (historical 2025 column)",url:"https://www.ebonyistate.gov.ng/storage/documents/min-1-2026-approved-budgetpdf-1769898846.pdf"}]
+  },
+  {
+    id:"nwifuru-2023-election-denial-allegation-2026-11-27",
+    subjectId:"francis-nwifuru",
+    date:"2026-11-26",
+    speaker:"Ifeanyi Chukwuma Odii, PDP Ebonyi governorship candidate, at the party's campaign flag-off",
+    wording:"Reported paraphrase: Odii alleged that he was denied victory despite winning the 2023 Ebonyi governorship poll.",
+    context:"INEC declared Francis Nwifuru winner with 199,131 votes; Odii received 80,191. The Ebonyi tribunal, Court of Appeal and Supreme Court upheld Nwifuru's return; the Supreme Court dismissed Odii's appeal in January 2024. The allegation is not supported by the official result or final court record, though the original 2026 speech and any specific evidence of irregularities have not been retrieved.",
+    impact:"negative",
+    status:"Attributed opposition allegation; official result and final court outcomes contradict the claim that Odii was the declared winner",
+    publisher:"The Sun / PUNCH / Vanguard",
+    title:"Odii alleges he was denied victory in 2023 Ebonyi election",
+    url:"https://thesun.ng/2027-odii-vows-to-end-poverty-industrialise-ebonyi/",
+    supportingSources:[{publisher:"PUNCH",title:"APC's Nwifuru declared winner of Ebonyi governorship election",url:"https://punchng.com/breaking-apcs-nwifuru-declared-winner-of-ebonyi-gov-election/"},{publisher:"Vanguard",title:"Supreme Court affirms Nwifuru as Ebonyi State Governor",url:"https://www.vanguardngr.com/2024/01/breaking-supreme-court-affirms-nwifuru-as-ebonyi-state-governor/"}]
+  }
+];
+
+export function getTenureEvidence(person: { id?: string; name?: string; office: string; state?: string; termStart?: string }) {
   const scope = person.office === "President" ? "national" : "subnational";
   const sources = tenureEvidenceSources.filter(source =>
     source.officeScope === "both" || source.officeScope === scope ||
@@ -1197,5 +1298,5 @@ export function getTenureEvidence(person: { office: string; state?: string; term
       },
     );
   }
-  return { sources, observations, quarterlyLabourSeries: person.office === "President" ? quarterlyLabourSeries2022To2024 : [] };
+  return { sources, observations, quarterlyLabourSeries: person.office === "President" ? quarterlyLabourSeries2022To2024 : [], updates: officeholderDossierUpdates.filter(item => item.subjectId === person.id) };
 }
