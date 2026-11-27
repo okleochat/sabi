@@ -27,6 +27,18 @@ The OpenPolls Africa catalogue checked for this release says that, as of 15 Nove
 - Published party preference: NDC 42.2%, APC 25.5%; the remaining 32.3% is not broken down.
 - Limitation: the published summary does not state sampling method, mode or margin of error. The question remains party preference rather than candidate vote intention. It is not pooled with Wave 1.
 
+### SBM candidate favourability (separate from party preference)
+
+The original SBM reports also publish candidate net-favourability measurements. Sabi displays these separately from the party-preference figures above:
+- Wave 1, May 2026: Bola Ahmed Tinubu -58.5; Peter Obi +58.3.
+- Wave 2, September 2026: Bola Ahmed Tinubu -3.3; Peter Obi +52.8; Rabiu Kwankwaso +1.6; Rotimi Amaechi -27.7.
+
+These are net-favourability scores reported by SBM, not vote shares, candidate vote-intention percentages, or probabilities of winning. Sabi does not rank candidates from them or combine them with party-preference figures. The survey's non-probability/undisclosed sampling limitations continue to apply.
+
+Original reports:
+- Wave 1: https://vst.sbmintel.com/2026/06/11/the-sbm-voter-sentiment-tracker-how-nigeria-may-vote/
+- Wave 2: https://www.sbmintel.com/2026/09/the-sbm-voter-sentiment-tracker-a-narrower-race/
+
 ### Yiaga Africa — National Voting Intentions Survey, Round 3 (NVIS 3.0)
 - Fieldwork: September 2026; published 7 October 2026.
 - Sample: 2,470 Nigerian adults across all 36 states and the FCT.
