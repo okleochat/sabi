@@ -54,3 +54,52 @@ Important limitation: code can send the alert, but it cannot wake this ChatGPT c
 - Public claim submissions are rate-limited per observed client IP in the current application process; this is a basic abuse guard, not a substitute for a durable distributed rate-limit service.
 - The optional webhook excludes private contact data. Treat the webhook URL and secret as server-side configuration and never embed them in client code or public documents.
 - The newsroom route must be tested with an unapproved user and an approved factchecker/editor/admin account after deployment.
+
+## Public subject catalogue and claim impact
+
+Every claim can be classified under a primary subject (a person, public officeholder, candidate, party, agency or other institution). The canonical subject label and key keep spelling variants together; the current alias map includes Bola Ahmed Tinubu, Peter Obi, Nyesom Wike, Godswill Akpabio and Chukwuma Charles Soludo. Other subjects receive a normalized key and can be consolidated by an editor.
+
+The separate impact field describes how the claim frames its subject:
+- Positive for subject: the claim presents the subject favourably.
+- Negative for subject: the claim presents the subject unfavourably.
+- Mixed impact: the claim contains both favourable and unfavourable framing.
+- Neutral / factual: no clear favourable or unfavourable framing.
+- Not assessed: impact has not yet been classified.
+
+Impact is not a truth verdict, an assessment of a person's character, or a rating of political performance. The truth verdict remains a separate editorial finding. Public cards and the newsroom explain this distinction.
+
+## Provenance and research-origin claims
+
+The origin field records how a claim entered Sabi:
+- Reader submission: sent through the public claim form.
+- Sabi newsroom research: identified independently through newsroom monitoring and source research.
+
+Reader contact details remain private. Sabi-origin research leads are inserted into the private newsroom queue with a research status and evidence trail. They are not automatically published. A newsroom-discovered claim becomes public only after the same evidence standard and human approval used for reader submissions.
+
+The initial newsroom research leads include the FCT Minister's July 2026 satellite-road completion statement and Abia Governor Alex Otti's May 2026 road-project totals. The public reports located so far repeat the officials' stated totals; project-level documentation is still needed. These are research leads, not verified findings.
+
+The initial public Sabi-research fact-check seeds cover:
+- The President's September 2026 inflation-rate comparison, with a distinction between disinflation and falling prices.
+- The President's October 2026 claim of more than 4% economic growth, qualified to the available first-half 2026 GDP data.
+- The Anambra debt figures in the 2026 public dispute about Peter Obi's 2014 handover, distinguishing original facility amounts, a 2026 remaining balance and the nearest DMO snapshots.
+- The viral claim that Peter Obi did not build any school facilities, distinguishing new standalone schools from classroom construction and school rehabilitation.
+
+These starter records are seeded once by stable Firestore document IDs. Subsequent edits to the source seed file do not overwrite a fact-check that has already been created in Firestore; editors should update a live record through the newsroom process.
+
+## Duplicate and related-claim handling
+
+Before submission, the public form calls the claim lookup endpoint. The system normalizes case, punctuation, accents, whitespace and embedded URLs and calculates a SHA-256 fingerprint. A Firestore claimFingerprints document provides an atomic duplicate guard, so concurrent submissions with the same normalized wording cannot both enter the queue. Existing archived fact-checks and recent legacy queue entries are also checked.
+
+An exact match is blocked and the user is directed to the existing public check or informed that the exact claim is already in the private queue. Similar published claims are presented as suggestions only. They are not blocked because a related statement may have a different date, speaker, scope or context. The newsroom must review these distinctions.
+
+The duplicate rule is exact-normalized wording, not a semantic guarantee. It cannot detect every paraphrase or two claims that express the same proposition in different words. The pre-submission suggestions help users notice related coverage, and editors should still consolidate genuine duplicates during triage.
+
+## Public fact-check library
+
+The public `/fact-checks` archive supports search across claim wording, title, summary, subject and cited-source names, plus filters for:
+- Subject / person / institution.
+- Impact on subject.
+- Provenance (reader submission, Sabi newsroom research, or legacy origin not recorded).
+- Editorial verdict.
+
+The public detail page repeats subject, impact, provenance and verdict separately. No private queue content, submitter contact details or private research notes are exposed.
