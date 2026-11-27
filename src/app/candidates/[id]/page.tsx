@@ -98,7 +98,7 @@ export default async function CandidateProfile({params}:{params:Promise<{id:stri
       <p>{item.position}</p>
       <a href={item.url} target="_blank" rel="noreferrer">OPEN SOURCE ↗</a>
      </article>)}</div>
-     <p className="notice">Status: the last located court report says judgment was reserved on 27 October 2026. No final judgment was located in the source check for this update. Recheck before treating the ballot position as settled.</p>
+     <p className="notice">{tracker.disputeStatusNote||"The procedural status remains unresolved in the sources checked; see the source trail above. Recheck before treating the ballot position as settled."}</p>
     </div>:null}
     <div className="candidate-manifesto-status">
      <div className="eyebrow">MANIFESTO DOCUMENT STATUS / SOURCE SNAPSHOT</div>
