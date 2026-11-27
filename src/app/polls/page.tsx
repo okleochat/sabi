@@ -1,7 +1,7 @@
 import type {Metadata} from "next";
 import Link from "next/link";
 import ShareCard from "@/app/components/ShareCard";
-import {calculatePollingAverage,polls,pollingCatalogueSource,pollingEstimatorRules} from "@/data/polling-data";
+import {calculatePollingAverage,polls,pollingCatalogueSource,pollingResearchCutoff,pollingEstimatorRules} from "@/data/polling-data";
 
 export const metadata:Metadata={title:"2027 Polling Desk — surveys, methods & public mood"};
 export const dynamic="force-static";
@@ -107,11 +107,7 @@ export default function PollingDeskPage(){
    <div className="eyebrow"><span/>THE INDEPENDENT ESTIMATOR / VERSION 1.0</div>
    <h2>NO GUESSWORK.<br/>NO MADE-UP ODDS.</h2>
    <p className="notice">Sabi's estimator is a transparent aggregation of eligible polling measurements. It is not an election forecast and will not publish a candidate's probability of winning.</p>
-   <div className="content-grid">
-    <article className="content-card"><div className="eyebrow">01 / ELIGIBILITY</div><h3>Only comparable surveys enter</h3><p>National probability samples that ask about the final INEC candidate field, with published dates, sample, questionnaire, method and weighting. Online click-polls, campaign-run surveys and convenience samples are displayed separately.</p></article>
-    <article className="content-card"><div className="eyebrow">02 / WEIGHTING</div><h3>Recency and sample size</h3><p>Latest qualifying wave per pollster. Descriptive weight: square root of effective sample size multiplied by a 30-day half-life recency factor. The inputs and formula remain visible.</p></article>
-    <article className="content-card"><div className="eyebrow">03 / PUBLICATION GATE</div><h3>Three independent pollsters</h3><p>A pooled average appears only after at least three independent qualifying pollsters cover the same national candidate field. Otherwise, every survey remains separate and the reason is stated.</p></article>
-   </div>
+   <div className="poll-rules-list">{pollingEstimatorRules.map((rule,i)=><div key={rule}><b>{String(i+1).padStart(2,"0")}</b><p>{rule}</p></div>)}</div>
    <div className="source-note">Polling catalogue checked {pollingResearchCutoff}. Discovery cross-check: {pollingCatalogueSource.publisher}, last updated {pollingCatalogueSource.lastUpdated}. <a href={pollingCatalogueSource.url} target="_blank" rel="noreferrer">OPEN POLL CATALOGUE ↗</a>. Sabi preserves contradictory methodology details instead of silently resolving them.</div>
   </section>
   <section className="page-section"><div className="eyebrow"><span/>SEND A POLL OR CORRECTION</div><h2>GOT A POLL?<br/>SHOW US THE METHOD.</h2><p>Send the original release, questionnaire, fieldwork dates and sample design to the Sabi newsroom. We will list it only when its scope and limitations can be checked.</p><Link className="btn black" href="/sabi-check">SUBMIT A CLAIM OR SOURCE ↗</Link></section>
