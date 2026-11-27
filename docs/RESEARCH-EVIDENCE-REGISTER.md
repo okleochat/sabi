@@ -363,3 +363,74 @@ The app currently keeps the Overall Score panel visible as **IN PROGRESS** and s
 The expanded source and observation inventory is maintained in [TENURE-EVIDENCE-REGISTER.md](./TENURE-EVIDENCE-REGISTER.md). This adds historical and qualitative evidence across cost of living, jobs, security, education, health, infrastructure, integrity, public finance and promises.
 
 The source catalogue and structured extracts are deliberately reported separately: a source being indexed does not mean its entire archive has been scraped or that it supplies a comparable observation for every year of an officeholder's tenure. Pre-tenure baselines, official claims, survey results, administrative rates, independent estimates and project leads retain their own labels and limitations.
+
+
+## 1B. State-police constitutional amendment — desk update, 27 November 2026
+
+### Verified procedural milestones
+
+- The National Assembly passed the Constitution (Sixth Alteration) Bill, 2026, for State Police Services in both chambers earlier in 2026. The Senate passage was reported as 24 June and House passage as 23 July in November reporting; the exact certified final text and division lists should be obtained from the legislature before a clause-by-clause legal audit.
+- On 16 November, Clerk to the National Assembly Kamoru Ogunlana announced that all 36 State Houses of Assembly had approved the bill. PUNCH reported the Clerk's statement on 17 November. The threshold under Section 9(2) is at least 24 of 36 states.
+- The Chief of Staff to the President said President Tinubu had received the bill and would review it with the Attorney-General before a formal signing ceremony. PUNCH reported the statement on 19 November.
+- The State House's 23 October statement had already distinguished the Constitution (Sixth Alteration) Bill from the separate draft National Policing Bill, which it said was undergoing legislative-drafting review and validation at the Federal Ministry of Justice.
+
+### Important legal uncertainty — do not overstate
+
+The public record contains conflicting positions on whether presidential assent is a legal prerequisite for a Section 9 constitutional alteration:
+
+- The National Assembly's current legislative-process page has a generic bill-making section that describes presidential assent, but its specific Section 9 constitution-alteration section says presidential assent is not required after state ratification and identifies Gazette publication as the final promulgation step. The page is internally inconsistent across these two sections.
+- The 2010 Federal High Court judgment in the Olisa Agbakoba case held that a constitutional alteration was inchoate until presented to the President for assent. The National Assembly disputed that view and indicated it would appeal.
+- PLAC's *A Step-by-Step Process of Amending the Nigerian Constitution* records the competing legal opinions and the 2010 judgment. It notes that a definitive Supreme Court interpretation would have been useful; this desk did not locate a final appellate disposition resolving the question.
+- The Chief of Staff's 19 November statement is a reported intention to assent. It does not settle the legal question or prove that a final constitutional instrument has been published.
+
+**Editorial position:** 36 state approvals are verified. Do not say the amendment is definitely in force, or definitely ineffective for want of a presidential signature, without the authenticated final text, Gazette record and authoritative legal clarification. Gazette publication and the status of the separate National Policing Bill are the next documentary checks.
+
+### Operational law and safeguards
+
+The State House's 23 October release said the draft National Policing Bill was undergoing review at the Federal Ministry of Justice. The State House's 4 August roadmap and public-input notice described proposed safeguards and standards. These are proposals, not proof of enacted safeguards. When the bill is published, check recruitment and vetting, training, command and jurisdiction, firearms, custody, complaints, discipline, independent oversight, funding, audits, state readiness and protections against partisan abuse.
+
+### Sources (publication / access dates)
+
+- National Assembly, *National Assembly Processes: Constitution Alteration under Section 9*, accessed 27 November 2026: https://www.nass.gov.ng/themes/newnass/legislative-process.html
+- PUNCH, *State police: NASS confirms all 36 assemblies approve bill*, 17 November 2026: https://punchng.com/state-police-nass-confirms-all-36-assemblies-approve-bill/
+- PUNCH, *Tinubu receives state police bill; Chief of Staff describes next steps*, 19 November 2026: https://punchng.com/tinubu-sends-state-police-bill-to-agf/
+- The State House, *Presidential Working Group applauds as State Police Amendment clears constitutional threshold*, 23 October 2026: https://statehouse.gov.ng/presidential-working-group-applauds-as-state-police-amendment-clears-constitutional-threshold-in-state-assemblies/
+- The State House, *FG announces roadmap for National Policing Bill and invites public input*, 4 August 2026: https://statehouse.gov.ng/fg-announces-seven-week-roadmap-for-national-policing-bill-invites-public-input/
+- PLAC, *A Step-by-Step Process of Amending the Nigerian Constitution*, first published 2014, reprinted 2019; accessed 27 November 2026: https://www.plac.org.ng/i/wp-content/uploads/2021/05/Step-by-Step-Guide-to-the-Process-of-Amending-the-Nigerian-Constitution.pdf
+- Vanguard, *Agbakoba, others vindicated?*, 9 November 2010: https://www.vanguardngr.com/2010/11/agbakoba-others-vindicated/
+
+## 1C. Polling desk additions — 27 November 2026
+
+No new national probability-sample poll of the final INEC presidential candidate field was located in this scan. Two publicly circulated opt-in online exercises were added to the Sabi poll catalogue for transparency, but are displayed separately and excluded from all averages and forecasts.
+
+### Oxford-Metro Analytics National Trust Poll
+
+- **Fieldwork:** Closed 7 September 2026; opening date not stated in the release located.
+- **Published:** 8 September 2026 press release distributed through Newsfile; later Nigerian press reports followed.
+- **Responses:** 69,110 approved and unflagged online responses.
+- **Reported figures:** Tinubu 35.41%; Obi 33.86%; Atiku 26.67%; remaining candidates/options 4.06%.
+- **Mode and sampling:** Open, self-selected online participation; unweighted. No probability sampling frame or weighting was reported.
+- **Geography:** State and FCT results were reported; Lagos and the FCT accounted for 54.44% of responses. The release says 56 diaspora responses were excluded from domestic regional tallies.
+- **Question wording:** Not reproduced in the release located.
+- **Sponsor:** Not stated; the release was issued by Oxford-Metro Analytics through Newsfile.
+- **Margin of error:** Not applicable to this self-selected non-probability exercise.
+- **Limitations:** No generalisation to the electorate; geographic concentration; no full questionnaire or recruitment frame; fieldwork predated INEC's final candidate list. Not eligible for a national candidate average.
+- **Sources:** Newsfile, 8 September 2026: https://www.newsfilecorp.com/release/313361; OpenPolls catalogue, accessed 27 November 2026: https://openpolls.africa/polls
+
+### Tinubu Must Go movement online ticket poll
+
+- **Fieldwork:** 24–25 September 2026, a 24-hour online exercise.
+- **Published:** 25–26 September 2026 in Nigerian press reports.
+- **Responses:** 109,799.
+- **Reported figures:** Atiku/Amaechi 73.6%; Obi/Kwankwaso 22.3%; other options 4.1%.
+- **Mode and sampling:** Opt-in, self-selected online poll organised by a movement publicly opposing the incumbent administration.
+- **Geography:** No geographic breakdown found.
+- **Question wording and candidate field:** Press reports describe a choice among leading opposition tickets. The exact wording was not published, and whether Tinubu was offered as an option is not stated.
+- **Sponsor:** Tinubu Must Go movement; the organiser has a stated political position in the contest.
+- **Margin of error:** Not applicable; no probability sample.
+- **Limitations:** No independent pollster, full questionnaire, sampling frame, weighting or complete methodology report located; no generalisation to the electorate; not a full-field ballot test. Not eligible for a national candidate average.
+- **Sources:** Vanguard, 26 September 2026: https://www.vanguardngr.com/2026/09/tinubu-must-go-poll-puts-atiku-ahead-of-obi-others-for-2027/; OpenPolls catalogue, accessed 27 November 2026: https://openpolls.africa/polls
+
+### Polling rule applied
+
+Candidate vote intention, party preference, candidate favourability, turnout intention and electoral confidence remain separate. A large opt-in response count is not a substitute for probability sampling. These two exercises are context records only; they are not averaged, ranked or converted into win probabilities.
