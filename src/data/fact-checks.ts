@@ -1,63 +1,67 @@
 export const starterFactchecks: Array<Record<string, any>> = [
   {
-    id: "sabi-research-tinubu-inflation-september-2026",
-    slug: "tinubu-september-2026-inflation-claim",
-    title: "Did headline inflation fall to 14.63% in September 2026?",
-    claim: "President Bola Ahmed Tinubu's October 2026 State House statement said headline inflation fell to 14.63% in September 2026 from 20.98% a year earlier.",
-    claimSource: "State House statement, 30 October 2026",
-    claimType: "statistics",
-    subject: "Bola Ahmed Tinubu",
-    subjectKey: "bola-tinubu",
-    subjectType: "elected-official",
-    impact: "positive",
-    origin: "sabi-research",
-    originLabel: "Sabi newsroom research",
-    verdict: "True",
-    summary: "The figures match the National Bureau of Statistics' September 2026 CPI release: headline year-on-year inflation was 14.63%, down from 20.98% in September 2025. That is a slower rate of price increases, not a fall in the overall price level.",
-    findings: "Sabi checked the President's State House statement against the September 2026 Consumer Price Index figures attributed to the National Bureau of Statistics and the Central Bank of Nigeria's November 2026 Monetary Policy Committee communique. The figures match: headline inflation was 14.63% year-on-year in September 2026, compared with 20.98% in September 2025. The CBN's November communique also reports 14.63% for September and 14.06% for October 2026.\n\nThe wording needs an important qualification. A lower year-on-year inflation rate means the average price level is rising more slowly than it did over the comparison period; it does not mean prices have returned to earlier levels or that the cost of living has fallen. The NBS September release reported month-on-month headline inflation of 0.06%, meaning the measured price level still increased between August and September.\n\nThe numeric comparison is supported, so the verdict applies to that narrow statistical statement. It does not establish that any single government policy caused the change. Attribution requires separate analysis and evidence.",
-    evidence: [
-      { title: "From Reforms to Delivery: Our Infrastructure Investment and Growth Strategy", publisher: "The State House, Abuja", url: "https://statehouse.gov.ng/from-reforms-to-delivery-our-infrastructure-investment-and-growth-strategy/", sourceType: "primary" },
-      { title: "Nigeria's inflation rate drops to 14.63%", publisher: "TheCable, reporting the NBS September 2026 CPI release", url: "https://www.thecable.ng/breaking-nigerias-inflation-rate-drops-to-14-63/", sourceType: "secondary" },
-      { title: "Monetary Policy Committee Communique No. 165, November 2026", publisher: "Central Bank of Nigeria", url: "https://www.cbn.gov.ng/Out/2026/CCD/MPC%20Communique%20No%20165%20of%20November%202026.pdf", sourceType: "primary" },
-      { title: "Fact-checking 2026 Independence Day claims by Nigerian president Bola Tinubu", publisher: "Africa Check", url: "https://africacheck.org/fact-checks/reports/fact-checking-2026-independence-day-claims-nigerian-president-bola-tinubu", sourceType: "independent-fact-check" }
+    id:"sabi-research-tinubu-inflation-september-2026",slug:"tinubu-september-2026-inflation-claim",
+    title:"Did headline inflation fall to 14.63% in September 2026?",
+    claim:"President Bola Ahmed Tinubu's October 2026 State House statement said headline inflation fell to 14.63% in September 2026 from 20.98% a year earlier.",
+    claimSource:"State House statement, 30 October 2026",claimType:"statistics",subject:"Bola Ahmed Tinubu",subjectKey:"bola-tinubu",subjectType:"elected-official",impact:"positive",
+    origin:"sabi-research",originLabel:"Sabi newsroom research",verdict:"True",
+    summary:"The figures match the NBS September 2026 CPI release: headline year-on-year inflation was 14.63%, down from 20.98% in September 2025. That is a slower rate of price increases, not a fall in the overall price level.",
+    findings:"Sabi checked the President's State House statement against the September 2026 Consumer Price Index figures attributed to the National Bureau of Statistics and the Central Bank of Nigeria's November 2026 Monetary Policy Committee communique. The figures match: headline inflation was 14.63% year-on-year in September 2026, compared with 20.98% in September 2025. The CBN's November communique also reports 14.63% for September and 14.06% for October 2026.\n\nThe wording needs an important qualification. A lower year-on-year inflation rate means the average price level is rising more slowly than it did over the comparison period; it does not mean prices have returned to earlier levels or that the cost of living has fallen. The NBS September release reported month-on-month headline inflation of 0.06%, meaning the measured price level still increased between August and September.\n\nThe numeric comparison is supported, so the verdict applies to that narrow statistical statement. It does not establish that any single government policy caused the change. Attribution requires separate analysis and evidence.",
+    evidence:[
+      {title:"From Reforms to Delivery: Our Infrastructure Investment and Growth Strategy",publisher:"The State House, Abuja",url:"https://statehouse.gov.ng/from-reforms-to-delivery-our-infrastructure-investment-and-growth-strategy/",sourceType:"primary"},
+      {title:"Nigeria's inflation rate drops to 14.63%",publisher:"TheCable, reporting the NBS September 2026 CPI release",url:"https://www.thecable.ng/breaking-nigerias-inflation-rate-drops-to-14-63/",sourceType:"secondary"},
+      {title:"Monetary Policy Committee Communique No. 165, November 2026",publisher:"Central Bank of Nigeria",url:"https://www.cbn.gov.ng/Out/2026/CCD/MPC%20Communique%20No%20165%20of%20November%202026.pdf",sourceType:"primary"},
+      {title:"Fact-checking 2026 Independence Day claims by Nigerian president Bola Tinubu",publisher:"Africa Check",url:"https://africacheck.org/fact-checks/reports/fact-checking-2026-independence-day-claims-nigerian-president-bola-tinubu",sourceType:"independent-fact-check"}
     ],
-    published: true,
-    status: "published",
-    publishedAt: "2026-11-27",
-    createdAt: "2026-11-27T12:00:00.000Z",
-    updatedAt: "2026-11-27T12:00:00.000Z",
-    reviewStandard: "sabi-editorial-research",
-    sourceClaimId: "sabi-research-tinubu-inflation-september-2026"
+    published:true,status:"published",publishedAt:"2026-11-27",createdAt:"2026-11-27T12:00:00.000Z",updatedAt:"2026-11-27T12:00:00.000Z",reviewStandard:"sabi-editorial-research",sourceClaimId:"sabi-research-tinubu-inflation-september-2026"
   },
   {
-    id: "sabi-research-obi-anambra-debt-handover-2026",
-    slug: "obi-anambra-debt-handover-claim",
-    title: "Does Anambra's 2026 debt table prove Peter Obi handed over $92.35m in debt?",
-    claim: "The Anambra State Government's September 2026 debt statement establishes that Peter Obi left $92.35 million outstanding on eight external loans when he handed over in March 2014.",
-    claimSource: "Anambra State Government debt statement, 16 September 2026; subsequent public reporting",
-    claimType: "statistics",
-    subject: "Peter Obi",
-    subjectKey: "peter-obi",
-    subjectType: "presidential-candidate",
-    impact: "negative",
-    origin: "sabi-research",
-    originLabel: "Sabi newsroom research",
-    verdict: "Misleading",
-    summary: "The $92.35m figure is presented as the balance outstanding on eight facilities at 30 June 2026, not the debt balance on 17 March 2014. The $123.77m figure is the sum of original facility amounts at signing. The public records reviewed do not establish the precise debt balance at handover.",
-    findings: "The Anambra State Government's 16 September 2026 statement lists eight external-loan facilities with a combined original value of US$123.771 million. Its table labels that amount as the loan amount in US dollars at the date each facility was signed. The same table gives US$92.353 million as the outstanding balance on those facilities at 30 June 2026. These are different measures and dates.\n\nThe Debt Management Office's state external-debt tables record Anambra's total external debt stock at US$30.324 million on 31 December 2013 and US$41.459 million on 30 June 2014. Those are the nearest published snapshots located around Peter Obi's 17 March 2014 handover date. The DMO's footnotes also qualify the totals by excluding certain arrears owed to the Federal Government arising from unanticipated disbursements. Neither snapshot is a loan-by-loan reconciliation exactly on 17 March 2014.\n\nThe documents support that the eight facilities were signed during the period of Obi's governorship and that substantial balances were still being repaid in 2026. They do not establish that US$92.35 million was the outstanding debt balance on the day he left office. They also do not establish that Anambra had no debt or liabilities at handover. To settle the exact handover position, the state should publish the drawdown, principal repayment and outstanding-balance schedule for each facility as at 17 March 2014, together with any domestic liabilities.\n\nThe claim is misleading because it treats a 2026 balance as though it were a 2014 handover figure. This finding is about the precision and dating of the number, not a finding of wrongdoing by any person.",
-    evidence: [
-      { title: "Gov Peter Obi and Record of Public Debt in Anambra", publisher: "Anambra State Government, 16 September 2026", url: "https://anambrastate.gov.ng/gov-peter-obi-and-record-of-public-debt-in-anambra/", sourceType: "primary" },
-      { title: "States and Federal Governments' External Debt Stock as at 31 December 2013", publisher: "Debt Management Office", url: "https://www.dmo.gov.ng/debt-profile/sub-national-debts/1068-federal-and-state-governments-external-debt-stock-as-at-31st-december-2013/file", sourceType: "primary" },
-      { title: "States and Federal Governments' External Debt Stock as at 30 June 2014", publisher: "Debt Management Office", url: "https://www.dmo.gov.ng/debt-profile/sub-national-debts/1065-federal-and-state-governments-external-debt-stock-as-at-30th-june-2014/file", sourceType: "primary" },
-      { title: "What records show about Anambra debt under Peter Obi, amid govt's $123.7m claim", publisher: "Premium Times", url: "https://www.premiumtimesng.com/regional/ssouth-east/912915-what-records-show-about-anambra-debt-under-peter-obi-amid-govts-123-7-claim.html", sourceType: "independent-reporting" },
-      { title: "Peter Obi rejects $123.77 million debt claim, challenges Anambra government", publisher: "Channels Television, 25 September 2026", url: "https://www.channelstv.com/2026/09/25/i-did-not-borrow-or-issue-bond-for-anambra-obi-challenges-123-77m-debt-claim/", sourceType: "response" }
+    id:"sabi-research-tinubu-h1-gdp-2026",slug:"tinubu-over-four-percent-economic-growth-claim",
+    title:"Did Nigeria's economy grow by more than 4% in 2026?",
+    claim:"In his 1 October 2026 Independence Day address, President Tinubu said: “Our economy has grown by over 4 per cent this year.”",
+    claimSource:"President Tinubu's Independence Day address, 1 October 2026",claimType:"statistics",subject:"Bola Ahmed Tinubu",subjectKey:"bola-tinubu",subjectType:"elected-official",impact:"positive",
+    origin:"sabi-research",originLabel:"Sabi newsroom research",verdict:"Mostly true",
+    summary:"The first-half figure supports growth of about 4.16% between January and June 2026. But only the first two quarters had been published when the President spoke, so the statement did not establish full-year 2026 growth.",
+    findings:"The President made the claim in his 1 October 2026 Independence Day broadcast. The National Bureau of Statistics' Q1 2026 report recorded real GDP growth of 3.89% year-on-year; its Q2 report recorded 4.43%. The two reported quarters together produced first-half real GDP of approximately ₦104.73 trillion, compared with ₦100.55 trillion in the first half of 2025. The first-half growth rate is about 4.16% when calculated from those totals. Africa Check independently re-did the arithmetic and assessed the first-half interpretation as correct.\n\nThe important limitation is time scope. At the date of the broadcast, Q3 and Q4 GDP results were not yet available. The first-half data supports the statement if “this year” is understood to mean the first six months of 2026; it cannot establish the growth rate for the full calendar year. The first quarter alone was below 4%.\n\nSabi therefore records the claim as Mostly true: the available year-to-date evidence supports a figure just above 4%, but the speech did not explicitly limit its claim to the first half and a full-year conclusion was not yet possible. This finding checks the reported growth figure, not whether economic gains were evenly felt by households or whether particular policies caused the growth.",
+    evidence:[
+      {title:"Nigeria's economy grows over 4% in 2026 – Tinubu",publisher:"Premium Times, 1 October 2026",url:"https://www.premiumtimesng.com/news/more-news/913746-nigerias-economy-grows-over-4-in-2026-tinubu.html",sourceType:"claim-report"},
+      {title:"National Bureau of Statistics",publisher:"NBS official statistical releases",url:"https://nigerianstat.gov.ng/",sourceType:"primary"},
+      {title:"Fact-checking 2026 Independence Day claims by Nigerian president Bola Tinubu",publisher:"Africa Check, 7 October 2026",url:"https://africacheck.org/fact-checks/reports/fact-checking-2026-independence-day-claims-nigerian-president-bola-tinubu",sourceType:"independent-fact-check"},
+      {title:"From Reforms to Delivery: Our Infrastructure Investment and Growth Strategy",publisher:"The State House, Abuja, 30 October 2026",url:"https://statehouse.gov.ng/from-reforms-to-delivery-our-infrastructure-investment-and-growth-strategy/",sourceType:"primary"}
     ],
-    published: true,
-    status: "published",
-    publishedAt: "2026-11-27",
-    createdAt: "2026-11-27T12:00:00.000Z",
-    updatedAt: "2026-11-27T12:00:00.000Z",
-    reviewStandard: "sabi-editorial-research",
-    sourceClaimId: "sabi-research-obi-anambra-debt-handover-2026"
+    published:true,status:"published",publishedAt:"2026-11-27",createdAt:"2026-11-27T12:00:00.000Z",updatedAt:"2026-11-27T12:00:00.000Z",reviewStandard:"sabi-editorial-research",sourceClaimId:"sabi-research-tinubu-h1-gdp-2026"
+  },
+  {
+    id:"sabi-research-obi-anambra-debt-handover-2026",slug:"obi-anambra-debt-handover-claim",
+    title:"Does Anambra's 2026 debt table prove Peter Obi handed over $92.35m in debt?",
+    claim:"The Anambra State Government's September 2026 debt statement establishes that Peter Obi left $92.35 million outstanding on eight external loans when he handed over in March 2014.",
+    claimSource:"Anambra State Government debt statement, 16 September 2026; subsequent public reporting",claimType:"statistics",subject:"Peter Obi",subjectKey:"peter-obi",subjectType:"presidential-candidate",impact:"negative",
+    origin:"sabi-research",originLabel:"Sabi newsroom research",verdict:"Misleading",
+    summary:"The $92.35m figure is the balance outstanding on eight facilities at 30 June 2026, not the debt balance on 17 March 2014. The $123.77m figure is the sum of original facility amounts at signing. The public records reviewed do not establish the precise debt balance at handover.",
+    findings:"The Anambra State Government's 16 September 2026 statement lists eight external-loan facilities with a combined original value of US$123.771 million. Its table labels that amount as the loan amount in US dollars at the date each facility was signed. The same table gives US$92.353 million as the outstanding balance on those facilities at 30 June 2026. These are different measures and dates.\n\nThe Debt Management Office's state external-debt tables record Anambra's total external debt stock at US$30.324 million on 31 December 2013 and US$41.459 million on 30 June 2014. Those are the nearest published snapshots located around Peter Obi's 17 March 2014 handover date. The DMO's footnotes also qualify the totals by excluding certain arrears owed to the Federal Government arising from unanticipated disbursements. Neither snapshot is a loan-by-loan reconciliation exactly on 17 March 2014.\n\nThe documents support that the eight facilities were signed during the period of Obi's governorship and that substantial balances were still being repaid in 2026. They do not establish that US$92.35 million was the outstanding debt balance on the day he left office. They also do not establish that Anambra had no debt or liabilities at handover. To settle the exact handover position, the state should publish the drawdown, principal repayment and outstanding-balance schedule for each facility as at 17 March 2014, together with any domestic liabilities.\n\nThe claim is misleading because it treats a 2026 balance as though it were a 2014 handover figure. This finding is about the precision and dating of the number, not a finding of wrongdoing by any person.",
+    evidence:[
+      {title:"Gov Peter Obi and Record of Public Debt in Anambra",publisher:"Anambra State Government, 16 September 2026",url:"https://anambrastate.gov.ng/gov-peter-obi-and-record-of-public-debt-in-anambra/",sourceType:"primary"},
+      {title:"States and Federal Governments' External Debt Stock as at 31 December 2013",publisher:"Debt Management Office",url:"https://www.dmo.gov.ng/debt-profile/sub-national-debts/1068-federal-and-state-governments-external-debt-stock-as-at-31st-december-2013/file",sourceType:"primary"},
+      {title:"States and Federal Governments' External Debt Stock as at 30 June 2014",publisher:"Debt Management Office",url:"https://www.dmo.gov.ng/debt-profile/sub-national-debts/1065-federal-and-state-governments-external-debt-stock-as-at-30th-june-2014/file",sourceType:"primary"},
+      {title:"What records show about Anambra debt under Peter Obi, amid govt's $123.7m claim",publisher:"Premium Times",url:"https://www.premiumtimesng.com/regional/ssouth-east/912915-what-records-show-about-anambra-debt-under-peter-obi-amid-govts-123-7-claim.html",sourceType:"independent-reporting"},
+      {title:"Peter Obi rejects $123.77 million debt claim, challenges Anambra government",publisher:"Channels Television, 25 September 2026",url:"https://www.channelstv.com/2026/09/25/i-did-not-borrow-or-issue-bond-for-anambra-obi-challenges-123-77m-debt-claim/",sourceType:"response"}
+    ],
+    published:true,status:"published",publishedAt:"2026-11-27",createdAt:"2026-11-27T12:00:00.000Z",updatedAt:"2026-11-27T12:00:00.000Z",reviewStandard:"sabi-editorial-research",sourceClaimId:"sabi-research-obi-anambra-debt-handover-2026"
+  },
+  {
+    id:"sabi-research-obi-no-schools-anambra-2026",slug:"obi-did-not-build-a-single-school-claim",
+    title:"Did Peter Obi spend eight years as Anambra governor without building a single school?",
+    claim:"A viral graphic alleged that Peter Obi was the only governor in Nigerian history who did not build a single school during eight years governing Anambra.",
+    claimSource:"Viral social-media graphic documented by FactCheckAfrica, 31 October 2026",claimType:"public-statement",subject:"Peter Obi",subjectKey:"peter-obi",subjectType:"presidential-candidate",impact:"negative",
+    origin:"sabi-research",originLabel:"Sabi newsroom research",verdict:"Misleading",
+    summary:"Obi acknowledged that he did not establish new schools. However, records document classroom construction, school-building rehabilitation and education infrastructure spending during his tenure. The “only governor in history” part is unsupported by comparative evidence.",
+    findings:"Sabi reviewed the viral graphic documented by FactCheckAfrica and the records identified in its November 2026 fact-check. The wording conflates two different things: establishing entirely new schools and constructing or rehabilitating buildings within existing schools. Peter Obi acknowledged in 2024 that he did not build new schools as standalone institutions during his time as Anambra governor. That admission does not mean no school construction took place.\n\nFactCheckAfrica cites a 2012 state programme targeting 4,000 new classrooms, with 1,000 reported completed; a 2013 allocation of more than ₦5.7 billion to educational institutions and mission schools for renovation, rehabilitation and construction; and a laboratory rehabilitation and equipment programme that reached more than 500 schools. It also cites a November 2013 Channels Television report on a ₦1.5 billion infrastructure-upgrade grant to 150 schools under the World Bank-supported State Education Programme Investment Project. The 2014 Anambra government record provides an additional source trail for education interventions.\n\nThe evidence therefore contradicts the broad interpretation that not a single school facility or classroom was built or improved. The graphic's superlative claim that Obi was the only governor in Nigeria's history to have done so is also unsupported: it offers no comparative review of the records of other governors across the country's states.\n\nThe verdict is Misleading. It does not erase the distinction that Obi did not establish entirely new schools, and it does not make a comparative judgement about his overall education performance. The impact label is negative because the circulating claim frames Obi's record unfavourably; it is not a judgement on the truth of the claim.",
+    evidence:[
+      {title:"FACT CHECK: Did Peter Obi Spend Eight Years as Anambra Governor Without Building a Single School?",publisher:"FactCheckAfrica, November 2026",url:"https://factcheckafrica.net/fact-check-did-peter-obi-spend-eight-years-as-anambra-governor-without-building-a-single-school/",sourceType:"independent-fact-check"},
+      {title:"The record: Peter Obi's achievements in Anambra, 2014 publication",publisher:"Anambra State Government record hosted as a document archive",url:"https://peterobi.online/anambra-achievements/",sourceType:"historical-government-record"},
+      {title:"Anambra State Education Rebirth: The Peter Obi Model",publisher:"Policy assessment referenced by FactCheckAfrica",url:"https://selonnes.com/",sourceType:"policy-assessment"},
+      {title:"2013 school infrastructure support under SEPIP",publisher:"Channels Television (as cited by FactCheckAfrica)",url:"https://www.channelstv.com/",sourceType:"independent-reporting"}
+    ],
+    published:true,status:"published",publishedAt:"2026-11-27",createdAt:"2026-11-27T12:00:00.000Z",updatedAt:"2026-11-27T12:00:00.000Z",reviewStandard:"sabi-editorial-research",sourceClaimId:"sabi-research-obi-no-schools-anambra-2026"
   }
 ];
