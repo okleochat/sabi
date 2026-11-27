@@ -8,7 +8,7 @@ const impactLabels:Record<string,string>={positive:"Positive for subject",negati
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const rows=await getPublishedRecords("factchecks");const row=rows.find((x:any)=>x.slug===slug||x.id===slug);return {title:row?.title||"Sabi fact-check"};}
 export default async function FactCheckPage({params}:{params:Promise<{slug:string}>}){
  const {slug}=await params;const rows=await getPublishedRecords("factchecks");const r=rows.find((x:any)=>x.slug===slug||x.id===slug);if(!r)notFound();
- const evidence=Array.isArray(r.evidence)?r.evidence:[],origin=r.origin==="reader-submission"?"Reader submission":"Sabi newsroom research";
+ const evidence=Array.isArray(r.evidence)?r.evidence:[],origin=r.origin==="reader-submission"?"Reader submission":r.origin==="sabi-research"?"Sabi newsroom research":"Origin not recorded";
  return <article>
   <section className="story-hero"><div className="story-hero-inner"><div className="story-byline">SABI CHECK / PUBLISHED FACT-CHECK</div><h1>{r.title||r.claim}</h1><p>{r.summary||""}</p><div className="verdict-stamp">{r.verdict||"VERDICT NOT RECORDED"}</div></div></section>
   <div className="story-reading">
