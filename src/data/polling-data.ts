@@ -1,5 +1,6 @@
 export type PollCategory = "party-preference" | "candidate-vote-intention" | "turnout-confidence" | "election-confidence" | "government-approval";
 export type PollResult = {label:string; value:number; unit:"percent"; note?:string};
+export type CandidateSentimentResult = {candidate:string; measure:"net-favourability"; value:number; unit:"points"; note?:string};
 export type PollRecord = {
   id:string;
   title:string;
@@ -15,6 +16,7 @@ export type PollRecord = {
   marginOfError:string;
   sponsor:string;
   results:PollResult[];
+  candidateSentiment?:CandidateSentimentResult[];
   sourceUrl:string;
   methodologyUrl?:string;
   limitations:string[];
@@ -56,9 +58,13 @@ export const polls:PollRecord[] = [
       {label:"Undecided",value:11.3,unit:"percent"},
       {label:"Other / unreported categories",value:9.7,unit:"percent",note:"The pollster's free summary does not disaggregate this remainder."},
     ],
-    sourceUrl:"https://openpolls.africa/polls",
+    candidateSentiment:[
+      {candidate:"Bola Ahmed Tinubu",measure:"net-favourability",value:-58.5,unit:"points",note:"SBM reports a net favourability score, not a vote share."},
+      {candidate:"Peter Obi",measure:"net-favourability",value:58.3,unit:"points",note:"SBM reports a net favourability score, not a vote share."},
+    ],
+    sourceUrl:"https://vst.sbmintel.com/2026/06/11/the-sbm-voter-sentiment-tracker-how-nigeria-may-vote/",
     limitations:[
-      "This measures party preference, not support for named presidential candidates.",
+      "The published NDC/APC/ADC/undecided figures are party preference, while the separate candidate measurements are net favourability. Neither is a final-ballot national vote-intention average.",
       "The sample is not designed to represent all eligible voters because respondents were approached in public places.",
       "No margin of error is published.",
       "The fieldwork predates the final INEC presidential candidate list.",
@@ -88,9 +94,15 @@ export const polls:PollRecord[] = [
       {label:"APC",value:25.5,unit:"percent"},
       {label:"Other / unreported categories",value:32.3,unit:"percent",note:"The free summary publishes only the two leading party shares; the remainder is not broken down."},
     ],
-    sourceUrl:"https://openpolls.africa/polls",
+    candidateSentiment:[
+      {candidate:"Bola Ahmed Tinubu",measure:"net-favourability",value:-3.3,unit:"points"},
+      {candidate:"Peter Obi",measure:"net-favourability",value:52.8,unit:"points"},
+      {candidate:"Rabiu Kwankwaso",measure:"net-favourability",value:1.6,unit:"points"},
+      {candidate:"Rotimi Amaechi",measure:"net-favourability",value:-27.7,unit:"points"},
+    ],
+    sourceUrl:"https://www.sbmintel.com/2026/09/the-sbm-voter-sentiment-tracker-a-narrower-race/",
     limitations:[
-      "This measures party preference, not candidate vote intention.",
+      "This measures party preference and separately reports candidate net favourability. Neither measure is a final-ballot national vote-intention average.",
       "The sampling method, mode and margin of error are not stated in the published summary.",
       "The free summary reports only the two leading parties; the remaining 32.3% is not disaggregated.",
       "It predates the final INEC presidential candidate list.",
