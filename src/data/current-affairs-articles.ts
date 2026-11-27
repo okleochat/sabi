@@ -127,4 +127,46 @@ export const currentAffairsArticles:StarterArticle[]=[
   {title:"Gunmen kill 16 in attack on Plateau community",publisher:"TheCable",publishedAt:"2026-11-26",url:"https://www.thecable.ng/gunmen-kill-16-in-attack-on-plateau-community/"}
  ]
 }
+,
+{
+ id:"opposition-summit-november-30-2026",
+ slug:"opposition-summit-november-30-2026",
+ title:"Opposition summit set for 30 November — but no joint ticket is agreed",
+ summary:"Six opposition groupings plan to consider three cooperation documents. Makinde confirms talks with Atiku and Obi, while his campaign denies a reported step-down deal; the summit has not yet happened.",
+ category:"2027 election watch",
+ label:"ELECTION WATCH / 27 NOV 2026",
+ author:"The Sabi Desk",
+ publishedAt:"2026-11-27",
+ updatedAt:"2026-11-27",
+ readTime:"6 min",
+ featured:false,
+ heroArt:"ink",
+ body:[
+  {type:"paragraph",text:"A second summit of opposition political parties is scheduled for Monday, 30 November 2026, at the NAF Conference Centre in Abuja. The Coalition for Democracy says the participating groups are the African Democratic Congress (ADC), Allied Peoples Movement (APM), Nigeria Democratic Congress (NDC), a faction of the Peoples Democratic Party, the Peoples Redemption Party (PRP) and the Social Democratic Party (SDP). The Sun reports that the PDP group is the Tanimu Turaki-led faction."},
+  {type:"paragraph",text:"Expected presidential candidates include Atiku Abubakar (ADC), Peter Obi (NDC), Seyi Makinde (APM), Donald Duke (PRP) and Adewole Adebayo (SDP), alongside party leaders. The coalition says the summit will consider three documents: the National Covenant for Democratic Renewal, the Framework for Opposition Unity and the National Reform Programme. They were developed by working groups after the first summit on 31 August. These are documents for consideration at a future meeting; they have not been shown as adopted in the sources reviewed."},
+  {type:"heading",text:"Makinde confirms a loose arrangement — not a merger"},
+  {type:"paragraph",text:"In an interview with Chude Jideonwo published on 25–26 November, Oyo Governor and APM presidential candidate Seyi Makinde said there would be an arrangement involving himself, Atiku and Obi to challenge President Tinubu. He also said it would not be a formal party merger like the 2015 APC formation. The interview and his remarks were reported by TheCable and quoted by PUNCH. Neither report provides a signed agreement, a candidate-selection mechanism or a settled joint ticket."},
+  {type:"heading",text:"The reported Makinde step-down deal is disputed"},
+  {type:"paragraph",text:"Lere Olayinka, a media aide to FCT Minister Nyesom Wike, posted on Facebook and X that Makinde would step down for Atiku on 30 November and negotiate a Secretary to the Government of the Federation appointment. PUNCH reproduced the post, but the original social-media post URL was not located in this review. The PUNCH report also records an Atiku ally confirming that talks had taken place, but not confirming a withdrawal or SGF agreement."},
+  {type:"paragraph",text:"Makinde’s APM campaign spokesperson, Richard Ihediwa, told PUNCH there was no decision for the governor to withdraw and said he remained focused on the race. Atiku’s public-communication aide, Phrank Shaibu, questioned Olayinka’s authority to speak for the ADC, and the ADC declined to confirm the reported arrangement. The evidence therefore supports the existence of consultations, not a verified decision by Makinde to withdraw or accept an appointment."},
+  {type:"heading",text:"Atiku’s court position remains relevant"},
+  {type:"paragraph",text:"A Federal High Court ruling on 5 November set aside the processes that produced the ADC leadership and Atiku’s nomination. Reuters reported that the ADC rejected the decision and said it would appeal. This desk has not located a final appellate outcome in the sources checked by 27 November. The ruling should be reported as a live legal issue, not as a final determination of the election field."},
+  {type:"heading",text:"What is known — and what is not"},
+  {type:"list",items:[
+   "Known: a six-group opposition summit is scheduled for 30 November, with three cooperation documents listed for consideration.",
+   "Known: Makinde publicly confirmed discussions with Atiku and Obi and described a loose arrangement rather than a formal merger.",
+   "Disputed: the claim that Makinde has agreed to withdraw for Atiku and seek an SGF appointment. His campaign denies any decision to withdraw.",
+   "Not established: a consensus presidential candidate, a signed pact, a formal merger, a final ticket, or a confirmed withdrawal by any candidate.",
+   "Still open: the authority of each participating party or faction to bind its candidates and members, and the effect of Atiku’s pending court challenge."
+  ]},
+  {type:"callout",text:"The 30 November summit is a scheduled political event, not a completed coalition. Sabi will update this record only when the documents, signatories, party decisions and any candidate changes can be verified."}
+ ],
+ sources:[
+  {title:"2027: APC unfazed as Atiku, Obi, Makinde meet Monday",publisher:"PUNCH",publishedAt:"2026-11-27",url:"https://punchng.com/2027-apc-unfazed-as-atiku-obi-makinde-meet-monday/"},
+  {title:"Atiku, Obi, others expected at November 30 Opposition Summit",publisher:"The Sun",publishedAt:"2026-11-27",url:"https://thesun.ng/atiku-obi-others-expected-november-30-opposition-summit/"},
+  {title:"Atiku, Obi, Makinde expected to sign opposition unity pact on Monday",publisher:"Nigeria Info FM",publishedAt:"2026-11-27",url:"https://www.nigeriainfo.fm/news/2027-elections/atiku-obi-makinde-expected-to-sign-opposition-unity-pact-on-monday/"},
+  {title:"Makinde: Opposition will enter into an arrangement to defeat Tinubu in 2027",publisher:"TheCable",publishedAt:"2026-11-26",url:"https://www.thecable.ng/makinde-opposition-will-enter-into-an-arrangement-to-defeat-tinubu-in-2027/"},
+  {title:"Nigerian court voids candidacy of opposition ADC's Atiku for 2027 election",publisher:"Reuters",publishedAt:"2026-11-05",url:"https://www.reuters.com/world/africa/nigerian-court-voids-candidacy-opposition-adcs-atiku-2027-election-2026-11-05/"}
+ ]
+}
 ];
