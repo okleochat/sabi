@@ -142,7 +142,7 @@ export const currentAffairsArticles:StarterArticle[]=[
   "body": [
     {
       "type": "paragraph",
-      "text": "The Independent National Electoral Commission (INEC) scheduled a nationwide Mock Accreditation and Result Upload Exercise for Saturday, 28 November 2026, from 8:30 a.m. to 2:30 p.m. The Commission says two polling units in each of Nigeria's 8,838 Registration Areas will take part across the 36 states and the Federal Capital Territory. That design implies 17,676 selected polling units."
+      "text": "The Independent National Electoral Commission (INEC) scheduled a nationwide Mock Accreditation and Result Upload Exercise for Saturday, 28 November 2026, from 8:30 a.m. to 2:30 p.m. The Commission says two polling units in each of Nigeria's 8,838 Registration Areas will take part across the 36 states and the Federal Capital Territory. That design implies 17,676 selected polling units. INEC's official election calendar separately lists the Presidential and National Assembly elections for 16 January 2027 and the Governorship and State House of Assembly elections for 6 February 2027; the mock does not replace or change those dates."
     },
     {
       "type": "paragraph",
@@ -198,6 +198,11 @@ export const currentAffairsArticles:StarterArticle[]=[
       "title": "List of polling units for the nationwide mock accreditation scheduled to hold on November 28th, 2026",
       "publisher": "INEC",
       "url": "https://inecnigeria.org/press/list-of-polling-units-for-the-nationwide-mock-accreditation-scheduled-to-hold-on"
+    },
+    {
+      "title": "Full Election Calendar and Timetable",
+      "publisher": "INEC",
+      "url": "https://www.inecnigeria.org/elections/calendar/"
     },
     {
       "title": "INEC selects 17,676 polling units for mock BVAS exercise",
