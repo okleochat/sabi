@@ -1,6 +1,132 @@
 import type {StarterArticle} from "./content-types";
 export const currentAffairsArticles:StarterArticle[]=[
 {
+  "id": "federal-2026-budget-revision-debt-2026-11-28",
+  "slug": "federal-2026-budget-revision-debt-2026-11-28",
+  "title": "Tinubu's proposed ₦65.18tn budget reset: spending falls, deficit stays",
+  "summary": "The President's repeal-and-re-enactment proposal cuts 2026 expenditure by ₦3.147tn but retains the ₦31.457tn deficit and ₦29.218tn borrowing plan. Both chambers have moved it through second reading; it is not yet a new law.",
+  "category": "Federal budget and debt",
+  "label": "FEDERAL BUDGET / 28 NOV 2026",
+  "author": "The Sabi Desk",
+  "publishedAt": "2026-11-28",
+  "updatedAt": "2026-11-28",
+  "readTime": "7 min read",
+  "featured": false,
+  "heroArt": "ledger",
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "In a letter dated 20 November 2026, President Bola Tinubu asked the National Assembly to repeal and re-enact the 2026 Appropriation Act alongside a revised Federal Government fiscal framework. The proposal reduces aggregate expenditure from ₦68.323 trillion to ₦65.176 trillion, a cut of ₦3.147 trillion. The request is a proposed amendment, not a new appropriation already in force."
+    },
+    {
+      "type": "heading",
+      "text": "The headline cut does not reduce the stated deficit"
+    },
+    {
+      "type": "paragraph",
+      "text": "The revised framework projects Federal Government revenue, including government-owned enterprises, of ₦33.720 trillion and capital expenditure of ₦26.232 trillion. It keeps the fiscal deficit at ₦31.457 trillion, or 5.64% of GDP, and planned new borrowing at ₦29.218 trillion: ₦18.428 trillion domestic and ₦10.790 trillion external. The President says the proposed US$7.7 billion external borrowing would finance an existing foreign-borrowing provision rather than increase the overall borrowing envelope."
+    },
+    {
+      "type": "paragraph",
+      "text": "The letter says the changes would regularise some NNPCL expenditures incurred on behalf of the Federation, address underprovided debt-service obligations, recognise issued capital warrants and supplementation commitments, and provide refunds to MDAs and special accounts. It also says MDA capital provisions consist mainly of amounts already warranted. The underlying warrants, payment records, NNPCL schedules and project-level allocations have not been independently reconciled in this update."
+    },
+    {
+      "type": "heading",
+      "text": "Where the bill stands"
+    },
+    {
+      "type": "paragraph",
+      "text": "The Federal Ministry of Information reported on 24 November that the Senate had received the proposal and referred it for further action. Contemporaneous reporting on 25 November says the Senate and House of Representatives moved the bill through second reading. The Senate then adjourned plenary until 1 December for committee work. Sabi has not located final passage by both chambers or presidential assent as at 28 November; the existing appropriation remains the operative law until the legislative process is completed."
+    },
+    {
+      "type": "paragraph",
+      "text": "A separate borrowing decision must not be collapsed into the revised budget figures. The National Assembly Library Trust Fund's 24 November House plenary summary records approval of a 2026–2027 supplementary external borrowing plan of US$20.52 billion and €1.04 billion, plus a resolution concerning external borrowing already provided for in the 2026 Appropriation Act. THISDAY reports a corresponding Senate approval. The detailed schedules are needed to map those authorisations against the ₦29.218 trillion borrowing line and avoid double-counting."
+    },
+    {
+      "type": "heading",
+      "text": "A debt-ratio claim needs its denominator and date"
+    },
+    {
+      "type": "paragraph",
+      "text": "During the Senate debate, THISDAY reported that Deputy Senate President Barau Jibrin put Nigeria's current debt-to-GDP ratio at about 35% and said it could rise to about 42% after the proposed borrowing, still below a 70% benchmark. The report paraphrases his statement; Sabi has not located a verbatim transcript or the calculation behind the 42% figure."
+    },
+    {
+      "type": "paragraph",
+      "text": "The latest official actual figure located in this scan is the CBN's Second Quarter 2026 Economic Report: consolidated public debt of ₦166.79 trillion, or 31.78% of GDP, at end-June 2026. The DMO's June 30 debt table confirms total debt of ₦166.788 trillion, comprising ₦91.590 trillion domestic and ₦75.198 trillion external debt. The IMF's May 2026 Article IV report projected gross public debt at 35.4% of GDP for 2026, which is closer to the 35% figure but is a projection, not the end-June actual."
+    },
+    {
+      "type": "paragraph",
+      "text": "The 70% figure is the IMF/World Bank Market Access Country benchmark. The DMO's 2024 Debt Sustainability Analysis also records a 60% recommended national ceiling in the 2024–2027 Medium-Term Debt Management Strategy; the CBN's Q2 report describes 60% as the national ceiling and 70% as the IMF benchmark. These are different reference points, not interchangeable thresholds. The 42% post-borrowing estimate still needs its debt perimeter, drawdown assumptions, exchange rate, GDP denominator and treatment of overlapping borrowing approvals."
+    },
+    {
+      "type": "heading",
+      "text": "What Sabi will track next"
+    },
+    {
+      "type": "list",
+      "items": [
+        "The final bill text, committee reports, passage in each chamber and any presidential assent",
+        "A line-by-line bridge between the original and revised appropriation, including the NNPCL and debt-service adjustments",
+        "The issued capital warrants and project-level amounts described as already warranted",
+        "The separate external borrowing authorisations, drawdowns, loan terms, project allocations and whether any amounts overlap",
+        "The next DMO/CBN debt stock release and the GDP denominator used for the 35% and 42% claims"
+      ]
+    },
+    {
+      "type": "callout",
+      "text": "A lower expenditure ceiling is not automatically a lower deficit or lower debt. The revised framework retains the stated deficit and borrowing plan; the final bill and financing records will show what actually changes."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Tinubu Seeks Senate Approval to Reduce 2026 Budget Expenditure by ₦3.14 Trillion",
+      "publisher": "Federal Ministry of Information and National Orientation",
+      "publishedAt": "2026-11-24",
+      "url": "https://fmino.gov.ng/tinubu-seeks-senate-approval-to-reduce-2026-budget-expenditure-by-%E2%82%A63-14-trillion/"
+    },
+    {
+      "title": "House of Representatives Plenary Highlights for Tuesday, 24 November 2026",
+      "publisher": "National Assembly Library Trust Fund",
+      "publishedAt": "2026-11-24",
+      "url": "https://naltf.gov.ng/house-of-representatives-plenary-highlights-for-tuesday-24-november-2026/"
+    },
+    {
+      "title": "Tinubu Cuts 2026 Budget by N3.2trn, Retains N31.4trn Deficit, Senate Approves External Borrowing Plan",
+      "publisher": "THISDAY",
+      "publishedAt": "2026-11-25",
+      "url": "https://www.thisdaylive.com/2026/11/25/tinubu-cuts-2026-budget-by-n3-2trn-retains-n31-4trn-deficit-senate-approves-external-borrowing-plan/"
+    },
+    {
+      "title": "Reps pass N65.17trn 2026 budget bill for second reading",
+      "publisher": "BusinessDay",
+      "publishedAt": "2026-11-25",
+      "url": "https://businessday.ng/news/article/reps-pass-n65-17trn-2026-budget-bill-for-second-reading/"
+    },
+    {
+      "title": "CBN Economic Report, Second Quarter 2026",
+      "publisher": "Central Bank of Nigeria",
+      "url": "https://www.cbn.gov.ng/Out/2026/RSD/Second%20Quarter%202026%20Economic%20Report.pdf"
+    },
+    {
+      "title": "Nigeria's Total Public Debt Portfolio as at June 30, 2026",
+      "publisher": "Debt Management Office",
+      "publishedAt": "2026-09-25",
+      "url": "https://dmo.gov.ng/total-public-debts/6080-nigeria-s-total-public-debt-as-at-june-30-2026/file"
+    },
+    {
+      "title": "Nigeria 2026 Article IV Consultation — Staff Report",
+      "publisher": "International Monetary Fund",
+      "publishedAt": "2026-05-07",
+      "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1ngaea2026001.pdf"
+    },
+    {
+      "title": "2024 Debt Sustainability Analysis",
+      "publisher": "Debt Management Office",
+      "url": "https://dmo.gov.ng/6129-2024-debt-sustainability-analysis-dsa-report/file"
+    }
+  ]
+},
+{
   "id": "inec-nationwide-mock-accreditation-2026-11-28",
   "slug": "inec-nationwide-mock-accreditation-2026-11-28",
   "title": "INEC's nationwide mock: what the BVAS test can—and cannot—prove",
