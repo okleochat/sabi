@@ -467,3 +467,56 @@ Reuters reported that a Federal High Court on 5 November set aside the processes
 - Nigeria Info FM, *Atiku, Obi, Makinde expected to sign opposition unity pact on Monday*, 27 November 2026: https://www.nigeriainfo.fm/news/2027-elections/atiku-obi-makinde-expected-to-sign-opposition-unity-pact-on-monday/
 - TheCable, *Makinde: Opposition will enter into an arrangement to defeat Tinubu in 2027*, 26 November 2026: https://www.thecable.ng/makinde-opposition-will-enter-into-an-arrangement-to-defeat-tinubu-in-2027/
 - Reuters, *Nigerian court voids candidacy of opposition ADC's Atiku for 2027 election*, 5 November 2026: https://www.reuters.com/world/africa/nigerian-court-voids-candidacy-opposition-adcs-atiku-2027-election-2026-11-05/
+
+ 
+## 1E. INEC nationwide mock accreditation and result-upload exercise — 28 November 2026
+
+INEC scheduled a nationwide Mock Accreditation and Result Upload Exercise for 28 November 2026, from 08:30 to 14:30 WAT. Its official announcement says the exercise will use BVAS and test accreditation and electronic result transmission. INEC's official list page links state-by-state polling-unit lists.
+
+- INEC's stated design is two polling units in each of 8,838 Registration Areas, which gives 17,676 by arithmetic.
+- PUNCH and Channels Television reported 17,676 selected polling units (24 Nov 2026). Vanguard reported 17,656 (23 Nov 2026). Sabi has not yet independently counted all entries in the official state PDFs; preserve the discrepancy until the list is counted.
+- The exercise is a test, not a candidate contest or election result. Do not report a winner or infer election readiness from the announcement.
+- At Chatham House on 12 November, INEC Chairman Joash Amupitan said the Commission had developed validation safeguards so inaccurate polling-unit results or over-voting figures would not be uploaded to IReV. This is an official technical assurance, not independent evidence of system performance.
+- **Evidence still required:** full test protocol; number of units/devices participating; accreditation and upload success/failure rates; error logs; network conditions; retry and fallback handling; audit trails; independent observer reports; corrective actions; and evidence that collation-centre controls are also tested.
+
+Sources:
+- INEC, *INEC sets 28th November, 2026 for nationwide mock accreditation exercise*, published 17 Nov 2026: https://www.inecnigeria.org/press/inec-sets-28th-november-2026-for-nationwide-mock-accreditation-exercise
+- INEC, *List of polling units for the nationwide mock accreditation scheduled to hold on November 28th, 2026*, accessed 28 Nov 2026: https://inecnigeria.org/press/list-of-polling-units-for-the-nationwide-mock-accreditation-scheduled-to-hold-on
+- PUNCH, 24 Nov 2026: https://punchng.com/inec-selects-17676-polling-units-for-mock-bvas-exercise/
+- Channels Television, 24 Nov 2026: https://www.channelstv.com/2026/11/24/inec-selects-17676-polling-units-for-saturdays-nationwide-bvas-mock-accreditation-exercise/
+- Vanguard, 23 Nov 2026: https://www.vanguardngr.com/2026/11/mock-accreditation-inec-publishes-17656-selected-pus-across-36-states-fct/
+
+## 1F. Osun 2027 draft budget — revenue and expenditure reconciliation
+
+Governor Ademola Adeleke presented the proposed 2027 Osun budget on 25 November 2026. The official speech gives total proposed expenditure of ₦927,370,584,800 and capital projects of ₦559,307,166,790.
+
+**Expenditure arithmetic:** personnel ₦130,011,911,330 + overheads ₦238,051,506,680 + capital ₦559,307,166,790 = ₦927,370,584,800. This reconciles exactly.
+
+**Revenue figures listed in the speech:** FAAC ₦400,926,611,400 + independent revenue ₦250,172,402,980 + development-partner receipts ₦230,646,070,420 = ₦881,745,084,800. Compared with proposed expenditure, the three listed sources leave ₦45,625,500,000 unexplained in the speech summary.
+
+**Editorial status:** research lead, not a verdict. The speech may omit other receipts or financing items. Do not describe the difference as debt, an unlawful deficit or missing funds without the full estimates. The proposal remains subject to legislative consideration and is not evidence of actual spending or completed projects.
+
+Evidence required:
+- Full 2027 budget estimates and financing schedule
+- Grants, capital receipts, borrowing and other financing items
+- Revenue assumptions and recent outturns for FAAC and IGR
+- Sectoral and MDA allocations, project register, costs and procurement details
+- 2026 budget implementation reports and audited accounts
+
+Sources:
+- Osun State Government, *2027 Budget Speech*, 25 Nov 2026: https://www.osunstate.gov.ng/2026/11/osun-state-2027-budget-speech-presented-by-governor-ademola-adeleke-to-the-house-of-assembly-on-wednesday-25th-november-2026/
+- The Guardian Nigeria, 25 Nov 2026: https://guardian.ng/news/capital-project-gulps-n559bn-as-adeleke-presents-n927-37bn-budget-in-osun/
+- Vanguard, 26 Nov 2026: https://www.vanguardngr.com/2026/11/2027-budget-adeleke-presents-%E2%82%A6927-3bn-targets-youth-development-job-creation/
+
+## 1G. Polling desk review — 28 November 2026
+
+- No new, methodologically documented national candidate vote-intention poll was located in this scan. No candidate-support average, ranking, win probability or forecast is published.
+- Party preference, candidate favourability, turnout intention, election confidence and government approval remain separate measures.
+- Yiaga Africa's NVIS 3.0 remains a September 2026 turnout/confidence survey, not a candidate vote-intention poll. Its landing page still shows conflicting headline and detailed-story figures for INEC confidence (29% versus 34%); Sabi preserves the discrepancy rather than selecting a convenient figure.
+- Afrobarometer's election-expectations release published 11 Nov 2026 reports June–July 2024 Nigeria Round 10 fieldwork. It is historical survey evidence, not a new November 2026 poll. The official Round 10 summary confirms the 1,600-person nationally representative random, stratified sample and ±2.5 percentage-point margin of error.
+
+Sources:
+- Yiaga Africa, NVIS 3.0: https://nvis.yiaga.org/
+- Yiaga Africa, report resource page: https://yiaga.org/resources/willing-but-wary-report-of-the-national-voting-intentions
+- Afrobarometer, 11 Nov 2026 release: https://www.afrobarometer.org/wp-content/uploads/2026/11/News-release-Nigerians-doubt-quality-of-upcoming-election-Afrobarometer-bh-11nov26.pdf
+- Afrobarometer, Nigeria Round 10 2024 summary: https://www.afrobarometer.org/wp-content/uploads/2025/08/R10-Summary-of-results-Nigeria-Afrobarometer-bh-7aug25.pdf
