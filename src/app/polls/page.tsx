@@ -17,7 +17,8 @@ const categoryLabel:Record<string,string>={
 export default function PollingDeskPage(){
  const average=calculatePollingAverage();
  const partyPolls=polls.filter(p=>p.category==="party-preference");
- const publicMood=polls.filter(p=>p.category!=="party-preference");
+ const candidateVoteSnapshots=polls.filter(p=>p.category==="candidate-vote-intention");
+ const publicMood=polls.filter(p=>p.category!=="party-preference"&&p.category!=="candidate-vote-intention");
  return <div className="page-shell">
   <section className="page-intro">
    <div className="eyebrow"><span/>SABI POLLING DESK / NIGERIA 2027</div>
@@ -29,12 +30,12 @@ export default function PollingDeskPage(){
    </div>
   </section>
   <section className="page-section">
-   <ShareCard kind="SABI POLLING DESK" kicker="NIGERIA / 2027" title="Polls, with the methods attached." summary="Track what has actually been measured, who was interviewed, how they were selected and what the survey can legitimately tell us." details={[{label:"Published survey records",value:String(polls.length)},{label:"Candidate vote averages",value:average?"Available":"Withheld"},{label:"Research checked",value:"27 Nov 2026"}]} path="/polls"/>
+   <ShareCard kind="SABI POLLING DESK" kicker="NIGERIA / 2027" title="Polls, with the methods attached." summary="Track what has actually been measured, who was interviewed, how they were selected and what the survey can legitimately tell us." details={[{label:"Published survey records",value:String(polls.length)},{label:"Candidate vote averages",value:average?"Available":"Withheld"},{label:"Research checked",value:"28 Nov 2026"}]} path="/polls"/>
    <div className="poll-status-panel">
     <div>
      <div className="eyebrow">NATIONAL CANDIDATE VOTE-INTENTION ESTIMATE</div>
      <div className="poll-status-value">{average?"POLLING AVERAGE AVAILABLE":"NOT YET CALCULATED"}</div>
-     <p>{average?average.note:"As of 27 November 2026, the published records reviewed do not meet Sabi's entry rules for a final-ballot, national probability-sample average. The available presidential party-preference figures use non-random or undisclosed sampling; other national surveys measure turnout intention and election confidence, not candidate vote shares."}</p>
+     <p>{average?average.note:"As of 28 November 2026, no published survey meets Sabi's entry rules for a final-ballot, national probability-sample average. Two self-selected online ticket exercises are shown separately as context only; neither meets the sampling, question-transparency and final-ballot requirements. Party-preference, turnout-intention and election-confidence measures remain separate from candidate vote intention."}</p>
     </div>
     <div className="poll-status-meta">
      <div className="eyebrow">WHEN THE AVERAGE CAN APPEAR</div>
@@ -64,6 +65,8 @@ export default function PollingDeskPage(){
       <div><span>SAMPLE</span><strong>{poll.sampleSize?.toLocaleString("en-NG")||"Not published"}</strong></div>
       <div><span>GEOGRAPHY</span><strong>{poll.geography}</strong></div>
       <div><span>MODE</span><strong>{poll.mode}</strong></div>
+      <div><span>SPONSOR</span><strong>{poll.sponsor}</strong></div>
+      <div><span>QUESTION</span><strong>{poll.question||"Not published in the source located"}</strong></div>
       <div><span>MARGIN OF ERROR</span><strong>{poll.marginOfError}</strong></div>
      </div>
      <div className="poll-results-list">
@@ -89,6 +92,29 @@ export default function PollingDeskPage(){
     </article>)}
    </div>
   </section>
+  {candidateVoteSnapshots.length>0?<section className="profile-research">
+   <div className="eyebrow"><span/>NON-PROBABILITY CANDIDATE-VOTE SNAPSHOTS / {candidateVoteSnapshots.length}</div>
+   <h2>RESPONSE COUNTS<br/>ARE NOT A NATIONAL POLL.</h2>
+   <p className="notice">These online exercises are shown because they circulated publicly. Participation was self-selected and/or organised by a movement with a position in the contest. They are not representative surveys and are excluded from every candidate average, ranking and forecast.</p>
+   <div className="poll-record-grid">{candidateVoteSnapshots.map(poll=><article className="content-card poll-record" key={poll.id}>
+    <div className="eyebrow">CANDIDATE VOTE INTENTION / NOT REPRESENTATIVE</div>
+    <h3>{poll.pollster}</h3>
+    <p>{poll.fieldwork} · Published {poll.publishedAt}</p>
+    <div className="poll-meta-grid">
+     <div><span>RESPONSES</span><strong>{poll.sampleSize?.toLocaleString("en-NG")||"Not published"}</strong></div>
+     <div><span>POPULATION</span><strong>{poll.population}</strong></div>
+     <div><span>GEOGRAPHY</span><strong>{poll.geography}</strong></div>
+     <div><span>MODE</span><strong>{poll.mode}</strong></div>
+     <div><span>SPONSOR</span><strong>{poll.sponsor}</strong></div>
+     <div><span>QUESTION WORDING</span><strong>{poll.question||"Not published in the source located"}</strong></div>
+     <div><span>SAMPLING</span><strong>{poll.samplingMethod}</strong></div>
+     <div><span>MARGIN OF ERROR</span><strong>{poll.marginOfError}</strong></div>
+    </div>
+    <div className="poll-results"><h4>REPORTED RESULTS — PARTICIPANTS ONLY</h4>{poll.results.map(result=><div className="poll-result" key={result.label}><span>{result.label}</span><strong>{result.value}{result.unit==="percent"?"%":""}</strong></div>)}</div>
+    <div className="poll-limitations"><h4>WHY THIS IS NOT A NATIONAL ESTIMATE</h4><ul>{poll.limitations.map(item=><li key={item}>{item}</li>)}</ul></div>
+    <div className="poll-source-links"><a href={poll.sourceUrl} target="_blank" rel="noreferrer">OPEN REPORTED RESULTS ↗</a>{poll.methodologyUrl?<a href={poll.methodologyUrl} target="_blank" rel="noreferrer">METHODOLOGY CROSS-CHECK ↗</a>:null}</div>
+   </article>)}</div>
+  </section>:null}
   <section className="profile-research">
    <div className="eyebrow"><span/>VOTER READINESS & ELECTION CONFIDENCE</div>
    <h2>HOW VOTERS VIEW<br/>THE PROCESS.</h2>
@@ -99,7 +125,7 @@ export default function PollingDeskPage(){
      <div className="poll-metadata-grid">
       <div><span>FIELDWORK</span><strong>{poll.fieldwork}</strong></div><div><span>PUBLISHED</span><strong>{poll.publishedAt}</strong></div>
       <div><span>SAMPLE</span><strong>{poll.sampleSize?.toLocaleString("en-NG")||"Not published"}</strong></div><div><span>GEOGRAPHY</span><strong>{poll.geography}</strong></div>
-      <div><span>MODE</span><strong>{poll.mode}</strong></div><div><span>MARGIN OF ERROR</span><strong>{poll.marginOfError}</strong></div>
+      <div><span>MODE</span><strong>{poll.mode}</strong></div><div><span>SPONSOR</span><strong>{poll.sponsor}</strong></div><div><span>QUESTION</span><strong>{poll.question||"Not published in the source located"}</strong></div><div><span>MARGIN OF ERROR</span><strong>{poll.marginOfError}</strong></div>
      </div>
      <div className="poll-results-list">{poll.results.map(result=><div className="poll-result" key={result.label}>
       <div className="poll-result-head"><strong>{result.label}</strong><b>{result.value.toFixed(1)}%</b></div><div className="poll-track"><span style={{width:Math.min(100,Math.max(0,result.value))+"%"}}/></div>{result.note?<small>{result.note}</small>:null}

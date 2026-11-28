@@ -160,6 +160,31 @@ export default async function PoliticianIndexProfile({params}:{params:Promise<{i
     </div>
     <div className="source-note">Source: National Bureau of Statistics, Nigeria Labour Force Survey Q2 2024. <a href="https://nigerianstat.gov.ng/pdfuploads/NLFS_Q2_2024.pdf" target="_blank" rel="noreferrer">OPEN ORIGINAL TABLE ↗</a>. Read the report's methods before comparing across survey rounds.</div>
    </article>:null}
+
+   {tenureEvidence.updates.length ? (
+    <section className="profile-research">
+     <div className="eyebrow">RECENT PUBLIC RECORD · SOURCE-ATTRIBUTED</div>
+     <h2>RECENT STATEMENTS AND DEVELOPMENTS</h2>
+     <p className="notice">These are attributed statements, actions and public challenges, not automatic performance verdicts. “Impact on subject” describes the direction of the claim or event, separately from whether it is proven.</p>
+     <div className="content-grid">
+      {tenureEvidence.updates.map((item) => (
+       <article className="content-card" key={item.id}>
+        <div className="eyebrow">{item.date} · {item.status}</div>
+        <h3>{item.title}</h3>
+        <p><strong>Speaker:</strong> {item.speaker}</p>
+        <blockquote>{item.wording}</blockquote>
+        <p>{item.context}</p>
+        <p><strong>Impact on subject:</strong> {item.impact}</p>
+        <p><strong>Source:</strong> {item.publisher}</p>
+        <a href={item.url} target="_blank" rel="noreferrer">OPEN SOURCE</a>
+        {item.supportingSources?.length ? (
+         <ul>{item.supportingSources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.publisher}: {source.title}</a></li>)}</ul>
+        ) : null}
+       </article>
+      ))}
+     </div>
+    </section>
+   ) : null}
    <div className="eyebrow" style={{marginTop:28}}>SOURCE REGISTER / {tenureEvidence.sources.length} DOCUMENTS AND DATA PORTALS</div>
    <div className="content-grid">
     {tenureEvidence.sources.map(source=><article className="content-card" key={source.id}>

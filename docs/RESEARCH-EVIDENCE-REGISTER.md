@@ -363,3 +363,212 @@ The app currently keeps the Overall Score panel visible as **IN PROGRESS** and s
 The expanded source and observation inventory is maintained in [TENURE-EVIDENCE-REGISTER.md](./TENURE-EVIDENCE-REGISTER.md). This adds historical and qualitative evidence across cost of living, jobs, security, education, health, infrastructure, integrity, public finance and promises.
 
 The source catalogue and structured extracts are deliberately reported separately: a source being indexed does not mean its entire archive has been scraped or that it supplies a comparable observation for every year of an officeholder's tenure. Pre-tenure baselines, official claims, survey results, administrative rates, independent estimates and project leads retain their own labels and limitations.
+
+
+## 1B. State-police constitutional amendment — desk update, 27 November 2026
+
+### Verified procedural milestones
+
+- The National Assembly passed the Constitution (Sixth Alteration) Bill, 2026, for State Police Services in both chambers earlier in 2026. The Senate passage was reported as 24 June and House passage as 23 July in November reporting; the exact certified final text and division lists should be obtained from the legislature before a clause-by-clause legal audit.
+- On 16 November, Clerk to the National Assembly Kamoru Ogunlana announced that all 36 State Houses of Assembly had approved the bill. PUNCH reported the Clerk's statement on 17 November. The threshold under Section 9(2) is at least 24 of 36 states.
+- The Chief of Staff to the President said President Tinubu had received the bill and would review it with the Attorney-General before a formal signing ceremony. PUNCH reported the statement on 19 November.
+- The State House's 23 October statement had already distinguished the Constitution (Sixth Alteration) Bill from the separate draft National Policing Bill, which it said was undergoing legislative-drafting review and validation at the Federal Ministry of Justice.
+
+### Important legal uncertainty — do not overstate
+
+The public record contains conflicting positions on whether presidential assent is a legal prerequisite for a Section 9 constitutional alteration:
+
+- The National Assembly's current legislative-process page has a generic bill-making section that describes presidential assent, but its specific Section 9 constitution-alteration section says presidential assent is not required after state ratification and identifies Gazette publication as the final promulgation step. The page is internally inconsistent across these two sections.
+- The 2010 Federal High Court judgment in the Olisa Agbakoba case held that a constitutional alteration was inchoate until presented to the President for assent. The National Assembly disputed that view and indicated it would appeal.
+- PLAC's *A Step-by-Step Process of Amending the Nigerian Constitution* records the competing legal opinions and the 2010 judgment. It notes that a definitive Supreme Court interpretation would have been useful; this desk did not locate a final appellate disposition resolving the question.
+- The Chief of Staff's 19 November statement is a reported intention to assent. It does not settle the legal question or prove that a final constitutional instrument has been published.
+
+**Editorial position:** 36 state approvals are verified. Do not say the amendment is definitely in force, or definitely ineffective for want of a presidential signature, without the authenticated final text, Gazette record and authoritative legal clarification. Gazette publication and the status of the separate National Policing Bill are the next documentary checks.
+
+### Operational law and safeguards
+
+The State House's 23 October release said the draft National Policing Bill was undergoing review at the Federal Ministry of Justice. The State House's 4 August roadmap and public-input notice described proposed safeguards and standards. These are proposals, not proof of enacted safeguards. When the bill is published, check recruitment and vetting, training, command and jurisdiction, firearms, custody, complaints, discipline, independent oversight, funding, audits, state readiness and protections against partisan abuse.
+
+### Sources (publication / access dates)
+
+- National Assembly, *National Assembly Processes: Constitution Alteration under Section 9*, accessed 27 November 2026: https://www.nass.gov.ng/themes/newnass/legislative-process.html
+- PUNCH, *State police: NASS confirms all 36 assemblies approve bill*, 17 November 2026: https://punchng.com/state-police-nass-confirms-all-36-assemblies-approve-bill/
+- PUNCH, *Tinubu receives state police bill; Chief of Staff describes next steps*, 19 November 2026: https://punchng.com/tinubu-sends-state-police-bill-to-agf/
+- The State House, *Presidential Working Group applauds as State Police Amendment clears constitutional threshold*, 23 October 2026: https://statehouse.gov.ng/presidential-working-group-applauds-as-state-police-amendment-clears-constitutional-threshold-in-state-assemblies/
+- The State House, *FG announces roadmap for National Policing Bill and invites public input*, 4 August 2026: https://statehouse.gov.ng/fg-announces-seven-week-roadmap-for-national-policing-bill-invites-public-input/
+- PLAC, *A Step-by-Step Process of Amending the Nigerian Constitution*, first published 2014, reprinted 2019; accessed 27 November 2026: https://www.plac.org.ng/i/wp-content/uploads/2021/05/Step-by-Step-Guide-to-the-Process-of-Amending-the-Nigerian-Constitution.pdf
+- Vanguard, *Agbakoba, others vindicated?*, 9 November 2010: https://www.vanguardngr.com/2010/11/agbakoba-others-vindicated/
+
+## 1C. Polling desk additions — 27 November 2026
+
+No new national probability-sample poll of the final INEC presidential candidate field was located in this scan. Two publicly circulated opt-in online exercises were added to the Sabi poll catalogue for transparency, but are displayed separately and excluded from all averages and forecasts.
+
+### Oxford-Metro Analytics National Trust Poll
+
+- **Fieldwork:** Closed 7 September 2026; opening date not stated in the release located.
+- **Published:** 8 September 2026 press release distributed through Newsfile; later Nigerian press reports followed.
+- **Responses:** 69,110 approved and unflagged online responses.
+- **Reported figures:** Tinubu 35.41%; Obi 33.86%; Atiku 26.67%; remaining candidates/options 4.06%.
+- **Mode and sampling:** Open, self-selected online participation; unweighted. No probability sampling frame or weighting was reported.
+- **Geography:** State and FCT results were reported; Lagos and the FCT accounted for 54.44% of responses. The release says 56 diaspora responses were excluded from domestic regional tallies.
+- **Question wording:** Not reproduced in the release located.
+- **Sponsor:** Not stated; the release was issued by Oxford-Metro Analytics through Newsfile.
+- **Margin of error:** Not applicable to this self-selected non-probability exercise.
+- **Limitations:** No generalisation to the electorate; geographic concentration; no full questionnaire or recruitment frame; fieldwork predated INEC's final candidate list. Not eligible for a national candidate average.
+- **Sources:** Newsfile, 8 September 2026: https://www.newsfilecorp.com/release/313361; OpenPolls catalogue, accessed 27 November 2026: https://openpolls.africa/polls
+
+### Tinubu Must Go movement online ticket poll
+
+- **Fieldwork:** 24–25 September 2026, a 24-hour online exercise.
+- **Published:** 25–26 September 2026 in Nigerian press reports.
+- **Responses:** 109,799.
+- **Reported figures:** Atiku/Amaechi 73.6%; Obi/Kwankwaso 22.3%; other options 4.1%.
+- **Mode and sampling:** Opt-in, self-selected online poll organised by a movement publicly opposing the incumbent administration.
+- **Geography:** No geographic breakdown found.
+- **Question wording and candidate field:** Press reports describe a choice among leading opposition tickets. The exact wording was not published, and whether Tinubu was offered as an option is not stated.
+- **Sponsor:** Tinubu Must Go movement; the organiser has a stated political position in the contest.
+- **Margin of error:** Not applicable; no probability sample.
+- **Limitations:** No independent pollster, full questionnaire, sampling frame, weighting or complete methodology report located; no generalisation to the electorate; not a full-field ballot test. Not eligible for a national candidate average.
+- **Sources:** Vanguard, 26 September 2026: https://www.vanguardngr.com/2026/09/tinubu-must-go-poll-puts-atiku-ahead-of-obi-others-for-2027/; OpenPolls catalogue, accessed 27 November 2026: https://openpolls.africa/polls
+
+### Polling rule applied
+
+Candidate vote intention, party preference, candidate favourability, turnout intention and electoral confidence remain separate. A large opt-in response count is not a substitute for probability sampling. These two exercises are context records only; they are not averaged, ranked or converted into win probabilities.
+
+
+## 1D. Opposition summit and candidate coordination — 27 November 2026
+
+### Confirmed public arrangements
+
+- The Coalition for Democracy announced that the Second Summit of Nigeria's Opposition Political Parties would proceed on Monday, 30 November 2026, at the NAF Conference Centre, Abuja.
+- The six participating groupings reported are ADC, APM, NDC, a PDP faction, PRP and SDP. The Sun identifies the PDP group as the Tanimu Turaki-led faction.
+- Expected presidential candidates include Atiku Abubakar (ADC), Peter Obi (NDC), Seyi Makinde (APM), Donald Duke (PRP) and Adewole Adebayo (SDP).
+- The coalition says the summit will consider the National Covenant for Democratic Renewal, the Framework for Opposition Unity and the National Reform Programme. The documents were developed after the inaugural summit of 31 August. They are proposed for consideration; no adoption or signed agreement is verified as of 27 November.
+- Makinde publicly said he, Atiku and Obi would have an arrangement to challenge President Tinubu, while distinguishing the arrangement from a formal 2015-style party merger. This is a statement of intention, not proof of a settled ticket or merger.
+
+### Disputed withdrawal / SGF allegation
+
+PUNCH reproduced a Facebook/X post by Lere Olayinka, a media aide to Nyesom Wike, alleging that Makinde would step down for Atiku on 30 November and negotiate a Secretary to the Government of the Federation appointment. The original post URL was not located. PUNCH also reported:
+
+- An Atiku ally confirmed talks but did not confirm a withdrawal or SGF agreement.
+- APM campaign spokesperson Richard Ihediwa said there was no decision for Makinde to withdraw and that he remained in the race.
+- Atiku's public-communication aide questioned Olayinka's authority to speak for the ADC; the ADC declined to confirm the arrangement.
+
+**Editorial position:** Treat the step-down/SGF story as a disputed allegation. The existence of consultations is not proof of a deal. Obtain the original post, direct candidate statements, formal party resolutions and the summit's signed documents before reaching a verdict.
+
+### Atiku legal status
+
+Reuters reported that a Federal High Court on 5 November set aside the processes that produced the ADC leadership and Atiku's nomination. ADC rejected the decision and said it would appeal. This desk did not locate a final appellate outcome by 27 November. Report the ruling and appeal position precisely; do not describe the candidate field as finally settled on this basis alone.
+
+### Sources (publication dates)
+
+- PUNCH, *2027: APC unfazed as Atiku, Obi, Makinde meet Monday*, 27 November 2026: https://punchng.com/2027-apc-unfazed-as-atiku-obi-makinde-meet-monday/
+- The Sun, *Atiku, Obi, others expected at November 30 Opposition Summit*, 27 November 2026: https://thesun.ng/atiku-obi-others-expected-november-30-opposition-summit/
+- Nigeria Info FM, *Atiku, Obi, Makinde expected to sign opposition unity pact on Monday*, 27 November 2026: https://www.nigeriainfo.fm/news/2027-elections/atiku-obi-makinde-expected-to-sign-opposition-unity-pact-on-monday/
+- TheCable, *Makinde: Opposition will enter into an arrangement to defeat Tinubu in 2027*, 26 November 2026: https://www.thecable.ng/makinde-opposition-will-enter-into-an-arrangement-to-defeat-tinubu-in-2027/
+- Reuters, *Nigerian court voids candidacy of opposition ADC's Atiku for 2027 election*, 5 November 2026: https://www.reuters.com/world/africa/nigerian-court-voids-candidacy-opposition-adcs-atiku-2027-election-2026-11-05/
+
+ 
+## 1E. INEC nationwide mock accreditation and result-upload exercise — 28 November 2026
+
+INEC scheduled a nationwide Mock Accreditation and Result Upload Exercise for 28 November 2026, from 08:30 to 14:30 WAT. Its official announcement says the exercise will use BVAS and test accreditation and electronic result transmission. INEC's official list page links state-by-state polling-unit lists.
+
+- INEC's stated design is two polling units in each of 8,838 Registration Areas, which gives 17,676 by arithmetic.
+- PUNCH and Channels Television reported 17,676 selected polling units (24 Nov 2026). Vanguard reported 17,656 (23 Nov 2026). Sabi has not yet independently counted all entries in the official state PDFs; preserve the discrepancy until the list is counted.
+- The exercise is a test, not a candidate contest or election result. Do not report a winner or infer election readiness from the announcement.
+- At Chatham House on 12 November, INEC Chairman Joash Amupitan said the Commission had developed validation safeguards so inaccurate polling-unit results or over-voting figures would not be uploaded to IReV. This is an official technical assurance, not independent evidence of system performance.
+- **Evidence still required:** full test protocol; number of units/devices participating; accreditation and upload success/failure rates; error logs; network conditions; retry and fallback handling; audit trails; independent observer reports; corrective actions; and evidence that collation-centre controls are also tested.
+
+Sources:
+- INEC, *INEC sets 28th November, 2026 for nationwide mock accreditation exercise*, published 17 Nov 2026: https://www.inecnigeria.org/press/inec-sets-28th-november-2026-for-nationwide-mock-accreditation-exercise
+- INEC, *List of polling units for the nationwide mock accreditation scheduled to hold on November 28th, 2026*, accessed 28 Nov 2026: https://inecnigeria.org/press/list-of-polling-units-for-the-nationwide-mock-accreditation-scheduled-to-hold-on
+- PUNCH, 24 Nov 2026: https://punchng.com/inec-selects-17676-polling-units-for-mock-bvas-exercise/
+- Channels Television, 24 Nov 2026: https://www.channelstv.com/2026/11/24/inec-selects-17676-polling-units-for-saturdays-nationwide-bvas-mock-accreditation-exercise/
+- Vanguard, 23 Nov 2026: https://www.vanguardngr.com/2026/11/mock-accreditation-inec-publishes-17656-selected-pus-across-36-states-fct/amp/
+
+INEC's current official election calendar, accessed 28 Nov 2026, continues to list the Presidential/National Assembly election for 16 Jan 2027 and the Governorship/State House of Assembly election for 6 Feb 2027. No later change was found in this scan: https://www.inecnigeria.org/elections/calendar/
+
+## 1F. Osun 2027 draft budget — revenue and expenditure reconciliation
+
+Governor Ademola Adeleke presented the proposed 2027 Osun budget on 25 November 2026. The official speech gives total proposed expenditure of ₦927,370,584,800 and capital projects of ₦559,307,166,790.
+
+**Expenditure arithmetic:** personnel ₦130,011,911,330 + overheads ₦238,051,506,680 + capital ₦559,307,166,790 = ₦927,370,584,800. This reconciles exactly.
+
+**Revenue figures listed in the speech:** FAAC ₦400,926,611,400 + independent revenue ₦250,172,402,980 + development-partner receipts ₦230,646,070,420 = ₦881,745,084,800. Compared with proposed expenditure, the three listed sources leave ₦45,625,500,000 unexplained in the speech summary.
+
+**Editorial status:** research lead, not a verdict. The speech may omit other receipts or financing items. Do not describe the difference as debt, an unlawful deficit or missing funds without the full estimates. The proposal remains subject to legislative consideration and is not evidence of actual spending or completed projects.
+
+Evidence required:
+- Full 2027 budget estimates and financing schedule
+- Grants, capital receipts, borrowing and other financing items
+- Revenue assumptions and recent outturns for FAAC and IGR
+- Sectoral and MDA allocations, project register, costs and procurement details
+- 2026 budget implementation reports and audited accounts
+
+Sources:
+- Osun State Government, *2027 Budget Speech*, 25 Nov 2026: https://www.osunstate.gov.ng/2026/11/osun-state-2027-budget-speech-presented-by-governor-ademola-adeleke-to-the-house-of-assembly-on-wednesday-25th-november-2026/
+- The Guardian Nigeria, 25 Nov 2026: https://guardian.ng/news/capital-project-gulps-n559bn-as-adeleke-presents-n927-37bn-budget-in-osun/
+- Vanguard, 26 Nov 2026: https://www.vanguardngr.com/2026/11/2027-budget-adeleke-presents-%E2%82%A6927-3bn-targets-youth-development-job-creation/
+
+## 1G. Polling desk review — 28 November 2026
+
+- No new, methodologically documented national candidate vote-intention poll was located in this scan. No candidate-support average, ranking, win probability or forecast is published.
+- Party preference, candidate favourability, turnout intention, election confidence and government approval remain separate measures.
+- Yiaga Africa's NVIS 3.0 remains a September 2026 turnout/confidence survey, not a candidate vote-intention poll. Its landing page still shows conflicting headline and detailed-story figures for INEC confidence (29% versus 34%); Sabi preserves the discrepancy rather than selecting a convenient figure.
+- Afrobarometer's election-expectations release published 11 Nov 2026 reports June–July 2024 Nigeria Round 10 fieldwork. It is historical survey evidence, not a new November 2026 poll. The official Round 10 summary confirms the 1,600-person nationally representative random, stratified sample and ±2.5 percentage-point margin of error.
+
+Sources:
+- Yiaga Africa, NVIS 3.0: https://nvis.yiaga.org/
+- Yiaga Africa, report resource page: https://yiaga.org/resources/willing-but-wary-report-of-the-national-voting-intentions
+- Afrobarometer, 11 Nov 2026 release: https://www.afrobarometer.org/wp-content/uploads/2026/11/News-release-Nigerians-doubt-quality-of-upcoming-election-Afrobarometer-bh-11nov26.pdf
+- Afrobarometer, Nigeria Round 10 2024 summary: https://www.afrobarometer.org/wp-content/uploads/2025/08/R10-Summary-of-results-Nigeria-Afrobarometer-bh-7aug25.pdf
+
+ 
+## 1H. Federal 2026 budget revision and debt statements — 24–28 November 2026
+
+President Bola Tinubu's letter dated 20 November 2026 seeks repeal and re-enactment of the 2026 Appropriation Act and a revised Federal Government fiscal framework.
+
+- Proposed aggregate expenditure falls from ₦68.323tn to ₦65.176tn: a ₦3.147tn reduction.
+- Projected FGN revenue, including government-owned enterprises: ₦33.720tn.
+- Aggregate capital expenditure: ₦26.232tn.
+- Fiscal deficit remains ₦31.457tn, or 5.64% of GDP.
+- Planned new borrowing remains ₦29.218tn: ₦18.428tn domestic and ₦10.790tn external.
+- The President says the proposed US$7.7bn external borrowing finances an existing foreign-borrowing provision and does not increase the borrowing envelope.
+- The President's letter says MDA capital provision consists mainly of amounts already warranted. Obtain the warrants, project-level schedules and disbursement records before assessing implementation.
+- FMINO's 24 Nov release describes the Senate's receipt and referral. Contemporaneous reporting on 25 Nov says both chambers passed the revised bill through second reading; the Senate adjourned to 1 Dec for committee work. No final passage by both chambers or assent was located by 28 Nov. The current appropriation remains operative until the amendment is enacted.
+- Separately, the NALTF House plenary summary records approval of a 2026–2027 supplementary external borrowing plan of US$20.52bn and €1.04bn, plus a resolution concerning borrowing already provided for in the 2026 Appropriation Act. THISDAY reports Senate approval as well. Map these authorisations to the revised budget's borrowing line before adding amounts or describing them as incremental debt.
+
+Sources:
+- Federal Ministry of Information and National Orientation, 24 Nov 2026: https://fmino.gov.ng/tinubu-seeks-senate-approval-to-reduce-2026-budget-expenditure-by-%E2%82%A63-14-trillion/
+- National Assembly Library Trust Fund, House Plenary Highlights, 24 Nov 2026: https://naltf.gov.ng/house-of-representatives-plenary-highlights-for-tuesday-24-november-2026/
+- THISDAY, 25 Nov 2026: https://www.thisdaylive.com/2026/11/25/tinubu-cuts-2026-budget-by-n3-2trn-retains-n31-4trn-deficit-senate-approves-external-borrowing-plan/
+- BusinessDay, House second reading, 25 Nov 2026: https://businessday.ng/news/article/reps-pass-n65-17trn-2026-budget-bill-for-second-reading/
+
+### Debt-to-GDP statement by Deputy Senate President Barau Jibrin
+
+THISDAY's 25 Nov report paraphrases Barau as putting Nigeria's debt-to-GDP ratio at about 35%, potentially rising to about 42% after the proposed borrowing, still below a 70% benchmark. The article does not provide a verbatim transcript or the calculation for 42%.
+
+- CBN's Second Quarter 2026 Economic Report says consolidated public debt was ₦166.79tn, or 31.78% of GDP, at end-June 2026.
+- DMO's June 30, 2026 debt table confirms ₦166.788tn total debt: ₦91.590tn domestic and ₦75.198tn external.
+- IMF's May 2026 Article IV report projects gross public debt at 35.4% of GDP for 2026. This is a projection, not the latest actual end-June ratio.
+- The 70% figure is the IMF Market Access Country benchmark. CBN and DMO material also refer to a 60% national ceiling/recommended threshold; the two benchmarks should not be conflated.
+- The 42% estimate remains unverified until the debt perimeter, GDP denominator, exchange rate, drawdown timing, borrowing amounts and overlap between approvals are disclosed.
+
+Sources:
+- CBN, *Economic Report, Second Quarter 2026*: https://www.cbn.gov.ng/Out/2026/RSD/Second%20Quarter%202026%20Economic%20Report.pdf
+- DMO, *Nigeria's Total Public Debt Portfolio as at June 30, 2026*, published 25 Sep 2026: https://dmo.gov.ng/total-public-debts/6080-nigeria-s-total-public-debt-as-at-june-30-2026/file
+- DMO, *2024 Debt Sustainability Analysis*: https://dmo.gov.ng/6129-2024-debt-sustainability-analysis-dsa-report/file
+- IMF, *2026 Article IV Consultation*, report completed 7 May 2026: https://www.imf.org/-/media/files/publications/cr/2026/english/1ngaea2026001.pdf
+
+ 
+### 28 November 2026, 08:50 WAT — additional INEC operational and procurement claims
+
+Vanguard's 28 Nov report says INEC Chairman Joash Amupitan, speaking at the INEC–ONSA Strategic Election Security Conference in Abuja on 26 Nov, described the mock as a full-scale operational rehearsal for BVAS, IReV and security coordination. He urged Resident Electoral Commissioners and state Commissioners of Police to test communications, response times, logistics and security blind spots.
+
+The same report attributes to Amupitan a statement that INEC would deploy over 1.41 million ad hoc personnel and 57,000 newly procured BVAS devices, with a threshold of 850 voters per machine. Daily Post's 26 Nov report also carries the 1.41 million and 57,000 figures. These remain reported official claims pending procurement, delivery, asset-register, allocation, training and staffing records. The 57,000 figure is newly procured devices, not necessarily the Commission's total inventory.
+
+No post-exercise performance report was located at the 08:50 WAT cut-off. The mock was scheduled to run until 14:30 WAT; do not describe it as completed or successful yet.
+
+Sources:
+- Vanguard, 28 Nov 2026: https://www.vanguardngr.com/2026/11/inec-tests-bvas-result-portal-today/
+- Daily Post, 26 Nov 2026: https://dailypost.ng/2026/11/26/inec-security-agencies-move-to-strengthen-collaboration-ahead-of-2027-elections/

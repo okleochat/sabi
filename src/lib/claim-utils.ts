@@ -42,7 +42,24 @@ const subjectAliases: Record<string, { key: string; label: string; type: string 
   "akpabio": { key: "godswill-akpabio", label: "Godswill Akpabio", type: "public-official" },
   "charles soludo": { key: "charles-soludo", label: "Chukwuma Charles Soludo", type: "elected-official" },
   "soludo": { key: "charles-soludo", label: "Chukwuma Charles Soludo", type: "elected-official" },
-  "chukwuma soludo": { key: "charles-soludo", label: "Chukwuma Charles Soludo", type: "elected-official" }
+  "chukwuma soludo": { key: "charles-soludo", label: "Chukwuma Charles Soludo", type: "elected-official" },
+  "plateau state government": { key: "plateau-state-government", label: "Plateau State Government", type: "public-agency" },
+  "plateau government": { key: "plateau-state-government", label: "Plateau State Government", type: "public-agency" },
+  "national peace committee": { key: "national-peace-committee", label: "National Peace Committee", type: "public-agency" },
+  "bishop matthew hassan kukah committee": { key: "national-peace-committee", label: "National Peace Committee", type: "public-agency" },
+  "ok movement": { key: "ok-movement", label: "OK Movement", type: "political-support-organisation" },
+  "obi kwankwaso movement": { key: "ok-movement", label: "OK Movement", type: "political-support-organisation" },
+  "nigeria democratic congress": { key: "nigeria-democratic-congress", label: "Nigeria Democratic Congress", type: "political-party" },
+  "jarrett tenebe": { key: "jarrett-tenebe", label: "Jarrett Tenebe", type: "party-official" },
+  "2023 ebonyi governorship election": { key: "2023-ebonyi-governorship-election", label: "2023 Ebonyi governorship election", type: "election" },
+  "ebonyi state": { key: "ebonyi-state", label: "Ebonyi State", type: "state" },
+  "francis nwifuru": { key: "francis-nwifuru", label: "Francis Nwifuru", type: "elected-official" },
+  "ifeanyi odii": { key: "ifeanyi-odii", label: "Ifeanyi Odii", type: "gubernatorial-candidate" },
+  "babajide sanwo-olu": { key: "babajide-sanwo-olu", label: "Babajide Sanwo-Olu", type: "elected-official" },
+  "caleb mutfwang": { key: "caleb-mutfwang", label: "Caleb Mutfwang", type: "elected-official" },
+  "federal government": { key: "federal-government", label: "Federal Government of Nigeria", type: "public-agency" },
+  "federal government of nigeria": { key: "federal-government", label: "Federal Government of Nigeria", type: "public-agency" },
+  "edo state police command": { key: "edo-state-police-command", label: "Edo State Police Command", type: "public-agency" }
 };
 
 export function resolveClaimSubject(value: unknown, preferredType = ""): { subject: string; subjectKey: string; subjectType: string } {
@@ -64,6 +81,6 @@ export function impactLabel(value: unknown): string {
     case "negative": return "Negative for subject";
     case "mixed": return "Mixed impact";
     case "neutral": return "Neutral / factual";
-    default: return "Not assessed";
+    default: return "Unclear / effect not established";
   }
 }

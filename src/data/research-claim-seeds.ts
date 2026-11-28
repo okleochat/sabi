@@ -1,5 +1,3 @@
-import { reviewedClaimResearch } from "./claim-research-updates";
-
 export const starterResearchClaims: Array<Record<string, any>> = [
   {
     id:"sabi-research-wike-satellite-roads-july-2026",
@@ -60,5 +58,893 @@ export const starterResearchClaims: Array<Record<string, any>> = [
     contact:"",isTimeSensitive:false,createdAt:"2026-11-27T12:00:00.000Z",submittedAt:"2026-11-27T12:00:00.000Z",updatedAt:"2026-11-27T12:00:00.000Z",
     origin:"sabi-research",originLabel:"Sabi newsroom research",alertStatus:"not_applicable",seedVersion:1
   },
-  ...reviewedClaimResearch
+{
+ id:"sabi-research-tinubu-state-police-assent-2026-11-27",
+ claim:"Femi Gbajabiamila said of President Tinubu: “He will assent to the Bill at a formal signing ceremony.”",
+ claimType:"public-statement",
+ subject:"Bola Ahmed Tinubu",
+ subjectKey:"bola-tinubu",
+ subjectType:"elected-official",
+ impact:"positive",
+ status:"researching",
+ reviewStatus:"researching",
+ reviewPriority:"standard",
+ claimSource:"Femi Gbajabiamila's statement as quoted by PUNCH, 19 November 2026",
+ context:"The statement followed reports that the Constitution (Sixth Alteration) Bill for State Police Services had received approval from all 36 State Houses of Assembly and had been transmitted to the President.",
+ sourceUrl:"https://punchng.com/tinubu-sends-state-police-bill-to-agf/",
+ supportingUrls:[
+  "https://punchng.com/state-police-nass-confirms-all-36-assemblies-approve-bill/",
+  "https://www.nass.gov.ng/themes/newnass/legislative-process.html",
+  "https://www.plac.org.ng/i/wp-content/uploads/2021/05/Step-by-Step-Guide-to-the-Process-of-Amending-the-Nigerian-Constitution.pdf",
+  "https://statehouse.gov.ng/presidential-working-group-applauds-as-state-police-amendment-clears-constitutional-threshold-in-state-assemblies/"
+ ],
+ researchNotes:"This is a forward-looking statement attributed to the President through his Chief of Staff, not proof that the amendment was promulgated or that state police services are operating. The 36 state-assembly approvals are reported by the Clerk to the National Assembly. The National Assembly's current Section 9 process page says presidential assent is not required after state ratification, but its generic bill-making section says assent is required. PLAC's constitutional-amendment guide records the opposing legal views and the 2010 Federal High Court Agbakoba judgment holding assent necessary. The exact legal effect is therefore not settled by the public statements reviewed here. Obtain the authenticated final amendment text, any Gazette publication and a definitive appellate/legal clarification. Keep the constitutional alteration separate from the National Policing Bill, which the State House described as undergoing Justice Ministry drafting review. Do not issue a failed-promise verdict merely because a signing notice was not found.",
+ reviewSummary:"The Chief of Staff publicly described an intended presidential signing. The constitutional amendment's legal status after state ratification is disputed in public legal sources, and the operational National Policing Bill is separate. No truth verdict is assigned.",
+ findings:"",
+ verdict:"",
+ evidence:[
+  {title:"Tinubu receives state police bill; Chief of Staff describes next steps",publisher:"PUNCH",url:"https://punchng.com/tinubu-sends-state-police-bill-to-agf/",sourceType:"credible-reporting"},
+  {title:"State police: NASS confirms all 36 assemblies approve bill",publisher:"PUNCH",url:"https://punchng.com/state-police-nass-confirms-all-36-assemblies-approve-bill/",sourceType:"credible-reporting"},
+  {title:"National Assembly processes: Constitution Alteration under Section 9",publisher:"National Assembly",url:"https://www.nass.gov.ng/themes/newnass/legislative-process.html",sourceType:"official-procedure"},
+  {title:"A Step-by-Step Process of Amending the Nigerian Constitution",publisher:"Policy and Legal Advocacy Centre",url:"https://www.plac.org.ng/i/wp-content/uploads/2021/05/Step-by-Step-Guide-to-the-Process-of-Amending-the-Nigerian-Constitution.pdf",sourceType:"legal-analysis"}
+ ],
+ state:"",
+ contact:"",
+ isTimeSensitive:false,
+ createdAt:"2026-11-27T09:00:00.000Z",
+ submittedAt:"2026-11-27T09:00:00.000Z",
+ updatedAt:"2026-11-27T09:00:00.000Z",
+ origin:"sabi-research",
+ originLabel:"Sabi newsroom research",
+ alertStatus:"not_applicable",
+ seedVersion:1
+},
+{
+ id:"sabi-research-plateau-government-relative-calm-tafi-gana-2026-11-27",
+ claim:"Plateau State Government said: “So far, relative calm has been established.”",
+ claimType:"public-statement",
+ subject:"Plateau State Government",
+ subjectKey:"plateau-state-government",
+ subjectType:"public-agency",
+ impact:"positive",
+ status:"researching",
+ reviewStatus:"researching",
+ reviewPriority:"high",
+ claimSource:"Plateau State Government statement signed by Commissioner Joyce Lohya Ramnap, 26 November 2026, as quoted by PUNCH",
+ context:"The statement followed the 25–26 November attack on Tafi-Gana in Bassa Local Government Area. The government also said Governor Caleb Mutfwang had directed security operatives to take strategic measures to protect residents.",
+ sourceUrl:"https://punchng.com/plateau-condemns-attack-on-community/",
+ supportingUrls:[
+  "https://guardian.ng/news/death-toll-rises-to-19-in-plateau-community-attack-four-injured/",
+  "https://punchng.com/16-feared-killed-as-gunmen-attack-plateau-community-2/",
+  "https://ait.live/several-reportedly-killed-in-plateau-community-attack-as-government-orders-security/"
+ ],
+ researchNotes:"The claim is an official government statement about the security situation and response, not an independent verification that residents are safe. The association's initial statement reported 16 deaths; Guardian and Vanguard later reported 19, while a Daily Post report quoted a youth leader giving 22. The government statement did not publish a casualty figure. PUNCH reported that the Plateau Police Command and Operation Enduring Peace had not responded to enquiries at filing. Obtain the police/army incident report, deployment records, hospital casualty confirmation, follow-up community accounts and any investigation findings. Perpetrator identity and motive remain unestablished; do not infer guilt or repeat ethnic attribution as fact.",
+ reviewSummary:"The government says calm was restored and security measures were ordered. Independent confirmation of the security situation, deployment and final casualty count is still missing.",
+ findings:"",
+ verdict:"",
+ evidence:[
+  {title:"Plateau condemns attack on community",publisher:"PUNCH",url:"https://punchng.com/plateau-condemns-attack-on-community/",sourceType:"government-statement-reported"},
+  {title:"Death toll in Plateau community attack rises to 19",publisher:"The Guardian",url:"https://guardian.ng/news/death-toll-rises-to-19-in-plateau-community-attack-four-injured/",sourceType:"independent-reporting"},
+  {title:"16 feared killed as gunmen attack Plateau community",publisher:"PUNCH",url:"https://punchng.com/16-feared-killed-as-gunmen-attack-plateau-community-2/",sourceType:"independent-reporting"},
+  {title:"Several reportedly killed in Plateau community attack as government orders security",publisher:"AIT",url:"https://ait.live/several-reportedly-killed-in-plateau-community-attack-as-government-orders-security/",sourceType:"government-statement-reported"}
+ ],
+ state:"Plateau",
+ contact:"",
+ isTimeSensitive:true,
+ createdAt:"2026-11-27T09:05:00.000Z",
+ submittedAt:"2026-11-27T09:05:00.000Z",
+ updatedAt:"2026-11-27T09:05:00.000Z",
+ origin:"sabi-research",
+ originLabel:"Sabi newsroom research",
+ alertStatus:"not_applicable",
+ seedVersion:1
+}
+,
+{
+ id:"sabi-research-makinde-opposition-arrangement-nov-2026",
+ claim:"Seyi Makinde said: “There will be an arrangement between Atiku, Obi and me to stop President Tinubu from winning the 2027 presidential election.”",
+ claimType:"public-statement",
+ subject:"Seyi Makinde",
+ subjectKey:"seyi-makinde",
+ subjectType:"elected-official",
+ impact:"positive",
+ status:"researching",
+ reviewStatus:"researching",
+ reviewPriority:"standard",
+ claimSource:"Seyi Makinde, interview with Chude Jideonwo published 25–26 November 2026, as quoted by PUNCH on 27 November; TheCable also reported the interview on 26 November. The original video link was not independently located in this scan.",
+ context:"Makinde is Oyo State Governor and the APM presidential candidate. He described a proposed loose arrangement with Atiku Abubakar and Peter Obi, while distinguishing it from a formal merger of parties like the 2015 APC formation.",
+ sourceUrl:"https://punchng.com/2027-apc-unfazed-as-atiku-obi-makinde-meet-monday/",
+ supportingUrls:[
+  "https://www.thecable.ng/makinde-opposition-will-enter-into-an-arrangement-to-defeat-tinubu-in-2027/",
+  "https://thesun.ng/atiku-obi-others-expected-november-30-opposition-summit/",
+  "https://www.nigeriainfo.fm/news/2027-elections/atiku-obi-makinde-expected-to-sign-opposition-unity-pact-on-monday/",
+  "https://www.reuters.com/world/africa/nigerian-court-voids-candidacy-opposition-adcs-atiku-2027-election-2026-11-05/"
+ ],
+ researchNotes:"This is a public statement of political intention, not evidence that a coalition, joint ticket or candidate-selection agreement has been completed. The second opposition summit is scheduled for 30 November and is expected to consider three cooperation documents. Obtain the original interview recording, any signed pact, party and candidate resolutions, the agreed selection process and direct responses from Atiku and Obi. Atiku's ADC nomination was set aside by a Federal High Court on 5 November; Reuters reported that ADC rejected the ruling and said it would appeal. No final appellate outcome was located in this scan. Do not infer a settled ticket or eligibility outcome from negotiations alone.",
+ reviewSummary:"Makinde publicly confirms a loose arrangement with Atiku and Obi. The form, signatories, candidate-selection process and legal status of any joint ticket remain unresolved.",
+ findings:"",
+ verdict:"",
+ evidence:[
+  {title:"2027: APC unfazed as Atiku, Obi, Makinde meet Monday",publisher:"PUNCH",url:"https://punchng.com/2027-apc-unfazed-as-atiku-obi-makinde-meet-monday/",sourceType:"reported-interview-and-party-responses"},
+  {title:"Makinde: Opposition will enter into an arrangement to defeat Tinubu in 2027",publisher:"TheCable",url:"https://www.thecable.ng/makinde-opposition-will-enter-into-an-arrangement-to-defeat-tinubu-in-2027/",sourceType:"reported-interview"},
+  {title:"Atiku, Obi, others expected at November 30 Opposition Summit",publisher:"The Sun",url:"https://thesun.ng/atiku-obi-others-expected-november-30-opposition-summit/",sourceType:"coalition-statement-reported"}
+ ],
+ state:"Oyo",
+ contact:"",
+ isTimeSensitive:true,
+ createdAt:"2026-11-27T09:30:00.000Z",
+ submittedAt:"2026-11-27T09:30:00.000Z",
+ updatedAt:"2026-11-27T09:30:00.000Z",
+ origin:"sabi-research",
+ originLabel:"Sabi newsroom research",
+ alertStatus:"not_applicable",
+ seedVersion:1
+},
+{
+ id:"sabi-research-lere-olayinka-makinde-stepdown-sgf-claim-2026-11",
+ claim:"Lere Olayinka posted: “APM presidential candidate, Seyi Makinde, to step down for Atiku on November 30, negotiates for SGF, to collapse Oyo APM for ADC candidates.”",
+ claimType:"public-statement",
+ subject:"Seyi Makinde",
+ subjectKey:"seyi-makinde",
+ subjectType:"elected-official",
+ impact:"negative",
+ status:"researching",
+ reviewStatus:"researching",
+ reviewPriority:"high",
+ claimSource:"Lere Olayinka, media aide to Nyesom Wike, Facebook/X post reproduced by PUNCH on 27 November 2026; original post URL not located.",
+ context:"The post alleged that Makinde would withdraw from the APM presidential race for Atiku and seek an SGF appointment as part of opposition negotiations ahead of the 30 November summit.",
+ sourceUrl:"https://punchng.com/2027-apc-unfazed-as-atiku-obi-makinde-meet-monday/",
+ supportingUrls:[
+  "https://thesun.ng/atiku-obi-others-expected-november-30-opposition-summit/",
+  "https://www.nigeriainfo.fm/news/2027-elections/atiku-obi-makinde-expected-to-sign-opposition-unity-pact-on-monday/",
+  "https://www.thecable.ng/makinde-opposition-will-enter-into-an-arrangement-to-defeat-tinubu-in-2027/"
+ ],
+ researchNotes:"This is an allegation by a media aide, not a verified agreement. PUNCH reproduced the post but the original Facebook/X URL was not located. The same PUNCH report says an Atiku ally confirmed talks but did not confirm a withdrawal or SGF deal; APM campaign spokesperson Richard Ihediwa said there was no decision for Makinde to withdraw and that he remained in the race; Atiku's aide Phrank Shaibu questioned Olayinka's authority to speak for ADC, and ADC declined to confirm the claim. Obtain the original post, a direct response from Makinde, formal APM/ADC resolutions and the 30 November summit documents and outcome. Do not infer a secret deal from the existence of consultations. No truth verdict is assigned.",
+ reviewSummary:"The withdrawal/SGF allegation is disputed and lacks a located primary post or formal party decision. Makinde's campaign publicly says he remains in the race.",
+ findings:"",
+ verdict:"",
+ evidence:[
+  {title:"2027: APC unfazed as Atiku, Obi, Makinde meet Monday",publisher:"PUNCH",url:"https://punchng.com/2027-apc-unfazed-as-atiku-obi-makinde-meet-monday/",sourceType:"reported-social-media-post-and-party-response"},
+  {title:"Atiku, Obi, others expected at November 30 Opposition Summit",publisher:"The Sun",url:"https://thesun.ng/atiku-obi-others-expected-november-30-opposition-summit/",sourceType:"coalition-statement-reported"}
+ ],
+ state:"Oyo",
+ contact:"",
+ isTimeSensitive:true,
+ createdAt:"2026-11-27T09:35:00.000Z",
+ submittedAt:"2026-11-27T09:35:00.000Z",
+ updatedAt:"2026-11-27T09:35:00.000Z",
+ origin:"sabi-research",
+ originLabel:"Sabi newsroom research",
+ alertStatus:"not_applicable",
+ seedVersion:1
+},
+{
+  "id": "sabi-research-ndc-17-attacks-peace-committee-2026-11-27",
+  "claim": "Osa Director said the NDC had recorded at least 17 attacks on its members and supporters and called the National Peace Committee a “toothless bulldog”.",
+  "claimType": "political-violence-complaint",
+  "assessmentType": "Political violence / Peace Accord complaint",
+  "subject": "National Peace Committee",
+  "subjectKey": "national-peace-committee",
+  "subjectType": "public-agency",
+  "impact": "negative",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "Osa Director, NDC National Publicity Secretary, interview with Saturday Sun, published 27 November 2026.",
+  "sourceUrl": "https://thesun.ng/ndc-knocks-abdulsalami-peace-committee-calls-it-toothless-bulldog-over-attacks-on-opposition/",
+  "supportingUrls": [
+    "https://punchng.com/2027-abdulsalami-panel-flags-109-breaches-warns-of-election-violence/",
+    "https://www.thisdaylive.com/2026/11/27/opposition-pandef-demand-arrest-of-sponsors-of-attacks-on-ndc-supporters/"
+  ],
+  "context": "The party says neither Abdulsalami Abubakar nor Bishop Matthew Hassan Kukah contacted it about the incidents. The 17 count is NDC's own tally, not a police or Peace Committee count.",
+  "researchNotes": "No incident-level list, dates, locations, victim names, police case numbers, or committee monitoring IDs were located. The committee's reported 109 breaches include 33 political violence/thuggery incidents and 19 attacks on political activities/assets; overlap is unknown. Do not add 17 to 109. Seek the NDC incident register, police records, committee monitoring log, and a direct response from the committee.",
+  "reviewSummary": "The accusation and exact wording are confirmed as an attributed NDC statement. The underlying 17 incidents and the committee's alleged failure to respond remain unverified.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "NDC knocks Abdulsalami peace committee, calls it ‘toothless bulldog’ over attacks on opposition",
+      "publisher": "The Sun",
+      "url": "https://thesun.ng/ndc-knocks-abdulsalami-peace-committee-calls-it-toothless-bulldog-over-attacks-on-opposition/",
+      "sourceType": "interview"
+    },
+    {
+      "title": "Abdulsalami panel flags 109 breaches, warns of election violence",
+      "publisher": "PUNCH",
+      "url": "https://punchng.com/2027-abdulsalami-panel-flags-109-breaches-warns-of-election-violence/",
+      "sourceType": "related-committee-report"
+    }
+  ],
+  "state": "National",
+  "isTimeSensitive": true,
+  "createdAt": "2026-11-27T19:32:00.000Z",
+  "updatedAt": "2026-11-27T19:32:00.000Z",
+  "submittedAt": "2026-11-27T19:32:00.000Z"
+},
+{
+  "id": "sabi-research-ok-movement-withdrawal-obi-ndc-2026-11-27",
+  "claim": "John Ozyl Ughulu said the OK Movement would immediately withdraw its campaign, mobilisation and operational support from the NDC and Peter Obi; the NDC and Obi's spokesman disputed the group's standing.",
+  "claimType": "political-support-group-withdrawal",
+  "assessmentType": "Support-group withdrawal / organisational status",
+  "subject": "Peter Obi",
+  "subjectKey": "peter-obi",
+  "subjectType": "presidential-candidate",
+  "impact": "unclear",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "John Ozyl Ughulu, National Director-General of the group calling itself the OK Movement, statement reported 27 November 2026.",
+  "sourceUrl": "https://punchng.com/ok-movement-faction-withdraws-support-for-obi-ndc/",
+  "supportingUrls": [
+    "https://thesun.ng/2027-ok-movement-announces-withdrawal-of-support-for-obi-kwankwaso-ndc/",
+    "https://radionigeriaabuja.gov.ng/ok-movement-ends-political-relationship-with-ndc/",
+    "https://punchng.com/ok-movement-not-funded-by-obi-ndc-dg/",
+    "https://punchng.com/obi-kwankwaso-movement-defies-ndc-insists-on-independent-structures/"
+  ],
+  "context": "Ughulu says Obi and NDC ended the relationship. Osa Director calls Ughulu's faction rogue elements and says authentic leadership remains with Obi; Obi spokesman Idris Zekeri says the campaign does not recognise Ughulu's group.",
+  "researchNotes": "A related organisational dispute was reported in September. Membership, nationwide structures and electoral influence are self-reported and unverified. Do not state that Obi lost all OK Movement support or quantify an electoral effect.",
+  "reviewSummary": "A group/faction announced withdrawal, but the candidate camp and party dispute its authority to speak for the authentic movement. Organisational representativeness and political impact remain unclear.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "OK Movement faction withdraws support for Obi, NDC",
+      "publisher": "PUNCH",
+      "url": "https://punchng.com/ok-movement-faction-withdraws-support-for-obi-ndc/",
+      "sourceType": "reported-statement-and-rebuttal"
+    },
+    {
+      "title": "2027: OK Movement announces withdrawal of support for Obi, Kwankwaso, NDC",
+      "publisher": "The Sun",
+      "url": "https://thesun.ng/2027-ok-movement-announces-withdrawal-of-support-for-obi-kwankwaso-ndc/",
+      "sourceType": "group-statement"
+    },
+    {
+      "title": "OK movement not funded by Obi, NDC – DG",
+      "publisher": "PUNCH",
+      "url": "https://punchng.com/ok-movement-not-funded-by-obi-ndc-dg/",
+      "sourceType": "related-prior-dispute"
+    }
+  ],
+  "state": "National",
+  "isTimeSensitive": true,
+  "createdAt": "2026-11-27T19:32:00.000Z",
+  "updatedAt": "2026-11-27T19:32:00.000Z",
+  "submittedAt": "2026-11-27T19:32:00.000Z"
+},
+{
+  "id": "sabi-research-tenebe-ak47-remark-2026-11-27",
+  "claim": "Edo APC chairman Jarrett Tenebe was reported as saying at a rally: “So, anybody who refuses, who wants to stand in our way, for us not to have those votes that we intend to give to Mr President, AK-47 fire.”",
+  "claimType": "political-speech",
+  "assessmentType": "Political speech / alleged incitement",
+  "subject": "Jarrett Tenebe",
+  "subjectKey": "jarrett-tenebe",
+  "subjectType": "party-official",
+  "impact": "negative",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "Jarrett Tenebe, Edo APC chairman, remarks reported from an APC rally; original full video not yet retrieved.",
+  "sourceUrl": "https://www.thisdaylive.com/2026/11/27/opposition-pandef-demand-arrest-of-sponsors-of-attacks-on-ndc-supporters/",
+  "supportingUrls": [
+    "https://www.thisdaylive.com/2026/11/27/opposition-pandef-demand-arrest-of-sponsors-of-attacks-on-ndc-supporters/"
+  ],
+  "context": "On 27 Nov, NDC asked police and DSS to investigate the earlier remark after a shooting at an NDC gathering in Benin City. The party explicitly disclaimed alleging Tenebe ordered or participated in the shooting; THISDAY reports Edo Police said one person was injured and an investigation began.",
+  "researchNotes": "The original rally video and full context have not been retrieved. No causal link between the remark and the later shooting is established. Seek full video, police incident report, Tenebe/APC response, and any investigation outcome.",
+  "reviewSummary": "The reported remark and subsequent call for investigation are attributable statements. Full context, legal meaning, and any connection to the later shooting remain unresolved; do not imply involvement in the attack.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "Opposition, PANDEF demand arrest of sponsors of attacks on NDC supporters",
+      "publisher": "THISDAY",
+      "url": "https://www.thisdaylive.com/2026/11/27/opposition-pandef-demand-arrest-of-sponsors-of-attacks-on-ndc-supporters/",
+      "sourceType": "reported-party-statement"
+    }
+  ],
+  "state": "Edo",
+  "isTimeSensitive": true,
+  "createdAt": "2026-11-27T19:32:00.000Z",
+  "updatedAt": "2026-11-27T19:32:00.000Z",
+  "submittedAt": "2026-11-27T19:32:00.000Z"
+},
+{
+  "id": "sabi-research-adc-pcc-four-deaths-edo-delta-2026-11-27",
+  "claim": "The ADC Presidential Campaign Council said reports of more than four deaths in attacks on NDC supporters in Edo and Delta were disturbing.",
+  "claimType": "election-security-casualty-claim",
+  "assessmentType": "Election security / casualty claim",
+  "subject": "2027 election security",
+  "subjectKey": "2027-election-security",
+  "subjectType": "election",
+  "impact": "negative",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "Kola Ologbondiyan, Director of Media and Publicity, ADC Presidential Campaign Council, statement reported by THISDAY 27 November 2026.",
+  "sourceUrl": "https://www.thisdaylive.com/2026/11/27/opposition-pandef-demand-arrest-of-sponsors-of-attacks-on-ndc-supporters/",
+  "supportingUrls": [
+    "https://thesun.ng/ndc-knocks-abdulsalami-peace-committee-calls-it-toothless-bulldog-over-attacks-on-opposition/"
+  ],
+  "context": "The report aggregates incidents across at least two states. Edo Police confirmed one injured person in the Benin City incident, not four deaths there; PANDEF said Delta casualties had not been officially confirmed.",
+  "researchNotes": "The NDC's separate 17-attack count is not the same measure. Do not sum figures. Obtain the ADC-PCC incident list, police reports from Edo and Delta, hospital/mortuary records, identities, dates, and official casualty updates. Do not attribute responsibility to a party without evidence.",
+  "reviewSummary": "The ADC-PCC statement is confirmed as reported. The claimed death toll across Edo and Delta is not independently established and requires incident-level verification.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "Opposition, PANDEF demand arrest of sponsors of attacks on NDC supporters",
+      "publisher": "THISDAY",
+      "url": "https://www.thisdaylive.com/2026/11/27/opposition-pandef-demand-arrest-of-sponsors-of-attacks-on-ndc-supporters/",
+      "sourceType": "reported-campaign-council-statement"
+    }
+  ],
+  "state": "Edo / Delta",
+  "isTimeSensitive": true,
+  "createdAt": "2026-11-27T19:32:00.000Z",
+  "updatedAt": "2026-11-27T19:32:00.000Z",
+  "submittedAt": "2026-11-27T19:32:00.000Z"
+},
+{
+  "id": "sabi-research-odii-ebonyi-mpi-78-2026-11-27",
+  "claim": "Ifeanyi Odii said national assessments indicated that nearly eight out of every ten Ebonyi residents were living in multidimensional poverty.",
+  "claimType": "official-statistics",
+  "assessmentType": "Multidimensional poverty / official statistics",
+  "subject": "Ebonyi State",
+  "subjectKey": "ebonyi-state",
+  "subjectType": "state",
+  "impact": "negative",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "Ifeanyi Chukwuma Odii, PDP Ebonyi governorship candidate, at the party's campaign flag-off in Abakaliki on 26 November 2026; reported by The Sun on 27 November.",
+  "sourceUrl": "https://thesun.ng/2027-odii-vows-to-end-poverty-industrialise-ebonyi/",
+  "supportingUrls": [
+    "https://www.nigerianstat.gov.ng/pdfuploads/NIGERIA%20MULTIDIMENSIONAL%20POVERTY%20INDEX%20SURVEY%20RESULTS%202022.pdf"
+  ],
+  "context": "The Sun reports this as a paraphrase, not a verbatim quotation.",
+  "researchNotes": "The NBS 2022 MPI report supports 78.0% multidimensional-poverty incidence in Ebonyi for its 2021/22 reference period. It is not a 2026 poverty rate and is distinct from income poverty. No newer state-representative MPI estimate was located. The data do not by themselves establish that the current governor caused the poverty level.",
+  "reviewSummary": "The 78% figure is supported by the NBS 2022 MPI baseline for 2021/22. The key qualification is time: it is a historical survey estimate, not a current 2026 measure.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "2027: Odii vows to end poverty, industrialise Ebonyi",
+      "publisher": "The Sun",
+      "url": "https://thesun.ng/2027-odii-vows-to-end-poverty-industrialise-ebonyi/",
+      "sourceType": "reported-candidate-statement"
+    },
+    {
+      "title": "Nigeria Multidimensional Poverty Index Survey Results 2022",
+      "publisher": "National Bureau of Statistics",
+      "url": "https://www.nigerianstat.gov.ng/pdfuploads/NIGERIA%20MULTIDIMENSIONAL%20POVERTY%20INDEX%20SURVEY%20RESULTS%202022.pdf",
+      "sourceType": "primary-statistical-report"
+    }
+  ],
+  "state": "Ebonyi",
+  "isTimeSensitive": false,
+  "createdAt": "2026-11-27T19:32:00.000Z",
+  "updatedAt": "2026-11-27T19:32:00.000Z",
+  "submittedAt": "2026-11-27T19:32:00.000Z"
+},
+{
+  "id": "sabi-research-odii-ebonyi-agriculture-budget-2025-2026-11-27",
+  "claim": "Ifeanyi Odii said Ebonyi allocated less than two per cent of its 2025 budget to agriculture.",
+  "claimType": "budget-allocation",
+  "assessmentType": "Budget allocation / official expenditure",
+  "subject": "Francis Nwifuru",
+  "subjectKey": "francis-nwifuru",
+  "subjectType": "governor",
+  "impact": "negative",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "Ifeanyi Chukwuma Odii, PDP Ebonyi governorship candidate, at the party's campaign flag-off in Abakaliki on 26 November 2026; reported by The Sun on 27 November.",
+  "sourceUrl": "https://thesun.ng/2027-odii-vows-to-end-poverty-industrialise-ebonyi/",
+  "supportingUrls": [
+    "https://ebonyistate.gov.ng/storage/documents/min-1-ebsg-2025-approved-budgetpdf-1738259476.pdf",
+    "https://www.ebonyistate.gov.ng/storage/documents/min-1-2026-approved-budgetpdf-1769898846.pdf"
+  ],
+  "context": "The claim concerns the approved 2025 agriculture allocation, not actual expenditure.",
+  "researchNotes": "Both official budget documents place the 2025 agriculture allocation below 2%, but they disagree on the exact amount: the 2025 approved budget PDF lists N6.57202bn (about 1.48% of N444.978bn), while the 2026 approved budget's historical 2025 column lists N5.67202bn (about 1.28%). The threshold claim is supported by both, but the exact allocation must be reconciled against the 2025 Appropriation Law and implementation reports. An appropriation is not actual spending.",
+  "reviewSummary": "The less-than-2% claim is supported by both official budget tables. The exact allocation is inconsistent across official documents (about 1.28% versus 1.48%); verify against the appropriation law and implementation report before assigning a final verdict.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "2027: Odii vows to end poverty, industrialise Ebonyi",
+      "publisher": "The Sun",
+      "url": "https://thesun.ng/2027-odii-vows-to-end-poverty-industrialise-ebonyi/",
+      "sourceType": "reported-candidate-statement"
+    },
+    {
+      "title": "Ebonyi State Government 2025 Approved Budget",
+      "publisher": "Ebonyi State Government",
+      "url": "https://ebonyistate.gov.ng/storage/documents/min-1-ebsg-2025-approved-budgetpdf-1738259476.pdf",
+      "sourceType": "primary-budget-document"
+    },
+    {
+      "title": "Ebonyi State Government 2026 Approved Budget",
+      "publisher": "Ebonyi State Government",
+      "url": "https://www.ebonyistate.gov.ng/storage/documents/min-1-2026-approved-budgetpdf-1769898846.pdf",
+      "sourceType": "primary-budget-document"
+    }
+  ],
+  "state": "Ebonyi",
+  "isTimeSensitive": false,
+  "createdAt": "2026-11-27T19:32:00.000Z",
+  "updatedAt": "2026-11-27T19:32:00.000Z",
+  "submittedAt": "2026-11-27T19:32:00.000Z"
+},
+{
+  "id": "sabi-research-odii-2023-ebonyi-election-claim-2026-11-27",
+  "claim": "Ifeanyi Odii alleged that he was denied victory despite winning the 2023 Ebonyi governorship election.",
+  "claimType": "election-result-allegation",
+  "assessmentType": "Election result / court record",
+  "subject": "2023 Ebonyi governorship election",
+  "subjectKey": "2023-ebonyi-governorship-election",
+  "subjectType": "election",
+  "impact": "negative",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "Ifeanyi Chukwuma Odii, PDP Ebonyi governorship candidate, at the party's campaign flag-off in Abakaliki on 26 November 2026; paraphrased by The Sun on 27 November.",
+  "sourceUrl": "https://thesun.ng/2027-odii-vows-to-end-poverty-industrialise-ebonyi/",
+  "supportingUrls": [
+    "https://punchng.com/breaking-apcs-nwifuru-declared-winner-of-ebonyi-gov-election/",
+    "https://www.vanguardngr.com/2024/01/breaking-supreme-court-affirms-nwifuru-as-ebonyi-state-governor/",
+    "https://thenationonlineng.net/breaking-tribunal-affirms-nwifurus-election-as-ebonyi-governor/"
+  ],
+  "context": "The Sun paraphrases Odii; the original speech/video was not located.",
+  "researchNotes": "INEC's announced result was Nwifuru 199,131 and Odii 80,191. The Ebonyi tribunal, Court of Appeal and Supreme Court upheld Nwifuru's return; the Supreme Court dismissed Odii's appeal on 12 Jan 2024. This strongly contradicts the factual claim that Odii was the declared winner, but does not by itself prove that no irregularities occurred. Obtain the full 2023 petition judgments and the 2026 speech before any verdict.",
+  "reviewSummary": "The reported claim is not supported by the official result or final court outcome: Nwifuru was returned with 199,131 votes against Odii's 80,191, and Odii's appeal was dismissed. The broader allegation of irregularities requires its own evidence.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "2027: Odii vows to end poverty, industrialise Ebonyi",
+      "publisher": "The Sun",
+      "url": "https://thesun.ng/2027-odii-vows-to-end-poverty-industrialise-ebonyi/",
+      "sourceType": "reported-candidate-statement"
+    },
+    {
+      "title": "APC's Nwifuru declared winner of Ebonyi governorship election",
+      "publisher": "PUNCH",
+      "url": "https://punchng.com/breaking-apcs-nwifuru-declared-winner-of-ebonyi-gov-election/",
+      "sourceType": "reported-INEC-result"
+    },
+    {
+      "title": "Supreme Court affirms Nwifuru as Ebonyi State Governor",
+      "publisher": "Vanguard",
+      "url": "https://www.vanguardngr.com/2024/01/breaking-supreme-court-affirms-nwifuru-as-ebonyi-state-governor/",
+      "sourceType": "court-outcome-reported"
+    }
+  ],
+  "state": "Ebonyi",
+  "isTimeSensitive": false,
+  "createdAt": "2026-11-27T19:32:00.000Z",
+  "updatedAt": "2026-11-27T19:32:00.000Z",
+  "submittedAt": "2026-11-27T19:32:00.000Z"
+},
+{
+  "id": "sabi-research-odii-poverty-industrialisation-pledge-2026-11-27",
+  "claim": "Ifeanyi Odii pledged to tackle poverty, industrialise Ebonyi and create jobs if elected governor.",
+  "claimType": "campaign-promise",
+  "assessmentType": "Campaign promise / delivery tracking",
+  "subject": "Ifeanyi Odii",
+  "subjectKey": "ifeanyi-odii",
+  "subjectType": "gubernatorial-candidate",
+  "impact": "positive",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "medium",
+  "claimSource": "Ifeanyi Chukwuma Odii, PDP Ebonyi governorship candidate, at the party's campaign flag-off in Abakaliki on 26 November 2026; reported by The Sun on 27 November.",
+  "sourceUrl": "https://thesun.ng/2027-odii-vows-to-end-poverty-industrialise-ebonyi/",
+  "supportingUrls": [
+    "https://thesun.ng/2027-odii-vows-to-end-poverty-industrialise-ebonyi/"
+  ],
+  "context": "The pledge was reported at the PDP campaign flag-off in Abakaliki.",
+  "researchNotes": "This is a campaign pledge, not a factual claim that can be rated true or false. No measurable poverty-reduction target, jobs target, industrial output target, budget, implementation timeline, or funding plan was provided. Track future manifesto details and delivery commitments separately from fact-check verdicts.",
+  "reviewSummary": "The pledge is confirmed as a reported campaign statement. Delivery is not assessable without quantified targets, financing, milestones and a baseline.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "2027: Odii vows to end poverty, industrialise Ebonyi",
+      "publisher": "The Sun",
+      "url": "https://thesun.ng/2027-odii-vows-to-end-poverty-industrialise-ebonyi/",
+      "sourceType": "reported-candidate-statement"
+    }
+  ],
+  "state": "Ebonyi",
+  "isTimeSensitive": false,
+  "createdAt": "2026-11-27T19:32:00.000Z",
+  "updatedAt": "2026-11-27T19:32:00.000Z",
+  "submittedAt": "2026-11-27T19:32:00.000Z"
+},
+{
+  "id": "sabi-research-atiku-adc-lifu-appeal-2026-11-27",
+  "claim": "ADC filed a 17-ground appeal against the Federal High Court judgment setting aside its David Mark-led leadership process and asked the Court of Appeal to restrain INEC from altering party records while the appeal is pending.",
+  "claimType": "judicial-development",
+  "assessmentType": "Judicial appeal / nomination status",
+  "subject": "Atiku Abubakar",
+  "subjectKey": "atiku-abubakar",
+  "subjectType": "presidential-candidate",
+  "impact": "negative",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "African Democratic Congress, through its appeal filing reported by TheCable on 18 November 2026.",
+  "sourceUrl": "https://www.thecable.ng/adc-files-appeal-against-lifus-judgment-seeks-to-stop-inec-from-altering-party-records/",
+  "supportingUrls": [
+    "https://www.reuters.com/world/africa/nigerian-court-nullifies-opposition-party-leadership-raises-questions-over-atiku-candidacy-2026-11-05/",
+    "https://www.arise.tv/adc-crisis-inec-explains-why-atiku-remains-presidential-candidate-on-website-questions-bala-gombes-chairmanship-claim/",
+    "https://inecnigeria.org/documents/uploads/2026/10/b5af9099-864c-4d5e-924d-e1a2c771c529-final-list-presidential.pdf"
+  ],
+  "context": "ADC lawyer Kalu Kalu says the judgment did not expressly void Atiku's candidacy; Reuters described it as affecting the process that produced his nomination.",
+  "researchNotes": "On 19 November, Arise News quoted an unnamed senior INEC source saying a Notice of Appeal and Stay of Execution were subsisting and explaining why Atiku remained listed. Arise did not reproduce the order or identify its scope. This corrects the earlier note that no stay had been located: a media report of a stay exists, but the order itself remains unverified. INEC's 31 October final list still names Atiku and Rotimi Amaechi but predates the 5 November judgment. Obtain the certified judgment, notice of appeal, stay order, Court of Appeal docket, formal INEC decision and the order's scope before stating the operative legal status. Filing an appeal alone does not suspend a judgment.",
+  "reviewSummary": "The appeal and a stay of execution are reported by an unnamed INEC source, but no certified stay order or final appellate merits decision has been independently reviewed. Atiku's nomination status remains unresolved.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "ADC files appeal against Lifu's judgment, seeks to stop INEC from altering party records",
+      "publisher": "TheCable",
+      "url": "https://www.thecable.ng/adc-files-appeal-against-lifus-judgment-seeks-to-stop-inec-from-altering-party-records/",
+      "sourceType": "reported-court-filing"
+    },
+    {
+      "title": "ADC Crisis: INEC Explains Why Atiku Remains Presidential Candidate on Website",
+      "publisher": "Arise News, 19 November 2026",
+      "url": "https://www.arise.tv/adc-crisis-inec-explains-why-atiku-remains-presidential-candidate-on-website-questions-bala-gombes-chairmanship-claim/",
+      "sourceType": "reported-anonymous-INEC-source"
+    },
+    {
+      "title": "INEC final presidential candidate list, 31 October 2026",
+      "publisher": "Independent National Electoral Commission",
+      "url": "https://inecnigeria.org/documents/uploads/2026/10/b5af9099-864c-4d5e-924d-e1a2c771c529-final-list-presidential.pdf",
+      "sourceType": "official-list-predating-judgment"
+    }
+  ],
+  "state": "National",
+  "isTimeSensitive": true,
+  "createdAt": "2026-11-27T19:32:00.000Z",
+  "updatedAt": "2026-11-28T08:16:00.000Z",
+  "submittedAt": "2026-11-27T19:32:00.000Z"
+},
+{
+  "id": "sabi-research-tinubu-northeast-peace-pledge-2026-11-27",
+  "claim": "President Bola Tinubu said in Maiduguri: “We will achieve that peace, the terrorism will go,” urging insurgents to lay down their arms and surrender their weapons.",
+  "claimType": "public-statement",
+  "assessmentType": "Presidential security pledge / delivery tracking",
+  "subject": "Bola Ahmed Tinubu",
+  "subjectKey": "bola-ahmed-tinubu",
+  "subjectType": "president",
+  "impact": "positive",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "medium",
+  "claimSource": "President Bola Tinubu, speaking in Maiduguri on 25 November 2026; reported by Reuters.",
+  "sourceUrl": "https://www.reuters.com/world/africa/nigerias-tinubu-promises-peace-insurgency-hit-region-2026-11-25/",
+  "supportingUrls": [
+    "https://www.reuters.com/world/africa/nigerias-tinubu-promises-peace-insurgency-hit-region-2026-11-25/"
+  ],
+  "context": "This is a public pledge, not a statement that security has already improved.",
+  "researchNotes": "The statement has no delivery deadline or operational target. Track against independently verified security incidents, civilian casualties, displacement, school closures/abductions, and security-agency reporting in Borno and the wider North-East. Do not convert the pledge into an outcome verdict.",
+  "reviewSummary": "The pledge is confirmed as a public statement. Its outcome is not assessable at the time of the statement.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "Nigeria's Tinubu promises peace in insurgency-hit region",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/world/africa/nigerias-tinubu-promises-peace-insurgency-hit-region-2026-11-25/",
+      "sourceType": "reported-presidential-statement"
+    }
+  ],
+  "state": "Borno",
+  "isTimeSensitive": true,
+  "createdAt": "2026-11-27T19:32:00.000Z",
+  "updatedAt": "2026-11-27T19:32:00.000Z",
+  "submittedAt": "2026-11-27T19:32:00.000Z"
+},
+{
+  "id": "sabi-research-inec-irev-validation-safeguard-2026-11-28",
+  "claim": "INEC Chairman Prof. Joash Amupitan said: “If a result is not accurate at the polling unit, it will not go to IReV at all.”",
+  "claimType": "public-statement",
+  "assessmentType": "Electoral technology / result-validation assurance",
+  "subject": "INEC",
+  "subjectKey": "inec",
+  "subjectType": "public-agency",
+  "impact": "positive",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "Prof. Joash Amupitan, speaking at Chatham House in London on 12 November 2026; reported in INEC's official press release published 17 November 2026.",
+  "context": "The INEC Chairman described validation safeguards intended to prevent inaccurate polling-unit results or over-voting figures from being uploaded to the INEC Result Viewing Portal (IReV). The Commission scheduled a nationwide BVAS mock accreditation and result-upload exercise for 28 November 2026 to test accreditation and electronic transmission.",
+  "sourceUrl": "https://www.inecnigeria.org/press/inec-sets-28th-november-2026-for-nationwide-mock-accreditation-exercise",
+  "supportingUrls": [
+    "https://inecnigeria.org/press/list-of-polling-units-for-the-nationwide-mock-accreditation-scheduled-to-hold-on",
+    "https://punchng.com/inec-selects-17676-polling-units-for-mock-bvas-exercise/",
+    "https://www.channelstv.com/2026/11/24/inec-selects-17676-polling-units-for-saturdays-nationwide-bvas-mock-accreditation-exercise/"
+  ],
+  "researchNotes": "Sabi newsroom research lead, accessed 28 November 2026 at 08:35 WAT. The Chairman's statement is an official technical assurance, not an independently verified performance result. The mock exercise was scheduled to run from 08:30 to 14:30 WAT on 28 November; no post-exercise results report was located by this access cut-off. To assess the claim, obtain the published technical specification and validation rules; define what the system treats as an inaccurate result or over-voting; inspect test cases, successful and failed uploads, timestamps, error logs, network conditions, retry/fallback procedures, audit trails, independent observer reports and the corrective-action register. The test must be distinguished from the full election-day and collation process. Do not mark the assurance verified merely because INEC announced the safeguard or scheduled a mock.",
+  "reviewSummary": "The statement is confirmed in INEC's official release. Publicly reviewed material does not yet establish how the safeguard performs in practice; test evidence and independent scrutiny remain outstanding.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "INEC sets 28th November, 2026 for nationwide mock accreditation exercise",
+      "publisher": "INEC, published 17 November 2026",
+      "url": "https://www.inecnigeria.org/press/inec-sets-28th-november-2026-for-nationwide-mock-accreditation-exercise",
+      "sourceType": "official-statement"
+    },
+    {
+      "title": "List of polling units for the nationwide mock accreditation scheduled to hold on November 28th, 2026",
+      "publisher": "INEC",
+      "url": "https://inecnigeria.org/press/list-of-polling-units-for-the-nationwide-mock-accreditation-scheduled-to-hold-on",
+      "sourceType": "official-test-material"
+    }
+  ],
+  "state": "National",
+  "isTimeSensitive": true,
+  "createdAt": "2026-11-28T07:35:00.000Z",
+  "updatedAt": "2026-11-28T07:35:00.000Z",
+  "submittedAt": "2026-11-28T07:35:00.000Z",
+  "origin": "sabi-research",
+  "originLabel": "Sabi newsroom research",
+  "alertStatus": "not_applicable",
+  "seedVersion": 1
+},
+{
+  "id": "sabi-research-adeleke-2027-budget-revenue-reconciliation-2026-11-28",
+  "claim": "Ademola Adeleke's 25 November 2026 budget speech proposed ₦927,370,584,800 in 2027 expenditure and ₦559,307,166,790 in capital projects; the three revenue sources listed in the speech total ₦881,745,084,800.",
+  "claimType": "statistics",
+  "assessmentType": "State budget / revenue and expenditure reconciliation",
+  "subject": "Ademola Adeleke",
+  "subjectKey": "ademola-adeleke",
+  "subjectType": "elected-official",
+  "impact": "neutral",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "Governor Ademola Adeleke's official 2027 budget speech presented to the Osun State House of Assembly on 25 November 2026.",
+  "context": "The speech describes a proposed 2027 appropriation of ₦927,370,584,800, with ₦559,307,166,790 allocated to capital projects. It lists FAAC, independent revenue and development-partner receipts as revenue sources. The proposal is awaiting legislative scrutiny.",
+  "sourceUrl": "https://www.osunstate.gov.ng/2026/11/osun-state-2027-budget-speech-presented-by-governor-ademola-adeleke-to-the-house-of-assembly-on-wednesday-25th-november-2026/",
+  "supportingUrls": [
+    "https://guardian.ng/news/capital-project-gulps-n559bn-as-adeleke-presents-n927-37bn-budget-in-osun/",
+    "https://www.vanguardngr.com/2026/11/2027-budget-adeleke-presents-%E2%82%A6927-3bn-targets-youth-development-job-creation/"
+  ],
+  "researchNotes": "Sabi newsroom calculation, 28 November 2026. The three revenue sources stated in the speech are FAAC ₦400,926,611,400 + independent revenue ₦250,172,402,980 + development-partner receipts ₦230,646,070,420 = ₦881,745,084,800. Compared with proposed expenditure of ₦927,370,584,800, the listed sources leave ₦45,625,500,000 unexplained in the speech summary. The expenditure breakdown does reconcile exactly: personnel ₦130,011,911,330 + overheads ₦238,051,506,680 + capital ₦559,307,166,790 = ₦927,370,584,800. Do not infer that the difference is borrowing, an unlawful deficit or missing funds. Obtain the complete budget estimates and financing schedule to determine whether other revenue, grants, capital receipts or financing items are omitted from the speech summary. The proposal is not yet an enacted appropriation and is not evidence of actual expenditure or delivered projects.",
+  "reviewSummary": "The official speech confirms the proposed total and expenditure allocations. The three revenue sources listed in the speech are ₦45.6255bn below the proposed expenditure total; the full estimates are needed to reconcile the financing plan. No verdict is assigned.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "Osun State 2027 Budget Speech presented by Governor Ademola Adeleke to the House of Assembly on 25 November 2026",
+      "publisher": "Osun State Government, 25 November 2026",
+      "url": "https://www.osunstate.gov.ng/2026/11/osun-state-2027-budget-speech-presented-by-governor-ademola-adeleke-to-the-house-of-assembly-on-wednesday-25th-november-2026/",
+      "sourceType": "official-budget-speech"
+    },
+    {
+      "title": "Capital project gulps N559bn as Adeleke presents N927.37bn budget in Osun",
+      "publisher": "The Guardian Nigeria, 25 November 2026",
+      "url": "https://guardian.ng/news/capital-project-gulps-n559bn-as-adeleke-presents-n927-37bn-budget-in-osun/",
+      "sourceType": "independent-reporting"
+    }
+  ],
+  "state": "Osun",
+  "isTimeSensitive": true,
+  "createdAt": "2026-11-28T07:35:00.000Z",
+  "updatedAt": "2026-11-28T07:35:00.000Z",
+  "submittedAt": "2026-11-28T07:35:00.000Z",
+  "origin": "sabi-research",
+  "originLabel": "Sabi newsroom research",
+  "alertStatus": "not_applicable",
+  "seedVersion": 1
+},
+{
+  "id": "sabi-research-tinubu-2026-revised-budget-2026-11-28",
+  "claim": "President Bola Tinubu's proposed 2026 budget revision reduces aggregate expenditure from ₦68.323 trillion to ₦65.176 trillion while retaining a ₦31.457 trillion fiscal deficit and a ₦29.218 trillion new-borrowing plan.",
+  "claimType": "statistics",
+  "assessmentType": "Federal budget / revised appropriation and fiscal framework",
+  "subject": "Bola Ahmed Tinubu",
+  "subjectKey": "bola-ahmed-tinubu",
+  "subjectType": "elected-official",
+  "impact": "neutral",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "Presidential communication dated 20 November 2026, reproduced in the Federal Ministry of Information and National Orientation release of 24 November 2026 and the National Assembly Library Trust Fund's House plenary summary.",
+  "context": "The President requested repeal and re-enactment of the 2026 Appropriation Act and transmission of a revised Federal Government fiscal framework. The proposal is subject to legislative consideration and has not been identified as finally enacted as at 28 November 2026.",
+  "sourceUrl": "https://fmino.gov.ng/tinubu-seeks-senate-approval-to-reduce-2026-budget-expenditure-by-%E2%82%A63-14-trillion/",
+  "supportingUrls": [
+    "https://naltf.gov.ng/house-of-representatives-plenary-highlights-for-tuesday-24-november-2026/",
+    "https://www.thisdaylive.com/2026/11/25/tinubu-cuts-2026-budget-by-n3-2trn-retains-n31-4trn-deficit-senate-approves-external-borrowing-plan/",
+    "https://businessday.ng/news/article/reps-pass-n65-17trn-2026-budget-bill-for-second-reading/"
+  ],
+  "researchNotes": "The proposed expenditure reduction is ₦68.323tn − ₦65.176tn = ₦3.147tn. The official Ministry of Information summary gives projected FGN revenue of ₦33.720tn, capital expenditure of ₦26.232tn, deficit of ₦31.457tn (5.64% of GDP), and planned new borrowing of ₦29.218tn (₦18.428tn domestic and ₦10.790tn external). The President's letter says the proposed US$7.7bn external borrowing finances an existing foreign-borrowing provision and does not increase the envelope. The proposal was reported to have passed second reading in both chambers by 25 Nov; no final passage/assent was located by 28 Nov. Separately reported 2026–27 supplementary external borrowing authorisations must be mapped to the budget borrowing line before totals are combined. Obtain the full bill, revised fiscal framework, committee reports, appropriation schedules, capital warrants, NNPCL expenditure schedules, debt-service adjustments, loan terms and disbursement records. No verdict on fiscal discipline or delivery is assigned.",
+  "reviewSummary": "Official government and legislative summaries confirm the revised proposal's headline figures. The bill remains subject to the legislative process; underlying schedules and implementation records are still required.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "Tinubu Seeks Senate Approval to Reduce 2026 Budget Expenditure by ₦3.14 Trillion",
+      "publisher": "Federal Ministry of Information and National Orientation, 24 November 2026",
+      "url": "https://fmino.gov.ng/tinubu-seeks-senate-approval-to-reduce-2026-budget-expenditure-by-%E2%82%A63-14-trillion/",
+      "sourceType": "official-government-release"
+    },
+    {
+      "title": "House of Representatives Plenary Highlights for Tuesday, 24 November 2026",
+      "publisher": "National Assembly Library Trust Fund, 24 November 2026",
+      "url": "https://naltf.gov.ng/house-of-representatives-plenary-highlights-for-tuesday-24-november-2026/",
+      "sourceType": "official-legislative-summary"
+    }
+  ],
+  "state": "National",
+  "isTimeSensitive": true,
+  "createdAt": "2026-11-28T07:50:00.000Z",
+  "updatedAt": "2026-11-28T07:50:00.000Z",
+  "submittedAt": "2026-11-28T07:50:00.000Z",
+  "origin": "sabi-research",
+  "originLabel": "Sabi newsroom research",
+  "alertStatus": "not_applicable",
+  "seedVersion": 1
+},
+{
+  "id": "sabi-research-barau-debt-to-gdp-claim-2026-11-28",
+  "claim": "Deputy Senate President Barau Jibrin was reported as saying Nigeria's debt-to-GDP ratio was about 35%, could rise to about 42% after the proposed borrowing, and would remain below a 70% benchmark.",
+  "claimType": "statistic",
+  "assessmentType": "Public debt / debt-to-GDP ratio and benchmark comparison",
+  "subject": "Barau Jibrin",
+  "subjectKey": "barau-jibrin",
+  "subjectType": "elected-official",
+  "impact": "positive",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "THISDAY's report of the Senate debate, published 25 November 2026. The article paraphrases Barau Jibrin; a verbatim transcript of his remarks was not located.",
+  "context": "The statement was made during Senate consideration of the revised 2026 Appropriation Bill and related external borrowing authorisations. The claim frames the resulting debt ratio as remaining below an international benchmark.",
+  "sourceUrl": "https://www.thisdaylive.com/2026/11/25/tinubu-cuts-2026-budget-by-n3-2trn-retains-n31-4trn-deficit-senate-approves-external-borrowing-plan/",
+  "supportingUrls": [
+    "https://www.cbn.gov.ng/Out/2026/RSD/Second%20Quarter%202026%20Economic%20Report.pdf",
+    "https://dmo.gov.ng/total-public-debts/6080-nigeria-s-total-public-debt-as-at-june-30-2026/file",
+    "https://dmo.gov.ng/6129-2024-debt-sustainability-analysis-dsa-report/file",
+    "https://www.imf.org/-/media/files/publications/cr/2026/english/1ngaea2026001.pdf"
+  ],
+  "researchNotes": "The direct transcript and the calculation behind 42% were not located. CBN's Q2 2026 Economic Report states consolidated public debt was ₦166.79tn, or 31.78% of GDP, at end-June 2026; the DMO's June 30 debt table confirms ₦166.788tn total debt (₦91.590tn domestic and ₦75.198tn external). The IMF's May 2026 Article IV report projects gross public debt at 35.4% of GDP for 2026, which is close to the reported 35% but is a projection, not the latest actual end-June ratio. CBN says the national debt ceiling is 60% and the IMF Market Access Country benchmark is 70%; the DMO's 2024 DSA records the 70% IMF MAC benchmark and a 60% recommended national ceiling in the 2024–2027 MTDS. The 42% estimate cannot be reproduced without the debt perimeter, GDP denominator, exchange-rate assumption, drawdown timing, loan amounts and treatment of overlapping borrowing approvals. Do not label the statement false or verified until these are reconciled.",
+  "reviewSummary": "The 35% figure is broadly consistent with the IMF's 2026 projection but differs from the latest official end-June actual of 31.78%. The 42% post-borrowing estimate and the benchmark comparison require a disclosed calculation and precise debt perimeter. No verdict is assigned.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "Tinubu Cuts 2026 Budget by N3.2trn, Retains N31.4trn Deficit, Senate Approves External Borrowing Plan",
+      "publisher": "THISDAY, 25 November 2026",
+      "url": "https://www.thisdaylive.com/2026/11/25/tinubu-cuts-2026-budget-by-n3-2trn-retains-n31-4trn-deficit-senate-approves-external-borrowing-plan/",
+      "sourceType": "secondary-reporting-paraphrase"
+    },
+    {
+      "title": "CBN Economic Report, Second Quarter 2026",
+      "publisher": "Central Bank of Nigeria",
+      "url": "https://www.cbn.gov.ng/Out/2026/RSD/Second%20Quarter%202026%20Economic%20Report.pdf",
+      "sourceType": "official-statistical-report"
+    },
+    {
+      "title": "Nigeria's Total Public Debt Portfolio as at June 30, 2026",
+      "publisher": "Debt Management Office, published 25 September 2026",
+      "url": "https://dmo.gov.ng/total-public-debts/6080-nigeria-s-total-public-debt-as-at-june-30-2026/file",
+      "sourceType": "official-debt-statistics"
+    }
+  ],
+  "state": "National",
+  "isTimeSensitive": true,
+  "createdAt": "2026-11-28T07:50:00.000Z",
+  "updatedAt": "2026-11-28T07:50:00.000Z",
+  "submittedAt": "2026-11-28T07:50:00.000Z",
+  "origin": "sabi-research",
+  "originLabel": "Sabi newsroom research",
+  "alertStatus": "not_applicable",
+  "seedVersion": 1
+},
+{
+  "id": "sabi-research-inec-57000-bvas-1-41m-adhoc-2026-11-28",
+  "claim": "INEC Chairman Joash Amupitan said the Commission would deploy over 1.41 million ad hoc personnel and 57,000 newly procured BVAS devices for the 2027 general elections, with the devices calibrated at a reduced threshold of 850 voters per machine.",
+  "claimType": "public-statement",
+  "assessmentType": "Election procurement / BVAS inventory and ad hoc staffing",
+  "subject": "INEC",
+  "subjectKey": "inec",
+  "subjectType": "public-agency",
+  "impact": "positive",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "Prof. Joash Amupitan at the INEC–Office of the National Security Adviser Strategic Election Security Conference in Abuja on 26 November 2026; reported by Vanguard on 28 November 2026.",
+  "context": "The Chairman presented the equipment and staffing figures as part of the Commission's operational preparations for the 2027 general elections and the nationwide mock accreditation/result-upload exercise.",
+  "sourceUrl": "https://www.vanguardngr.com/2026/11/inec-tests-bvas-result-portal-today/",
+  "supportingUrls": [
+    "https://dailypost.ng/2026/11/26/inec-security-agencies-move-to-strengthen-collaboration-ahead-of-2027-elections/",
+    "https://www.inecnigeria.org/press/inec-sets-28th-november-2026-for-nationwide-mock-accreditation-exercise"
+  ],
+  "researchNotes": "The figures are attributed to the INEC Chairman and are reported by Vanguard on 28 Nov and Daily Post on 26 Nov; neither report substitutes for procurement and deployment records. The 57,000 figure is described as newly procured devices, not necessarily INEC's total BVAS inventory. To verify, obtain procurement notices, award decisions, contract values, supplier details, delivery and acceptance certificates, serial-number inventory, state-level allocation, functionality/repair reports, training records and the number of devices actually available for election day. For the 1.41m ad hoc personnel, obtain the approved staffing model, recruitment and training schedule, NYSC participation figures, deployment plan, payment budget and contingency arrangements. Do not infer that 57,000 devices are sufficient or insufficient without the full existing inventory and deployment model. The 850-voter threshold should be checked against the final operational guidelines and the distribution of registered voters by polling unit.",
+  "reviewSummary": "The Chairman's statement is reported by two outlets, but the underlying procurement, inventory and staffing records have not been reviewed. No verdict is assigned.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "INEC tests BVAS, result portal today",
+      "publisher": "Vanguard, 28 November 2026",
+      "url": "https://www.vanguardngr.com/2026/11/inec-tests-bvas-result-portal-today/",
+      "sourceType": "reported-official-statement"
+    },
+    {
+      "title": "INEC, security agencies move to strengthen collaboration ahead of 2027 elections",
+      "publisher": "Daily Post, 26 November 2026",
+      "url": "https://dailypost.ng/2026/11/26/inec-security-agencies-move-to-strengthen-collaboration-ahead-of-2027-elections/",
+      "sourceType": "corroborating-report"
+    }
+  ],
+  "state": "National",
+  "isTimeSensitive": true,
+  "createdAt": "2026-11-28T07:50:00.000Z",
+  "updatedAt": "2026-11-28T07:50:00.000Z",
+  "submittedAt": "2026-11-28T07:50:00.000Z",
+  "origin": "sabi-research",
+  "originLabel": "Sabi newsroom research",
+  "alertStatus": "not_applicable",
+  "seedVersion": 1
+}
+,
+{
+  "id": "sabi-research-fg-promissory-note-programme-330bn-2026-11-28",
+  "claim": "The Federal Government's 11 November 2026 addendum asked the House of Representatives to amend its Promissory Note Programme request to include proposed issuance totalling ₦330,081,491,763.56 for outstanding Federal Government liabilities.",
+  "claimType": "public-finance",
+  "assessmentType": "Promissory notes / verified-liability settlement",
+  "subject": "Federal Government of Nigeria",
+  "subjectKey": "federal-government",
+  "subjectType": "public-agency",
+  "impact": "neutral",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "Office of the Secretary to the Government of the Federation addendum dated 11 November 2026, received by the House of Representatives on 24 November 2026 as recorded in the House plenary summary.",
+  "sourceUrl": "https://naltf.gov.ng/house-of-representatives-plenary-highlights-for-tuesday-24-november-2026/",
+  "supportingUrls": [
+    "https://guardian.ng/news/fg-seeks-reps-approval-for-n330-08b-promissory-notes-to-clear-debts/",
+    "https://authorityngr.com/2026/11/25/tinubu-seeks-reps-approval-for-n330bn-promissory-notes-to-settle-fg-debts/",
+    "https://punchng.com/fg-corrects-n330bn-promissory-note-request-blames-clerical-error/"
+  ],
+  "context": "The addendum says the original 18 August request omitted ₦60.635bn that was already covered by presidential approval, bringing the proposed amount from ₦269.446bn to ₦330.081bn. The House summary records receipt of the addendum and says the proposed issuance is subject to National Assembly approval.",
+  "researchNotes": "The government describes the liabilities as verified, but the detailed schedule of creditors, contracts, project identifiers, invoice amounts, certification, due dates, payment history, note terms and maturities were not available in the public material reviewed. Verify that the two sums do not overlap with previously approved promissory-note programmes or other debt-settlement requests. Do not treat the request as a new ₦330bn cash disbursement, an approved appropriation, or proof that all underlying claims are valid.",
+  "reviewSummary": "The existence and arithmetic of the addendum are reported in the House plenary summary and corroborating coverage. Underlying liability schedules and final legislative approval remain unavailable; no verdict is assigned.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "House of Representatives Plenary Highlights for Tuesday, 24 November 2026",
+      "publisher": "National Assembly Library Trust Fund",
+      "url": "https://naltf.gov.ng/house-of-representatives-plenary-highlights-for-tuesday-24-november-2026/",
+      "sourceType": "official-plenary-summary"
+    },
+    {
+      "title": "FG seeks Reps' approval for N330.08b promissory notes to clear debts",
+      "publisher": "The Guardian Nigeria, 24 November 2026",
+      "url": "https://guardian.ng/news/fg-seeks-reps-approval-for-n330-08b-promissory-notes-to-clear-debts/",
+      "sourceType": "independent-report"
+    },
+    {
+      "title": "Tinubu seeks Reps' approval for N330bn promissory notes to settle FG debts",
+      "publisher": "The Authority, 25 November 2026",
+      "url": "https://authorityngr.com/2026/11/25/tinubu-seeks-reps-approval-for-n330bn-promissory-notes-to-settle-fg-debts/",
+      "sourceType": "independent-report"
+    }
+  ],
+  "state": "National",
+  "isTimeSensitive": true,
+  "createdAt": "2026-11-28T08:16:00.000Z",
+  "updatedAt": "2026-11-28T08:16:00.000Z",
+  "submittedAt": "2026-11-28T08:16:00.000Z",
+  "origin": "sabi-research",
+  "originLabel": "Sabi newsroom research",
+  "alertStatus": "not_applicable",
+  "seedVersion": 1
+}
 ];
