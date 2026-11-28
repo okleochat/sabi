@@ -28,7 +28,7 @@ export type PollRecord = {
   eligibleForCandidateAverage:boolean;
 };
 
-export const pollingResearchCutoff = "2026-11-27";
+export const pollingResearchCutoff = "2026-11-28";
 export const pollingCatalogueSource = {
   publisher:"OpenPolls Africa",
   title:"Nigeria 2027 opinion-poll catalogue",
