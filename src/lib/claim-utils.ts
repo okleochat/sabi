@@ -57,6 +57,8 @@ const subjectAliases: Record<string, { key: string; label: string; type: string 
   "ifeanyi odii": { key: "ifeanyi-odii", label: "Ifeanyi Odii", type: "gubernatorial-candidate" },
   "babajide sanwo-olu": { key: "babajide-sanwo-olu", label: "Babajide Sanwo-Olu", type: "elected-official" },
   "caleb mutfwang": { key: "caleb-mutfwang", label: "Caleb Mutfwang", type: "elected-official" },
+  "federal government": { key: "federal-government", label: "Federal Government of Nigeria", type: "public-agency" },
+  "federal government of nigeria": { key: "federal-government", label: "Federal Government of Nigeria", type: "public-agency" },
   "edo state police command": { key: "edo-state-police-command", label: "Edo State Police Command", type: "public-agency" }
 };
 
