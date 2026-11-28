@@ -486,6 +486,8 @@ Sources:
 - Channels Television, 24 Nov 2026: https://www.channelstv.com/2026/11/24/inec-selects-17676-polling-units-for-saturdays-nationwide-bvas-mock-accreditation-exercise/
 - Vanguard, 23 Nov 2026: https://www.vanguardngr.com/2026/11/mock-accreditation-inec-publishes-17656-selected-pus-across-36-states-fct/amp/
 
+INEC's current official election calendar, accessed 28 Nov 2026, continues to list the Presidential/National Assembly election for 16 Jan 2027 and the Governorship/State House of Assembly election for 6 Feb 2027. No later change was found in this scan: https://www.inecnigeria.org/elections/calendar/
+
 ## 1F. Osun 2027 draft budget — revenue and expenditure reconciliation
 
 Governor Ademola Adeleke presented the proposed 2027 Osun budget on 25 November 2026. The official speech gives total proposed expenditure of ₦927,370,584,800 and capital projects of ₦559,307,166,790.
