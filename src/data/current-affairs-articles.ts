@@ -89,7 +89,7 @@ export const currentAffairsArticles:StarterArticle[]=[
       "title": "Mock accreditation: INEC publishes 17,656 selected PUs across 36 states, FCT",
       "publisher": "Vanguard",
       "publishedAt": "2026-11-23",
-      "url": "https://www.vanguardngr.com/2026/11/mock-accreditation-inec-publishes-17656-selected-pus-across-36-states-fct/"
+      "url": "https://www.vanguardngr.com/2026/11/mock-accreditation-inec-publishes-17656-selected-pus-across-36-states-fct/amp/"
     }
   ]
 },
