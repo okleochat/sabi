@@ -17,6 +17,7 @@ const categoryLabel:Record<string,string>={
 export default function PollingDeskPage(){
  const average=calculatePollingAverage();
  const partyPolls=polls.filter(p=>p.category==="party-preference");
+ const candidateVoteSnapshots=polls.filter(p=>p.category==="candidate-vote-intention");
  const publicMood=polls.filter(p=>p.category!=="party-preference"&&p.category!=="candidate-vote-intention");
  return <div className="page-shell">
   <section className="page-intro">
