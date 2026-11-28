@@ -830,5 +830,52 @@ export const starterResearchClaims: Array<Record<string, any>> = [
   "originLabel": "Sabi newsroom research",
   "alertStatus": "not_applicable",
   "seedVersion": 1
+},
+{
+  "id": "sabi-research-inec-57000-bvas-1-41m-adhoc-2026-11-28",
+  "claim": "INEC Chairman Joash Amupitan said the Commission would deploy over 1.41 million ad hoc personnel and 57,000 newly procured BVAS devices for the 2027 general elections, with the devices calibrated at a reduced threshold of 850 voters per machine.",
+  "claimType": "public-statement",
+  "assessmentType": "Election procurement / BVAS inventory and ad hoc staffing",
+  "subject": "INEC",
+  "subjectKey": "inec",
+  "subjectType": "public-agency",
+  "impact": "positive",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "Prof. Joash Amupitan at the INEC–Office of the National Security Adviser Strategic Election Security Conference in Abuja on 26 November 2026; reported by Vanguard on 28 November 2026.",
+  "context": "The Chairman presented the equipment and staffing figures as part of the Commission's operational preparations for the 2027 general elections and the nationwide mock accreditation/result-upload exercise.",
+  "sourceUrl": "https://www.vanguardngr.com/2026/11/inec-tests-bvas-result-portal-today/",
+  "supportingUrls": [
+    "https://dailypost.ng/2026/11/26/inec-security-agencies-move-to-strengthen-collaboration-ahead-of-2027-elections/",
+    "https://www.inecnigeria.org/press/inec-sets-28th-november-2026-for-nationwide-mock-accreditation-exercise"
+  ],
+  "researchNotes": "The figures are attributed to the INEC Chairman and are reported by Vanguard on 28 Nov and Daily Post on 26 Nov; neither report substitutes for procurement and deployment records. The 57,000 figure is described as newly procured devices, not necessarily INEC's total BVAS inventory. To verify, obtain procurement notices, award decisions, contract values, supplier details, delivery and acceptance certificates, serial-number inventory, state-level allocation, functionality/repair reports, training records and the number of devices actually available for election day. For the 1.41m ad hoc personnel, obtain the approved staffing model, recruitment and training schedule, NYSC participation figures, deployment plan, payment budget and contingency arrangements. Do not infer that 57,000 devices are sufficient or insufficient without the full existing inventory and deployment model. The 850-voter threshold should be checked against the final operational guidelines and the distribution of registered voters by polling unit.",
+  "reviewSummary": "The Chairman's statement is reported by two outlets, but the underlying procurement, inventory and staffing records have not been reviewed. No verdict is assigned.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "INEC tests BVAS, result portal today",
+      "publisher": "Vanguard, 28 November 2026",
+      "url": "https://www.vanguardngr.com/2026/11/inec-tests-bvas-result-portal-today/",
+      "sourceType": "reported-official-statement"
+    },
+    {
+      "title": "INEC, security agencies move to strengthen collaboration ahead of 2027 elections",
+      "publisher": "Daily Post, 26 November 2026",
+      "url": "https://dailypost.ng/2026/11/26/inec-security-agencies-move-to-strengthen-collaboration-ahead-of-2027-elections/",
+      "sourceType": "corroborating-report"
+    }
+  ],
+  "state": "National",
+  "isTimeSensitive": true,
+  "createdAt": "2026-11-28T07:50:00.000Z",
+  "updatedAt": "2026-11-28T07:50:00.000Z",
+  "submittedAt": "2026-11-28T07:50:00.000Z",
+  "origin": "sabi-research",
+  "originLabel": "Sabi newsroom research",
+  "alertStatus": "not_applicable",
+  "seedVersion": 1
 }
 ];
