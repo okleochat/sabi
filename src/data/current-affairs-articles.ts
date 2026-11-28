@@ -178,6 +178,10 @@ export const currentAffairsArticles:StarterArticle[]=[
       "type": "paragraph",
       "text": "At the INEC–Office of the National Security Adviser Strategic Election Security Conference in Abuja on 26 November, Amupitan also described the mock as a full-scale operational rehearsal for technology and security coordination. Vanguard reported on 28 November that he urged Resident Electoral Commissioners and state Commissioners of Police to test communication lines, response times, logistics and security blind spots. The Commission's own explanation places particular importance on collation-centre failures identified in its post-2023 review. A polling-unit mock can test accreditation and upload workflows, but it cannot alone demonstrate that all collation-centre controls, network conditions, logistics and election-day contingencies will work in January 2027."
     },
+{
+  "type": "paragraph",
+  "text": "Vanguard also reported that Amupitan said INEC expects to deploy more than 1.41 million ad hoc personnel and 57,000 newly procured BVAS devices, calibrated at a reduced threshold of 850 voters per machine. Daily Post reported the same headline staffing and device figures after the 26 November conference. These are reported official claims, not independently verified inventory or deployment counts: 57,000 describes newly procured devices, not necessarily the Commission's total stock. Procurement awards, delivery certificates, device serials, state allocations, training records and the approved staffing model are still needed."
+},
     {
       "type": "callout",
       "text": "A successful mock is evidence that the tested workflows functioned under test conditions. It is not proof that every election-day risk has been solved."
@@ -227,6 +231,12 @@ export const currentAffairsArticles:StarterArticle[]=[
       "publisher": "Vanguard",
       "publishedAt": "2026-11-28",
       "url": "https://www.vanguardngr.com/2026/11/inec-tests-bvas-result-portal-today/"
+    },
+    {
+      "title": "INEC, security agencies move to strengthen collaboration ahead of 2027 elections",
+      "publisher": "Daily Post",
+      "publishedAt": "2026-11-26",
+      "url": "https://dailypost.ng/2026/11/26/inec-security-agencies-move-to-strengthen-collaboration-ahead-of-2027-elections/"
     }
   ]
 },
