@@ -4,7 +4,7 @@ export const currentAffairsArticles:StarterArticle[]=[
   "id": "federal-2026-budget-revision-debt-2026-11-28",
   "slug": "federal-2026-budget-revision-debt-2026-11-28",
   "title": "Tinubu's proposed ₦65.18tn budget reset: spending falls, deficit stays",
-  "summary": "The President's repeal-and-re-enactment proposal cuts 2026 expenditure by ₦3.147tn but retains the ₦31.457tn deficit and ₦29.218tn borrowing plan. Both chambers have moved it through second reading; it is not yet a new law.",
+  "summary": "Tinubu's proposed 2026 budget reset cuts expenditure by ₦3.147tn but keeps the stated deficit and borrowing plan. The House has also received a separate ₦330.08bn promissory-note addendum; approval and the underlying liabilities remain to be checked.",
   "category": "Federal budget and debt",
   "label": "FEDERAL BUDGET / 28 NOV 2026",
   "author": "The Sabi Desk",
@@ -40,7 +40,19 @@ export const currentAffairsArticles:StarterArticle[]=[
     },
     {
       "type": "paragraph",
-      "text": "A separate borrowing decision must not be collapsed into the revised budget figures. The National Assembly Library Trust Fund's 24 November House plenary summary records approval of a 2026–2027 supplementary external borrowing plan of US$20.52 billion and €1.04 billion, plus a resolution concerning external borrowing already provided for in the 2026 Appropriation Act. THISDAY reports a corresponding Senate approval. The detailed schedules are needed to map those authorisations against the ₦29.218 trillion borrowing line and avoid double-counting."
+      "text": "A separate borrowing decision must not be collapsed into the revised budget figures. The National Assembly Library Trust Fund's 24 November House plenary summary records approval of a 2026–2027 supplementary external borrowing plan of US$20.52 billion and €1.04 billion. THISDAY's detailed account of the Senate resolution gives US$20.517755901 billion and €1.045083643 billion, which is consistent with the House figures when rounded. PUNCH's 24 November report instead prints €1.45 billion, a material discrepancy. Sabi uses the exact figure reported by THISDAY and the rounded House summary, but flags the PUNCH outlier pending the signed Senate resolution and committee report. The detailed schedules are still needed to map those authorisations against the ₦29.218 trillion borrowing line and avoid double-counting."
+    },
+    {
+      "type": "heading",
+      "text": "A separate ₦330.08bn promissory-note request"
+    },
+    {
+      "type": "paragraph",
+      "text": "The House's 24 November plenary summary says it received an addendum from the Office of the Secretary to the Government of the Federation (OSGF) correcting an omission in the August request for the Promissory Note Programme. The government said the presidential approval covered ₦269,446,402,822.56 and ₦60,635,088,941.00, totalling ₦330,081,491,763.56. The addendum seeks to amend the proposed issuance for outstanding Federal Government liabilities; it is not evidence of an immediate cash payment or a new ₦330bn appropriation. The House summary records receipt of the addendum, not its approval."
+    },
+    {
+      "type": "paragraph",
+      "text": "The government describes the liabilities as verified, but the full schedule of creditors, contracts, projects, verification criteria, payment history, note maturities and any overlap with earlier debt-settlement programmes was not available in the public material reviewed. Sabi cannot independently confirm the amount or beneficiaries without those underlying records."
     },
     {
       "type": "heading",
@@ -69,7 +81,8 @@ export const currentAffairsArticles:StarterArticle[]=[
         "A line-by-line bridge between the original and revised appropriation, including the NNPCL and debt-service adjustments",
         "The issued capital warrants and project-level amounts described as already warranted",
         "The separate external borrowing authorisations, drawdowns, loan terms, project allocations and whether any amounts overlap",
-        "The next DMO/CBN debt stock release and the GDP denominator used for the 35% and 42% claims"
+        "The next DMO/CBN debt stock release and the GDP denominator used for the 35% and 42% claims",
+        "The ₦330.081bn promissory-note schedule, creditor-level verification, note terms, legislative approval status and overlap with earlier liabilities"
       ]
     },
     {
@@ -91,6 +104,12 @@ export const currentAffairsArticles:StarterArticle[]=[
       "url": "https://naltf.gov.ng/house-of-representatives-plenary-highlights-for-tuesday-24-november-2026/"
     },
     {
+      "title": "Senate approves Tinubu's $20.5bn, €1.45bn external borrowing plan",
+      "publisher": "PUNCH",
+      "publishedAt": "2026-11-24",
+      "url": "https://punchng.com/senate-approves-tinubus-20-5bn-e1-45bn-external-borrowing-plan/"
+    },
+    {
       "title": "Tinubu Cuts 2026 Budget by N3.2trn, Retains N31.4trn Deficit, Senate Approves External Borrowing Plan",
       "publisher": "THISDAY",
       "publishedAt": "2026-11-25",
@@ -101,6 +120,18 @@ export const currentAffairsArticles:StarterArticle[]=[
       "publisher": "BusinessDay",
       "publishedAt": "2026-11-25",
       "url": "https://businessday.ng/news/article/reps-pass-n65-17trn-2026-budget-bill-for-second-reading/"
+    },
+    {
+      "title": "FG seeks Reps’ approval for N330.08b promissory notes to clear debts",
+      "publisher": "The Guardian Nigeria",
+      "publishedAt": "2026-11-24",
+      "url": "https://guardian.ng/news/fg-seeks-reps-approval-for-n330-08b-promissory-notes-to-clear-debts/"
+    },
+    {
+      "title": "Tinubu seeks Reps’ approval for N330bn promissory notes to settle FG debts",
+      "publisher": "The Authority",
+      "publishedAt": "2026-11-25",
+      "url": "https://authorityngr.com/2026/11/25/tinubu-seeks-reps-approval-for-n330bn-promissory-notes-to-settle-fg-debts/"
     },
     {
       "title": "CBN Economic Report, Second Quarter 2026",
@@ -130,7 +161,7 @@ export const currentAffairsArticles:StarterArticle[]=[
   "id": "inec-nationwide-mock-accreditation-2026-11-28",
   "slug": "inec-nationwide-mock-accreditation-2026-11-28",
   "title": "INEC's nationwide mock: what the BVAS test can—and cannot—prove",
-  "summary": "INEC's 28 November BVAS test is also an operational security rehearsal. INEC says 57,000 new devices and more than 1.41 million ad hoc workers are planned; procurement and test outcomes still need evidence.",
+  "summary": "INEC's 28 November BVAS test is also an operational security rehearsal. The Chairman says 57,000 new devices and more than 1.41 million ad hoc workers are planned; INEC also reports a voter register above 100 million after a clean-up. Procurement and test outcomes still need evidence.",
   "category": "Election administration",
   "label": "ELECTION READINESS / 28 NOV 2026",
   "author": "The Sabi Desk",
@@ -183,12 +214,16 @@ export const currentAffairsArticles:StarterArticle[]=[
   "text": "Vanguard also reported that Amupitan said INEC expects to deploy more than 1.41 million ad hoc personnel and 57,000 newly procured BVAS devices, calibrated at a reduced threshold of 850 voters per machine. Daily Post reported the same headline staffing and device figures after the 26 November conference. These are reported official claims, not independently verified inventory or deployment counts: 57,000 describes newly procured devices, not necessarily the Commission's total stock. Procurement awards, delivery certificates, device serials, state allocations, training records and the approved staffing model are still needed."
 },
     {
+      "type": "paragraph",
+      "text": "At the 25 November meeting with Resident Electoral Commissioners, Amupitan also said three phases of Continuous Voter Registration had added more than 10.77 million registrants and that an Automated Biometric Identification System and statutory claims-and-objections review removed more than 1.6 million invalid, duplicate or deceased records. He said the verified register now exceeded 100 million and included 232,658 persons with disabilities. Channels Television reported that he also put the number of complaints received during claims and objections at about 311,000, with roughly 232,000 found to be genuine. These are INEC-reported totals; a reconciled state-by-state audit and breakdown of the removed categories were not located. They should not be described as independently audited figures."
+    },
+    {
       "type": "callout",
       "text": "A successful mock is evidence that the tested workflows functioned under test conditions. It is not proof that every election-day risk has been solved."
     },
     {
       "type": "paragraph",
-      "text": "At the 08:50 WAT research cut-off on 28 November, the exercise was scheduled to run until 2:30 p.m. and Sabi had not located a post-exercise results report. We therefore report it as scheduled, not as completed or successful. The next update should be based on INEC's published results and independent observation, not on the announcement alone."
+      "text": "At the 09:16 WAT research cut-off on 28 November, the exercise was scheduled to run until 2:30 p.m. and Sabi had not located a post-exercise results report. We therefore report it as scheduled, not as completed or successful. The next update should be based on INEC's published results and independent observation, not on the announcement alone."
     }
   ],
   "sources": [
@@ -231,6 +266,18 @@ export const currentAffairsArticles:StarterArticle[]=[
       "publisher": "Vanguard",
       "publishedAt": "2026-11-28",
       "url": "https://www.vanguardngr.com/2026/11/inec-tests-bvas-result-portal-today/"
+    },
+    {
+      "title": "INEC Chairman's address at the Strategic Consultative Meeting with Resident Electoral Commissioners",
+      "publisher": "INEC official account",
+      "publishedAt": "2026-11-25",
+      "url": "https://x.com/inecnigeria/status/2125619590017212805"
+    },
+    {
+      "title": "Registered Voters Now 100m As INEC Removes 1.6m Invalid Records",
+      "publisher": "Channels Television",
+      "publishedAt": "2026-11-26",
+      "url": "https://www.channelstv.com/2026/11/26/registered-voters-now-100m-as-inec-removes-1-6m-invalid-records/"
     },
     {
       "title": "INEC, security agencies move to strengthen collaboration ahead of 2027 elections",
@@ -454,12 +501,12 @@ export const currentAffairsArticles:StarterArticle[]=[
  id:"opposition-summit-november-30-2026",
  slug:"opposition-summit-november-30-2026",
  title:"Opposition summit set for 30 November — but no joint ticket is agreed",
- summary:"Six opposition groupings plan to consider three cooperation documents. Makinde confirms talks with Atiku and Obi, while his campaign denies a reported step-down deal; the summit has not yet happened.",
+ summary:"Six opposition groupings plan to consider three cooperation documents. Makinde confirms talks with Atiku and Obi, while his campaign denies a reported step-down deal. Atiku’s court challenge remains unresolved; Arise reports an INEC source citing a stay, but the order is not public.",
  category:"2027 election watch",
- label:"ELECTION WATCH / 27 NOV 2026",
+ label:"ELECTION WATCH / 28 NOV 2026",
  author:"The Sabi Desk",
  publishedAt:"2026-11-27",
- updatedAt:"2026-11-27",
+ updatedAt:"2026-11-28",
  readTime:"6 min",
  featured:false,
  heroArt:"ink",
@@ -472,14 +519,14 @@ export const currentAffairsArticles:StarterArticle[]=[
   {type:"paragraph",text:"Lere Olayinka, a media aide to FCT Minister Nyesom Wike, posted on Facebook and X that Makinde would step down for Atiku on 30 November and negotiate a Secretary to the Government of the Federation appointment. PUNCH reproduced the post, but the original social-media post URL was not located in this review. The PUNCH report also records an Atiku ally confirming that talks had taken place, but not confirming a withdrawal or SGF agreement."},
   {type:"paragraph",text:"Makinde’s APM campaign spokesperson, Richard Ihediwa, told PUNCH there was no decision for the governor to withdraw and said he remained focused on the race. Atiku’s public-communication aide, Phrank Shaibu, questioned Olayinka’s authority to speak for the ADC, and the ADC declined to confirm the reported arrangement. The evidence therefore supports the existence of consultations, not a verified decision by Makinde to withdraw or accept an appointment."},
   {type:"heading",text:"Atiku’s court position remains relevant"},
-  {type:"paragraph",text:"A Federal High Court ruling on 5 November set aside the processes that produced the ADC leadership and Atiku’s nomination. Reuters reported that the ADC rejected the decision and said it would appeal. This desk has not located a final appellate outcome in the sources checked by 27 November. The ruling should be reported as a live legal issue, not as a final determination of the election field."},
+  {type:"paragraph",text:"The Federal High Court’s 5 November judgment set aside the David Mark-led ADC leadership process and actions taken under it. PUNCH reported that the orders affected the primary process and nominations; Reuters described the ruling as voiding Atiku’s nomination. ADC lawyer Kalu Kalu argued on 11 November that the judgment did not expressly name or disqualify Atiku; that is the party’s legal position, not a court finding. ADC filed a 17-ground appeal and asked the Court of Appeal to restrain INEC from altering party records. On 19 November, Arise News quoted an unnamed senior INEC source saying a Notice of Appeal and Stay of Execution were subsisting and explaining why Atiku remained listed on the Commission’s website. Arise did not publish the stay order or identify its scope; the source said INEC would state its position in due course. INEC’s 31 October candidate list still names Atiku and Rotimi Amaechi, but it predates the judgment and cannot settle the later dispute. No certified stay order or final appellate merits judgment was located by 28 November. The legal effect of the judgment on the nomination therefore remains unresolved."},
   {type:"heading",text:"What is known — and what is not"},
   {type:"list",items:[
    "Known: a six-group opposition summit is scheduled for 30 November, with three cooperation documents listed for consideration.",
    "Known: Makinde publicly confirmed discussions with Atiku and Obi and described a loose arrangement rather than a formal merger.",
    "Disputed: the claim that Makinde has agreed to withdraw for Atiku and seek an SGF appointment. His campaign denies any decision to withdraw.",
    "Not established: a consensus presidential candidate, a signed pact, a formal merger, a final ticket, or a confirmed withdrawal by any candidate.",
-   "Still open: the authority of each participating party or faction to bind its candidates and members, and the effect of Atiku’s pending court challenge."
+   "Still open: the authority of each participating party or faction to bind its candidates and members; the precise scope and effect of the reported stay; a formal INEC decision; and the final appellate outcome."
   ]},
   {type:"callout",text:"The 30 November summit is a scheduled political event, not a completed coalition. Sabi will update this record only when the documents, signatories, party decisions and any candidate changes can be verified."}
  ],
@@ -488,7 +535,12 @@ export const currentAffairsArticles:StarterArticle[]=[
   {title:"Atiku, Obi, others expected at November 30 Opposition Summit",publisher:"The Sun",publishedAt:"2026-11-27",url:"https://thesun.ng/atiku-obi-others-expected-november-30-opposition-summit/"},
   {title:"Atiku, Obi, Makinde expected to sign opposition unity pact on Monday",publisher:"Nigeria Info FM",publishedAt:"2026-11-27",url:"https://www.nigeriainfo.fm/news/2027-elections/atiku-obi-makinde-expected-to-sign-opposition-unity-pact-on-monday/"},
   {title:"Makinde: Opposition will enter into an arrangement to defeat Tinubu in 2027",publisher:"TheCable",publishedAt:"2026-11-26",url:"https://www.thecable.ng/makinde-opposition-will-enter-into-an-arrangement-to-defeat-tinubu-in-2027/"},
-  {title:"Nigerian court voids candidacy of opposition ADC's Atiku for 2027 election",publisher:"Reuters",publishedAt:"2026-11-05",url:"https://www.reuters.com/world/africa/nigerian-court-voids-candidacy-opposition-adcs-atiku-2027-election-2026-11-05/"}
+  {title:"Court sacks Mark-led ADC NWC, nullifies Atiku’s candidacy",publisher:"PUNCH",publishedAt:"2026-11-05",url:"https://punchng.com/breaking-court-sacks-mark-led-adc-nwc-nullifies-atikus-candidacy/"},
+  {title:"Justice Lifu’s Judgment Does Not Void Atiku’s Candidacy — ADC Lawyer",publisher:"Channels Television",publishedAt:"2026-11-11",url:"https://www.channelstv.com/2026/11/11/justice-lifus-judgment-does-not-void-atikus-candidacy-adc-lawyer/"},
+  {title:"ADC files appeal against Lifu’s judgment, seeks to stop INEC from altering party records",publisher:"TheCable",publishedAt:"2026-11-18",url:"https://www.thecable.ng/adc-files-appeal-against-lifus-judgment-seeks-to-stop-inec-from-altering-party-records/"},
+  {title:"ADC Crisis: INEC Explains Why Atiku Remains Presidential Candidate on Website, Questions Bala Gombe’s Chairmanship Claim",publisher:"Arise News",publishedAt:"2026-11-19",url:"https://www.arise.tv/adc-crisis-inec-explains-why-atiku-remains-presidential-candidate-on-website-questions-bala-gombes-chairmanship-claim/"},
+  {title:"INEC updated final presidential candidate list",publisher:"Independent National Electoral Commission",publishedAt:"2026-10-31",url:"https://inecnigeria.org/documents/uploads/2026/10/b5af9099-864c-4d5e-924d-e1a2c771c529-final-list-presidential.pdf"},
+  {title:"Nigerian court voids candidacy of opposition ADC’s Atiku for 2027 election",publisher:"Reuters",publishedAt:"2026-11-05",url:"https://www.reuters.com/world/africa/nigerian-court-voids-candidacy-opposition-adcs-atiku-2027-election-2026-11-05/"}
  ]
 }
 ];
