@@ -130,7 +130,7 @@ export const currentAffairsArticles:StarterArticle[]=[
   "id": "inec-nationwide-mock-accreditation-2026-11-28",
   "slug": "inec-nationwide-mock-accreditation-2026-11-28",
   "title": "INEC's nationwide mock: what the BVAS test can—and cannot—prove",
-  "summary": "INEC scheduled a nationwide BVAS accreditation and result-upload test for 28 November. Its own design implies 17,676 polling units, but one report gives a different total. The exercise is a test, not an election.",
+  "summary": "INEC's 28 November BVAS test is also an operational security rehearsal. INEC says 57,000 new devices and more than 1.41 million ad hoc workers are planned; procurement and test outcomes still need evidence.",
   "category": "Election administration",
   "label": "ELECTION READINESS / 28 NOV 2026",
   "author": "The Sabi Desk",
@@ -176,7 +176,7 @@ export const currentAffairsArticles:StarterArticle[]=[
     },
     {
       "type": "paragraph",
-      "text": "The Commission's own explanation places particular importance on collation-centre failures identified in its post-2023 review. A polling-unit mock can test accreditation and upload workflows, but it cannot alone demonstrate that all collation-centre controls, network conditions, logistics and election-day contingencies will work in January 2027."
+      "At the INEC–Office of the National Security Adviser Strategic Election Security Conference in Abuja on 26 November, Amupitan also described the mock as a full-scale operational rehearsal for technology and security coordination. Vanguard reported on 28 November that he urged Resident Electoral Commissioners and state Commissioners of Police to test communication lines, response times, logistics and security blind spots. The Commission's own explanation places particular importance on collation-centre failures identified in its post-2023 review. A polling-unit mock can test accreditation and upload workflows, but it cannot alone demonstrate that all collation-centre controls, network conditions, logistics and election-day contingencies will work in January 2027."
     },
     {
       "type": "callout",
@@ -184,7 +184,7 @@ export const currentAffairsArticles:StarterArticle[]=[
     },
     {
       "type": "paragraph",
-      "text": "At the 08:35 WAT research cut-off on 28 November, Sabi had not located a post-exercise results report. We therefore report the exercise as scheduled, not as completed or successful. The next update should be based on INEC's published results and independent observation, not on the announcement alone."
+      "At the 08:50 WAT research cut-off on 28 November, the exercise was scheduled to run until 2:30 p.m. and Sabi had not located a post-exercise results report. We therefore report it as scheduled, not as completed or successful. The next update should be based on INEC's published results and independent observation, not on the announcement alone."
     }
   ],
   "sources": [
@@ -216,6 +216,12 @@ export const currentAffairsArticles:StarterArticle[]=[
       "publisher": "Vanguard",
       "publishedAt": "2026-11-23",
       "url": "https://www.vanguardngr.com/2026/11/mock-accreditation-inec-publishes-17656-selected-pus-across-36-states-fct/amp/"
+    },
+    {
+      "title": "INEC tests BVAS, result portal today",
+      "publisher": "Vanguard",
+      "publishedAt": "2026-11-28",
+      "url": "https://www.vanguardngr.com/2026/11/inec-tests-bvas-result-portal-today/"
     }
   ]
 },
