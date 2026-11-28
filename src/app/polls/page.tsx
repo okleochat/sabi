@@ -29,12 +29,12 @@ export default function PollingDeskPage(){
    </div>
   </section>
   <section className="page-section">
-   <ShareCard kind="SABI POLLING DESK" kicker="NIGERIA / 2027" title="Polls, with the methods attached." summary="Track what has actually been measured, who was interviewed, how they were selected and what the survey can legitimately tell us." details={[{label:"Published survey records",value:String(polls.length)},{label:"Candidate vote averages",value:average?"Available":"Withheld"},{label:"Research checked",value:"27 Nov 2026"}]} path="/polls"/>
+   <ShareCard kind="SABI POLLING DESK" kicker="NIGERIA / 2027" title="Polls, with the methods attached." summary="Track what has actually been measured, who was interviewed, how they were selected and what the survey can legitimately tell us." details={[{label:"Published survey records",value:String(polls.length)},{label:"Candidate vote averages",value:average?"Available":"Withheld"},{label:"Research checked",value:"28 Nov 2026"}]} path="/polls"/>
    <div className="poll-status-panel">
     <div>
      <div className="eyebrow">NATIONAL CANDIDATE VOTE-INTENTION ESTIMATE</div>
      <div className="poll-status-value">{average?"POLLING AVERAGE AVAILABLE":"NOT YET CALCULATED"}</div>
-     <p>{average?average.note:"As of 27 November 2026, no published survey meets Sabi's entry rules for a final-ballot, national probability-sample average. Two self-selected online ticket exercises are shown separately as context only; neither meets the sampling, question-transparency and final-ballot requirements. Party-preference, turnout-intention and election-confidence measures remain separate from candidate vote intention."}</p>
+     <p>{average?average.note:"As of 28 November 2026, no published survey meets Sabi's entry rules for a final-ballot, national probability-sample average. Two self-selected online ticket exercises are shown separately as context only; neither meets the sampling, question-transparency and final-ballot requirements. Party-preference, turnout-intention and election-confidence measures remain separate from candidate vote intention."}</p>
     </div>
     <div className="poll-status-meta">
      <div className="eyebrow">WHEN THE AVERAGE CAN APPEAR</div>
