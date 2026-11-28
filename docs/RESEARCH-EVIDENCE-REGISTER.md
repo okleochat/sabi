@@ -557,3 +557,16 @@ Sources:
 - DMO, *Nigeria's Total Public Debt Portfolio as at June 30, 2026*, published 25 Sep 2026: https://dmo.gov.ng/total-public-debts/6080-nigeria-s-total-public-debt-as-at-june-30-2026/file
 - DMO, *2024 Debt Sustainability Analysis*: https://dmo.gov.ng/6129-2024-debt-sustainability-analysis-dsa-report/file
 - IMF, *2026 Article IV Consultation*, report completed 7 May 2026: https://www.imf.org/-/media/files/publications/cr/2026/english/1ngaea2026001.pdf
+
+ 
+### 28 November 2026, 08:50 WAT — additional INEC operational and procurement claims
+
+Vanguard's 28 Nov report says INEC Chairman Joash Amupitan, speaking at the INEC–ONSA Strategic Election Security Conference in Abuja on 26 Nov, described the mock as a full-scale operational rehearsal for BVAS, IReV and security coordination. He urged Resident Electoral Commissioners and state Commissioners of Police to test communications, response times, logistics and security blind spots.
+
+The same report attributes to Amupitan a statement that INEC would deploy over 1.41 million ad hoc personnel and 57,000 newly procured BVAS devices, with a threshold of 850 voters per machine. Daily Post's 26 Nov report also carries the 1.41 million and 57,000 figures. These remain reported official claims pending procurement, delivery, asset-register, allocation, training and staffing records. The 57,000 figure is newly procured devices, not necessarily the Commission's total inventory.
+
+No post-exercise performance report was located at the 08:50 WAT cut-off. The mock was scheduled to run until 14:30 WAT; do not describe it as completed or successful yet.
+
+Sources:
+- Vanguard, 28 Nov 2026: https://www.vanguardngr.com/2026/11/inec-tests-bvas-result-portal-today/
+- Daily Post, 26 Nov 2026: https://dailypost.ng/2026/11/26/inec-security-agencies-move-to-strengthen-collaboration-ahead-of-2027-elections/
