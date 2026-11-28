@@ -201,81 +201,42 @@ export const polls:PollRecord[] = [
   },
   {
     id:"afrobarometer-nigeria-2024-election-expectations",
-    title:"Afrobarometer Nigeria survey (June–July 2024) — 2027 election expectations, released November 2026",
+    title:"Afrobarometer Nigeria release on 2027 election expectations — fieldwork date unresolved",
     pollster:"Afrobarometer; Nigeria network led by NOIPolls",
     category:"election-confidence",
-    fieldwork:"June–July 2024 (Nigeria Round 10 fieldwork; release published 11 November 2026)",
+    fieldwork:"June–July 2024 (as printed in the 11 November 2026 release; the date conflicts with its Round 11 framing. The official Round 10 Nigeria summary confirms June–July 2024 as Round 10 fieldwork.)",
     publishedAt:"2026-11-11",
     sampleSize:1600,
     population:"Adult Nigerians",
-    geography:"Nigeria, nationally representative",
-    mode:"Face-to-face household interviews",
-    samplingMethod:"Nationally representative, random, stratified probability sample of 1,600 adult Nigerians.",
-    marginOfError:"±2.5 percentage points at 95% confidence",
-    sponsor:"Afrobarometer Nigeria network",
+    geography:"Nigeria; described by the release as nationally representative",
+    mode:"Not stated in the 11 November 2026 release. The Round 10 Nigeria report describes face-to-face household interviews, but that mode cannot be assumed for the release's Round 11 figures.",
+    samplingMethod:"The release describes a nationally representative, random, stratified probability sample of 1,600 adults. However, its printed June–July 2024 fieldwork period matches the official Round 10 Nigeria summary, while the release describes Round 11 as launched in May 2026. No separate Round 11 Nigeria technical information form or microdata was located in this review; the design and weighting for these figures therefore remain unverified.",
+    marginOfError:"±2.5 percentage points at 95% confidence, as stated in the release; applicability to the release's Round 11/2026 figures is unverified.",
+    sponsor:"Afrobarometer; Nigeria network led by NOIPolls. No specific sponsor for this wave is identified in the release.",
+    question:"Turnout: “Thinking about the forthcoming elections in 2027, how likely is it that you will vote for a candidate in the presidential election?” Election confidence: “How free and fair do you expect the 2027 presidential and legislative elections to be?”",
     results:[
-      {
-            "label": "Likely to vote in 2027",
-            "value": 64,
-            "unit": "percent",
-            "note": "Turnout intention, not candidate vote intention."
-      },
-      {
-            "label": "Very likely to vote",
-            "value": 48,
-            "unit": "percent"
-      },
-      {
-            "label": "Expect the 2027 election to be largely free and fair",
-            "value": 37,
-            "unit": "percent"
-      },
-      {
-            "label": "Expect the 2027 election not to be free and fair or to have major problems",
-            "value": 48,
-            "unit": "percent"
-      },
-      {
-            "label": "Say vote-buying is likely in the 2027 election",
-            "value": 89,
-            "unit": "percent"
-      },
-      {
-            "label": "Expect valid votes may not be counted accurately",
-            "value": 79,
-            "unit": "percent"
-      },
-      {
-            "label": "Expect political violence during the election",
-            "value": 79,
-            "unit": "percent"
-      },
-      {
-            "label": "Expect electoral laws may be disregarded",
-            "value": 78,
-            "unit": "percent"
-      },
-      {
-            "label": "Expect incorrect results may be announced",
-            "value": 78,
-            "unit": "percent"
-      },
-      {
-            "label": "Say candidate policy positions influence their vote",
-            "value": 92,
-            "unit": "percent",
-            "note": "Voting motivation, not candidate preference."
-      }
-],
+      {label:"Likely to vote in 2027",value:64,unit:"percent",note:"Turnout intention, not candidate vote intention."},
+      {label:"Very likely to vote",value:48,unit:"percent"},
+      {label:"Expect the 2027 election to be largely free and fair",value:37,unit:"percent"},
+      {label:"Expect the 2027 election not to be free and fair or to have major problems",value:48,unit:"percent"},
+      {label:"Say vote-buying is likely in the 2027 election",value:89,unit:"percent"},
+      {label:"Expect valid votes may not be counted accurately",value:79,unit:"percent"},
+      {label:"Expect political violence during the election",value:79,unit:"percent"},
+      {label:"Expect electoral laws may be disregarded",value:78,unit:"percent"},
+      {label:"Expect incorrect results may be announced",value:78,unit:"percent"},
+      {label:"Say candidate policy positions influence their vote",value:92,unit:"percent",note:"Voting motivation, not candidate preference."}
+    ],
     sourceUrl:"https://www.afrobarometer.org/wp-content/uploads/2026/11/News-release-Nigerians-doubt-quality-of-upcoming-election-Afrobarometer-bh-11nov26.pdf",
     methodologyUrl:"https://www.afrobarometer.org/wp-content/uploads/2025/08/R10-Summary-of-results-Nigeria-Afrobarometer-bh-7aug25.pdf",
     limitations:[
-      "The news release was published 11 November 2026, but its own methodology section says the 1,600-person Nigeria fieldwork took place in June–July 2024; the official Nigeria Round 10 summary confirms this is the 2024 survey baseline. The 2026 publication date must not be presented as 2026 fieldwork or current opinion.",
-      "This is an election-expectations and turnout survey, not a candidate vote-intention poll, party-preference poll or favourability rating."
-],
+      "The 11 November 2026 release describes a new Round 11 survey and says Round 11 launched in May 2026, but its methodology paragraph prints June–July 2024 as the fieldwork period. Afrobarometer's official Nigeria Round 10 summary confirms June–July 2024 was Round 10 fieldwork. This may be a date error or a source-attribution problem; Sabi has requested clarification in the research notes and does not treat the figures as confirmed 2026 opinion.",
+      "The 2026 release does not state the survey mode or provide a separate Round 11 Nigeria technical information form or microdata in the material located. Round 10's face-to-face mode cannot be carried over by assumption.",
+      "The reported measures concern turnout intention and election confidence, not candidate vote intention, party preference or candidate favourability.",
+      "The stated ±2.5-point margin of error is reproduced as printed; its applicability to the Round 11 figures cannot be independently confirmed until the fieldwork and sample documentation are clarified."
+    ],
     finalBallotMatched:false,
-    probabilitySample:true,
-    methodologyPublished:true,
+    probabilitySample:false,
+    methodologyPublished:false,
     nationalScope:true,
     eligibleForCandidateAverage:false,
   },
