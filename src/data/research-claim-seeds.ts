@@ -632,5 +632,100 @@ export const starterResearchClaims: Array<Record<string, any>> = [
   "createdAt": "2026-11-27T19:32:00.000Z",
   "updatedAt": "2026-11-27T19:32:00.000Z",
   "submittedAt": "2026-11-27T19:32:00.000Z"
+},
+{
+  "id": "sabi-research-inec-irev-validation-safeguard-2026-11-28",
+  "claim": "INEC Chairman Prof. Joash Amupitan said: “If a result is not accurate at the polling unit, it will not go to IReV at all.”",
+  "claimType": "public-statement",
+  "assessmentType": "Electoral technology / result-validation assurance",
+  "subject": "INEC",
+  "subjectKey": "inec",
+  "subjectType": "public-agency",
+  "impact": "positive",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "Prof. Joash Amupitan, speaking at Chatham House in London on 12 November 2026; reported in INEC's official press release published 17 November 2026.",
+  "context": "The INEC Chairman described validation safeguards intended to prevent inaccurate polling-unit results or over-voting figures from being uploaded to the INEC Result Viewing Portal (IReV). The Commission scheduled a nationwide BVAS mock accreditation and result-upload exercise for 28 November 2026 to test accreditation and electronic transmission.",
+  "sourceUrl": "https://www.inecnigeria.org/press/inec-sets-28th-november-2026-for-nationwide-mock-accreditation-exercise",
+  "supportingUrls": [
+    "https://inecnigeria.org/press/list-of-polling-units-for-the-nationwide-mock-accreditation-scheduled-to-hold-on",
+    "https://punchng.com/inec-selects-17676-polling-units-for-mock-bvas-exercise/",
+    "https://www.channelstv.com/2026/11/24/inec-selects-17676-polling-units-for-saturdays-nationwide-bvas-mock-accreditation-exercise/"
+  ],
+  "researchNotes": "Sabi newsroom research lead, accessed 28 November 2026 at 08:35 WAT. The Chairman's statement is an official technical assurance, not an independently verified performance result. The mock exercise was scheduled to run from 08:30 to 14:30 WAT on 28 November; no post-exercise results report was located by this access cut-off. To assess the claim, obtain the published technical specification and validation rules; define what the system treats as an inaccurate result or over-voting; inspect test cases, successful and failed uploads, timestamps, error logs, network conditions, retry/fallback procedures, audit trails, independent observer reports and the corrective-action register. The test must be distinguished from the full election-day and collation process. Do not mark the assurance verified merely because INEC announced the safeguard or scheduled a mock.",
+  "reviewSummary": "The statement is confirmed in INEC's official release. Publicly reviewed material does not yet establish how the safeguard performs in practice; test evidence and independent scrutiny remain outstanding.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "INEC sets 28th November, 2026 for nationwide mock accreditation exercise",
+      "publisher": "INEC, published 17 November 2026",
+      "url": "https://www.inecnigeria.org/press/inec-sets-28th-november-2026-for-nationwide-mock-accreditation-exercise",
+      "sourceType": "official-statement"
+    },
+    {
+      "title": "List of polling units for the nationwide mock accreditation scheduled to hold on November 28th, 2026",
+      "publisher": "INEC",
+      "url": "https://inecnigeria.org/press/list-of-polling-units-for-the-nationwide-mock-accreditation-scheduled-to-hold-on",
+      "sourceType": "official-test-material"
+    }
+  ],
+  "state": "National",
+  "isTimeSensitive": true,
+  "createdAt": "2026-11-28T07:35:00.000Z",
+  "updatedAt": "2026-11-28T07:35:00.000Z",
+  "submittedAt": "2026-11-28T07:35:00.000Z",
+  "origin": "sabi-research",
+  "originLabel": "Sabi newsroom research",
+  "alertStatus": "not_applicable",
+  "seedVersion": 1
+},
+{
+  "id": "sabi-research-adeleke-2027-budget-revenue-reconciliation-2026-11-28",
+  "claim": "Ademola Adeleke's 25 November 2026 budget speech proposed ₦927,370,584,800 in 2027 expenditure and ₦559,307,166,790 in capital projects; the three revenue sources listed in the speech total ₦881,745,084,800.",
+  "claimType": "statistics",
+  "assessmentType": "State budget / revenue and expenditure reconciliation",
+  "subject": "Ademola Adeleke",
+  "subjectKey": "ademola-adeleke",
+  "subjectType": "elected-official",
+  "impact": "neutral",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "Governor Ademola Adeleke's official 2027 budget speech presented to the Osun State House of Assembly on 25 November 2026.",
+  "context": "The speech describes a proposed 2027 appropriation of ₦927,370,584,800, with ₦559,307,166,790 allocated to capital projects. It lists FAAC, independent revenue and development-partner receipts as revenue sources. The proposal is awaiting legislative scrutiny.",
+  "sourceUrl": "https://www.osunstate.gov.ng/2026/11/osun-state-2027-budget-speech-presented-by-governor-ademola-adeleke-to-the-house-of-assembly-on-wednesday-25th-november-2026/",
+  "supportingUrls": [
+    "https://guardian.ng/news/capital-project-gulps-n559bn-as-adeleke-presents-n927-37bn-budget-in-osun/",
+    "https://www.vanguardngr.com/2026/11/2027-budget-adeleke-presents-%E2%82%A6927-3bn-targets-youth-development-job-creation/"
+  ],
+  "researchNotes": "Sabi newsroom calculation, 28 November 2026. The three revenue sources stated in the speech are FAAC ₦400,926,611,400 + independent revenue ₦250,172,402,980 + development-partner receipts ₦230,646,070,420 = ₦881,745,084,800. Compared with proposed expenditure of ₦927,370,584,800, the listed sources leave ₦45,625,500,000 unexplained in the speech summary. The expenditure breakdown does reconcile exactly: personnel ₦130,011,911,330 + overheads ₦238,051,506,680 + capital ₦559,307,166,790 = ₦927,370,584,800. Do not infer that the difference is borrowing, an unlawful deficit or missing funds. Obtain the complete budget estimates and financing schedule to determine whether other revenue, grants, capital receipts or financing items are omitted from the speech summary. The proposal is not yet an enacted appropriation and is not evidence of actual expenditure or delivered projects.",
+  "reviewSummary": "The official speech confirms the proposed total and expenditure allocations. The three revenue sources listed in the speech are ₦45.6255bn below the proposed expenditure total; the full estimates are needed to reconcile the financing plan. No verdict is assigned.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "Osun State 2027 Budget Speech presented by Governor Ademola Adeleke to the House of Assembly on 25 November 2026",
+      "publisher": "Osun State Government, 25 November 2026",
+      "url": "https://www.osunstate.gov.ng/2026/11/osun-state-2027-budget-speech-presented-by-governor-ademola-adeleke-to-the-house-of-assembly-on-wednesday-25th-november-2026/",
+      "sourceType": "official-budget-speech"
+    },
+    {
+      "title": "Capital project gulps N559bn as Adeleke presents N927.37bn budget in Osun",
+      "publisher": "The Guardian Nigeria, 25 November 2026",
+      "url": "https://guardian.ng/news/capital-project-gulps-n559bn-as-adeleke-presents-n927-37bn-budget-in-osun/",
+      "sourceType": "independent-reporting"
+    }
+  ],
+  "state": "Osun",
+  "isTimeSensitive": true,
+  "createdAt": "2026-11-28T07:35:00.000Z",
+  "updatedAt": "2026-11-28T07:35:00.000Z",
+  "submittedAt": "2026-11-28T07:35:00.000Z",
+  "origin": "sabi-research",
+  "originLabel": "Sabi newsroom research",
+  "alertStatus": "not_applicable",
+  "seedVersion": 1
 }
 ];
