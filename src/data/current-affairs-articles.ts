@@ -176,7 +176,7 @@ export const currentAffairsArticles:StarterArticle[]=[
     },
     {
       "type": "paragraph",
-      "At the INEC–Office of the National Security Adviser Strategic Election Security Conference in Abuja on 26 November, Amupitan also described the mock as a full-scale operational rehearsal for technology and security coordination. Vanguard reported on 28 November that he urged Resident Electoral Commissioners and state Commissioners of Police to test communication lines, response times, logistics and security blind spots. The Commission's own explanation places particular importance on collation-centre failures identified in its post-2023 review. A polling-unit mock can test accreditation and upload workflows, but it cannot alone demonstrate that all collation-centre controls, network conditions, logistics and election-day contingencies will work in January 2027."
+      "text": "At the INEC–Office of the National Security Adviser Strategic Election Security Conference in Abuja on 26 November, Amupitan also described the mock as a full-scale operational rehearsal for technology and security coordination. Vanguard reported on 28 November that he urged Resident Electoral Commissioners and state Commissioners of Police to test communication lines, response times, logistics and security blind spots. The Commission's own explanation places particular importance on collation-centre failures identified in its post-2023 review. A polling-unit mock can test accreditation and upload workflows, but it cannot alone demonstrate that all collation-centre controls, network conditions, logistics and election-day contingencies will work in January 2027."
     },
     {
       "type": "callout",
@@ -184,7 +184,7 @@ export const currentAffairsArticles:StarterArticle[]=[
     },
     {
       "type": "paragraph",
-      "At the 08:50 WAT research cut-off on 28 November, the exercise was scheduled to run until 2:30 p.m. and Sabi had not located a post-exercise results report. We therefore report it as scheduled, not as completed or successful. The next update should be based on INEC's published results and independent observation, not on the announcement alone."
+      "text": "At the 08:50 WAT research cut-off on 28 November, the exercise was scheduled to run until 2:30 p.m. and Sabi had not located a post-exercise results report. We therefore report it as scheduled, not as completed or successful. The next update should be based on INEC's published results and independent observation, not on the announcement alone."
     }
   ],
   "sources": [
