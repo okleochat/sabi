@@ -484,7 +484,7 @@ Sources:
 - INEC, *List of polling units for the nationwide mock accreditation scheduled to hold on November 28th, 2026*, accessed 28 Nov 2026: https://inecnigeria.org/press/list-of-polling-units-for-the-nationwide-mock-accreditation-scheduled-to-hold-on
 - PUNCH, 24 Nov 2026: https://punchng.com/inec-selects-17676-polling-units-for-mock-bvas-exercise/
 - Channels Television, 24 Nov 2026: https://www.channelstv.com/2026/11/24/inec-selects-17676-polling-units-for-saturdays-nationwide-bvas-mock-accreditation-exercise/
-- Vanguard, 23 Nov 2026: https://www.vanguardngr.com/2026/11/mock-accreditation-inec-publishes-17656-selected-pus-across-36-states-fct/
+- Vanguard, 23 Nov 2026: https://www.vanguardngr.com/2026/11/mock-accreditation-inec-publishes-17656-selected-pus-across-36-states-fct/amp/
 
 ## 1F. Osun 2027 draft budget — revenue and expenditure reconciliation
 
