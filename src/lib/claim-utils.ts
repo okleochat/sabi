@@ -55,7 +55,6 @@ const subjectAliases: Record<string, { key: string; label: string; type: string 
   "ebonyi state": { key: "ebonyi-state", label: "Ebonyi State", type: "state" },
   "francis nwifuru": { key: "francis-nwifuru", label: "Francis Nwifuru", type: "elected-official" },
   "ifeanyi odii": { key: "ifeanyi-odii", label: "Ifeanyi Odii", type: "gubernatorial-candidate" },
-  "seyi makinde": { key: "seyi-makinde", label: "Seyi Makinde", type: "elected-official" },
   "babajide sanwo-olu": { key: "babajide-sanwo-olu", label: "Babajide Sanwo-Olu", type: "elected-official" },
   "caleb mutfwang": { key: "caleb-mutfwang", label: "Caleb Mutfwang", type: "elected-official" },
   "edo state police command": { key: "edo-state-police-command", label: "Edo State Police Command", type: "public-agency" }
