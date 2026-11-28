@@ -1,5 +1,179 @@
 import type {StarterArticle} from "./content-types";
 export const currentAffairsArticles:StarterArticle[]=[
+{
+  "id": "inec-nationwide-mock-accreditation-2026-11-28",
+  "slug": "inec-nationwide-mock-accreditation-2026-11-28",
+  "title": "INEC's nationwide mock: what the BVAS test can—and cannot—prove",
+  "summary": "INEC scheduled a nationwide BVAS accreditation and result-upload test for 28 November. Its own design implies 17,676 polling units, but one report gives a different total. The exercise is a test, not an election.",
+  "category": "Election administration",
+  "label": "ELECTION READINESS / 28 NOV 2026",
+  "author": "The Sabi Desk",
+  "publishedAt": "2026-11-28",
+  "updatedAt": "2026-11-28",
+  "readTime": "6 min read",
+  "featured": true,
+  "heroArt": "signal",
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "The Independent National Electoral Commission (INEC) scheduled a nationwide Mock Accreditation and Result Upload Exercise for Saturday, 28 November 2026, from 8:30 a.m. to 2:30 p.m. The Commission says two polling units in each of Nigeria's 8,838 Registration Areas will take part across the 36 states and the Federal Capital Territory. That design implies 17,676 selected polling units."
+    },
+    {
+      "type": "paragraph",
+      "text": "INEC's website now hosts downloadable state-by-state lists of selected polling units. There is, however, a count discrepancy in published reporting: PUNCH and Channels Television report 17,676, while Vanguard reported 17,656 on 23 November. The Commission's stated design arithmetic is 2 × 8,838 = 17,676, but Sabi has not independently counted every entry in the linked state PDFs. The exact list total remains open pending that reconciliation."
+    },
+    {
+      "type": "heading",
+      "text": "This is a systems test, not an election"
+    },
+    {
+      "type": "paragraph",
+      "text": "The exercise is intended to test BVAS functionality, accreditation procedures and the electronic upload of test data to the INEC Result Viewing Portal (IReV). It is not a contest between candidates and cannot produce a winner or an election result. INEC has asked registered voters in the selected units to participate so the Commission can observe the process under simulated conditions."
+    },
+    {
+      "type": "paragraph",
+      "text": "At Chatham House in London on 12 November, INEC Chairman Prof. Joash Amupitan said the Commission had added validation safeguards intended to prevent inaccurate polling-unit results or over-voting figures from being uploaded to IReV. He stated: “If a result is not accurate at the polling unit, it will not go to IReV at all.” That is an official technical assurance. It is not, by itself, evidence that the safeguard has been independently tested or that every result visible on IReV will necessarily be accurate."
+    },
+    {
+      "type": "heading",
+      "text": "What Sabi will look for after the exercise"
+    },
+    {
+      "type": "list",
+      "items": [
+        "A published test protocol and the exact validation rules used for inaccurate figures and over-voting",
+        "The number of selected polling units that actually participated, and the number of BVAS devices tested",
+        "Successful and failed accreditation attempts, upload success rates, delays, network failures and retry procedures",
+        "Whether test data appeared on IReV as intended, with an auditable link between polling-unit records and uploaded files",
+        "Independent observer access, incident logs, corrective actions and a timetable for fixing identified faults"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "The Commission's own explanation places particular importance on collation-centre failures identified in its post-2023 review. A polling-unit mock can test accreditation and upload workflows, but it cannot alone demonstrate that all collation-centre controls, network conditions, logistics and election-day contingencies will work in January 2027."
+    },
+    {
+      "type": "callout",
+      "text": "A successful mock is evidence that the tested workflows functioned under test conditions. It is not proof that every election-day risk has been solved."
+    },
+    {
+      "type": "paragraph",
+      "text": "At the 08:35 WAT research cut-off on 28 November, Sabi had not located a post-exercise results report. We therefore report the exercise as scheduled, not as completed or successful. The next update should be based on INEC's published results and independent observation, not on the announcement alone."
+    }
+  ],
+  "sources": [
+    {
+      "title": "INEC sets 28th November, 2026 for nationwide mock accreditation exercise",
+      "publisher": "INEC",
+      "publishedAt": "2026-11-17",
+      "url": "https://www.inecnigeria.org/press/inec-sets-28th-november-2026-for-nationwide-mock-accreditation-exercise"
+    },
+    {
+      "title": "List of polling units for the nationwide mock accreditation scheduled to hold on November 28th, 2026",
+      "publisher": "INEC",
+      "url": "https://inecnigeria.org/press/list-of-polling-units-for-the-nationwide-mock-accreditation-scheduled-to-hold-on"
+    },
+    {
+      "title": "INEC selects 17,676 polling units for mock BVAS exercise",
+      "publisher": "PUNCH",
+      "publishedAt": "2026-11-24",
+      "url": "https://punchng.com/inec-selects-17676-polling-units-for-mock-bvas-exercise/"
+    },
+    {
+      "title": "INEC Selects 17,676 Polling Units For Saturday's Nationwide BVAS Mock Accreditation Exercise",
+      "publisher": "Channels Television",
+      "publishedAt": "2026-11-24",
+      "url": "https://www.channelstv.com/2026/11/24/inec-selects-17676-polling-units-for-saturdays-nationwide-bvas-mock-accreditation-exercise/"
+    },
+    {
+      "title": "Mock accreditation: INEC publishes 17,656 selected PUs across 36 states, FCT",
+      "publisher": "Vanguard",
+      "publishedAt": "2026-11-23",
+      "url": "https://www.vanguardngr.com/2026/11/mock-accreditation-inec-publishes-17656-selected-pus-across-36-states-fct/"
+    }
+  ]
+},
+{
+  "id": "osun-2027-budget-revenue-reconciliation-2026-11-28",
+  "slug": "osun-2027-budget-revenue-reconciliation-2026-11-28",
+  "title": "Osun's ₦927.37bn 2027 draft budget: the revenue figures need reconciling",
+  "summary": "Adeleke's official speech gives an expenditure breakdown that adds up, but the three revenue sources it lists fall ₦45.63bn short of the proposed total. The full estimates are needed before drawing conclusions.",
+  "category": "State budgets",
+  "label": "BUDGET WATCH / 28 NOV 2026",
+  "author": "The Sabi Desk",
+  "publishedAt": "2026-11-28",
+  "updatedAt": "2026-11-28",
+  "readTime": "5 min read",
+  "featured": false,
+  "heroArt": "ink",
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "On 25 November 2026, Osun Governor Ademola Adeleke presented a proposed ₦927,370,584,800 budget for the 2027 fiscal year to the State House of Assembly. The official speech calls it the “Budget of Advanced Commitment and Expansion”. It remains a draft appropriation proposal awaiting legislative scrutiny; it is not an enacted budget or evidence of money already spent."
+    },
+    {
+      "type": "heading",
+      "text": "The expenditure side adds up"
+    },
+    {
+      "type": "paragraph",
+      "text": "The speech allocates ₦130,011,911,330 to personnel costs, ₦238,051,506,680 to overheads and ₦559,307,166,790 to capital projects. Those three figures sum exactly to ₦927,370,584,800. Capital expenditure is about 60.3% of the total, consistent with the Governor's stated 40:60 recurrent-to-capital ratio."
+    },
+    {
+      "type": "heading",
+      "text": "The listed revenue sources leave a question"
+    },
+    {
+      "type": "paragraph",
+      "text": "The same speech lists ₦400,926,611,400 from the Federation Account Allocation Committee (FAAC), ₦250,172,402,980 in independent revenue and ₦230,646,070,420 from development partners. Added together, those three sources equal ₦881,745,084,800. That is ₦45,625,500,000 below the proposed expenditure total."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is a reconciliation question, not proof of an illegal deficit, hidden borrowing or missing funds. The speech may omit other receipts or financing items that appear in the detailed estimates. The public summary does not identify the source of the ₦45.6255bn difference, so Sabi will not assume that it is debt or label it an accounting error."
+    },
+    {
+      "type": "heading",
+      "text": "What the Assembly and the public should request"
+    },
+    {
+      "type": "list",
+      "items": [
+        "The complete 2027 budget estimates and financing table, including grants, capital receipts, borrowing and any other financing items",
+        "The revenue assumptions behind FAAC and internally generated revenue projections, with recent outturns for comparison",
+        "Sector and ministry allocations, named projects, locations, costs, delivery timelines and procurement plans",
+        "A 2026 budget implementation report and audited accounts to show how previous allocations translated into actual spending and services"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "The Speaker said the Assembly would scrutinise the proposal and directed the Ministry of Budget and Economic Planning to submit detailed estimates for consideration. That scrutiny should reconcile the full financing plan and test whether the proposed capital programme is costed, deliverable and supported by realistic revenue assumptions."
+    },
+    {
+      "type": "callout",
+      "text": "A capital-heavy proposal is a spending intention. It is not a completed road, a functioning hospital or a verified improvement in household welfare."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Osun State 2027 Budget Speech presented by Governor Ademola Adeleke to the House of Assembly on 25 November 2026",
+      "publisher": "Osun State Government",
+      "publishedAt": "2026-11-25",
+      "url": "https://www.osunstate.gov.ng/2026/11/osun-state-2027-budget-speech-presented-by-governor-ademola-adeleke-to-the-house-of-assembly-on-wednesday-25th-november-2026/"
+    },
+    {
+      "title": "Capital project gulps N559bn as Adeleke presents N927.37bn budget in Osun",
+      "publisher": "The Guardian Nigeria",
+      "publishedAt": "2026-11-25",
+      "url": "https://guardian.ng/news/capital-project-gulps-n559bn-as-adeleke-presents-n927-37bn-budget-in-osun/"
+    },
+    {
+      "title": "2027 budget: Adeleke presents ₦927.3bn, targets youth development, job creation",
+      "publisher": "Vanguard",
+      "publishedAt": "2026-11-26",
+      "url": "https://www.vanguardngr.com/2026/11/2027-budget-adeleke-presents-%E2%82%A6927-3bn-targets-youth-development-job-creation/"
+    }
+  ]
+},
 {id:"political-violence-before-2027-polls",slug:"political-violence-before-2027-polls",title:"124 incidents. 22 deaths. What the election-violence monitor is warning us about.",summary:"KDI's monitoring project documented 124 incidents of electoral violence and 22 fatalities across 35 states and the FCT between 1 July and 23 November. The figures are a warning signal, not a reason to normalise fear.",category:"Election security",label:"NEWS ANALYSIS / 26 NOV 2026",author:"The Sabi Desk",publishedAt:"2026-11-26",updatedAt:"2026-11-26",readTime:"6 min read",featured:true,heroArt:"court",body:[
 {type:"paragraph",text:"The election is still weeks away, but violence is already part of the political picture. In a press statement dated 24 November, Kimpact Development Initiative (KDI) said its Nigeria Election Violence Education and Reporting (NEVER) Project had documented 124 incidents of electoral violence, resulting in 22 fatalities, across 35 states and the Federal Capital Territory between 1 July and 23 November 2026."},
 {type:"paragraph",text:"That is KDI's monitored dataset, not an official INEC tally. It records incidents including intimidation, physical assaults, kidnappings, shootings and destruction of campaign infrastructure. The distinction matters: the figures should be attributed to the organisation that collected them, and readers should be able to inspect its statement."},
