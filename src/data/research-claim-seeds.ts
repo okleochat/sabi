@@ -727,5 +727,108 @@ export const starterResearchClaims: Array<Record<string, any>> = [
   "originLabel": "Sabi newsroom research",
   "alertStatus": "not_applicable",
   "seedVersion": 1
+},
+{
+  "id": "sabi-research-tinubu-2026-revised-budget-2026-11-28",
+  "claim": "President Bola Tinubu's proposed 2026 budget revision reduces aggregate expenditure from ₦68.323 trillion to ₦65.176 trillion while retaining a ₦31.457 trillion fiscal deficit and a ₦29.218 trillion new-borrowing plan.",
+  "claimType": "statistics",
+  "assessmentType": "Federal budget / revised appropriation and fiscal framework",
+  "subject": "Bola Ahmed Tinubu",
+  "subjectKey": "bola-ahmed-tinubu",
+  "subjectType": "elected-official",
+  "impact": "neutral",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "Presidential communication dated 20 November 2026, reproduced in the Federal Ministry of Information and National Orientation release of 24 November 2026 and the National Assembly Library Trust Fund's House plenary summary.",
+  "context": "The President requested repeal and re-enactment of the 2026 Appropriation Act and transmission of a revised Federal Government fiscal framework. The proposal is subject to legislative consideration and has not been identified as finally enacted as at 28 November 2026.",
+  "sourceUrl": "https://fmino.gov.ng/tinubu-seeks-senate-approval-to-reduce-2026-budget-expenditure-by-%E2%82%A63-14-trillion/",
+  "supportingUrls": [
+    "https://naltf.gov.ng/house-of-representatives-plenary-highlights-for-tuesday-24-november-2026/",
+    "https://www.thisdaylive.com/2026/11/25/tinubu-cuts-2026-budget-by-n3-2trn-retains-n31-4trn-deficit-senate-approves-external-borrowing-plan/",
+    "https://businessday.ng/news/article/reps-pass-n65-17trn-2026-budget-bill-for-second-reading/"
+  ],
+  "researchNotes": "The proposed expenditure reduction is ₦68.323tn − ₦65.176tn = ₦3.147tn. The official Ministry of Information summary gives projected FGN revenue of ₦33.720tn, capital expenditure of ₦26.232tn, deficit of ₦31.457tn (5.64% of GDP), and planned new borrowing of ₦29.218tn (₦18.428tn domestic and ₦10.790tn external). The President's letter says the proposed US$7.7bn external borrowing finances an existing foreign-borrowing provision and does not increase the envelope. The proposal was reported to have passed second reading in both chambers by 25 Nov; no final passage/assent was located by 28 Nov. Separately reported 2026–27 supplementary external borrowing authorisations must be mapped to the budget borrowing line before totals are combined. Obtain the full bill, revised fiscal framework, committee reports, appropriation schedules, capital warrants, NNPCL expenditure schedules, debt-service adjustments, loan terms and disbursement records. No verdict on fiscal discipline or delivery is assigned.",
+  "reviewSummary": "Official government and legislative summaries confirm the revised proposal's headline figures. The bill remains subject to the legislative process; underlying schedules and implementation records are still required.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "Tinubu Seeks Senate Approval to Reduce 2026 Budget Expenditure by ₦3.14 Trillion",
+      "publisher": "Federal Ministry of Information and National Orientation, 24 November 2026",
+      "url": "https://fmino.gov.ng/tinubu-seeks-senate-approval-to-reduce-2026-budget-expenditure-by-%E2%82%A63-14-trillion/",
+      "sourceType": "official-government-release"
+    },
+    {
+      "title": "House of Representatives Plenary Highlights for Tuesday, 24 November 2026",
+      "publisher": "National Assembly Library Trust Fund, 24 November 2026",
+      "url": "https://naltf.gov.ng/house-of-representatives-plenary-highlights-for-tuesday-24-november-2026/",
+      "sourceType": "official-legislative-summary"
+    }
+  ],
+  "state": "National",
+  "isTimeSensitive": true,
+  "createdAt": "2026-11-28T07:50:00.000Z",
+  "updatedAt": "2026-11-28T07:50:00.000Z",
+  "submittedAt": "2026-11-28T07:50:00.000Z",
+  "origin": "sabi-research",
+  "originLabel": "Sabi newsroom research",
+  "alertStatus": "not_applicable",
+  "seedVersion": 1
+},
+{
+  "id": "sabi-research-barau-debt-to-gdp-claim-2026-11-28",
+  "claim": "Deputy Senate President Barau Jibrin was reported as saying Nigeria's debt-to-GDP ratio was about 35%, could rise to about 42% after the proposed borrowing, and would remain below a 70% benchmark.",
+  "claimType": "statistic",
+  "assessmentType": "Public debt / debt-to-GDP ratio and benchmark comparison",
+  "subject": "Barau Jibrin",
+  "subjectKey": "barau-jibrin",
+  "subjectType": "elected-official",
+  "impact": "positive",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "THISDAY's report of the Senate debate, published 25 November 2026. The article paraphrases Barau Jibrin; a verbatim transcript of his remarks was not located.",
+  "context": "The statement was made during Senate consideration of the revised 2026 Appropriation Bill and related external borrowing authorisations. The claim frames the resulting debt ratio as remaining below an international benchmark.",
+  "sourceUrl": "https://www.thisdaylive.com/2026/11/25/tinubu-cuts-2026-budget-by-n3-2trn-retains-n31-4trn-deficit-senate-approves-external-borrowing-plan/",
+  "supportingUrls": [
+    "https://www.cbn.gov.ng/Out/2026/RSD/Second%20Quarter%202026%20Economic%20Report.pdf",
+    "https://dmo.gov.ng/total-public-debts/6080-nigeria-s-total-public-debt-as-at-june-30-2026/file",
+    "https://dmo.gov.ng/6129-2024-debt-sustainability-analysis-dsa-report/file",
+    "https://www.imf.org/-/media/files/publications/cr/2026/english/1ngaea2026001.pdf"
+  ],
+  "researchNotes": "The direct transcript and the calculation behind 42% were not located. CBN's Q2 2026 Economic Report states consolidated public debt was ₦166.79tn, or 31.78% of GDP, at end-June 2026; the DMO's June 30 debt table confirms ₦166.788tn total debt (₦91.590tn domestic and ₦75.198tn external). The IMF's May 2026 Article IV report projects gross public debt at 35.4% of GDP for 2026, which is close to the reported 35% but is a projection, not the latest actual end-June ratio. CBN says the national debt ceiling is 60% and the IMF Market Access Country benchmark is 70%; the DMO's 2024 DSA records the 70% IMF MAC benchmark and a 60% recommended national ceiling in the 2024–2027 MTDS. The 42% estimate cannot be reproduced without the debt perimeter, GDP denominator, exchange-rate assumption, drawdown timing, loan amounts and treatment of overlapping borrowing approvals. Do not label the statement false or verified until these are reconciled.",
+  "reviewSummary": "The 35% figure is broadly consistent with the IMF's 2026 projection but differs from the latest official end-June actual of 31.78%. The 42% post-borrowing estimate and the benchmark comparison require a disclosed calculation and precise debt perimeter. No verdict is assigned.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "Tinubu Cuts 2026 Budget by N3.2trn, Retains N31.4trn Deficit, Senate Approves External Borrowing Plan",
+      "publisher": "THISDAY, 25 November 2026",
+      "url": "https://www.thisdaylive.com/2026/11/25/tinubu-cuts-2026-budget-by-n3-2trn-retains-n31-4trn-deficit-senate-approves-external-borrowing-plan/",
+      "sourceType": "secondary-reporting-paraphrase"
+    },
+    {
+      "title": "CBN Economic Report, Second Quarter 2026",
+      "publisher": "Central Bank of Nigeria",
+      "url": "https://www.cbn.gov.ng/Out/2026/RSD/Second%20Quarter%202026%20Economic%20Report.pdf",
+      "sourceType": "official-statistical-report"
+    },
+    {
+      "title": "Nigeria's Total Public Debt Portfolio as at June 30, 2026",
+      "publisher": "Debt Management Office, published 25 September 2026",
+      "url": "https://dmo.gov.ng/total-public-debts/6080-nigeria-s-total-public-debt-as-at-june-30-2026/file",
+      "sourceType": "official-debt-statistics"
+    }
+  ],
+  "state": "National",
+  "isTimeSensitive": true,
+  "createdAt": "2026-11-28T07:50:00.000Z",
+  "updatedAt": "2026-11-28T07:50:00.000Z",
+  "submittedAt": "2026-11-28T07:50:00.000Z",
+  "origin": "sabi-research",
+  "originLabel": "Sabi newsroom research",
+  "alertStatus": "not_applicable",
+  "seedVersion": 1
 }
 ];
