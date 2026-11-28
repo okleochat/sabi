@@ -576,11 +576,13 @@ export const starterResearchClaims: Array<Record<string, any>> = [
   "claimSource": "African Democratic Congress, through its appeal filing reported by TheCable on 18 November 2026.",
   "sourceUrl": "https://www.thecable.ng/adc-files-appeal-against-lifus-judgment-seeks-to-stop-inec-from-altering-party-records/",
   "supportingUrls": [
-    "https://www.reuters.com/world/africa/nigerian-court-nullifies-opposition-party-leadership-raises-questions-over-atiku-candidacy-2026-11-05/"
+    "https://www.reuters.com/world/africa/nigerian-court-nullifies-opposition-party-leadership-raises-questions-over-atiku-candidacy-2026-11-05/",
+    "https://www.arise.tv/adc-crisis-inec-explains-why-atiku-remains-presidential-candidate-on-website-questions-bala-gombes-chairmanship-claim/",
+    "https://inecnigeria.org/documents/uploads/2026/10/b5af9099-864c-4d5e-924d-e1a2c771c529-final-list-presidential.pdf"
   ],
   "context": "ADC lawyer Kalu Kalu says the judgment did not expressly void Atiku's candidacy; Reuters described it as affecting the process that produced his nomination.",
-  "researchNotes": "No order granting a stay or final appellate decision was located as of 27 Nov. Filing an appeal does not itself suspend a judgment. Obtain the certified judgment, notice of appeal, motion for stay, and Court of Appeal docket before stating Atiku's legal status definitively.",
-  "reviewSummary": "The appeal filing and stay request are reported, but the operative effect of the trial judgment on Atiku's nomination remains a legal question. No appellate stay or final ruling located.",
+  "researchNotes": "On 19 November, Arise News quoted an unnamed senior INEC source saying a Notice of Appeal and Stay of Execution were subsisting and explaining why Atiku remained listed. Arise did not reproduce the order or identify its scope. This corrects the earlier note that no stay had been located: a media report of a stay exists, but the order itself remains unverified. INEC's 31 October final list still names Atiku and Rotimi Amaechi but predates the 5 November judgment. Obtain the certified judgment, notice of appeal, stay order, Court of Appeal docket, formal INEC decision and the order's scope before stating the operative legal status. Filing an appeal alone does not suspend a judgment.",
+  "reviewSummary": "The appeal and a stay of execution are reported by an unnamed INEC source, but no certified stay order or final appellate merits decision has been independently reviewed. Atiku's nomination status remains unresolved.",
   "findings": "",
   "verdict": "",
   "evidence": [
@@ -589,12 +591,24 @@ export const starterResearchClaims: Array<Record<string, any>> = [
       "publisher": "TheCable",
       "url": "https://www.thecable.ng/adc-files-appeal-against-lifus-judgment-seeks-to-stop-inec-from-altering-party-records/",
       "sourceType": "reported-court-filing"
+    },
+    {
+      "title": "ADC Crisis: INEC Explains Why Atiku Remains Presidential Candidate on Website",
+      "publisher": "Arise News, 19 November 2026",
+      "url": "https://www.arise.tv/adc-crisis-inec-explains-why-atiku-remains-presidential-candidate-on-website-questions-bala-gombes-chairmanship-claim/",
+      "sourceType": "reported-anonymous-INEC-source"
+    },
+    {
+      "title": "INEC final presidential candidate list, 31 October 2026",
+      "publisher": "Independent National Electoral Commission",
+      "url": "https://inecnigeria.org/documents/uploads/2026/10/b5af9099-864c-4d5e-924d-e1a2c771c529-final-list-presidential.pdf",
+      "sourceType": "official-list-predating-judgment"
     }
   ],
   "state": "National",
   "isTimeSensitive": true,
   "createdAt": "2026-11-27T19:32:00.000Z",
-  "updatedAt": "2026-11-27T19:32:00.000Z",
+  "updatedAt": "2026-11-28T08:16:00.000Z",
   "submittedAt": "2026-11-27T19:32:00.000Z"
 },
 {
@@ -873,6 +887,61 @@ export const starterResearchClaims: Array<Record<string, any>> = [
   "createdAt": "2026-11-28T07:50:00.000Z",
   "updatedAt": "2026-11-28T07:50:00.000Z",
   "submittedAt": "2026-11-28T07:50:00.000Z",
+  "origin": "sabi-research",
+  "originLabel": "Sabi newsroom research",
+  "alertStatus": "not_applicable",
+  "seedVersion": 1
+}
+,
+{
+  "id": "sabi-research-fg-promissory-note-programme-330bn-2026-11-28",
+  "claim": "The Federal Government's 11 November 2026 addendum asked the House of Representatives to amend its Promissory Note Programme request to include proposed issuance totalling ₦330,081,491,763.56 for outstanding Federal Government liabilities.",
+  "claimType": "public-finance",
+  "assessmentType": "Promissory notes / verified-liability settlement",
+  "subject": "Federal Government of Nigeria",
+  "subjectKey": "federal-government",
+  "subjectType": "public-agency",
+  "impact": "neutral",
+  "status": "researching",
+  "reviewStatus": "researching",
+  "reviewPriority": "high",
+  "claimSource": "Office of the Secretary to the Government of the Federation addendum dated 11 November 2026, received by the House of Representatives on 24 November 2026 as recorded in the House plenary summary.",
+  "sourceUrl": "https://naltf.gov.ng/house-of-representatives-plenary-highlights-for-tuesday-24-november-2026/",
+  "supportingUrls": [
+    "https://guardian.ng/news/fg-seeks-reps-approval-for-n330-08b-promissory-notes-to-clear-debts/",
+    "https://authorityngr.com/2026/11/25/tinubu-seeks-reps-approval-for-n330bn-promissory-notes-to-settle-fg-debts/",
+    "https://punchng.com/fg-corrects-n330bn-promissory-note-request-blames-clerical-error/"
+  ],
+  "context": "The addendum says the original 18 August request omitted ₦60.635bn that was already covered by presidential approval, bringing the proposed amount from ₦269.446bn to ₦330.081bn. The House summary records receipt of the addendum and says the proposed issuance is subject to National Assembly approval.",
+  "researchNotes": "The government describes the liabilities as verified, but the detailed schedule of creditors, contracts, project identifiers, invoice amounts, certification, due dates, payment history, note terms and maturities were not available in the public material reviewed. Verify that the two sums do not overlap with previously approved promissory-note programmes or other debt-settlement requests. Do not treat the request as a new ₦330bn cash disbursement, an approved appropriation, or proof that all underlying claims are valid.",
+  "reviewSummary": "The existence and arithmetic of the addendum are reported in the House plenary summary and corroborating coverage. Underlying liability schedules and final legislative approval remain unavailable; no verdict is assigned.",
+  "findings": "",
+  "verdict": "",
+  "evidence": [
+    {
+      "title": "House of Representatives Plenary Highlights for Tuesday, 24 November 2026",
+      "publisher": "National Assembly Library Trust Fund",
+      "url": "https://naltf.gov.ng/house-of-representatives-plenary-highlights-for-tuesday-24-november-2026/",
+      "sourceType": "official-plenary-summary"
+    },
+    {
+      "title": "FG seeks Reps' approval for N330.08b promissory notes to clear debts",
+      "publisher": "The Guardian Nigeria, 24 November 2026",
+      "url": "https://guardian.ng/news/fg-seeks-reps-approval-for-n330-08b-promissory-notes-to-clear-debts/",
+      "sourceType": "independent-report"
+    },
+    {
+      "title": "Tinubu seeks Reps' approval for N330bn promissory notes to settle FG debts",
+      "publisher": "The Authority, 25 November 2026",
+      "url": "https://authorityngr.com/2026/11/25/tinubu-seeks-reps-approval-for-n330bn-promissory-notes-to-settle-fg-debts/",
+      "sourceType": "independent-report"
+    }
+  ],
+  "state": "National",
+  "isTimeSensitive": true,
+  "createdAt": "2026-11-28T08:16:00.000Z",
+  "updatedAt": "2026-11-28T08:16:00.000Z",
+  "submittedAt": "2026-11-28T08:16:00.000Z",
   "origin": "sabi-research",
   "originLabel": "Sabi newsroom research",
   "alertStatus": "not_applicable",
