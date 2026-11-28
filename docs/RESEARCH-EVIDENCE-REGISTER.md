@@ -520,3 +520,40 @@ Sources:
 - Yiaga Africa, report resource page: https://yiaga.org/resources/willing-but-wary-report-of-the-national-voting-intentions
 - Afrobarometer, 11 Nov 2026 release: https://www.afrobarometer.org/wp-content/uploads/2026/11/News-release-Nigerians-doubt-quality-of-upcoming-election-Afrobarometer-bh-11nov26.pdf
 - Afrobarometer, Nigeria Round 10 2024 summary: https://www.afrobarometer.org/wp-content/uploads/2025/08/R10-Summary-of-results-Nigeria-Afrobarometer-bh-7aug25.pdf
+
+ 
+## 1H. Federal 2026 budget revision and debt statements — 24–28 November 2026
+
+President Bola Tinubu's letter dated 20 November 2026 seeks repeal and re-enactment of the 2026 Appropriation Act and a revised Federal Government fiscal framework.
+
+- Proposed aggregate expenditure falls from ₦68.323tn to ₦65.176tn: a ₦3.147tn reduction.
+- Projected FGN revenue, including government-owned enterprises: ₦33.720tn.
+- Aggregate capital expenditure: ₦26.232tn.
+- Fiscal deficit remains ₦31.457tn, or 5.64% of GDP.
+- Planned new borrowing remains ₦29.218tn: ₦18.428tn domestic and ₦10.790tn external.
+- The President says the proposed US$7.7bn external borrowing finances an existing foreign-borrowing provision and does not increase the borrowing envelope.
+- The President's letter says MDA capital provision consists mainly of amounts already warranted. Obtain the warrants, project-level schedules and disbursement records before assessing implementation.
+- FMINO's 24 Nov release describes the Senate's receipt and referral. Contemporaneous reporting on 25 Nov says both chambers passed the revised bill through second reading; the Senate adjourned to 1 Dec for committee work. No final passage by both chambers or assent was located by 28 Nov. The current appropriation remains operative until the amendment is enacted.
+- Separately, the NALTF House plenary summary records approval of a 2026–2027 supplementary external borrowing plan of US$20.52bn and €1.04bn, plus a resolution concerning borrowing already provided for in the 2026 Appropriation Act. THISDAY reports Senate approval as well. Map these authorisations to the revised budget's borrowing line before adding amounts or describing them as incremental debt.
+
+Sources:
+- Federal Ministry of Information and National Orientation, 24 Nov 2026: https://fmino.gov.ng/tinubu-seeks-senate-approval-to-reduce-2026-budget-expenditure-by-%E2%82%A63-14-trillion/
+- National Assembly Library Trust Fund, House Plenary Highlights, 24 Nov 2026: https://naltf.gov.ng/house-of-representatives-plenary-highlights-for-tuesday-24-november-2026/
+- THISDAY, 25 Nov 2026: https://www.thisdaylive.com/2026/11/25/tinubu-cuts-2026-budget-by-n3-2trn-retains-n31-4trn-deficit-senate-approves-external-borrowing-plan/
+- BusinessDay, House second reading, 25 Nov 2026: https://businessday.ng/news/article/reps-pass-n65-17trn-2026-budget-bill-for-second-reading/
+
+### Debt-to-GDP statement by Deputy Senate President Barau Jibrin
+
+THISDAY's 25 Nov report paraphrases Barau as putting Nigeria's debt-to-GDP ratio at about 35%, potentially rising to about 42% after the proposed borrowing, still below a 70% benchmark. The article does not provide a verbatim transcript or the calculation for 42%.
+
+- CBN's Second Quarter 2026 Economic Report says consolidated public debt was ₦166.79tn, or 31.78% of GDP, at end-June 2026.
+- DMO's June 30, 2026 debt table confirms ₦166.788tn total debt: ₦91.590tn domestic and ₦75.198tn external.
+- IMF's May 2026 Article IV report projects gross public debt at 35.4% of GDP for 2026. This is a projection, not the latest actual end-June ratio.
+- The 70% figure is the IMF Market Access Country benchmark. CBN and DMO material also refer to a 60% national ceiling/recommended threshold; the two benchmarks should not be conflated.
+- The 42% estimate remains unverified until the debt perimeter, GDP denominator, exchange rate, drawdown timing, borrowing amounts and overlap between approvals are disclosed.
+
+Sources:
+- CBN, *Economic Report, Second Quarter 2026*: https://www.cbn.gov.ng/Out/2026/RSD/Second%20Quarter%202026%20Economic%20Report.pdf
+- DMO, *Nigeria's Total Public Debt Portfolio as at June 30, 2026*, published 25 Sep 2026: https://dmo.gov.ng/total-public-debts/6080-nigeria-s-total-public-debt-as-at-june-30-2026/file
+- DMO, *2024 Debt Sustainability Analysis*: https://dmo.gov.ng/6129-2024-debt-sustainability-analysis-dsa-report/file
+- IMF, *2026 Article IV Consultation*, report completed 7 May 2026: https://www.imf.org/-/media/files/publications/cr/2026/english/1ngaea2026001.pdf
